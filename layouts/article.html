@@ -1,0 +1,12 @@
+{{> header }}
+	<header>
+    <a class="back-to-index" href="../index.html">&larr; Index</a>
+  </header>
+    <article>
+      <h1>{{ title }}</h1>
+      <div class="meta">
+          {{#if date}}Published: {{ date }}{{/if}}
+      </div>
+      {{{ contents }}}
+    </article>
+{{> footer }}
