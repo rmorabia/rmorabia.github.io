@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{ {title }} - Radhika Morabia</title>
+    <meta name="description" content="Radhika Morabia&#x27;s Blog" />
+  </head>
+  <body>	<header>
+    <a class="back-to-index" href="../index.html">&larr; Index</a>
+  </header>
+    <article>
+      <h1>Coding Log — January 2nd, 2018 — Day 17</h1>
+      <div class="meta">
+          
+      </div>
+      <p><strong>Coding Time:</strong> Half Day</p>
+<p><strong>Here&#39;s what I did today:</strong></p>
+<h2 id="continued-learning-javascript-https-github-com-getify-you-dont-know-js-">Continued Learning <a href="https://github.com/getify/You-Dont-Know-JS">JavaScript</a></h2>
+<p>Days like today are what cause a 6 month plan to turn into a 9 month plan. </p>
+<p>The wifi was out for most of the day. I could&#39;ve worked offline, but I just couldn&#39;t get myself to. It&#39;s already so hard to learn to code, and then I only had access to the book in Kindle form. </p>
+<p>So, I downloaded the Markdown files and got a dedicated Markdown viewer now. I will be okay without the internet now. Especially after knowing that the book is pretty self-contained. The first program we write in the book is 30 lines! That&#39;s a pretty big deal to me. There&#39;s no &quot;hello, world. You&#39;re a programmer now!&quot; here. At the same time, at no point (once I got my head on after the information overload from last night) did I feel truly lost writing this code. I just needed to look up at some of the examples of how to write the syntax for what I wanted to do. That was all within the chapter -- no outside Googling involved.</p>
+<p>For now, this is how I handle writing programs. I take it one tiny step at a time. I write (on paper) what I want to accomplish in plain English. Then, I reference the chapter to figure out how to do that. (I vaguely already had an idea of what I wanted to code up each time, but the specific syntax is hard to remember right now.) Then, I write it out. I test it using VS Code&#39;s debugger. If it works, I keep going. Rinse &amp; repeat until 2-3 lines reaches 30 lines.</p>
+<p>I have to admit, I got pretty stumped around the time where I had to add functions into my code. Part of that was that I came back to it after 12 hours away. My flow of writing out what I wanted to do on paper just didn&#39;t hold. I sort of brute forced it. But hey, I did do the bonus challenge of adding a prompt, so... That makes up for it?</p>
+<p>Here&#39;s my code for the practice program we had to do in Chapter 1:</p>
+<pre><code class="lang-js">const phone = 99.99
+/*var bankBalance = 575.23*/
+var total = 0
+const accessory = 9.99
+const TAX_RATE = 0.08
+
+bankBalance = prompt( &quot;How much $$ you got, man&quot;)
+
+function calculatingTaxRate(total) {
+  total = total + (total * TAX_RATE)
+  return total
+}
+
+function dollarDollar() {
+  return &quot;$&quot; + total.toFixed(2)
+}
+
+while (bankBalance &gt; (phone + accessory)) {
+  bankBalance = bankBalance - phone - accessory
+  total = total + phone + accessory
+}
+
+total = calculatingTaxRate(total)
+
+console.log(bankBalance)
+
+total = dollarDollar()
+console.log(total)
+
+if (total &lt; bankBalance) {
+  console.log(&#39;Woo&#39;) 
+}
+
+else {
+  console.log(&#39;Boo&#39;)
+}
+</code></pre>
+<p>It&#39;s a pretty complicated program, in my opinion! I think it&#39;s really exciting that I did something like this on my second day of real dynamic coding without ever feeling truly lost.</p>
+<p>After looking at the solution, I made a few mistakes writing my code:</p>
+<ul>
+<li>I totally skipped over the Spending Threshold that was mentioned in the practice. I read it and thought it was just the bank balance? Oh well.</li>
+<li>I do not use ANY comments. I know I have to use comments liberally, but I just don&#39;t remember while I&#39;m writing my code.</li>
+<li>I missed a few other small things (making the accessory an if statement within the while), so technically my program ended up a lot more bare-featured than the example code. Oh well? I don&#39;t know. I&#39;m pretty proud of this. I don&#39;t know if I should be.</li>
+<li>I also have no clue if ; are supposed to be in JS or not? The book uses them, but my Linter said no??? I&#39;m so confused.</li>
+</ul>
+<p>So, there&#39;s a new thing I&#39;m trying to make my learning deeper. After I get the code right the first time, I delete it, and try rewriting it from scratch without all the copious referencing to the chapter I just read. Otherwise, how do I know if I really understood it? </p>
+<p>It&#39;s a 6-bullet instruction list, and guess where I ran into my first problem despite having already written the code before? Bullet 1. Great.</p>
+<p>I think I understood what I had to do, but the syntax really slipped me up. I forgot {} around an if statement, for example. I forgot to put all the correct parentheses around a statement. It&#39;s the kind of thing a Linter doesn&#39;t pick up.</p>
+<p>The only other spot where I ran into problems was with the tax function not returning a success message when it was clearly successful. I looked back at my own code (never the lesson), changed one line, and it worked.</p>
+<p>I think this new method of rewriting an exercise a second time really helps develop understanding. I told myself I would write it 3 and 4 times until I got it without having to reference at all, but I think that might be overkill. </p>
+<p>For now, here was the code for my second time: </p>
+<pre><code class="lang-js">const TAX_RATE = 0.08
+const PHONE = 99.99
+const ACCESSORY = 9.99
+
+var total = 0
+
+// I want to do these prompts but they don&#39;t work inside of VS Code, I will re-enable them in the browser after
+
+spendingThreshold = prompt( &quot;How much you wanna spend per phone, I guess??&quot;)
+bankBalance = prompt( &quot;How much $$ you got total tho&quot;)
+
+/*var spendingThreshold = 200
+var bankBalance = 648.93*/
+
+function payTheGovt () {
+    total = total + (total * TAX_RATE)
+    return total
+}
+
+function formatNerd () {
+    return &quot;$&quot; + total.toFixed(2)
+}
+
+while (bankBalance &gt; (PHONE + ACCESSORY)) {
+  bankBalance = bankBalance - PHONE
+  total = total + PHONE
+
+  if ((PHONE + ACCESSORY) &lt; spendingThreshold) {
+    total = total + ACCESSORY
+    bankBalance = bankBalance - ACCESSORY
+  }
+}
+
+total = payTheGovt()
+/*total = formatNerd()*/
+
+console.log(total)
+console.log(formatNerd())
+console.log(bankBalance)
+
+if (bankBalance) {
+    console.log(&quot;Woo&quot;)
+}
+
+else {
+    console.log(&quot;Boo&quot;)
+}
+</code></pre>
+<p>I know there&#39;s extraneous console logs. I like it that way. It helped me keep track. </p>
+<h2 id="tomorrow-s-to-do-s">Tomorrow&#39;s To-Do&#39;s</h2>
+<p>Read through Chapter 2! I&#39;m getting a bit of a jumpstart in bed tonight. I&#39;m not going to be in front of the computer to do the code snippets, I&#39;ll just be going through a bit on paper to avoid information overload tomorrow.</p>
+
+    </article>
+<nav>---<br /><a href="/about">About this blog</a></nav> 
+</body>  
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{ {title }} - Radhika Morabia</title>
+    <meta name="description" content="Radhika Morabia&#x27;s Blog" />
+  </head>
+  <body>	<header>
+    <a class="back-to-index" href="../index.html">&larr; Index</a>
+  </header>
+    <article>
+      <h1>Coding Log — December 26th, 2017 — Day 10</h1>
+      <div class="meta">
+          
+      </div>
+      <p><strong>Coding Time:</strong> Full Day</p>
+<p>It&#39;s been a whole week since I last updated! I didn&#39;t really do anything worth mentioning in the interim. As long as I keep showing up, I will eventually get to where I want to go.</p>
+<p><strong>Here&#39;s what I did today:</strong></p>
+<h2 id="continued-learning-html-css-https-learn-shayhowe-com-html-css-">Continued Learning <a href="https://learn.shayhowe.com/html-css/">HTML/CSS</a></h2>
+<p>I finished Sections 5 &amp; 6 out of 12. I definitely handled this better than I would&#39;ve last week. Section 6 is twice as long as Section 5, and I&#39;m pleasantly surprised I read them both in one day.</p>
+<p>I did so by going back and forth between my computer and my Kindle. This book has definite &quot;reading&quot; sections and definite &quot;practice&quot; sessions. If it&#39;s reading/absorbing time, I grab my notebook + fountain pen and saunder off into my bed with my Kindle. Once it&#39;s practice time, it&#39;s back on my computer.</p>
+<p>I definitely absorb more from my Kindle, but I obviously can&#39;t practice on it. At the same time, if I&#39;m sitting in bed too long, I start to fall asleep. This is a good balance between relaxed absorption and short, focused practice sessions. I hope I can replicate it for the books to come.</p>
+<p>Back to the course, though...</p>
+<p><a href="https://learn.shayhowe.com/practice/working-with-typography/index.html">The website we&#39;re making is turning out to be gorgeous.</a> (Not going to upload my source code if only because it&#39;s 90% similar to the working examples on the book&#39;s web site.)</p>
+<p>I didn&#39;t know you could do all of this with plain CSS (+ some CSS grid for mobile-responsiveness?). I definitely don&#39;t have the design chops to think this up, regardless of the technical code behind this website. You really don&#39;t know what you don&#39;t know. This book is written with design in mind &amp; it shows.</p>
+<p>It&#39;s nice to know that I have this arsenal of inline-block, box-models, and semantics to fall back on when I end up designing something complicated. This book is showing the sheer possibility of design within CSS. It may be overkill for job readiness in the short-term, but I&#39;m really enjoying it.</p>
+<p>Here are my notes for Sections 5 &amp; 6:</p>
+<pre><code>## css columns
+
+* **this is all not mobile responsive, as far as i can tell**
+* float: left or right will move an element to the side and the other elements will flow around it
+  * eg. img { float: right; } 
+    * if you want to do more than left &amp; right (2 columns), position all to the left and adjust the width
+    * use margin &amp; width with float to column properly
+* what happens when content overlaps and bleeds through?
+    * clear: both can be used AFTER floats to prevent the following elements from using the space in between.
+        * can be left, right, or both. preference both.
+    * OR contain floats by creating a parent element that only allows wrapping within it. 
+        * eg. 
+                ```.group:before,
+                    .group:after {
+                      content: &quot;&quot;;
+                      display: table;
+                    }
+                    .group:after {
+                      clear: both;
+                    }
+                    .group {
+                  clear: both;
+                  (* zoom: 1;
+                    }
+                    section {
+                      float: left;
+                      margin: 0 1.5%;
+                      width: 63%;
+                    }
+                    aside {
+                      float: right;
+                      margin: 0 1.5%;
+                      width: 30%;
+                    }
+</code></pre><ul>
+<li>use inline-block + relevant width &amp; other elements to model columns and layouts as well.<ul>
+<li>no need to clear floats, BUT a space will be created between the blocks which can be fixed in the HTML by starting the next section on the same line. eg. <head> </head><aside></aside><ul>
+<li>this can also be fixed by commenting on the space between the lines</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>position will make an element go to a specific place rather than a column<ul>
+<li>relative works with the flow of the page, the position it relative to itself</li>
+<li>absolute is relative to the parent element and does not take into account the flow of the page</li>
+<li>use box-offset (direction) to define the position from ^</li>
+</ul>
+</li>
+</ul>
+<h2 id="typography">typography</h2>
+<ul>
+<li><strong>these are all pretty common and easily searchable</strong></li>
+<li>to center text vertically within an element (like a button), set height and line-height to the same value<ul>
+<li>eg. .btn { height: 22px; line-height: 22px; }</li>
+</ul>
+</li>
+<li>text-indent: get that fancy newspaper look</li>
+<li>text-shadow: exists to look like you&#39;re stuck in 2005? could look cool for a:hover</li>
+<li>there are only some web-save fonts: including arial, garamond, courier, times, etc.. very limited, but good for fall-back.<ul>
+<li>the ultimate fall-back is serif or sans-serif, though</li>
+</ul>
+</li>
+<li>@font-face: use any font file you locally have or sourced from another place like google fonts
+```</li>
+</ul>
+<p>Quite a bit of it is not in proper syntax since Markdown recognizes HTML and thinks I actually want to bold or italicize my notes. I know what the proper syntax is for these, I just had to write them in a readable way for the notes.</p>
+<h2 id="continued-learning-git-http-gitimmersion-com-">Continued <a href="http://gitimmersion.com">Learning Git</a></h2>
+<p>I went up to Lesson 23 of 53 before getting too mentally exhausted to understand anything. I&#39;m still trying to progress through this in short bursts, I don&#39;t mind how many days it takes.</p>
+<p>Here are my notes from today:</p>
+<pre><code>* `git tag` -- checkpoints to easily refer to. [tag] can be used instead of hash
+* how to revert back to master when already git add-ed? `git reset HEAD file.name` (to get rid of the add) + `git checkout file.name`
+* how to revert back when already git commit-ed? `git commit HEAD` to revert to last commit, `git revert [hash]` to revert to any previous commit
+    * extra: want to erase that this ever happened? `git reset --hard [hash/tag]`
+* `git commit --amend -m &#39;message&#39;` to fix that stupid mistake without making a whole new commit
+* aliases:
+    * `git co` = checkout
+    * `git c` = commit
+    * `git st` = status
+    * `git hist` = pretty log
+* `git mv` to move locally and let git know in the process, no need for git add afterwards
+* `.git/config` will overwrite git settings for this project
+</code></pre><h2 id="tomorrow-s-to-do-s">Tomorrow&#39;s To-Do&#39;s</h2>
+<p>Read another 2 lessons of the HTML/CSS book &amp; another 10 lessons of the Git book.</p>
+
+    </article>
+<nav>---<br /><a href="/about">About this blog</a></nav> 
+</body>  
+</html>

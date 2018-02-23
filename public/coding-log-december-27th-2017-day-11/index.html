@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{ {title }} - Radhika Morabia</title>
+    <meta name="description" content="Radhika Morabia&#x27;s Blog" />
+  </head>
+  <body>	<header>
+    <a class="back-to-index" href="../index.html">&larr; Index</a>
+  </header>
+    <article>
+      <h1>Coding Log — December 27th, 2017 — Day 11</h1>
+      <div class="meta">
+          
+      </div>
+      <p><strong>Coding Time:</strong> Full Day</p>
+<p><strong>Here&#39;s what I did today:</strong></p>
+<h2 id="continued-learning-html-css-https-learn-shayhowe-com-html-css-">Continued Learning <a href="https://learn.shayhowe.com/html-css/">HTML/CSS</a></h2>
+<p>I finished Sections 7 &amp; 8 out of 12. We covered background colors &amp; lists. The wide application in the earlier lessons is moving into specific scenarios. Some are a little obscure and I found myself skimming (why do I care about the specific styling of a relay gradient when I can just Google it), but then the book popped out at me with another widly applicable concept again. </p>
+<p>Here are my notes for Sections 7 &amp; 8:</p>
+<pre><code>* function url(&quot;...&quot;) to href like html
+* you can add background colors &amp; images to specific elements, not just the whole page
+* gradients exist. transparent text on a gradient background, whaaaaaa
+ * order menu in unordered list rather than just anchors stacked on top of each other
+</code></pre><p>That&#39;s it? Yes. A lot of big ideas &amp; possibilities rather than specific rules as we go on.</p>
+<h2 id="continued-learning-git-http-gitimmersion-com-">Continued <a href="http://gitimmersion.com">Learning Git</a></h2>
+<p>I went up to Lesson 34 of 53. I&#39;m not sure how applicable this is without pushing. My time from committing to pushing is virtually nil. I suppose this doesn&#39;t apply when I&#39;m in a future team environment. </p>
+<p>Here are my notes from today:</p>
+<pre><code>* `git checkout -b [branch]` to create a new branch
+</code></pre><p>Maybe today was just a day of few notes? Wow.</p>
+<h2 id="started-building-my-portfolio-page-https-www-freecodecamp-org-challenges-build-a-personal-portfolio-webpage-">Started Building <a href="https://www.freecodecamp.org/challenges/build-a-personal-portfolio-webpage">My Portfolio Page</a></h2>
+<p>This is the first project in <a href="http://freecodecamp.org">FreeCodeCamp</a>. Using raw HTML &amp; CSS, you build a portfolio website that looks like <a href="https://codepen.io/freeCodeCamp/full/YqLyXB">this</a>. I don&#39;t know about your design preferences, but that&#39;s the ugliest thing I&#39;ve ever seen. So, I&#39;m making this harder on myself and I&#39;m going to try emulating <a href="https://bmorelli25.github.io/portfolio-template/">this</a>.</p>
+<p>The second site is written in pure HTML/CSS, so I should already know everything I need to. I&#39;ve built websites before. I have a pretty steady grasp of HTML &amp; CSS, especially with the design &amp; clean code concepts I&#39;ve been learning with the HTML/CSS book.</p>
+<p>Here are the project requirements, outlined by FCC and paraphrased by me:</p>
+<ul>
+<li>Access all content just by scrolling (single-page website)</li>
+<li>Social media buttons that lead somewhere</li>
+<li>Mobile responsive</li>
+<li>Thumbnails of different projects</li>
+<li>Navigate to different sections just by clicking on the links in the navigation bar</li>
+</ul>
+<p>I&#39;m going to be making a single page website with a floating navigation bar that links to About, Resume, Projects, BLOG (this is in all caps because it&#39;s going to have a different background), and Contact. All of those will be different sections below the start that just says, &quot;Hi, I&#39;m Radhika Morabia.&quot; in large, capitalized letters with the obvious exception of BLOG, which for now will continue having the Jekyll theme that won&#39;t match my homepage at all anymore.</p>
+<p>I have the design all mocked up on paper, but I run into problems I&#39;ve never encountered before immediately. How do I make a navigation bar float? How do I get one of those cool top sections that fill out the size of the screen? Should I code it to be mobile responsive on my own or use a framework like <a href="http://purecss.io">Pure</a> to make my life easier? I don&#39;t know the answers to any of these.</p>
+<p>So, the obvious solution is to break the project up into small pieces. Work on it from top to bottom day by day. It&#39;s really not that hard once I isolate which questions I have for my best friend, Google. It&#39;s just a little different than anything I&#39;ve written before. </p>
+<p>First -- Should I use a framework or not? It sort of throws away everything I learned about CSS to do so. </p>
+<p>I built my first website using a CSS framework. I didn&#39;t know enough about CSS to wield it properly, though. It ended up being quite counter-productive.</p>
+<p>However, I now know how CSS works. This means I can <strong>read and customize</strong> a framework to fit my needs. While younger me had to work within the limitations of a CSS framework, an older me can make the framework run to my will.</p>
+<p>At the end of the day, I think the core tenet is this -- <em>I am not a designer. CSS frameworks design for you.</em> I want my website to be pretty, and it&#39;s going to take a lot longer to make it pretty using my own minimalist brain.</p>
+<p>I did some research and found <a href="https://picturepan2.github.io/spectre/">Spectre</a>, which seems to be heavier on the design than Pure, but still lightweight. Perfect for me.</p>
+<p>As so happens with all new technologies, it took a lot of troubleshooting to make it work, but I successfully uses SASS &amp; Gulp (both technologies I&#39;m entirely unfamiliar with and which required some dangerous node.js reinstalls) to change the default color of all the CSS from purple to a nice green.</p>
+<p>Apparently SASS makes it easy to change defaults in a variety of categories, so I may end up using this quite a bit before the end of this.</p>
+<p>Here&#39;s what I accomplished within the realms of actually building the website, with a lot of StackOverflow-ing:</p>
+<h3 id="nav-bar-floats-and-is-split-between-left-and-right">Nav bar floats, and is split between left and right</h3>
+<p>The left and right split came with the framework. To float the header, you just use <code>position: fixed</code>. Of course. </p>
+<h3 id="intro-takes-up-the-entire-space-that-the-screen-provides">Intro takes up the entire space that the screen provides</h3>
+<p>This took forever to figure out. I don&#39;t know if it was because of some default CSS from the framework or if the header came in the way. I couldn&#39;t get the intro to fit the size of the screen AND center vertically/horizantally AND show the next content below. I still don&#39;t really understand why it worked with the code I ended up using.</p>
+<p>For the HTML, I needed an outer box (the div to take over the whole screen) and an inner box (with the content that needed to be centered). This makes sense.</p>
+<pre><code class="lang-html">&lt;section id=&quot;intro&quot;&gt;
+  &lt;div id=&quot;center-intro&quot;&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+<p>For the CSS, I needed to make the <code>intro</code> box take up the entire screen. There were multiple ways of doing this, but nothing I tried seemed to be compatible with centering text.</p>
+<p>Apparently there&#39;s an easier solution with Flexbox, but I don&#39;t know how that works yet and it never worked despite my troubleshooting like SASS did.</p>
+<pre><code class="lang-css">#intro {
+    height: 100%;
+    width: 100%;
+  }
+</code></pre>
+<p>For the actual centering of the text, this is where I start to get confused. It reads okay in theory, but it still doesn&#39;t make sense. I tried playing around with it to understand it, and somehow every line is needed to center the text vertically and horizantally. I don&#39;t know why.</p>
+<pre><code class="lang-css">  #center-intro {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    float: left;
+    text-align: center;
+  }
+</code></pre>
+<p>I also used IDs instead of classes for this. I thought it might&#39;ve been a cascading issue. It might&#39;ve been. Who knows? Better safe than sorry.</p>
+<p><strong><a href="https://stackoverflow.com/a/5703632/3491301">Here is the StackOverflow answer that helped me solve this.</a></strong></p>
+<p>It&#39;s 2:30 AM as I&#39;m finishing this up. I love troubleshooting, and I could stay up forever just finding solutions to fixing the site, but I should sleep.</p>
+<p>It feels really good to be coding again, even if it&#39;s static. I&#39;m not a theoretical thinker, I&#39;m the type of person who writes/codes with an end in mind. It feels good to have an end in mind again. </p>
+<h2 id="tomorrow-s-to-do-s">Tomorrow&#39;s To-Do&#39;s</h2>
+<p>Read another 2 lessons of the HTML/CSS book &amp; another 10 lessons of the Git book.</p>
+<p>For the website,there are a few things I have to do to officially complete the Navigation bar and the Introduction section.</p>
+<ul>
+<li>Make the button background on Log a different color</li>
+<li>Test all the links to make sure they are working</li>
+<li>Add icons to the three links</li>
+<li>Add a ^ (but down) from the intro to About at the bottom of the section</li>
+</ul>
+<p>Then, I&#39;ll be done with the first 2 of 7 seven sections on the website. The remaining sections are: About, Resume, Projects, Contact, and the Footer.</p>
+<p>Will they be as hard as the Intro? Part of me thinks no since there&#39;s less fancy CSS involved. At the same time, who knows? Who ever knows?</p>
+
+    </article>
+<nav>---<br /><a href="/about">About this blog</a></nav> 
+</body>  
+</html>

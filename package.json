@@ -1,9 +1,9 @@
 {
-  "name": "electroniq",
+  "name": "rmorabia-blog",
   "version": "1.0.0",
   "private": true,
-  "description": "Electroniq is astrophysicist (and retro music enthusiast) Tara Himmels' blog.",
-  "author": "Tara Himmels",
+  "description": "Radhika Morabia's Blog",
+  "author": "Radhika Morabia",
   "dependencies": {
     "handlebars": "^4.0.5",
     "metalsmith": "^2.2.0",

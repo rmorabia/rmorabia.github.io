@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{ {title }} - Radhika Morabia</title>
+    <meta name="description" content="Radhika Morabia&#x27;s Blog" />
+  </head>
+  <body>	<header>
+    <a class="back-to-index" href="../index.html">&larr; Index</a>
+  </header>
+    <article>
+      <h1>Coding Log — January 13th, 2018 — Day 26</h1>
+      <div class="meta">
+          
+      </div>
+      <p><strong>Coding Time:</strong> Full Day</p>
+<p><strong>Here&#39;s what I did today:</strong></p>
+<h2 id="-i-built-my-first-thing-http-rmorabia-com-tinyjs-"><a href="http://rmorabia.com/tinyjs">I Built My First Thing</a></h2>
+<p>Carousels seem hard.</p>
+<p>The distance between the carousel and I still seems vast. </p>
+<p>So, I decided to start a mini-multi-project. 10/12 tiny, tiny, tiny projects between me and functional small apps. I&#39;m trying to bridge the difference between tiny and small.</p>
+<p>Here&#39;s a list of 13 ideas I have, sort of in order but I can&#39;t actually judge difficulty:</p>
+<ol>
+<li>Hello, Name!</li>
+<li>That 30-line thing we made in the YDKJS intro book BUT IN THE DOM</li>
+<li>Tooltip that changes color depending on which button you click? Basically something simple that will change CSS with JavaScript</li>
+<li>Tiny Luck-Based Game -- Choose a door, win a prize! The door is random!</li>
+<li>Carousel/Slideshow</li>
+<li>Accordion/Dropdown Menu</li>
+<li>Quiz that grades your answers</li>
+<li>Random Color Generator </li>
+<li>Micro-blog thing -- Looping through an array of mini-posts</li>
+<li>The Almighty To-Do List, from scratch this time</li>
+<li>Countdown Timer</li>
+<li>Paint App</li>
+<li>Plain Text Editor</li>
+</ol>
+<p>I am aware that half of those don&#39;t make sense. They don&#39;t make much sense to me, either. Regardless, it&#39;s the idea of building iterative projects that continue to build on what you learned last time &amp; continue to push new challenges.</p>
+<p>First, the basics of DOM manipulation with HTML.
+Then, DOM manipulation with CSS.
+Then, programming logic with CSS &amp; HTML.</p>
+<p>&amp; The list keeps going until you get to small apps. </p>
+<p>Once you can build a small app (or 3!), you can build anything given enough time! That&#39;s the point I&#39;m trying to cross.</p>
+<p>So today, I built my first app. It asks you for your name &amp; then prints out &quot;Hello NAME!&quot; Despite the JavaScript only being 5 lines long, it took me a few hours to finish.</p>
+<p>Here were the app requirements (as per Watch &amp; Code):</p>
+<ol>
+<li>It should ask the user what their name is with an input element.</li>
+<li>There should be a button that triggers the output.</li>
+<li>The output should say &quot;Hello NAME!&quot;</li>
+</ol>
+<p>That&#39;s it. Simplest app possible. </p>
+<p>Still, it took me about 2 hours to complete...</p>
+<p>Let me say something now... MDN Docs were NOT helpful. I don&#39;t know in what situations people find them to be useful, but my most helpful Googling was a mix of W3Schools (I know, I know) to get quick overviews of specific things and StackOverflow for the unconnected concepts in my head.</p>
+<p>Here were the individual steps to take after figuring out the requirements:</p>
+<ol>
+<li>Get a working prototpye working in the console, including prompting the user to input their name.</li>
+<li>Write barbones HTML page for what the program will look like.</li>
+<li>Figure out how to store name when clicking okay. </li>
+<li>Figure out how to display full text &quot;Hello NAME!&quot; when clicking okay.</li>
+</ol>
+<p>Steps 1, 2, and 4 were easy.</p>
+<p>Step 3 is where you&#39;re really applying DOM manipulation, which is something I understood in theory, and only now (partially) understand in practice. These were the mistakes I made:</p>
+<ul>
+<li>Script souce must always be at the bottom of the HTML body</li>
+<li>Variables are always outside of functions. They can be in objects.</li>
+<li>querySelector selects the name of a certain element</li>
+<li>Print the VALUE of the input form, not the whole input form</li>
+</ul>
+<p>Since I forgot querySelector even existed, I had some super complicated 20-line code that was variables upon variables that never actually triggered the button to do anything.</p>
+<p>Hopefully, using it in practice like this will solidify the DOM elements like getDocumentById &amp; querySelector for me. </p>
+<p>You can see the working app <a href="http://rmorabia.com/tinyjs">here</a>! I&#39;m pretty proud of it. It took problem-solving to get to the end result, as small as it is.</p>
+<p>This felt a lot like writing a website with just HTML/CSS again. You code what you can, then you run into a multi-hour problem. You solve it. You move on. That&#39;s good. That&#39;s how it&#39;s supposed to feel. </p>
+<h2 id="began-building-thing-2">Began Building Thing #2</h2>
+<p>The second project is a DOM version of the <a href="https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#practice">first coding exercies in YDKJS</a>. I tackled this previously on the blog, but now it&#39;s time to retackle it and take user inputs.</p>
+<p>This builds on the previous app by adding in programming knowledge while reiterating the DOM. </p>
+<p>Here are the requirements:</p>
+<ol>
+<li>Follow the requirements/steps for the console version of the app as listed in YDKJS.</li>
+<li>Create inputs for bankBalance and spendingThreshold.</li>
+<li>Display total &amp; if the user can afford the purchase.</li>
+</ol>
+<p>I vaguely started writing the app, but it just wasn&#39;t going well, so I...</p>
+<h2 id="started-to-continue-watching-the-web-developer-bootcamp">Started to Continue watching The Web Developer Bootcamp</h2>
+<p>Seems tough to program 2 apps in one day. So, this is going to be my side hobby as I go through this little project.</p>
+<p>I&#39;ll be writing down physical notes, but for now I won&#39;t be coding along. I may tomorrow.</p>
+<h2 id="tomorrow-s-to-do-s">Tomorrow&#39;s To-Do&#39;s</h2>
+<p>Finish App #2! Hopefully do so early enough in the day to get a nice, solid break before possibly starting App #3?</p>
+<p>If not, definitely continue The Web Developer Bootcamp!</p>
+
+    </article>
+<nav>---<br /><a href="/about">About this blog</a></nav> 
+</body>  
+</html>

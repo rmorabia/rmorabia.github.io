@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{ {title }} - Radhika Morabia</title>
+    <meta name="description" content="Radhika Morabia&#x27;s Blog" />
+  </head>
+  <body>	<header>
+    <a class="back-to-index" href="../index.html">&larr; Index</a>
+  </header>
+    <article>
+      <h1>Coding Log — December 20th, 2017 — Day 9</h1>
+      <div class="meta">
+          
+      </div>
+      <p><strong>Coding Time:</strong> Full Day</p>
+<p>I know I took a few days off here. I was working, or at least trying to work, but I didn&#39;t end up accomplishing much, so I didn&#39;t think it was worth remarking upon. In particular, I was experimenting with learning styles, which I won&#39;t go into here. Regardless...</p>
+<p><strong>Here&#39;s what I did today:</strong></p>
+<h2 id="continued-learning-html-css-https-learn-shayhowe-com-html-css-">Continued Learning <a href="https://learn.shayhowe.com/html-css/">HTML/CSS</a></h2>
+<p>I finished Sections 3 &amp; 4 out of 12. This continues to be a very solid groundwork of design concepts in CSS/HTML rather than just a book that throws terms at you.</p>
+<p>Here are my notes for every section thus far:</p>
+<pre><code>## html basic terminology
+
+* element is the h in &lt;&#39;h&#39;&gt;
+* tag is the entire &lt;h&#39;&gt;
+* attribute are inside a tag like class/src. eg. &lt;a &#39;href=&quot; &quot;&#39;&gt;
+* class can make css for all of the elements with this attribute eg. html: &lt;p class=&quot;awesome&quot; and &lt;div class=&quot;awesome&quot;. css: .awesome { color: green; }
+* id is like class but it can only be applied to one element eg. html: &lt;p id=&quot;rmo&quot; css: #rmo { ... }
+
+## css basic terminology
+
+* selector designates exactly which element the styles apply to. eg . p { ... }
+* properties are what will be applied to the elected element. eg. p { color: }
+* value is what you put into the properties, what actually happens eg. p { color:green; }
+
+ ## css basics
+
+* css resets make all browsers have the same fundamental style that you can then build off of.
+* css stylesheets run from top to bottom, so the bottom is going to happen first.
+* when naming class/ID names, choose a name that covers the content of the elements, not the appearance
+* Comments: /* hi * /
+* class/ID selectors take priority over the css cascade. they have weight. heaviest to lightest: ID, Class, Type(p, div)
+* make css colors semi-transparent with RGBA (instead of hex colors) within 0 and 1. eg. background: rgba(128, 0, 0, .25) (last part)
+* for most colors, use hex. if you need transparency, use rgba ^
+* change display properties to be block/inline/inline-block to have the element displayed in different ways.
+* display: none makes the element INVISIBLE. easter eggs galore
+* margin is in the outside of an element&#39;s border, padding is on the inside of an element&#39;s border
+* margin/padding shorthand: specifiy all 4 directions in one value. in order of top, right, bottom, and left. eg. margin: 10px 20px 0 15px;
+    * longhand is padding-top or margin-left, one at a time
+* vendor prefix for some selectors is used to support older browsers. eg. -moz-, -ms-, -webkit-
+* box-sizing to handle width of each &quot;box&quot; in the css. in most cases, use border-box. this will absorb padding &amp; border, but NOT margin. eg. p { box-sizing: border-box; }
+* star * is the universal selector. * :before and * :after also exist
+* auto value (in margin) equals it out between both sides if there&#39;s already a set width
+
+ ## html basics
+
+ * two kinds of elements:
+     * block-level: whole line is taken up, like p
+     * inline-level: within a block, like a link
+ * comments: &lt;!-- hi --&gt;
+ * there are 6 levels of heading. use heading FOR headings, not to make text big or bold.
+ * tags with semantic importance:
+     * &lt;strong is used to give strong importance to text
+     * &lt;b is used to styllistically offset text
+     * &lt;em is used to emphasize text/stress text
+     * &lt;i is used to display an alternative voice or tone, like quotation marks
+ * do not write special characters as the special characters. encode them.
+ * to link to the same page, just add an ID to the particular part you want to link to. then, link to that id. eg. &lt;p id=&quot;top&quot; and &lt;a href=&quot;#top&quot;
+ * put multiple classes in one element as long as there is a space between them eg. &lt;a class=&quot;yo yo2 yo3&quot;
+</code></pre><p>Quite a bit of it is not in proper syntax since Markdown recognizes HTML and thinks I actually want to bold or italicize my notes. I know what the proper syntax is for these, I just had to write them in a readable way for the notes.</p>
+<h2 id="started-learning-git-http-gitimmersion-com-">Started <a href="http://gitimmersion.com">Learning Git</a></h2>
+<p>I went up to Lesson 13 of 53. These are short, miniature lessons to get you familiarized with the various commands that Git offers. I expect to finish this pretty quickly.</p>
+<p>Here are my notes from today:</p>
+<pre><code>* git status -- check status of working folder vs git repository
+* git log -- view a history of commits
+* git checkout [hash] returns your local file to an earlier commit like magic or git checkout master returns your file to the latest commit
+</code></pre><h2 id="tomorrow-s-to-do-s">Tomorrow&#39;s To-Do&#39;s</h2>
+<p>Continue with both the HTML/CSS course and the Git course. I can&#39;t start JavaScript until I finish these, so hopefully I get through them quicker with the updated learning methodologies. </p>
+
+    </article>
+<nav>---<br /><a href="/about">About this blog</a></nav> 
+</body>  
+</html>

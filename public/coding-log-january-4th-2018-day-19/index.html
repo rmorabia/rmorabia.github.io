@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{ {title }} - Radhika Morabia</title>
+    <meta name="description" content="Radhika Morabia&#x27;s Blog" />
+  </head>
+  <body>	<header>
+    <a class="back-to-index" href="../index.html">&larr; Index</a>
+  </header>
+    <article>
+      <h1>Coding Log — January 4th, 2018 — Day 19</h1>
+      <div class="meta">
+          
+      </div>
+      <p><strong>Coding Time:</strong> Full Day</p>
+<p><strong>Here&#39;s what I did today:</strong></p>
+<h2 id="continued-watch-code-http-watchandcode-com-">Continued <a href="http://watchandcode.com">Watch &amp; Code</a></h2>
+<p>I still don&#39;t think I&#39;m very good at absorbing a lot of information in one day. My brain was clearly not in it after 2 sections. Those 2 sections should&#39;ve taken me half an hour, yet here I am, 10 hours later. I don&#39;t know how to fix this. Maybe more breaks. I&#39;ve spent the whole day in this chair and I&#39;m just tired. I&#39;m disappointed that even when I like something, I still can&#39;t focus on it.</p>
+<p>Eugh.</p>
+<p>Regardless, I got up to 42% of the course. There&#39;s no point in continuing if I&#39;m just going to be following the tutorial half-heartedly.</p>
+<p>Here&#39;s the code we&#39;ve written thus far:</p>
+<pre><code class="lang-js">var todoList = {
+  todos: [],
+  displayTodos: function() {
+    if (this.todos.length === 0) {
+      console.log(&#39;You have nothing left to do today. :)&#39;);
+    } else {
+      console.log(&quot;My todos:&quot;);
+      for (var i = 0; i &lt; this.todos.length; i++) {
+        if (this.todos[i].completed === true) {
+          console.log(&#39;(x)&#39;, this.todos[i].todoText);
+        } else {
+          console.log(&#39;( )&#39;, this.todos[i].todoText);
+        }
+      }
+    }
+  },
+  addTodo: function(todoText) {
+    this.todos.push({
+      todoText: todoText,
+      completed: false
+    });
+    this.displayTodos();
+  },
+  changeTodo: function(position, todoText) {
+    this.todos[position].todoText = todoText;
+    this.displayTodos();
+  },
+  deleteTodo: function(deleteTodo) {
+    this.todos.splice(deleteTodo, 1);
+    this.displayTodos();
+  },
+  toggleCompleted: function(position) {
+    var todo = this.todos[position];
+    todo.completed = !todo.completed;
+    this.displayTodos();
+  }
+};
+
+if (this.todos[i].completed === true) {
+      console.log(&#39;(x)&#39;, this.todos[i].todoText);
+} else {
+      console.log(&#39;( )&#39;, this.todos[i].todoText);
+
+}
+</code></pre>
+<h2 id="tomorrow-s-to-do-s">Tomorrow&#39;s To-Do&#39;s</h2>
+<p>I really need something to vary this with tomorrow... Hm... Time to buy the Udemy course? Or I&#39;ll go through Kyle Simpson&#39;s video course for Up &amp; Going like I said I would.</p>
+
+    </article>
+<nav>---<br /><a href="/about">About this blog</a></nav> 
+</body>  
+</html>

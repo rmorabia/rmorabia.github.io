@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{ {title }} - Radhika Morabia</title>
+    <meta name="description" content="Radhika Morabia&#x27;s Blog" />
+  </head>
+  <body>	<header>
+    <a class="back-to-index" href="../index.html">&larr; Index</a>
+  </header>
+    <article>
+      <h1>Coding Log — January 6th, 2018 — Day 21</h1>
+      <div class="meta">
+          
+      </div>
+      <p><strong>Coding Time:</strong> Half Day</p>
+<p><strong>Here&#39;s what I did today:</strong></p>
+<h2 id="continued-watch-code-http-watchandcode-com-">Continued <a href="http://watchandcode.com">Watch &amp; Code</a></h2>
+<p>Just couldn&#39;t finish today. I&#39;m 91% in. There&#39;s just so many distractions on the internet and I&#39;m not sure if it&#39;s right for me to stop myself so soon. All that matters is showing up every day. Eventually, you will get there.</p>
+<p>Here&#39;s the latest code. Once again, nearly done. I&#39;m 100% sure I&#39;ll finish it tomorrow with room to spare to continue The Web Developer Bootcamp.</p>
+<pre><code class="lang-javascript">var todoList = {
+  todos: [],
+  changeTodo: function(position, todoText) {
+    this.todos[position].todoText = todoText;
+  },
+  deleteTodo: function(deleteTodo) {
+    this.todos.splice(deleteTodo, 1);
+  },
+  toggleCompleted: function(position) {
+    var todo = this.todos[position];
+    todo.completed = !todo.completed;
+  },
+  toggleAll: function() {
+    var totalTodos = this.todos.length;
+    var completedTodos = 0;
+    for (var i = 0; i &lt; totalTodos; i++) {
+      if (this.todos[i].completed === true) {
+        completedTodos++;
+      }
+    }
+    if (completedTodos === totalTodos) {
+      for (var i = 0; i &lt; totalTodos; i++) {
+        this.todos[i].completed = false;
+      }
+    } else {
+      for (var i = 0; i &lt; totalTodos; i++) {
+        this.todos[i].completed = true;
+      }
+    }
+  }
+};
+
+var handlers = {
+  addTodo: function() {
+    var addTodoTextInput = document.getElementById(&#39;addTodoTextInput&#39;);
+    todoList.addTodo(addTodoTextInput.value);
+    addTodoTextInput.value = &#39;&#39;;
+    view.displayTodos();
+  },
+  changeTodo: function() {
+    var changeTodoPositionInput = document.getElementById(&#39;changeTodoPositionInput&#39;);
+    var changeTodoTextInput = document.getElementById(&#39;changeTodoTextInput&#39;);
+    todoList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value);
+    changeTodoPositionInput.value = &quot;&quot;;
+    changeTodoTextInput.value = &quot;&quot;;
+    view.displayTodos();
+  },
+  deleteTodo: function() {
+    var deleteTodoPositionInput = document.getElementById(&#39;deleteTodoPositionInput&#39;);
+    todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
+    deleteTodoPositionInput.value = &quot;&quot;;
+    view.displayTodos();
+  },
+  toggleCompleted: function() {
+    var toggleCompletedPositionInput = document.getElementById(&#39;toggleCompletedPositionInput&#39;);
+    todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
+    toggleCompletedPositionInput.value = &#39;&#39;;
+    view.displayTodos();
+  },
+  toggleAll: function() {
+    todoList.toggleAll();
+    view.displayTodos();
+  }
+};
+
+var view = {
+  displayTodos: function() {
+    var todosUl = document.querySelector(&#39;ul&#39;);
+    todosUl.innerHTML = &#39;&#39;;
+    for (var i = 0; i &lt; todoList.todos.length; i++) {
+      var todoLi = document.createElement(&#39;li&#39;);
+      var todo = todoList.todos[i];
+      var todoTextWithCompletion = &#39;&#39;;
+
+      if (todo.completed === true) {
+        todoTextWithCompletion = &#39;(x) &#39; + todo.todoText;
+      } else {
+        todoTextWithCompletion = &#39;( ) &#39; + todo.todoText;
+      }
+
+      todoLi.textContent = todoTextWithCompletion
+      todosUl.appendChild(todoLi);
+    }  
+  },
+  createDeleteButton: function () {
+    var deleteButton = document.createElement(&#39;button&#39;);
+    deleteButton.textContent = &#39;Delete&#39;;
+    deleteButton.className = &#39;deleteButton&#39;;
+    return deleteButton;
+  }
+};
+</code></pre>
+<p>You can also see my to-do list live <a href="https://clean-root.glitch.me/">here</a>. It&#39;s functional! Feel free to try it out.</p>
+<h2 id="-sort-of-started-the-web-developer-bootcamp-https-clean-root-glitch-me-">(Sort Of) Started <a href="https://clean-root.glitch.me/">The Web Developer Bootcamp</a></h2>
+<p>The first few sections cover web development at large &amp; HTML/CSS. Just sort of watching without doing anything. I know this stuff, but I don&#39;t want to completely skip it. I will either be starting with Intermediate CSS or just jumping straight into BasiC JavaScript, we&#39;ll see.</p>
+<h2 id="tomorrow-s-to-do-s">Tomorrow&#39;s To-Do&#39;s</h2>
+<p>Finish Watch &amp; Code! Seriously this time. I don&#39;t know I just lose the hours like this.</p>
+<p><em>Actually</em> start The Web Developer Bootcamp.</p>
+
+    </article>
+<nav>---<br /><a href="/about">About this blog</a></nav> 
+</body>  
+</html>

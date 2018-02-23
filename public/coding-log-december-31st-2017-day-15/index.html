@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{ {title }} - Radhika Morabia</title>
+    <meta name="description" content="Radhika Morabia&#x27;s Blog" />
+  </head>
+  <body>	<header>
+    <a class="back-to-index" href="../index.html">&larr; Index</a>
+  </header>
+    <article>
+      <h1>Coding Log — December 31st, 2017 — Day 15</h1>
+      <div class="meta">
+          
+      </div>
+      <p><strong>Coding Time:</strong> Half Day</p>
+<p><strong>Here&#39;s what I did today:</strong></p>
+<h2 id="learned-flexbox-http-flexbox-io-">Learned <a href="http://flexbox.io">Flexbox</a></h2>
+<p>One of the hardest parts about learning something new is choosing the right resource to learn it from. The guide I was following had two recommendations -- a video course and an interative game thing that&#39;s basically like Codecademy. My wifi was not helping me progress with either one.</p>
+<p>I tried looking at alternatives to both and none went in enough detail in a short enough timeline. I could read a whole book about Flexbox or just suck it up and slowly get through the Flexbox videos. I preferred the videos this time.</p>
+<p>I actually learned enough about Flexbox to actually simplify my website! I&#39;d seen code about Flexbox being used to vertically and horizantally center content. When I copy &amp; pasted, it didn&#39;t work for me. So, I went with some other weird CSS code I did not understand at all.</p>
+<p>So, I changed my website&#39;s code with Flexbox&#39;s <code>justify-content</code> property. The code is just a few lines shorter, but it&#39;s definitely easiser to read.</p>
+<p>On a meta level, I went through a video course today and it didn&#39;t suck! It took FOREVER (videos are only 2.5 hours long, I was somehow at it for 6 hours), but that doesn&#39;t mean it&#39;s impossible. Is it faster or slower than books? I don&#39;t know. It&#39;s hard either way.</p>
+<p>Here are my notes for Flexbox:</p>
+<h1 id="css-grids">CSS Grids</h1>
+<ul>
+<li>You probably never want to lay out a grid with normal CSS anymore. Use a framework, Flexbox, or CSS grid depending on the situation.</li>
+<li>Flexbox is usually for smaller scale grid layouts and content centering, while CSS Grid is for large scale layouts.</li>
+</ul>
+<h2 id="flexbox">Flexbox</h2>
+<pre><code>* change display tag to flex for parent element of the sections you want to grid. eg. `&lt;section` around three different articles.
+    * this will automatically do every column equally, it&#39;s magical and will work for many situations but is NOT mobile responsive
+* `flex direction` is default set to row, but can also be changed to column
+* to make flexbox automatically choose the correct layout for any situation (including mobile), use `flex-wrap: wrap`
+    * only works with fixed width/height
+    * add `flex: ???px` to each box to give it that fixed height otherwise it&#39;ll all jumble into tiny slivers of long columns
+* shorthand for flex-direction &amp; flex-wrap: `flex-flow: row wrap;`
+* flexbox lets you order elements using the `order: 0;` property.
+    * by default all elements are 0. so if you put one element at 1, it&#39;ll come after all the rest.
+* `justify-content`: defines alignment along main axis (if row, left to right).
+        * flex-start (default): packed in the left side
+        * flex-end: packed in the right side
+        * center: packed in center
+        * space-between: divies up the space between each element to fill the width of the browser
+        * space around: space-between but it also does it to the sides of the first elements too
+* to center content vertically (this did work for my index):
+    * parent element:
+    * display: flex;
+    * justify-content: center;
+    * flex-direction: column;
+    * min-height: 100vh;
+* `align-content` is like justify-content, but it works along the corss axis rather than the main access. (default top to bottom)
+    * default is stretch, aligns it to fill the space.
+    * all the other properties are the same as justify-content
+* **you can stack justify &amp; align content on top of each other!!**
+    * don&#39;t forget to flex-wrap if it isn&#39;t working
+    * double troubleshooting tip: do you have `height: 100vh;`?
+* `align-items` exists too??
+    * default: stretch
+    * unique features: `baseline` -- aligns the bottom of each text item to be at the same place
+* `align-self` does align-items but for an individual item
+        * put it in the css for the specific item instead of the parent
+* flex property -- proportions out the flex items equally or can be used not so equally if you put different values in different boxes
+    * eg. `box: 1` is all boxes 1 + `box2: 2;` will make box2 double the space of the rest of the boxes
+* some subsets of the flex property include:
+    * `flex-grow` -- how should my content behave when there&#39;s extra room?
+    * `flex-shrink` -- how should my content behave when there&#39;s not enough room?
+    * `flex-basis` -- how should my content behave in a perfect world?
+* if one of the align-versions isn&#39;t working, try the others. i don&#39;t understand the difference right now.
+</code></pre><h2 id="learned-sass-https-www-freecodecamp-org-challenges-build-a-personal-portfolio-webpage-">Learned <a href="https://www.freecodecamp.org/challenges/build-a-personal-portfolio-webpage">Sass</a></h2>
+<p>I promise I learned this tonight, but I did in bed. I&#39;ll upload my notes tomorrow.</p>
+<h2 id="tomorrow-s-to-do-s">Tomorrow&#39;s To-Do&#39;s</h2>
+<p>I wanted to finish learning CSS Grid, Flexbox, and Sass all in one day. I had enough energy left to learn CSS Grid today and get all my CSS work done within December, but I didn&#39;t think it&#39;d be prudent to learn the two major gridding systems in one day. There needs to be some sort of break.</p>
+<p>So, I&#39;m postponing CSS Grid for now. It&#39;s not necessarily on my to-do list for tomorrow since I don&#39;t know if that&#39;s enough of a space between the two systems? It&#39;s just on my to-do list in general. The course I&#39;m taking is an hour of videos, so it shouldn&#39;t take too long to learn, anyway.</p>
+<p>Tomorrow, I&#39;m starting JavaScript! I&#39;m going to go through as much of <a href="https://github.com/getify/You-Dont-Know-JS">You Don&#39;t Know JS</a> as I can before I inevitably get stuck. When I get stuck, I&#39;m switching to the appropriate places in Watch &amp; Code JS, Eloquent JS, JS: The Weird Parts, and some good old Mozilla Docs.</p>
+<p>According to the internet, most of the essential vanilla JavaScript I need to know is in YDKJS. After that, it&#39;s maybe a quick go-through of an edX course or JS: The Weird parts, and definitely going through the algorithms section on FreeCodeCamp, then I&#39;ve got vanilla JavaScript in the bag.</p>
+<p>So, we&#39;ll see how naturally I understand a complicated book. (Spoiler Alert: My brain will probably fry within the first day.)</p>
+
+    </article>
+<nav>---<br /><a href="/about">About this blog</a></nav> 
+</body>  
+</html>

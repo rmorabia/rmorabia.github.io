@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{ {title }} - Radhika Morabia</title>
+    <meta name="description" content="Radhika Morabia&#x27;s Blog" />
+  </head>
+  <body>	<header>
+    <a class="back-to-index" href="../index.html">&larr; Index</a>
+  </header>
+    <article>
+      <h1>Coding Log — January 23rd, 2018 — Day 29</h1>
+      <div class="meta">
+          
+      </div>
+      <p><strong>Coding Time:</strong> Half Day</p>
+<p><strong>Here&#39;s what I did today:</strong></p>
+<h2 id="-i-finished-the-fourth-thing-http-rmorabia-com-tinyjs-"><a href="http://rmorabia.com/tinyjs">I Finished The Fourth Thing</a></h2>
+<p>I was really dreading debugging the last two requirements of this project. I dont know why.</p>
+<p>I read a rule recently -- Every day, tell yourself you only need to code for 1 minute. Chances are, once you get past that minute, you&#39;ll want to keep going. It&#39;s a good rule that would&#39;ve helped me today. Just get started and the fun of the challenge kept me going.</p>
+<p>I added a lot of programming knowledge to the requirement that said to stop the numbers from going up once someone is declared a winner (by going green). I tried something and got bugs, I tried re-ordering and got other bugs. So, it&#39;s kind of a 70-line mess. In the end, I got it to work, though. That&#39;s what matters most.</p>
+<p>Requirement #6, which was to update the &quot;Playing To&quot; without needing to click a button was very easy. One Google search, one MDN check (it&#39;s starting to grow on me), and two event listeners for <code>click</code> and <code>keyup</code>.</p>
+<p>The biggest difference between this project and the project on Day 2 was that I made this bug-proof. I checked every possible outcome. There was a weird bug for a while where (assuming your Playing To is set to 5), if one player reached 4 and the other was still at 0, you couldn&#39;t increase that 0 to 1. If it was 4-3, it could be 4-4. It was only at 4-0 or 0-4. And, I had to walk through that programming logic to figure out why that was happening, what did I do that said that was the action the code is supposed to take?</p>
+<p>And that debugging is what made the code really long. I spent a lot of extra time just trying to check every single possibility.</p>
+<p>But, I did it. I&#39;m forcing myself to watch the 30 minute tutorial in the Web Developer Bootcamp I was supposed to code along with instead of coding from scratch. I&#39;m sure Colt will make it deceptively easy.</p>
+<p>Also, I&#39;d like to acknowledge that there is no way I could code this project from scratch without <a href="http://watchandcode.com">Practical JavaScript</a>. I&#39;ve seen the way The Web Developer Bootcamp handles projects, and it&#39;s complicated. It&#39;s not iterative like PJ shows. Breaking down a project into requirements and steps is such a helpful concept I didn&#39;t really think about when going through Practical JavaScript. I&#39;m glad I did before I went through the Bootcamp. That process seems to be priceless.</p>
+<p>Double also, GitHub Pages updates very slowly and my new testing ground for deploying projects live is Glitch. If something isn&#39;t working in the main link, double check with <a href="http://rmorabia.glitch.me">rmorabia.glitch.me</a>. </p>
+<p><strong>Thoughts after seeing Colt&#39;s code:</strong> Welp. Totally different thought process on how to approach the problem. My code is 66 lines, his is 53 lines. It&#39;s a negligible difference.</p>
+<p>There&#39;s only two things I want to change about my code after that.</p>
+<p>I didn&#39;t use the best event listener for the input value. I had two -- <code>click</code> and <code>keyup</code>. I can combine that into one called <code>change</code>.</p>
+<p>I also didn&#39;t reset the scores each time the playing to value changed. Whoops. One bug I missed testing for. </p>
+<p>I really don&#39;t like tutorials &amp; code-alongs, especially after seeing Practical JavaScript. They just take you through the &quot;logical&quot; route, which isn&#39;t the correct route. It isn&#39;t the route that you&#39;d get if you tried it on your own. It&#39;s so much more zig-zaggy on your own. I really don&#39;t want to have to go through any more tutorials and code alongs for JavaScript.</p>
+<p>I want the info, I want a few examples of how to apply it, and then I just want ideas for projects that I can break down on my own.</p>
+<h2 id="continued-watching-the-web-developer-bootcamp-http-udemy-com-the-web-developer-bootcamp-">Continued watching <a href="http://udemy.com/the-web-developer-bootcamp">The Web Developer Bootcamp</a></h2>
+<p>It&#39;s really hard to focus when I already know something or I mentally feel finished with something. I watched the code along for the score keeper project on 2x speed and it was still slow and boring.</p>
+<p>After a few more exercises, we have 2 huge projects in a row that each take up their own section. I don&#39;t know if I can do that all on my own or if I have to code-along. I really don&#39;t want to do another code-along with vanilla JavaScript.</p>
+<p>Here&#39;s the map again: </p>
+<ul>
+<li>[X] Introduction to this Course 7/7</li>
+<li>[X] Introduction to Front End Development 4/4</li>
+<li><del>Introduction to HTML 5/13</del></li>
+<li><del>Intermediate HTML 0/13</del></li>
+<li><del>Introduction to CSS 0/13</del></li>
+<li><del>Intermediate CSS 0/16</del></li>
+<li><del>Bootstrap 0/15</del></li>
+<li>[ ] Introduction to JavaScript 0/12</li>
+<li>[ ] Javascript Basics: Control Flow 0/17</li>
+<li>[ ] Javascript Basics: Functions 0/10</li>
+<li>[ ] Javascript Basics: Arrays 0/12</li>
+<li>[ ] Javascript Basics: Objects 0/7</li>
+<li>[X] DOM Manipulation 13/13</li>
+<li>[X] Advanced DOM Manipulation 8/8</li>
+<li>[ ] Color Game Project 0/10</li>
+<li><del>Intro to jQuery 0/9</del></li>
+<li><del>Advanced jQuery 0/5</del></li>
+<li>[ ] Todo List Projects 0/11</li>
+<li>[ ] Project: Patatap Clone 0 / 9</li>
+</ul>
+<p>So, I&#39;m done with all the DOM manipulation sections. I&#39;m going to be starting &amp; completing all 3 of the projects as soon as I can. If it gets too hard or I just get bored, I&#39;ll go back to JavaScript Basics. </p>
+<h2 id="tomorrow-s-to-do-s">Tomorrow&#39;s To-Do&#39;s</h2>
+<p>Start the Color Game Project tomorrow.</p>
+<p>Possibly build another small component like a carousel or an accordian.</p>
+<p>If I have extra time, I want to try reading Books #1 and #2 (or the equivalent video courses) of You Don&#39;t Know JS again. </p>
+<p><em>Note: This is being pushed late because my Wifi went out... again.</em></p>
+
+    </article>
+<nav>---<br /><a href="/about">About this blog</a></nav> 
+</body>  
+</html>

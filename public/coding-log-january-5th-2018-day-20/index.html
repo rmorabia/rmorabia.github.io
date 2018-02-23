@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{ {title }} - Radhika Morabia</title>
+    <meta name="description" content="Radhika Morabia&#x27;s Blog" />
+  </head>
+  <body>	<header>
+    <a class="back-to-index" href="../index.html">&larr; Index</a>
+  </header>
+    <article>
+      <h1>Coding Log — January 5th, 2018 — Day 20</h1>
+      <div class="meta">
+          
+      </div>
+      <p><strong>Coding Time:</strong> Full Day</p>
+<p><strong>Here&#39;s what I did today:</strong></p>
+<h2 id="continued-watch-code-http-watchandcode-com-">Continued <a href="http://watchandcode.com">Watch &amp; Code</a></h2>
+<p>Made good progress today, but couldn&#39;t finish. I&#39;m 75% of the way through. I&#39;ll finish in the first few hours of the day and hopefully have enough time to start something new!</p>
+<p>Here&#39;s the code thus far:</p>
+<pre><code class="lang-js">var todoList = {
+  todos: [],
+  displayTodos: function() {
+    if (this.todos.length === 0) {
+      console.log(&#39;You have nothing left to do today. :)&#39;);
+    } else {
+      console.log(&quot;My todos:&quot;);
+      for (var i = 0; i &lt; this.todos.length; i++) {
+        if (this.todos[i].completed === true) {
+          console.log(&#39;(x)&#39;, this.todos[i].todoText);
+        } else {
+          console.log(&#39;( )&#39;, this.todos[i].todoText);
+        }
+      }
+    }
+  },
+  addTodo: function(todoText) {
+    this.todos.push({
+      todoText: todoText,
+      completed: false
+    });
+    this.displayTodos();
+  },
+  changeTodo: function(position, todoText) {
+    this.todos[position].todoText = todoText;
+    this.displayTodos();
+  },
+  deleteTodo: function(deleteTodo) {
+    this.todos.splice(deleteTodo, 1);
+    this.displayTodos();
+  },
+  toggleCompleted: function(position) {
+    var todo = this.todos[position];
+    todo.completed = !todo.completed;
+    this.displayTodos();
+  },
+  toggleAll: function() {
+    var totalTodos = this.todos.length;
+    var completedTodos = 0;
+    for (var i = 0; i &lt; totalTodos; i++) {
+      if (this.todos[i].completed === true) {
+        completedTodos++;
+      }
+    }
+    if (completedTodos === totalTodos) {
+      for (var i = 0; i &lt; totalTodos; i++) {
+        this.todos[i].completed = false;
+      }
+    } else {
+      for (var i = 0; i &lt; totalTodos; i++) {
+        this.todos[i].completed = true;
+      }
+    }
+    this.displayTodos();
+  }
+};
+
+var handlers = {
+  displayTodos: function() {
+    todoList.displayTodos();
+  },
+  toggleAll: function() {
+    todoList.toggleAll();
+  },
+  addTodo: function() {
+    var addTodoTextInput = document.getElementById(&#39;addTodoTextInput&#39;)
+    todoList.addTodo(addTodoTextInput.value);
+    addTodoTextInput.value = &#39;&#39;;
+  }
+};
+</code></pre>
+<p>Increasingly complicated. We moved into DOM/working with the browser today, which I&#39;ve been looking forward to for a while. Now that I know this, I can do anything.</p>
+<h2 id="bought-the-web-developer-bootcamp-https-www-udemy-com-the-web-developer-bootcamp-">Bought <a href="https://www.udemy.com/the-web-developer-bootcamp">The Web Developer Bootcamp</a></h2>
+<p>$10.99 is probably the cheapest it&#39;s ever going to get. Apparently, it&#39;s already had new content added this month. As of right now, the only Udemy courses I&#39;m going to be taking are this and JavaScript: The Weird Parts. I&#39;m skeptical about the follow-up to this course -- I think I&#39;ll move on to <a href="http://wesbos.com">Wes Bos</a> then. The Flexbox course was really good, even though the Markdown course put me to sleep.</p>
+<p>Regardless, there&#39;s 44 hours of videos here and a total of 347 items to complete. I hope to start this tomorrow and get through it relatively quickly.</p>
+<p>As long as I focus and take frequent breaks, I don&#39;t doubt I&#39;ll be able to finish this within a few weeks.</p>
+<h2 id="tomorrow-s-to-do-s">Tomorrow&#39;s To-Do&#39;s</h2>
+<p>Finish Watch &amp; Code! It&#39;s coming along nicely. The to-do list probably won&#39;t be a good side project to upload just yet, it will definitely need some customization. But it&#39;s nice to know that I have a template to work from to eventually be hosted and shown off at todo.rmorabia.com. </p>
+<p>Start the Web Developer Bootcamp! I&#39;ve been thinking about this one for a long time, so I hope it lives up to the hype.</p>
+
+    </article>
+<nav>---<br /><a href="/about">About this blog</a></nav> 
+</body>  
+</html>

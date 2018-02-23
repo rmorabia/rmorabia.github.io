@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{ {title }} - Radhika Morabia</title>
+    <meta name="description" content="Radhika Morabia&#x27;s Blog" />
+  </head>
+  <body>	<header>
+    <a class="back-to-index" href="../index.html">&larr; Index</a>
+  </header>
+    <article>
+      <h1>Coding Log — February 3rd, 2018 — Day 32</h1>
+      <div class="meta">
+          
+      </div>
+      <p><strong>Coding Time:</strong> Full Day</p>
+<p><strong>Here&#39;s what I did today:</strong></p>
+<h2 id="finished-building-the-color-game-http-rmorabia-com-color-game-">Finished Building the <a href="http://rmorabia.com/color-game">Color Game</a></h2>
+<p>It&#39;s done! It took 2 days, but it&#39;s done.</p>
+<p>This project is 200 lines of JavaScript despite Colt saying the end result is about 100 lines. I wonder where I went wrong. I will be watchin his codealong below.</p>
+<p>Here are the requirements, all fulfilled. There were more than I expected in the end. I didn&#39;t map out every single feature of the app. This didn&#39;t cause much grief, but I need to get better at this. I need to make my requirements lists thorough, even if they&#39;re absurdly long.</p>
+<ol>
+<li>Generate an RGB color randomly and convert it into text form.</li>
+<li>Convert that text form into a block of color.</li>
+<li>Display 6 random blocks of color.</li>
+<li>One of those 6 is the same color as the top text form of that color.</li>
+<li>That spot always changes to a random one of the 6.</li>
+<li>Click on a color that doesn&#39;t match: color block turns black</li>
+<li>Click on the right color: All 6 + background turn to that color</li>
+<li>Difficulty toggle: Easy has 3 blocks, Hard has 6</li>
+<li>When choosing the wrong anwer, a try again message appears</li>
+<li>Site is mobile-responsive</li>
+</ol>
+<p>This app wasn&#39;t too hard, but I learned a lot.</p>
+<p>I finally figured out what <code>arrays</code> are for. They&#39;re not just a list. Gordon &amp; Colt both explained it this way. I think it helped a lot once I realized it&#39;s more like a list of variables. You can do anything that you can with a variable, but you can also have the JavaScript talk to multiple variables at once with an array.</p>
+<p>I also sort of got better at <code>forEach</code>. I can&#39;t say I&#39;m a master yet, but I&#39;ve at least used it.</p>
+<p>Other than that, it&#39;s a real app! I styled it using Bootstrap (thought I&#39;d hate it, I was righht). It looks super professional compared to just listing it all out using text. My only regret is that there&#39;s no transitions. I still don&#39;t know how to do those in JavaScript or CSS. I should probably learn.</p>
+<h2 id="continued-watching-the-web-developer-bootcamp-http-udemy-com-the-web-developer-bootcamp-">Continued Watching <a href="http://udemy.com/the-web-developer-bootcamp">The Web Developer Bootcamp</a></h2>
+<p>I decided to watch the code along for the Color Game to see what I missed. Here are my notes:</p>
+<p>Well, first is the biggest mess-up which added 70 more lines of code. <code>querySelectorAll</code> + an array apparently work just fine together.</p>
+<p>So, instead of the ridiculous workaround with <code>id</code>s I had, this should&#39;ve worked just fine:</p>
+<pre><code class="lang-js">for (var i = 0; i&lt;.squares.length; i++) {
+    squares[i].style.backgroundColor = colors[i];
+}
+</code></pre>
+<p>The <code>squares</code> variable represents a class in HTML. Apparently, those are naturally arrays. The <code>colors</code> is are just the random colors that get generated. </p>
+<p>That&#39;s all the code I needed to push 6 (later random) colors to my HTML &amp; I could use that base to add click listeners to all 6 colors at once. Seriously. The more you know.</p>
+<p>I also noticed I forgot an entire part of the app. Once you win the game, the &quot;New Colors&quot; text changes to &quot;Play Again?&quot; This isn&#39;t a big deal since I obviously know the code to achieve this, but I&#39;m disappointed that I didn&#39;t even see it as part of the requirements.</p>
+<p>I also noticed I still don&#39;t have enough practice with function arguments/parameters to use them. I could&#39;ve used them to cut down on another 20 lines of my code. There&#39;s a lot of rewriting the exact same code in different places and in reptitive ways in my code.</p>
+<p>I didn&#39;t do too bad. My code just needs to be quite heavily refactored. The only question is if it&#39;s more correct to refactor immediately or to build more projects and come back to it later? I don&#39;t know. For now, I&#39;m moving on.</p>
+<h2 id="tomorrow-s-to-do-s">Tomorrow&#39;s To-Do&#39;s</h2>
+<p>There&#39;s a lot of possibilities for tomorrow.</p>
+<p>There&#39;s 1-2 more apps to make in The Web Developer Bootcamp. There&#39;s You Don&#39;t Know JS. There&#39;s JavaScript30. There&#39;s learning APIs and OOP so I can do the FCC Projects.</p>
+<p>I probably want to at least start JavaScript30 tomorrow, and then move onto whichever other option I want to pursue.</p>
+
+    </article>
+<nav>---<br /><a href="/about">About this blog</a></nav> 
+</body>  
+</html>

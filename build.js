@@ -10,8 +10,8 @@ var watch = require('metalsmith-watch');
 metalsmith(__dirname)
   .metadata({
     site: {
-      name: 'Electroniq',
-      description: "Electroniq is astrophysicist (and retro music enthusiast) Tara Himmels' blog."
+      name: 'Radhika Morabia',
+      description: "Radhika Morabia's Blog"
     }
   })
   .source('./src')
@@ -39,7 +39,7 @@ metalsmith(__dirname)
 	        }
 	}))
 	.use(serve({
-	  port: 8082,
+	  port: 1717,
 	  verbose: true
 	}))
 	.use(watch({
@@ -53,6 +53,6 @@ metalsmith(__dirname)
       console.log(err);
     }
     else {
-      console.log('Electroniq built!');
+      console.log('Blog built!');
     }
   });

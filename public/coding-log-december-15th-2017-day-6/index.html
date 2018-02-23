@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{ {title }} - Radhika Morabia</title>
+    <meta name="description" content="Radhika Morabia&#x27;s Blog" />
+  </head>
+  <body>	<header>
+    <a class="back-to-index" href="../index.html">&larr; Index</a>
+  </header>
+    <article>
+      <h1>Coding Log — December 15th, 2017 — Day 6</h1>
+      <div class="meta">
+          
+      </div>
+      <p><strong>Coding Time:</strong> Full Day</p>
+<p><strong>Here&#39;s what I did today:</strong></p>
+<h2 id="-continued-to-learn-the-command-line-https-ryanstutorials-net-linuxtutorial-"><a href="https://ryanstutorials.net/linuxtutorial/">Continued to Learn the Command Line</a></h2>
+<p>I really don&#39;t want to turn into a book learner. I don&#39;t believe you need to go through a book 100% to get going, get started, and get to making real things. Making things teaches you a lot more than just going through a book and doing examples. The further I get into this book, the more I feel like I should skim faster and faster.</p>
+<p>So today, I skimmed through <strong>Section 10: Grep and Regular Expressions</strong>. I can see where this becomes useful in debugging large files, sometime down the line. However, I won&#39;t be debugging in the command line. I&#39;ll be debugging in my text editor of choice. (Currently, that&#39;s Atom, but I really haven&#39;t decided.) I have one line of notes from this:</p>
+<pre><code>* egrep is the command for regular expressions, which can help you find data that matches a particular pattern
+</code></pre><p>If Grep is relevant within my IDE/text editor, I&#39;ll learn it within the confines of that particular editor. It&#39;s probably more graphical and has specific quirks.</p>
+<p>Next up? <strong>Section 11: Piping and Redirection.</strong></p>
+<p>Here are my notes from the very useful section:</p>
+<pre><code>* [command] &gt; [location] will save a log of the output from that command
+    * &#39;&gt;&gt;&#39; to add the output to an existing file instead of &gt; replacing it
+    * use 2 (stream 2: error stream) to write errors to log. eg. ls video.mpg 2&gt; errors.txt
+        * to do both, &amp;1. eg. ls -l video.mpeg vi3 &gt; myoutput 2&gt;&amp;1
+* &lt; to redirect FROM a file, eg. wc -l &lt; myoutput
+    * still not sure how this is useful but whatever
+* piping | splice multiple programs together. the output from the first command is the input for the second program. it can run forever. eg. ls | head -2
+</code></pre><p>There are only 2.5 sections left. I expect to finish this within a day or two.</p>
+<h2 id="continued-cs50x-https-www-edx-org-course-introduction-computer-science-harvardx-cs50x-">Continued <a href="https://www.edx.org/course/introduction-computer-science-harvardx-cs50x">CS50x</a></h2>
+<p>Today, I started on Week 1 of the course. I think I&#39;m sticking with this course instead of any other course. It&#39;s hard enough for a video course to hold my attention. The production quality and the general enthusiasm the professor has for really making things simple have kept me moderately captivated.</p>
+<p>I watched the lecture for Week 1 today, which 2 hours and 10 minutes long. It was dense. I feel the muscles in my thighs going numb from sitting still for so long. It covered a lot in one day, without breaks for implementation. This covers my fundamental problem with university-style learning &amp;/or video learning at large. I wanted to stop when David covered &quot;Hello world&quot; in C. I wanted to pause and try that code for myself. Before I could, he moved onto math. Then, he moved onto real-world problems with binary overflow. I couldn&#39;t stop at all. Technically, I could&#39;ve because it&#39;s an online video with the Pause button, but I didn&#39;t feel like there was any proper stopping point.</p>
+<p>It&#39;s a really interesting introduction to <em>Computer Science</em>, though. It&#39;s not just about code, it&#39;s about understanding why the code works that should serve as a fundamental block for any area of coding that the student would later go into. I think I&#39;ll invest a bit more time into it even though it feels slightly wasteful because of the broad application.</p>
+<p>I don&#39;t think the lectures exist to help with the coding, though. This course is way more like iterative project learning with supplemental videos rather than videos with supplemental Problem Sets/homework. I don&#39;t know if I&#39;m a fan of that or not. I like the really dumbed down way of exploring CS <em>concepts</em> in the lectures, though. I don&#39;t know how useful it&#39;ll be in my future. Will it stick with me and fundamentally change my ideas about computers &amp; coding? I don&#39;t know, but I like it.</p>
+<p>We are supposed to code all of our projects in the online IDE C9, which I&#39;m not sure I&#39;m a fan of. It&#39;s slower than working in Atom/any local IDE. My computer &amp; my wifi aren&#39;t very fast, so that extra RAM/bandwidth being eaten by working in another computer in the browser isn&#39;t the most ideal situation. It&#39;s also not the best way to develop independent coding skills. Regardless, I don&#39;t want to cause problems between the automatic grading system and my local code, so I&#39;ll learn C9.</p>
+<p>This week, we began to learn C. The problem set this week is 4 (already?!) small C projects that build incrementally on top of each other. Here is my source code for each one:</p>
+<p><em>Spent 2.5 hours on these first two projects tonight</em></p>
+<p><strong>Hello, World!</strong> (Source provided by the course, our job was simply to run it in the IDE)</p>
+<pre><code class="lang-c">#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    printf(&quot;hello, world\n&quot;);
+}
+</code></pre>
+<p><strong>How many bottles of water do you user per minute in the shower?</strong></p>
+<p>Typical liberal college projects focusing on environmentalism. I found that funny. This was the first self-coded project. I felt completely lost. I already forgot all of the syntax in C. I went back into the lecture just see an example of how the syntax in C actually works. I also needed the hint (in the walkthrough) of which function I&#39;m supposed to use.</p>
+<p>Once I got the first half (input minutes), the rest came easily. I checked every new line by re-compiling and running the program to make sure it still worked to the specifications I wanted. The int names aren&#39;t as intuitive as I would like, but I didn&#39;t want to waste time going back and making them perfect.</p>
+<pre><code class="lang-c">#include &lt;stdio.h&gt;
+#include &lt;cs50.h&gt;
+
+int main(void)
+{
+    printf(&quot;How many minutes did you shower? &quot;);
+    int n = get_int();
+    printf(&quot;Minutes: %i\n&quot;, n);
+
+    int b = n * 12;
+    printf(&quot;Bottles: %i\n&quot;, b);
+}
+</code></pre>
+<p>That&#39;s all I finished today. There are two more left. Here&#39;s where I left off with the third exercise — building a virtual staircase based on the integer provided by the user. I&#39;m still not even finished with actually making sure the user inputs the correct integer to render the staircases. I have to browse through the lecture &amp; the corresponding videos to find the missing links in my brain tomorrow.</p>
+<pre><code class="lang-c">#include &lt;stdio.h&gt;
+#include &lt;cs50.h&gt;
+
+int main(void)
+{    printf(&quot;Height: &quot;);
+    int h = get_int();
+    if (h &lt; 23)
+    {
+        printf(&quot;%i\n&quot;, h);
+    }
+    else
+    while (true)
+    {
+        printf(&quot;Height: &quot;);
+        int g = get_int();
+        printf(&quot;%i\n&quot;, g);
+    }
+
+}
+</code></pre>
+<h2 id="tomorrow-s-to-do-s">Tomorrow&#39;s To-Do&#39;s</h2>
+<p>Finish Week 1 of CS50x. Optionally, conquer both the less comfortable &amp; the more comfortable versions of each exercise. It may make Week 2 and so on easier.</p>
+<p><em>Optional:</em> Upload all of my source code from the CS50 project into a public GitHub folder called CS50? As long as I publish it here, I can choose to do this at a later point. I&#39;m not sure how useful this will be, or if it&#39;s good only for the sake of completion.</p>
+<p>Complete Section 12 of the command line guide.</p>
+<p>Still got time? Finish the rest of the CLI guide. </p>
+
+    </article>
+<nav>---<br /><a href="/about">About this blog</a></nav> 
+</body>  
+</html>
