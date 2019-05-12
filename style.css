@@ -70,6 +70,47 @@ body {
   color: #FFF;
 }
 
+#gradient {
+  background: linear-gradient(-45deg,#3cb643, #39aa3f, #09d272, #29d0a1, #0aa6be, #9dbdd8);
+  background-size: 1000% 1000%;
+  animation: Gradient 30s ease infinite;
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+
+  }
+}
+
+.icon-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.icon-link:hover {
+  padding-top: 5px;
+}
+
+a {
+  color: #fff;
+  text-decoration: white solid underline;
+}
+
+a:hover {
+  color: #3cb643;
+  background-color: white;
+  text-decoration: none;
+  transition: .75s;
+}
+
+
 p {
   font-size: 1.5rem;
   padding-top: 2rem;
@@ -88,15 +129,6 @@ p {
   margin: 0px;
 }
 
-a {
-  color: #FFF;
-  text-decoration: none;
-}
-
-a:hover,
-a:active {
-  text-decoration: underline;
-}
 
 #links {
   font-family: 'Didact Gothic', 'Arial', sans-serif;
@@ -119,5 +151,31 @@ a:active {
   
   #links {
     font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .fas, .fab {
+    display: inline-block;
+  }
+  .social-link {
+    display: none;
+  }
+
+}
+
+@media (min-width: 801px) {
+  .fas, .fab {
+    display: none
+  }
+  .icon-link:hover {
+    padding-top: 0;
+  }
+  .social-link {
+    text-decoration: underline;
+  }
+
+  .social-link:hover {
+      text-decoration: none;
   }
 }
