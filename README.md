@@ -1,5 +1,3 @@
-# Radhika Morabia's Personal Websites
+# Radhika Morabia's Personal Website
 
-[rmorabia.com](http://rmorabia.com)'s code is hosted on the `master` branch.
-
-[radhika.dev](http://radhika.dev)'s code is hosted on the `gatsby` branch.
+This is the code for my personal site. See my developer portfolio at [radhika.dev](https://radhika.dev).
