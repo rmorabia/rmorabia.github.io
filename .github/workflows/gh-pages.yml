@@ -1,17 +1,45 @@
-name: Eleventy Build
-on: [push]
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches:
+      - master
+  pull_request:
 
 jobs:
-  build_deploy:
+  deploy:
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - uses: actions/checkout@master
-      - name: Build
-        uses: TartanLlama/actions-eleventy@master
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
-          publish_dir: _site
-          publish_branch: master
+          node-version: "18"
+
+      - name: Persist npm cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
+
+      - name: Persist Eleventy .cache
+        uses: actions/cache@v3
+        with:
+          path: ./.cache
+          key: ${{ runner.os }}-eleventy-fetch-cache
+
+      - run: npm install
+      - run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          install_dependencies: true
+          publish_dir: ./_site
+          publish_branch: master
+          cname: rmorabia.com
