@@ -1,3 +1,3 @@
-# Radhika Morabia's Personal Website
+# Radhika Morabia's Developer Blog
 
-This is the code for my personal site. See my developer portfolio at [radhika.dev](https://radhika.dev).
+This is the code for my personal site. See it live at [rmorabia.com](https://rmorabia.com).
