@@ -1,6 +1,19 @@
 /* Defaults */
 :root {
-	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family: Courier, Consolas,
+		Menlo,
+		Monaco,
+		Andale Mono WT,
+		Andale Mono,
+		Lucida Console,
+		Lucida Sans Typewriter,
+		DejaVu Sans Mono,
+		Bitstream Vera Sans Mono,
+		Liberation Mono,
+		Nimbus Mono L,
+		Courier New,
+		Courier,
+		monospace;
 	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 }
 
@@ -14,7 +27,7 @@
 
 	--text-color: var(--color-gray-90);
 	--text-color-link: #082840;
-	--text-color-link-active: #5f2b48;
+	--text-color-link-active: #1cb933;
 	--text-color-link-visited: #17050F;
 
 	--syntax-tab-size: 2;
@@ -181,7 +194,6 @@ header {
 .postlist {
 	list-style: none;
 	padding: 0;
-	padding-left: 1.5rem;
 }
 .postlist-item {
 	display: flex;

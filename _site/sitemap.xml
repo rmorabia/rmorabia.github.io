@@ -22,11 +22,6 @@
 	</url>
 	
 	<url>
-		<loc>https://rmorabia.com/blog/fifthpost/</loc>
-		<lastmod>2023-01-23</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://rmorabia.com/about/</loc>
 		<lastmod>2024-07-16</lastmod>
 	</url>
@@ -59,5 +54,15 @@
 	<url>
 		<loc>https://rmorabia.com/tags/posts-with-two-tags/</loc>
 		<lastmod>2024-07-16</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://rmorabia.com/tags/redirects/</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://rmorabia.com/resume/</loc>
+		<lastmod>2024-09-01</lastmod>
 	</url>
 </urlset>

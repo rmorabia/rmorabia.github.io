@@ -97,6 +97,25 @@ module.exports = function(eleventyConfig) {
 		return (new Date()).toISOString();
 	})
 
+	eleventyConfig.addCollection("redirects", function (collectionApi) {
+    // lets make a variable to hold our redirects
+    let redirects = [];
+    // We need to get each post in our posts folder. In my case this is /node
+    const nodes = collectionApi.getFilteredByGlob("blog/*.md");
+    // next lets iterate over all the nodes
+    nodes.forEach((node) =>
+      // for each alias
+      (node.data.aliases || []).forEach((alias) =>
+        // push the target url and the old url
+        redirects.push([
+          node.data.page.url,
+          node.data.page.url.replace(/\/[^\/]*?(\..+)?$/, `/${alias}$1`),
+        ])
+      )
+    );
+    return redirects;
+  });
+
 	// Features to make your build faster (when you need them)
 
 	// If your passthrough copy gets heavy and cumbersome, add this line
@@ -141,3 +160,4 @@ module.exports = function(eleventyConfig) {
 		// folder name and does **not** affect where things go in the output folder.
 		pathPrefix: "/",
 	};
+};

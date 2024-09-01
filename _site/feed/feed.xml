@@ -4,21 +4,12 @@
 	<subtitle>...and the rest is rust and stardust.</subtitle>
 	<link href="https://rmorabia.com/feed/feed.xml" rel="self"/>
 	<link href="https://rmorabia.com/"/>
-	<updated>2023-01-23T00:00:00Z</updated>
+	<updated>2018-09-30T00:00:00Z</updated>
 	<id>https://rmorabia.com/</id>
 	<author>
 		<name>Radhika Morabia</name>
 		<email>hi@rmorabia.com</email>
 	</author>
-	
-	<entry>
-		<title>This is a fifth post (draft)</title>
-		<link href="https://rmorabia.com/blog/fifthpost/"/>
-		<updated>2023-01-23T00:00:00Z</updated>
-		<id>https://rmorabia.com/blog/fifthpost/</id>
-		<content type="html">&lt;p&gt;This is a draft post&lt;/p&gt;
-</content>
-	</entry>
 	
 	<entry>
 		<title>This is my fourth post!</title>
