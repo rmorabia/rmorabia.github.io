@@ -10,4 +10,6 @@ I'm Radhika Morabia, a Software Engineer at [OpenTable](https://opentable.com). 
 
 I am interested in full-stack web development, embedded Linux, and computer vision.
 
+I am on [LinkedIn](https://linkedin.com/in/rmorabia) and [GitHub](https://github.com/rmorabia).
+
 If you would like to get in touch, my email is hi@[thisdomain].com.
