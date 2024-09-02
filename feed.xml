@@ -4,7 +4,7 @@
 	<subtitle>...and the rest is rust and stardust.</subtitle>
 	<link href="https://rmorabia.com/feed.xml" rel="self"/>
 	<link href="https://rmorabia.com/"/>
-	<updated>2018-09-30T00:00:00Z</updated>
+	<updated>2024-09-01T00:00:00Z</updated>
 	<id>https://rmorabia.com/</id>
 	<author>
 		<name>Radhika Morabia</name>
@@ -12,84 +12,45 @@
 	</author>
 	
 	<entry>
-		<title>This is my fourth post!</title>
-		<link href="https://rmorabia.com/blog/fourthpost/"/>
-		<updated>2018-09-30T00:00:00Z</updated>
-		<id>https://rmorabia.com/blog/fourthpost/</id>
-		<content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
-&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
-&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://rmorabia.com/img/IdthKOzqFA-350.avif 350w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://rmorabia.com/img/IdthKOzqFA-350.webp 350w&quot;&gt;&lt;img alt=&quot;A possum parent and two possum kids hanging from the iconic red balloon&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://rmorabia.com/img/IdthKOzqFA-350.png&quot; width=&quot;350&quot; height=&quot;685&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
-&lt;h2 id=&quot;section-header&quot; tabindex=&quot;-1&quot;&gt;Section Header &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/fourthpost/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
+		<title>The Limits of Front-End Testing</title>
+		<link href="https://rmorabia.com/blog/integration-testing/"/>
+		<updated>2024-09-01T00:00:00Z</updated>
+		<id>https://rmorabia.com/blog/integration-testing/</id>
+		<content type="html">&lt;p&gt;I recently submitted a bugfix in a codebase I haven&#39;t touched in over 6 months. I added unit tests, manually QAed, and ...broke production pretty badly.&lt;/p&gt;
+&lt;p&gt;I spent the next couple of days a bit shaken -- in trying to fix an edge case, I ended up breaking a fundamental flow in the app.&lt;/p&gt;
+&lt;p&gt;How did this happen? We have all sorts of tests: unit tests on most functions and actions (using Jest), component-level tests on this page (using React Testing Library), and end-to-end tests that check if the flow is working (using Cypress). I felt safe in writing code I wasn&#39;t 100% familiar with. I wouldn&#39;t have been surprised if another edge case showed up, but no part of me was expecting to break the entire flow, given this test coverage.&lt;/p&gt;
+&lt;p&gt;What was the leak?&lt;/p&gt;
+&lt;p&gt;First, let me explain the bug, then talk about our tests. I wrote a modification to a function which saves user data to the server, which validates that data and sends it back to us to update the UI with. I made a bad assumption which is that I wanted the data in a specific part to reset to default if the user did a specific action. My code was correct given that assumption, but this would end up locking the user in a loop where it&#39;s impossible to ever actually update that data that I keep resetting to default. I, for some strange reason, thought that it would fail the back-end validation if it wasn&#39;t completely reset. This is not how it ended up working, of course, because the reset data was completely valid to the back-end, and would get saved as the user&#39;s changes every time.&lt;/p&gt;
+&lt;p&gt;The fix to this was to limit the values that are reset to only be the values I actually needed to reset. So, instead of &amp;quot;User did X, data that relies on X will reset to default,&amp;quot; I&#39;m changing it to &amp;quot;User did X, data that relies on X is unchanged, but I&#39;m changing X to Y. They&#39;ll never know.&amp;quot; This is a bit convoluted, but my summary here is: I made a bad assumption about how data would be validated. This ended up resetting the the user&#39;s data every time they tried to save.&lt;/p&gt;
+&lt;p&gt;So, how did this fail the tests, considering how easy this was to replicate in QA, and the app has a log of user actions to check if what the user actually did is what the app ended up understanding?&lt;/p&gt;
+&lt;p&gt;Our component-level tests were testing whether or not the correct components rendered and the UI updated as epxected. The UI would update as expected, it was the saving to the server that failed.&lt;/p&gt;
+&lt;p&gt;Okay, then if the saving failed, how did it pass those unit tests? Our unit tests were testing the server call of the specific function I was editing. My work passed all of these tests because the correct server call was being made and I wrote the first assumption of what the request body to that call should be, and of course, my code passed &lt;em&gt;my&lt;/em&gt; tests. It was the UI after that wouldn&#39;t update!&lt;/p&gt;
+&lt;p&gt;Okay, then if the UI didn&#39;t update correctly, how did it pass the end-to-end tests? The end-to-end tests test the entire flow, changing basically every option possible in one large test per flow, which is not how users use the app -- which would be changing one thing and that appropraitely showing up in the log.&lt;/p&gt;
+&lt;p&gt;After the incident occurred, I thought: this must be such an easy test to add. How don&#39;t we have tests like that already? Every action the user takes, we have a log of what the user has done. So, it&#39;s a simple test, user does X, does log say that the user did X? Regardlesss of the request bodies and the state changes, does the app function as expected?&lt;/p&gt;
+&lt;p&gt;It turns out, we never test that kind of interaction in the app. I actually have a few times in another project I did after this bug, but those tests took multiple seconds using RTL when the average time for RTL is a couple of milliseconds. I think it&#39;s against the nature of most apps to do this kind of testing: it would require adding a couple of dozen unit tests at the container level of a sub-application and drilling into sub-components.&lt;/p&gt;
+&lt;p&gt;I&#39;m the only one writing tests this way, which makes me think I&#39;m writing these tests wrong. After this incident, I opened the RTL test for the container component of this page that was failing, expecting to write another one of these drilling tests, only to find all the sub components mocked and the functions tested in isolation. I think that&#39;s the correct way... and it wouldn&#39;t have caught my issue even if I did add that test, since just like the unit tests I wrote, I would&#39;ve updated the request body to reset all my data just like I expected.&lt;/p&gt;
+&lt;p&gt;I think the answer here is pretty simple: there should&#39;ve already been integration tests. The ideal test for this scenario, and a lot of scenarios in this app that are constantly sending and receiving data to a back-end (more than any other app I&#39;ve ever written) is to have robust integration tests. It would&#39;ve set my alarm signals off if other tests failed, not the new ones I created. How do you do integration tests with React, though, without 30 minute test times in Cypress?&lt;/p&gt;
+&lt;p&gt;The test that would&#39;ve fixed this is in my mind: &amp;quot;When I update Section H and hit Save, the request body is as follows. After a successful response, the user log (which is also gotten from the server) says X occurred as follows, and only X occured as follows.&amp;quot; The important part here is these would have to be pre-existing tests, dozens of integration tests should&#39;ve broken when I added my code, sending off alarm signals that this is having unintended consequences.&lt;/p&gt;
+&lt;p&gt;However, the tooling, infrastructure, testing culture, and other overhead to make this happen is over my head. Even if I wanted to take this on as a project on the side now, I&#39;m not even sure how to accomplish that given the render-focused tests that we write with RTL. I&#39;m not the best at testing yet. I have had a copy of TDD by Kent Beck on my desk before this incident, and I will probably take the time to actually crack it open now after this incident.&lt;/p&gt;
 </content>
 	</entry>
 	
 	<entry>
-		<title>This is my third post.</title>
-		<link href="https://rmorabia.com/blog/thirdpost/"/>
-		<updated>2018-08-24T00:00:00Z</updated>
-		<id>https://rmorabia.com/blog/thirdpost/</id>
-		<content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
-&lt;h2 id=&quot;code&quot; tabindex=&quot;-1&quot;&gt;Code &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/thirdpost/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;styled-with-syntax&quot; tabindex=&quot;-1&quot;&gt;Styled (with Syntax) &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/thirdpost/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
-&lt;pre class=&quot;language-js&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// this is a command&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;myCommand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; counter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-	counter&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;// Test with a line break above this line.&lt;/span&gt;
-console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;Test&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;unstyled&quot; tabindex=&quot;-1&quot;&gt;Unstyled &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/thirdpost/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// this is a command
-function myCommand() {
-	let counter = 0;
-	counter++;
-}
-
-// Test with a line break above this line.
-console.log(&#39;Test&#39;);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&quot;section-header&quot; tabindex=&quot;-1&quot;&gt;Section Header &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/thirdpost/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
-</content>
-	</entry>
-	
-	<entry>
-		<title>This is my second post with a much longer title.</title>
-		<link href="https://rmorabia.com/blog/secondpost/"/>
-		<updated>2018-07-04T00:00:00Z</updated>
-		<id>https://rmorabia.com/blog/secondpost/</id>
-		<content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
-&lt;h2 id=&quot;section-header&quot; tabindex=&quot;-1&quot;&gt;Section Header &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/secondpost/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://rmorabia.com/blog/firstpost/&quot;&gt;First post&lt;/a&gt;
-&lt;a href=&quot;https://rmorabia.com/blog/thirdpost/&quot;&gt;Third post&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
-&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
-</content>
-	</entry>
-	
-	<entry>
-		<title>This is my first post.</title>
-		<link href="https://rmorabia.com/blog/firstpost/"/>
-		<updated>2018-05-01T00:00:00Z</updated>
-		<id>https://rmorabia.com/blog/firstpost/</id>
-		<content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
-&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
-&lt;h2 id=&quot;section-header&quot; tabindex=&quot;-1&quot;&gt;Section Header &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/firstpost/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
-&lt;pre class=&quot;language-diff-js&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-diff-js&quot;&gt;&lt;span class=&quot;token unchanged language-js&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;// this is a command&lt;/span&gt;
-&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;myCommand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&quot;token inserted-sign inserted language-js&quot;&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; counter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&quot;token deleted-sign deleted language-js&quot;&gt;&lt;span class=&quot;token prefix deleted&quot;&gt;-&lt;/span&gt;  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; counter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;span class=&quot;token unchanged language-js&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;  counter&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;/span&gt;
-&lt;span class=&quot;token unchanged language-js&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;// Test with a line break above this line.&lt;/span&gt;
-&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;Test&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+		<title>Developer Blogs &amp; Newsletters I Read</title>
+		<link href="https://rmorabia.com/blog/dev-blogs/"/>
+		<updated>2024-08-25T00:00:00Z</updated>
+		<id>https://rmorabia.com/blog/dev-blogs/</id>
+		<content type="html">&lt;p&gt;This is a list of the current developer blogs, email newsletters, and YouTube channels I am subscribed to, along with some notes on whether or not they will be useful for you to follow.&lt;/p&gt;
+&lt;h2 id=&quot;the-pragmatic-engineer&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://www.pragmaticengineer.com/&quot;&gt;The Pragmatic Engineer&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/dev-blogs/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Gergely is the best at telling software engineers everything they need to know about the state of the industry without the hype. I&#39;ve been reading his work since he was just blogging, and have now been reading his newsletter for a couple of years. The emphasis really is on a pragmatic point of view: real, relevant news, analyses, and insider interviews. This is particularly mostly relevant if you work in the &amp;quot;tech&amp;quot; industry, not as an engineer in another industry.&lt;/p&gt;
+&lt;h2 id=&quot;bytes-dev&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://bytes.dev/&quot;&gt;Bytes.dev&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/dev-blogs/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This is JavaScript-specific news that doesn&#39;t make me want to tear my hair out. A lot of the main focus is on trends, which is pretty irrelevant unless you&#39;re working for a startup and are choosing new technologies every day. However, they have a section that&#39;s called &amp;quot;Spot the Bug&amp;quot; which is a good reminder of obscure language rules, and their curation of external blog posts worth reading is a good enough mix of trends and non-trends to justify skimming twice a week.&lt;/p&gt;
+&lt;h2 id=&quot;tech-talks-weekly&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://techtalksweekly.substack.com/&quot;&gt;Tech Talks Weekly&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/dev-blogs/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This is a recent and powerful discovery for me. I fundamentally believe that if you&#39;re hot a hobbyist professional and you want to keep learning, your options start to get slim very fast. You can read a couple of books a year, but I generally focus on more fundamentals and timeless books there. To keep up with a diverse set of ideas and technologies without getting bogged down in blog spam (popularity isn&#39;t a good curation metric!), tech talks are my new go-to. I try and watch anything that sounds interesting to me and shut it off in 10 minutes if it&#39;s not useful. This means, more often than not, watching talks outside of the world of JavaScript and front-end development.&lt;/p&gt;
+&lt;h2 id=&quot;software-clown-by-itamar-turner-trauring&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://codewithoutrules.com/&quot;&gt;Software Clown by Itamar Turner-Trauring&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/dev-blogs/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The shortest, sweetest newsletter I get each week. Software Clown is an extraordinary series even though I&#39;ve never touched Python in my life, and Itamar&#39;s books and blog posts are concise and actionable. I highly recommend this one to basically every professional software engineer. There&#39;s no encouragement to become a hobbyist who&#39;s into trends here.&lt;/p&gt;
+&lt;h2 id=&quot;will-larson&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://lethain.com/&quot;&gt;Will Larson&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/dev-blogs/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Will is mostly a skip for me these days as his focus has shifted almost entirely towards writing for Staff+ Engineers and tech executives. However, I will still read just about anything that isn&#39;t specifically about those topics from him. He has written some of the most all-time engineering career posts ever, so digging through his archives is more recommended than subscribing at this point.&lt;/p&gt;
 </content>
 	</entry>
 </feed>
