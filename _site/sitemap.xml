@@ -2,16 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	
 	<url>
-		<loc>https://rmorabia.com/blog/firstpost/</loc>
-		<lastmod>2018-05-01</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://rmorabia.com/blog/secondpost/</loc>
-		<lastmod>2018-07-04</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://rmorabia.com/blog/thirdpost/</loc>
 		<lastmod>2018-08-24</lastmod>
 	</url>
@@ -42,16 +32,6 @@
 	</url>
 	
 	<url>
-		<loc>https://rmorabia.com/tags/another-tag/</loc>
-		<lastmod>2024-07-16</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://rmorabia.com/tags/number-2/</loc>
-		<lastmod>2024-07-16</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://rmorabia.com/tags/second-tag/</loc>
 		<lastmod>2024-07-16</lastmod>
 	</url>
@@ -64,6 +44,16 @@
 	<url>
 		<loc>https://rmorabia.com/tags/redirects/</loc>
 		<lastmod>2024-07-16</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://rmorabia.com/blog/dev-blogs/</loc>
+		<lastmod>2024-08-25</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://rmorabia.com/blog/integration-testing/</loc>
+		<lastmod>2024-09-01</lastmod>
 	</url>
 	
 	<url>
