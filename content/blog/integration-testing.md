@@ -22,7 +22,7 @@ Our component-level tests were testing whether or not the correct components ren
 
 Okay, then if the saving failed, how did it pass those unit tests? Our unit tests were testing the server call of the specific function I was editing. My work passed all of these tests because the correct server call was being made and I wrote the first assumption of what the request body to that call should be, and of course, my code passed *my* tests. It was the UI after that wouldn't update!
 
-Okay, then if the UI didn't update correctly, how did it pass the end-to-end tests? The end-to-end tests test the entire flow, changing basically every option possible in one large test per flow, which is not how users use the app -- which would be changing one thing and that appropraitely showing up in the log.
+Okay, then if the UI didn't update correctly, how did it pass the end-to-end tests? The end-to-end tests test the entire flow, changing basically every option possible in one large test per flow, which is not how users use the app -- which would be changing one thing and that appropriately showing up in the log.
 
 After the incident occurred, I thought: this must be such an easy test to add. How don't we have tests like that already? Every action the user takes, we have a log of what the user has done. So, it's a simple test, user does X, does log say that the user did X? Regardlesss of the request bodies and the state changes, does the app function as expected?
 
