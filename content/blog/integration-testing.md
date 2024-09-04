@@ -18,7 +18,7 @@ The fix to this was to limit the values that are reset to only be the values I a
 
 So, how did this fail the tests, considering how easy this was to replicate in QA, and the app has a log of user actions to check if what the user actually did is what the app ended up understanding?
 
-Our component-level tests were testing whether or not the correct components rendered and the UI updated as epxected. The UI would update as expected, it was the saving to the server that failed.
+Our component-level tests were testing whether or not the correct components rendered and the UI updated as expected. The UI would update as expected, it was the saving to the server that failed.
 
 Okay, then if the saving failed, how did it pass those unit tests? Our unit tests were testing the server call of the specific function I was editing. My work passed all of these tests because the correct server call was being made and I wrote the first assumption of what the request body to that call should be, and of course, my code passed *my* tests. It was the UI after that wouldn't update!
 
