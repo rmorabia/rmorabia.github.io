@@ -542,7 +542,7 @@ h2 + .header-anchor {
 <p>So, how did this fail the tests, considering how easy this was to replicate in QA, and the app has a log of user actions to check if what the user actually did is what the app ended up understanding?</p>
 <p>Our component-level tests were testing whether or not the correct components rendered and the UI updated as expected. The UI would update as expected, it was the saving to the server that failed.</p>
 <p>Okay, then if the saving failed, how did it pass those unit tests? Our unit tests were testing the server call of the specific function I was editing. My work passed all of these tests because the correct server call was being made and I wrote the first assumption of what the request body to that call should be, and of course, my code passed <em>my</em> tests. It was the UI after that wouldn't update!</p>
-<p>Okay, then if the UI didn't update correctly, how did it pass the end-to-end tests? The end-to-end tests test the entire flow, changing basically every option possible in one large test per flow, which is not how users use the app -- which would be changing one thing and that appropraitely showing up in the log.</p>
+<p>Okay, then if the UI didn't update correctly, how did it pass the end-to-end tests? The end-to-end tests test the entire flow, changing basically every option possible in one large test per flow, which is not how users use the app -- which would be changing one thing and that appropriately showing up in the log.</p>
 <p>After the incident occurred, I thought: this must be such an easy test to add. How don't we have tests like that already? Every action the user takes, we have a log of what the user has done. So, it's a simple test, user does X, does log say that the user did X? Regardlesss of the request bodies and the state changes, does the app function as expected?</p>
 <p>It turns out, we never test that kind of interaction in the app. I actually have a few times in another project I did after this bug, but those tests took multiple seconds using RTL when the average time for RTL is a couple of milliseconds. I think it's against the nature of most apps to do this kind of testing: it would require adding a couple of dozen unit tests at the container level of a sub-application and drilling into sub-components.</p>
 <p>I'm the only one writing tests this way, which makes me think I'm writing these tests wrong. After this incident, I opened the RTL test for the container component of this page that was failing, expecting to write another one of these drilling tests, only to find all the sub components mocked and the functions tested in isolation. I think that's the correct way... and it wouldn't have caught my issue even if I did add that test, since just like the unit tests I wrote, I would've updated the request body to reset all my data just like I expected.</p>
@@ -559,6 +559,6 @@ h2 + .header-anchor {
 
 		<footer></footer>
 
-		<!-- This page `/blog/integration-testing/` was built on 2024-09-04T01:46:09.808Z -->
+		<!-- This page `/blog/integration-testing/` was built on 2024-09-04T01:48:25.023Z -->
 	</body>
 </html>
