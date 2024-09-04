@@ -129,6 +129,7 @@ THIS WILL TAKE A WHILE&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span
 &lt;p&gt;OpenAI 4o introduced the idea that Indian languages will be 50% faster to translate and have a 20% increase in accuracy. In my limited tests with it, it is a worthwhile enough improvement that I would really like to build v2.0 based on OpenAI 4o&#39;s audio model. I highly doubt that OpenAI will be releasing 4o as an open source project that I can simply plug into Google Colab, though.&lt;/p&gt;
 &lt;p&gt;This means I will likely be building an actual web app for users to use and interface with the API. I&#39;ll have full control over the flow, and I&#39;m really hoping that I can get the 50% user base up to 90% once I can design the app myself.&lt;/p&gt;
 &lt;p&gt;Honestly, the most difficult part for me is to figure out how to get bots to not use the API without my permission, since I&#39;d be paying for OpenAI&#39;s servers out of pocket. I have no idea how to password-protect a site, but I will find out! OpenAI, please, there&#39;s so many movies I need to see.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;By the way, if you want to use the AI subtitler, it is at https://is.gd/translatesubs.&lt;/em&gt;&lt;/p&gt;
 </content>
 	</entry>
 	
