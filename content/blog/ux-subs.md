@@ -77,7 +77,7 @@ Since this got vaguely popular, I actually got emails asking for help on how to 
 
 Every time I got an email or message with an issue, I'd update either the documentation or the code to accommodate their lack of understanding, which ended up in the following changes from the original:
 
-1. Everything is one step now and goes in order of most need for user interaction to least. So, it begins by validating their Google Drive to save the subtitle file.
+1. Everything is one step now and goes in order of shortest to longest time to interact for the user. So, it begins by validating their Google Drive to save the subtitle file.
 2. The user uploads a file using an HTML input they are familiar with from other webpages.
 3. The user chooses a language from an HTML dropdown that they are familiar with from other webpages.
 4. I change the name of their movie file myself into something that Whisper can handle, and explicitly document the limits of what ffmpeg can handle.
