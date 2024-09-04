@@ -92,3 +92,5 @@ OpenAI 4o introduced the idea that Indian languages will be 50% faster to transl
 This means I will likely be building an actual web app for users to use and interface with the API. I'll have full control over the flow, and I'm really hoping that I can get the 50% user base up to 90% once I can design the app myself. 
 
 Honestly, the most difficult part for me is to figure out how to get bots to not use the API without my permission, since I'd be paying for OpenAI's servers out of pocket. I have no idea how to password-protect a site, but I will find out! OpenAI, please, there's so many movies I need to see.
+
+*By the way, if you want to use the AI subtitler, it is at https://is.gd/translatesubs.*
