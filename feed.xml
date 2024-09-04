@@ -55,6 +55,84 @@
 	</entry>
 	
 	<entry>
+		<title>Making Use of Free Developer Tooling for Non-Developers</title>
+		<link href="https://rmorabia.com/blog/ux-subs/"/>
+		<updated>2024-07-22T00:00:00Z</updated>
+		<id>https://rmorabia.com/blog/ux-subs/</id>
+		<content type="html">&lt;p&gt;All of my friends know I only really did one impressive thing last year: I built an AI subtitle generator that will take any video or audio file (usually a movie), and output a subtitle file you can drop in with the movie. That&#39;s existed for years, but the big change here is that a level of progress had been pushed: Subtitles were finally vaguely sorta kinda ...if you squint... usable for movies in other languages.&lt;/p&gt;
+&lt;p&gt;It took me 2 or 3 hours, and the entire code can be pasted below:&lt;/p&gt;
+&lt;pre class=&quot;language-py&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-py&quot;&gt; &lt;span class=&quot;token comment&quot;&gt;# @title Choose your language and press play to the side&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; google&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;colab &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; drive
+drive&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mount&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;/content/drive&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; google&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;colab &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; files
+uploaded &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; files&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;upload&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+filename &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;iter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;uploaded&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+!pip install git&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;https&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt;github&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;com&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;openai&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;whisper&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;git
+
+!sudo apt update &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; sudo apt install ffmpeg
+
+language &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;Telugu&#39;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# @param [&quot;Hindi&quot;, &quot;Tamil&quot;, &quot;Telugu&quot;, &quot;Malayalam&quot;, &quot;Punjabi&quot;, &quot;Kannada&quot;, &quot;Gujarati&quot;, &quot;Bengali&quot;, &quot;French&quot;, &quot;Japanese&quot;, &quot;Korean&quot;, &quot;Cantonese&quot;, &quot;Spanish&quot;, &quot;Portuguese&quot;]&lt;/span&gt;
+
+!ffmpeg &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;i $filename subs&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mp3
+!whisper subs&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mp3 &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;task translate &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;model large &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;language $language &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;output_dir &lt;span class=&quot;token string&quot;&gt;&quot;/content/drive/My Drive/Subtitles&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That&#39;s right. It&#39;s just 15 lines of Python that wraps around OpenAI&#39;s Whisper and uses pre-existing tools using Google Colab&#39;s Jupyter notebook system.&lt;/p&gt;
+&lt;p&gt;To me, it was an architectural wonder that I could clumsily use a fairly accessible system to do huge amounts of computing for personal gain. I thought everyone would be on board with being able to use this magical tool, because all they really needed was a Google account and some patience.&lt;/p&gt;
+&lt;p&gt;As always happens in engineers doing UX, I was very, very wrong.&lt;/p&gt;
+&lt;p&gt;Let&#39;s go back to v1 of this app:&lt;/p&gt;
+&lt;pre class=&quot;language-py&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-py&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Step One: Install Requirements&lt;/span&gt;
+!pip install git&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;https&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt;github&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;com&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;openai&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;whisper&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;git
+
+!sudo apt update &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; sudo apt install ffmpeg
+
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; google&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;colab &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; drive
+drive&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mount&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;/content/drive&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# Step Two: Upload Audio File&lt;/span&gt;
+
+If you need to get an &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mp3 &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; a video &lt;span class=&quot;token builtin&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; you can use VLC Media Player to do so using this tutorial &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;here&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;https&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt;researchguides&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;edu&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;php?g&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1286426&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+Once you have your &lt;span class=&quot;token builtin&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;open&lt;/span&gt; the &lt;span class=&quot;token builtin&quot;&gt;file&lt;/span&gt; folder on the left&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;hand corner of the page&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; Drag the &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mp3 you would like to transcribe into the &lt;span class=&quot;token string&quot;&gt;&quot;Files&quot;&lt;/span&gt; section&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+Give it a minute&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; there&lt;span class=&quot;token string&quot;&gt;&#39;s a blue circle that indicates it&#39;&lt;/span&gt;s uploading&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; Since it&lt;span class=&quot;token string&quot;&gt;&#39;s as long as a movie, it&#39;&lt;/span&gt;ll probably take a few minutes&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; Stay on this page &lt;span class=&quot;token keyword&quot;&gt;and&lt;/span&gt; wait until it&#39;s done&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+This will upload the audio to this page&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; Here&lt;span class=&quot;token string&quot;&gt;&#39;s what it looks like once you&#39;&lt;/span&gt;ve uploaded a &lt;span class=&quot;token builtin&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# Step Three: Translate&lt;/span&gt;
+
+To translate an &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mp3&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; simply copy &lt;span class=&quot;token keyword&quot;&gt;and&lt;/span&gt; paste the title of your &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mp3 &lt;span class=&quot;token builtin&quot;&gt;file&lt;/span&gt; into the command line below &lt;span class=&quot;token keyword&quot;&gt;and&lt;/span&gt; run the cell&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; Remember to include the &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mp3 at the end&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+You can change the language &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; needed &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; the command line&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;and&lt;/span&gt; English &lt;span class=&quot;token keyword&quot;&gt;is&lt;/span&gt; the default output&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+THIS WILL TAKE A WHILE&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; Once it &lt;span class=&quot;token keyword&quot;&gt;is&lt;/span&gt; done&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; click the Folder icon again&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; Wala! There &lt;span class=&quot;token keyword&quot;&gt;is&lt;/span&gt; your SRT&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; Enjoy!!!
+
+!whisper &lt;span class=&quot;token string&quot;&gt;&quot;jabardasth.mp3&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;task translate &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;model large &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;language Telugu &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;output_dir &lt;span class=&quot;token string&quot;&gt;&quot;/content/drive/My Drive/Subtitles&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As users tried the app, they got stuck at a myriad number of points:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;They wouldn&#39;t be clear on how to connect to a GPU using Colab.&lt;/li&gt;
+&lt;li&gt;They&#39;d upload files with invalid characters like &lt;code&gt;movie name&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;They were unclear on how to upload files to Google Colab.&lt;/li&gt;
+&lt;li&gt;They expected to be able to walk away after Step 1 or 2, because sometimes their uploads took so long, but actually, they had to stay.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Since this got vaguely popular, I actually got emails asking for help on how to use it, and it was fairly easily for me to diagnose every time. &lt;strong&gt;What was obvious to me was not obvious to the user.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Every time I got an email or message with an issue, I&#39;d update either the documentation or the code to accommodate their lack of understanding, which ended up in the following changes from the original:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Everything is one step now and goes in order of most need for user interaction to least. So, it begins by validating their Google Drive to save the subtitle file.&lt;/li&gt;
+&lt;li&gt;The user uploads a file using an HTML input they are familiar with from other webpages.&lt;/li&gt;
+&lt;li&gt;The user chooses a language from an HTML dropdown that they are familiar with from other webpages.&lt;/li&gt;
+&lt;li&gt;I change the name of their movie file myself into something that Whisper can handle, and explicitly document the limits of what ffmpeg can handle.&lt;/li&gt;
+&lt;li&gt;The app can work with both video and audio files.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Basically, I gave the user a lot less choice (which I, as an engineer like) and put them on a much more linear path.&lt;/p&gt;
+&lt;p&gt;I eventually was able to get maybe 50% of my expected userbase to deal with the headaches of using a fundamentally technical tool used for college students&#39; coding projects to do our hobbyist movie subtitling. To those 50%, it was magic. To the other 50%, unfortunately Colab still has random failures, the GPUs are often taken, and the subtitling still isn&#39;t that impressive.&lt;/p&gt;
+&lt;p&gt;OpenAI 4o introduced the idea that Indian languages will be 50% faster to translate and have a 20% increase in accuracy. In my limited tests with it, it is a worthwhile enough improvement that I would really like to build v2.0 based on OpenAI 4o&#39;s audio model. I highly doubt that OpenAI will be releasing 4o as an open source project that I can simply plug into Google Colab, though.&lt;/p&gt;
+&lt;p&gt;This means I will likely be building an actual web app for users to use and interface with the API. I&#39;ll have full control over the flow, and I&#39;m really hoping that I can get the 50% user base up to 90% once I can design the app myself.&lt;/p&gt;
+&lt;p&gt;Honestly, the most difficult part for me is to figure out how to get bots to not use the API without my permission, since I&#39;d be paying for OpenAI&#39;s servers out of pocket. I have no idea how to password-protect a site, but I will find out! OpenAI, please, there&#39;s so many movies I need to see.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
 		<title>How to Make Visual Studio Code 150% Faster in Large Projects</title>
 		<link href="https://rmorabia.com/blog/vs/"/>
 		<updated>2020-07-15T00:00:00Z</updated>

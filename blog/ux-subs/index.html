@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Making Use of Free Developer Tooling for Non-Developers</title>
+		<meta name="description" content="my experience designing and testing a free AI tool for my friends.">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="radhika&#39;s dev thoughts">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="radhika&#39;s dev thoughts">
+		<style>/**
+ * VS theme by Andrew Lock (https://andrewlock.net)
+ * Inspired by Visual Studio syntax coloring
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #393A34;
+  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  font-size: .9em;
+  line-height: 1.2em;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre>code[class*="language-"] {
+  font-size: 1em;
+}
+
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
+  background: #C1DEF1;
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+  background: #C1DEF1;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  border: 1px solid #dddddd;
+  background-color: white;
+}
+
+/* Inline code */
+:not(pre)>code[class*="language-"] {
+  padding: .2em;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  background: #f8f8f8;
+  border: 1px solid #dddddd;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #008000;
+  font-style: italic;
+}
+
+.token.namespace {
+  opacity: .7;
+}
+
+.token.string {
+  color: #A31515;
+}
+
+.token.punctuation,
+.token.operator {
+  color: #393A34;
+  /* no highlight */
+}
+
+.token.url,
+.token.symbol,
+.token.number,
+.token.boolean,
+.token.variable,
+.token.constant,
+.token.inserted {
+  color: #36acaa;
+}
+
+.token.atrule,
+.token.keyword,
+.token.attr-value,
+.language-autohotkey .token.selector,
+.language-json .token.boolean,
+.language-json .token.number,
+code[class*="language-css"] {
+  color: #0000ff;
+}
+
+.token.function {
+  color: #393A34;
+}
+
+.token.deleted,
+.language-autohotkey .token.tag {
+  color: #9a050f;
+}
+
+.token.selector,
+.language-autohotkey .token.keyword {
+  color: #00009f;
+}
+
+.token.important {
+  color: #e90;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.class-name,
+.language-json .token.property {
+  color: #2B91AF;
+}
+
+.token.tag,
+.token.selector {
+  color: #800000;
+}
+
+.token.attr-name,
+.token.property,
+.token.regex,
+.token.entity {
+  color: #ff0000;
+}
+
+.token.directive.tag .tag {
+  background: #ffff00;
+  color: #393A34;
+}
+
+/* overrides color-values for the Line Numbers plugin
+ * http://prismjs.com/plugins/line-numbers/
+ */
+.line-numbers.line-numbers .line-numbers-rows {
+  border-right-color: #a5a5a5;
+}
+
+.line-numbers .line-numbers-rows>span:before {
+  color: #2B91AF;
+}
+
+/* overrides color-values for the Line Highlight plugin
+* http://prismjs.com/plugins/line-highlight/
+*/
+.line-highlight.line-highlight {
+  background: rgba(193, 222, 241, 0.2);
+  background: -webkit-linear-gradient(left, rgba(193, 222, 241, 0.2) 70%, rgba(221, 222, 241, 0));
+  background: linear-gradient(to right, rgba(193, 222, 241, 0.2) 70%, rgba(221, 222, 241, 0));
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: Courier, Consolas,
+		Menlo,
+		Monaco,
+		Andale Mono WT,
+		Andale Mono,
+		Lucida Console,
+		Lucida Sans Typewriter,
+		DejaVu Sans Mono,
+		Bitstream Vera Sans Mono,
+		Liberation Mono,
+		Nimbus Mono L,
+		Courier New,
+		Courier,
+		monospace;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #1cb933;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #C0C0C0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 40em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em .5em;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	font-size: 1em; /* 16px /16 */
+	font-weight: 700;
+	margin-right: 2em;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: .1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: #aaa;
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/" class="home-link">radhika&#39;s dev thoughts</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/">Home</a></li>
+					<li class="nav-item"><a href="/about/">About Me</a></li>
+					<li class="nav-item"><a href="/resume/">Resume</a></li>
+					<li class="nav-item"><a href="/rss/">RSS</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			
+<h1>Making Use of Free Developer Tooling for Non-Developers</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2024-07-22">July 22, 2024</time></li>
+</ul>
+
+<p>All of my friends know I only really did one impressive thing last year: I built an AI subtitle generator that will take any video or audio file (usually a movie), and output a subtitle file you can drop in with the movie. That's existed for years, but the big change here is that a level of progress had been pushed: Subtitles were finally vaguely sorta kinda ...if you squint... usable for movies in other languages.</p>
+<p>It took me 2 or 3 hours, and the entire code can be pasted below:</p>
+<pre class="language-py" tabindex="0"><code class="language-py"> <span class="token comment"># @title Choose your language and press play to the side</span>
+<span class="token keyword">from</span> google<span class="token punctuation">.</span>colab <span class="token keyword">import</span> drive
+drive<span class="token punctuation">.</span>mount<span class="token punctuation">(</span><span class="token string">'/content/drive'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">from</span> google<span class="token punctuation">.</span>colab <span class="token keyword">import</span> files
+uploaded <span class="token operator">=</span> files<span class="token punctuation">.</span>upload<span class="token punctuation">(</span><span class="token punctuation">)</span>
+filename <span class="token operator">=</span> <span class="token builtin">next</span><span class="token punctuation">(</span><span class="token builtin">iter</span><span class="token punctuation">(</span>uploaded<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+!pip install git<span class="token operator">+</span>https<span class="token punctuation">:</span><span class="token operator">//</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>openai<span class="token operator">/</span>whisper<span class="token punctuation">.</span>git
+
+!sudo apt update <span class="token operator">&amp;</span><span class="token operator">&amp;</span> sudo apt install ffmpeg
+
+language <span class="token operator">=</span> <span class="token string">'Telugu'</span> <span class="token comment"># @param ["Hindi", "Tamil", "Telugu", "Malayalam", "Punjabi", "Kannada", "Gujarati", "Bengali", "French", "Japanese", "Korean", "Cantonese", "Spanish", "Portuguese"]</span>
+
+!ffmpeg <span class="token operator">-</span>i $filename subs<span class="token punctuation">.</span>mp3
+!whisper subs<span class="token punctuation">.</span>mp3 <span class="token operator">-</span><span class="token operator">-</span>task translate <span class="token operator">-</span><span class="token operator">-</span>model large <span class="token operator">-</span><span class="token operator">-</span>language $language <span class="token operator">-</span><span class="token operator">-</span>output_dir <span class="token string">"/content/drive/My Drive/Subtitles"</span></code></pre>
+<p>That's right. It's just 15 lines of Python that wraps around OpenAI's Whisper and uses pre-existing tools using Google Colab's Jupyter notebook system.</p>
+<p>To me, it was an architectural wonder that I could clumsily use a fairly accessible system to do huge amounts of computing for personal gain. I thought everyone would be on board with being able to use this magical tool, because all they really needed was a Google account and some patience.</p>
+<p>As always happens in engineers doing UX, I was very, very wrong.</p>
+<p>Let's go back to v1 of this app:</p>
+<pre class="language-py" tabindex="0"><code class="language-py"><span class="token comment"># Step One: Install Requirements</span>
+!pip install git<span class="token operator">+</span>https<span class="token punctuation">:</span><span class="token operator">//</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>openai<span class="token operator">/</span>whisper<span class="token punctuation">.</span>git
+
+!sudo apt update <span class="token operator">&amp;</span><span class="token operator">&amp;</span> sudo apt install ffmpeg
+
+<span class="token keyword">from</span> google<span class="token punctuation">.</span>colab <span class="token keyword">import</span> drive
+drive<span class="token punctuation">.</span>mount<span class="token punctuation">(</span><span class="token string">'/content/drive'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Step Two: Upload Audio File</span>
+
+If you need to get an <span class="token punctuation">.</span>mp3 <span class="token keyword">from</span> a video <span class="token builtin">file</span><span class="token punctuation">,</span> you can use VLC Media Player to do so using this tutorial <span class="token punctuation">[</span>here<span class="token punctuation">]</span><span class="token punctuation">(</span>https<span class="token punctuation">:</span><span class="token operator">//</span>researchguides<span class="token punctuation">.</span><span class="token keyword">case</span><span class="token punctuation">.</span>edu<span class="token operator">/</span>c<span class="token punctuation">.</span>php?g<span class="token operator">=</span><span class="token number">1286426</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+
+Once you have your <span class="token builtin">file</span><span class="token punctuation">,</span> <span class="token builtin">open</span> the <span class="token builtin">file</span> folder on the left<span class="token operator">-</span>hand corner of the page<span class="token punctuation">.</span> Drag the <span class="token punctuation">.</span>mp3 you would like to transcribe into the <span class="token string">"Files"</span> section<span class="token punctuation">.</span>
+
+Give it a minute<span class="token punctuation">,</span> there<span class="token string">'s a blue circle that indicates it'</span>s uploading<span class="token punctuation">.</span> Since it<span class="token string">'s as long as a movie, it'</span>ll probably take a few minutes<span class="token punctuation">.</span> Stay on this page <span class="token keyword">and</span> wait until it's done<span class="token punctuation">.</span>
+
+This will upload the audio to this page<span class="token punctuation">.</span> Here<span class="token string">'s what it looks like once you'</span>ve uploaded a <span class="token builtin">file</span><span class="token punctuation">:</span>
+
+<span class="token comment"># Step Three: Translate</span>
+
+To translate an <span class="token punctuation">.</span>mp3<span class="token punctuation">,</span> simply copy <span class="token keyword">and</span> paste the title of your <span class="token punctuation">.</span>mp3 <span class="token builtin">file</span> into the command line below <span class="token keyword">and</span> run the cell<span class="token punctuation">.</span> Remember to include the <span class="token punctuation">.</span>mp3 at the end<span class="token punctuation">.</span>
+
+You can change the language <span class="token keyword">as</span> needed <span class="token keyword">in</span> the command line<span class="token punctuation">,</span> <span class="token keyword">and</span> English <span class="token keyword">is</span> the default output<span class="token punctuation">.</span>
+
+THIS WILL TAKE A WHILE<span class="token punctuation">.</span> Once it <span class="token keyword">is</span> done<span class="token punctuation">,</span> click the Folder icon again<span class="token punctuation">.</span> Wala! There <span class="token keyword">is</span> your SRT<span class="token punctuation">.</span> Enjoy!!!
+
+!whisper <span class="token string">"jabardasth.mp3"</span> <span class="token operator">-</span><span class="token operator">-</span>task translate <span class="token operator">-</span><span class="token operator">-</span>model large <span class="token operator">-</span><span class="token operator">-</span>language Telugu <span class="token operator">-</span><span class="token operator">-</span>output_dir <span class="token string">"/content/drive/My Drive/Subtitles"</span></code></pre>
+<p>As users tried the app, they got stuck at a myriad number of points:</p>
+<ul>
+<li>They wouldn't be clear on how to connect to a GPU using Colab.</li>
+<li>They'd upload files with invalid characters like <code>movie name</code>.</li>
+<li>They were unclear on how to upload files to Google Colab.</li>
+<li>They expected to be able to walk away after Step 1 or 2, because sometimes their uploads took so long, but actually, they had to stay.</li>
+</ul>
+<p>Since this got vaguely popular, I actually got emails asking for help on how to use it, and it was fairly easily for me to diagnose every time. <strong>What was obvious to me was not obvious to the user.</strong></p>
+<p>Every time I got an email or message with an issue, I'd update either the documentation or the code to accommodate their lack of understanding, which ended up in the following changes from the original:</p>
+<ol>
+<li>Everything is one step now and goes in order of most need for user interaction to least. So, it begins by validating their Google Drive to save the subtitle file.</li>
+<li>The user uploads a file using an HTML input they are familiar with from other webpages.</li>
+<li>The user chooses a language from an HTML dropdown that they are familiar with from other webpages.</li>
+<li>I change the name of their movie file myself into something that Whisper can handle, and explicitly document the limits of what ffmpeg can handle.</li>
+<li>The app can work with both video and audio files.</li>
+</ol>
+<p>Basically, I gave the user a lot less choice (which I, as an engineer like) and put them on a much more linear path.</p>
+<p>I eventually was able to get maybe 50% of my expected userbase to deal with the headaches of using a fundamentally technical tool used for college students' coding projects to do our hobbyist movie subtitling. To those 50%, it was magic. To the other 50%, unfortunately Colab still has random failures, the GPUs are often taken, and the subtitling still isn't that impressive.</p>
+<p>OpenAI 4o introduced the idea that Indian languages will be 50% faster to translate and have a 20% increase in accuracy. In my limited tests with it, it is a worthwhile enough improvement that I would really like to build v2.0 based on OpenAI 4o's audio model. I highly doubt that OpenAI will be releasing 4o as an open source project that I can simply plug into Google Colab, though.</p>
+<p>This means I will likely be building an actual web app for users to use and interface with the API. I'll have full control over the flow, and I'm really hoping that I can get the 50% user base up to 90% once I can design the app myself.</p>
+<p>Honestly, the most difficult part for me is to figure out how to get bots to not use the API without my permission, since I'd be paying for OpenAI's servers out of pocket. I have no idea how to password-protect a site, but I will find out! OpenAI, please, there's so many movies I need to see.</p>
+
+<ul class="links-nextprev">
+	<i>If you would like to get in touch with me, send me an email at hi@[thisdomain].com.</i>
+	<br><br><li>Previous: <a href="/blog/vs/">How to Make Visual Studio Code 150% Faster in Large Projects</a></li><li>Next: <a href="/blog/dev-blogs/">Developer Blogs &amp; Newsletters I Read</a></li>
+</ul>
+
+		</main>
+
+		<footer></footer>
+
+		<!-- This page `/blog/ux-subs/` was built on 2024-09-04T02:21:08.539Z -->
+	</body>
+</html>
