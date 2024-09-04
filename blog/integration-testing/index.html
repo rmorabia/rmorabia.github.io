@@ -540,7 +540,7 @@ h2 + .header-anchor {
 <p>First, let me explain the bug, then talk about our tests. I wrote a modification to a function which saves user data to the server, which validates that data and sends it back to us to update the UI with. I made a bad assumption which is that I wanted the data in a specific part to reset to default if the user did a specific action. My code was correct given that assumption, but this would end up locking the user in a loop where it's impossible to ever actually update that data that I keep resetting to default. I, for some strange reason, thought that it would fail the back-end validation if it wasn't completely reset. This is not how it ended up working, of course, because the reset data was completely valid to the back-end, and would get saved as the user's changes every time.</p>
 <p>The fix to this was to limit the values that are reset to only be the values I actually needed to reset. So, instead of &quot;User did X, data that relies on X will reset to default,&quot; I'm changing it to &quot;User did X, data that relies on X is unchanged, but I'm changing X to Y. They'll never know.&quot; This is a bit convoluted, but my summary here is: I made a bad assumption about how data would be validated. This ended up resetting the the user's data every time they tried to save.</p>
 <p>So, how did this fail the tests, considering how easy this was to replicate in QA, and the app has a log of user actions to check if what the user actually did is what the app ended up understanding?</p>
-<p>Our component-level tests were testing whether or not the correct components rendered and the UI updated as epxected. The UI would update as expected, it was the saving to the server that failed.</p>
+<p>Our component-level tests were testing whether or not the correct components rendered and the UI updated as expected. The UI would update as expected, it was the saving to the server that failed.</p>
 <p>Okay, then if the saving failed, how did it pass those unit tests? Our unit tests were testing the server call of the specific function I was editing. My work passed all of these tests because the correct server call was being made and I wrote the first assumption of what the request body to that call should be, and of course, my code passed <em>my</em> tests. It was the UI after that wouldn't update!</p>
 <p>Okay, then if the UI didn't update correctly, how did it pass the end-to-end tests? The end-to-end tests test the entire flow, changing basically every option possible in one large test per flow, which is not how users use the app -- which would be changing one thing and that appropraitely showing up in the log.</p>
 <p>After the incident occurred, I thought: this must be such an easy test to add. How don't we have tests like that already? Every action the user takes, we have a log of what the user has done. So, it's a simple test, user does X, does log say that the user did X? Regardlesss of the request bodies and the state changes, does the app function as expected?</p>
@@ -559,6 +559,6 @@ h2 + .header-anchor {
 
 		<footer></footer>
 
-		<!-- This page `/blog/integration-testing/` was built on 2024-09-02T20:53:16.537Z -->
+		<!-- This page `/blog/integration-testing/` was built on 2024-09-04T01:46:09.808Z -->
 	</body>
 </html>
