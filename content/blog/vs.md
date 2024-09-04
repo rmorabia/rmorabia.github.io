@@ -25,7 +25,7 @@ I saw that something called `electron_node tsserver.js` was taking up over 100% 
 
 Further looking around led me to the fact that **Visual Studio Code has extensions built-in that you never installed.** I did not know this! You can find these by searching `@builtin` in your extensions.
 
-Specifically, there is an extension called `TypeScript and JavaScript Language Features` which includes a lot of functionality like closing tags. However, it automatically runs TypeScript features even if you don't have a TypeScript project. (This begs the question, why is Visual Studio Code so deeply integrated with TypeScript that it automatically assumes you're using it? Microsoft is selling us its entire ecoystem.)
+Specifically, there is an extension called `TypeScript and JavaScript Language Features` which includes a lot of functionality like closing tags. However, it automatically runs TypeScript features even if you don't have a TypeScript project. (This begs the question, why is Visual Studio Code so deeply integrated with TypeScript that it automatically assumes you're using it? Microsoft is selling us its entire ecosystem.)
 
 Once I disabled the `TypeScript: Disable Automatic Type Acquisition` feature, Visual Studio Code was instantly faster than I've ever seen it before.
 

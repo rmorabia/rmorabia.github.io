@@ -1,5 +1,5 @@
 ---
-title: Making Use of Free Developer Tooling for Non-Developers
+title: UX When Using Dev Tooling for Non-Developers
 description: my experience designing and testing a free AI tool for my friends.
 date: 2024-07-22
 ---
