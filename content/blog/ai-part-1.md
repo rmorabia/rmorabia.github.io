@@ -53,7 +53,7 @@ I want to really try to use AI more. I've been reading a lot and I think a lot o
 
 Cursor supports multi-line autocomplete, you can hit tab and it'll take you to the next place in the code it thinks you'd want to add a line to. If I get 1-2% rates of acceptable code, BUT it navigates me to relevant areas, that's just a pure speed of execution improvement.
 
-People also seem to be more impressed with Copilot's autocomplete suggestions (Claude 3.5 Sonnet is supposed to be the first really significant step up since ChatGPT 3), but I'm holding out on skepticism there.
+People also seem to be more impressed with Cursor's autocomplete suggestions (Claude 3.5 Sonnet is supposed to be the first really significant step up since ChatGPT 3), but I'm holding out on skepticism there.
 
 2. Get a ChatGPT API token and use that in another interface
 
