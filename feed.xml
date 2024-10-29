@@ -51,7 +51,7 @@
 &lt;li&gt;Switch to Cursor&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Cursor supports multi-line autocomplete, you can hit tab and it&#39;ll take you to the next place in the code it thinks you&#39;d want to add a line to. If I get 1-2% rates of acceptable code, BUT it navigates me to relevant areas, that&#39;s just a pure speed of execution improvement.&lt;/p&gt;
-&lt;p&gt;People also seem to be more impressed with Copilot&#39;s autocomplete suggestions (Claude 3.5 Sonnet is supposed to be the first really significant step up since ChatGPT 3), but I&#39;m holding out on skepticism there.&lt;/p&gt;
+&lt;p&gt;People also seem to be more impressed with Cursor&#39;s autocomplete suggestions (Claude 3.5 Sonnet is supposed to be the first really significant step up since ChatGPT 3), but I&#39;m holding out on skepticism there.&lt;/p&gt;
 &lt;ol start=&quot;2&quot;&gt;
 &lt;li&gt;Get a ChatGPT API token and use that in another interface&lt;/li&gt;
 &lt;/ol&gt;
