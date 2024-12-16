@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Adventures in AI-Assisted Coding Part 2: Re-orienting</title>
+		<title>Talks I Like</title>
 		<meta name="description" content="...and the rest is rust and stardust.">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="radhika&#39;s dev thoughts">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="radhika&#39;s dev thoughts">
@@ -527,61 +527,37 @@ h2 + .header-anchor {
 
 		<main id="skip">
 			
-<h1>Adventures in AI-Assisted Coding Part 2: Re-orienting</h1>
+<h1>Talks I Like</h1>
 
 <ul class="post-metadata">
 	<li><time datetime="2024-12-16">December 16, 2024</time></li>
 </ul>
 
-<p>I have been trying to use AI as an initial entrypoint for everything over the past month or so -- from code generation to debugging to searching.</p>
-<p>I've found it generally disappointing, but I've also gotten better at it and have started using it for a few more things.</p>
-<p>Here's my update, and maybe my final call on AI for now:</p>
-<ol>
-<li>Fancy Autocomplete / Cursor</li>
-</ol>
-<p>I was not able to get access to Cursor. My company discontinued taking the pilot out company-wide once Copilot integrated Claude 3.5 Sonnet into its chat window.</p>
-<p>I have to admit, the chat window has gotten marginally better due to do this and some other commands (@workspace seems to work more effectively now). It is now possible to generate something even mildly useful using the chat window and Sonnet. However, it's still quite slow and gets confused on itself after the initial prompt. It seems best to use this as an initial generator and then edit the code manually from there, although with the type of code I am writing (usually not new flows or endpoints), it's still faster and more accurate to write it myself.</p>
-<p>I now like to ask the chat window to refactor my code and then compare and contrast my code to the generated version. It's quite often true that a mix of both is better. I beleive an overall code review is now integrated within Visual Studio Code, and I am beginning to use it, but thus far, I've just been prompting a code block manually within the chat window like, &quot;Rewrite this function to be more concise/readable/performant.&quot; I will likely write an update post on the code review tool and the new debug tool soon, especially once my company gets off the full code review waitlist.</p>
-<p><strong>Final Verdict:</strong> Copilot is still fancy autocomplete, but also a good code reviewer.</p>
-<ol start="2">
-<li>StackOverflow Replacement</li>
-</ol>
-<p>I've updated my ChatGPT model to 4 and even o1. It's mostly useless and needlessly verbose about looking stuff up or asking why X code is behaving in this way. It is sometimes useful if I keep going and going, but by the nature of how it works, it's always agreeing with me. StackOverflow is still the best source of information, which is a pretty big issue because the site is dying.</p>
-<p>Honestly, I feel a <strong>big takeaway from LLMs is you need to understand the internals of your language, frameworks, and libraries more than ever before</strong>. I realize this statement runs quite counter to anything anyone else has been saying about LLMs, but I've never doubted StackOverflow the way I've doubted ChatGPT. (I know that's wrong, since StackOverflow is so very often wrong, but there's something about the multitude of slightly different questions and answers that makes filtering through to some sort of consensus fairly simple compared to the single truth ChatGPT presents itself as. As I said above, I feel that either subsequent prompting is completely useless, or I'm very bad at prompting, so asking for alternate ideas never quite works the same as cross-referencing SO, docs, blog posts, and GitHub Issues.) Without the ability to have multiple sources of truth on the open web anymore, pure reference becomes a much more valuable skill, I think... You should be able to very quickly tell ChatGPT that that fact it just spouted is incorrect and re-prompt them with the ultimate source of truth of <em>your</em> facts, and then tell them to debug or generate code based on that fact you know.</p>
-<p>Does that make sense? It's weird and counterintuitive. We're at the end of the year for the learning budget, is it time for me to use the remainder on a hardcover copy of ECMAScript 2024.</p>
-<p>It's also worth noting that there's now a Copilot chat that is indexing my organization's codebases. In theory, I should be able to ask it questions and find out stuff in other codebases. I have not found this useful at all for the back-end C# codebase. I still find highlighting a specific area of the code in VS Code and asking it to explain it to me useful, though. It's good at language interpretation when you are not worried about accuracy (which is an insane qualifier to make).</p>
-<p><strong>Final Verdict:</strong> Stick to StackOverflow.</p>
-<ol start="3">
-<li>Tests Writer</li>
-</ol>
-<p>This is basically the same. Write the boilerplate and the first test. It'll fill in the rest.</p>
-<p>I'm actually quite interested in TDD these days, which I believe is the next step for how much LLMs have taken over testing for me. They write a lot of tests, it's up to me to do the brain work to make sure that I am actually writing tests of worth.</p>
-<p>With our without TDD, the real killer here is just the autocomplete. Tests have so many repetitive statements. Just write one and use the LLM to write the rest quite a bit faster.</p>
-<p>I also find it generally useful for debugging issues with tests. It's such a controlled environment that it finally doesn't seem to get overwhelmed. This has been and continues to be the biggest game-changer here.</p>
-<p><strong>Final Verdict:</strong> It's actually the reason I am good at writing tests now. This remains huge.</p>
-<ol start="4">
-<li>Rubber Duck / Bug Catcher</li>
-</ol>
-<p>There's actually one interesting thing it's been hit and miss at -- parenthesis bugs. Sometimes, it works beautifully. Sometimes, it doesn't. Still, these are such a big, frequent pain for me that even the sometimes is useful. The same goes for other typo-induced bugs. I believe this is newly good with Sonnet 3.5 or ChatGPT 4o.</p>
-<p>Otherwise, for rubber ducking, I've gotten more used to it, although I don't necessarily know if it's a good thing or a bad thing. It's just ...there, conveniently, although I don't know if it's doing anything. I am not confident either way that it's saving time or wasting time.</p>
-<p><strong>At this point, I've decided to remove the Chat window from my sidebar.</strong> I still have the Chat prompt when I highlight code and press Cmd + I, but I think there are more productive ways to rubber duck (paper!), and I should go back to using it.</p>
-<p>There's only been one instance where that Chat window was particularly helpful for me -- when I needed to generate a Linux command to go through a bunch of JSONs and delete two keys that would have different values each time. I don't have tasks like these very often, and I believe that the ChatGPT chat interface through a browser could also do this.</p>
-<p><strong>Final Verdict:</strong> Stick to paper.</p>
-<p>...</p>
-<p>I've now successfully been using these LLM tools for 5 months. There's been suggestions that 6 months is the necessary training time to get good at these new tools. I think I'm about there. My final conclusions are that it's a game-changer for tests, interesting for code reviews and little syntax bugs, and near useless for everything else.</p>
-<p>If anything, the fundamentals are more important now than ever before. Get good at reading code. Get good at reading docs. Get good at writing valuable tests.</p>
-<p>I will be trying to do that more in 2025, starting with the first half of the year devoted to working via test-driven development.</p>
-<p>I am actually curious this time if anyone is reading this, please do send me an email and let me know how your usage of LLM tools has been. I feel they're overhyped even by real surveys (like in the Pragmatic Engineer newsletter).</p>
+<p>I've been keeping a daily practice of watching one talk during work, usually during lunch break, because I believe they are the best way for corporate-focused engineers to learn new things now. Blogs are too cutting edge, and books are too bloated to allow for a variety of inputs. Talks let me learn things in a low stakes way even from disciplines I'm not necessarily a part of.</p>
+<p><a href="https://techtalksweekly.substack.com">Tech Talks Weekly</a> is how I get all my talks, by the way. Every week, they send a list of basically every talk that went live that week. I add them to my YouTube Watch Later. Then, I shuffle during work and usually watch on a slightly faster speed. If 10ish minutes have passed and there's no build up to anything seemingly useful or interesting (lots of infotainment out there), I move on.</p>
+<p>Here are the talks that I've found very good and interesting thus far. Keep in mind this is heavily filtered! This will also be updated to whatever date the published date says.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=uNGDW3snVyA">Bun, Deno, Node.js? Recreating a JavaScript runtime from Scratch - Erick Wendel - NDC Oslo 2023</a></li>
+</ul>
+<p>Pretty good talk that goes over Node internals. How does it work? What's it actually doing?</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=vXnTMjMe5Eg">How to fall in love with TDD - Gui Ferreira - NDC Oslo 2024</a></li>
+</ul>
+<p>Finally made me <em>get</em> TDD. I'm going to try it based on notes for this talk, actually.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=9ZimlztLa1g">The Past, Present, and Future of Cross-Site/Cross-Origin Request Forgery - Philippe De Ryck</a></li>
+</ul>
+<p>Finally made me get CORS. More interesting than useful for my work.</p>
 
 <ul class="links-nextprev">
 	<i>If you would like to get in touch with me, send me an email at hi@[thisdomain].com.</i>
-	<br><br><li>Previous: <a href="/blog/ai-part-1/">Adventures in AI-Assisted Coding Part 1: The Journey So Far</a></li><li>Next: <a href="/blog/talks/">Talks I Like</a></li>
+	<br><br><li>Previous: <a href="/blog/ai-part-two/">Adventures in AI-Assisted Coding Part 2: Re-orienting</a></li>
 </ul>
 
 		</main>
 
 		<footer></footer>
 
-		<!-- This page `/blog/ai-part-two/` was built on 2024-12-16T21:00:37.096Z -->
+		<!-- This page `/blog/talks/` was built on 2024-12-16T21:00:37.096Z -->
 	</body>
 </html>
