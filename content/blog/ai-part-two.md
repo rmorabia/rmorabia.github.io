@@ -63,4 +63,4 @@ If anything, the fundamentals are more important now than ever before. Get good 
 
 I will be trying to do that more in 2025, starting with the first half of the year devoted to working via test-driven development. 
 
-I am actually curious this time if anyone is reading this, please do send me an email and let me know how your usage of LLM tools have been. I feel they're overhyped even by real surveys (like in the Pragmatic Engineer newsletter).
+I am actually curious this time if anyone is reading this, please do send me an email and let me know how your usage of LLM tools has been. I feel they're overhyped even by real surveys (like in the Pragmatic Engineer newsletter).
