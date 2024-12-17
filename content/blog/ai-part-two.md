@@ -9,7 +9,7 @@ I've found it generally disappointing, but I've also gotten better at it and hav
 
 Here's my update, and maybe my final call on AI for now:
 
-1. Fancy Autocomplete / Cursor
+## 1. Fancy Autocomplete / Cursor
 
 I was not able to get access to Cursor. My company discontinued taking the pilot out company-wide once Copilot integrated Claude 3.5 Sonnet into its chat window.
 
@@ -19,7 +19,7 @@ I now like to ask the chat window to refactor my code and then compare and contr
 
 **Final Verdict:** Copilot is still fancy autocomplete, but also a good code reviewer. 
 
-2. StackOverflow Replacement
+## 2. StackOverflow Replacement
 
 I've updated my ChatGPT model to 4 and even o1. It's mostly useless and needlessly verbose about looking stuff up or asking why X code is behaving in this way. It is sometimes useful if I keep going and going, but by the nature of how it works, it's always agreeing with me. StackOverflow is still the best source of information, which is a pretty big issue because the site is dying. 
 
@@ -31,7 +31,7 @@ It's also worth noting that there's now a Copilot chat that is indexing my organ
 
 **Final Verdict:** Stick to StackOverflow. 
 
-3. Tests Writer
+## 3. Tests Writer
 
 This is basically the same. Write the boilerplate and the first test. It'll fill in the rest.
 
@@ -43,7 +43,7 @@ I also find it generally useful for debugging issues with tests. It's such a con
 
 **Final Verdict:** It's actually the reason I am good at writing tests now. This remains huge.
 
-4. Rubber Duck / Bug Catcher
+## 4. Rubber Duck / Bug Catcher
 
 There's actually one interesting thing it's been hit and miss at -- parenthesis bugs. Sometimes, it works beautifully. Sometimes, it doesn't. Still, these are such a big, frequent pain for me that even the sometimes is useful. The same goes for other typo-induced bugs. I believe this is newly good with Sonnet 3.5 or ChatGPT 4o. 
 
