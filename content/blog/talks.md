@@ -9,14 +9,14 @@ I've been keeping a daily practice of watching one talk during work, usually dur
 
 Here are the talks that I've found very good and interesting thus far. Keep in mind this is heavily filtered! This will also be updated to whatever date the published date says.
 
-* [Bun, Deno, Node.js? Recreating a JavaScript runtime from Scratch - Erick Wendel - NDC Oslo 2023](https://www.youtube.com/watch?v=uNGDW3snVyA)
+## [Bun, Deno, Node.js? Recreating a JavaScript runtime from Scratch - Erick Wendel - NDC Oslo 2023](https://www.youtube.com/watch?v=uNGDW3snVyA)
 
 Pretty good talk that goes over Node internals. How does it work? What's it actually doing?
 
-* [How to fall in love with TDD - Gui Ferreira - NDC Oslo 2024](https://www.youtube.com/watch?v=vXnTMjMe5Eg)
+## [How to fall in love with TDD - Gui Ferreira - NDC Oslo 2024](https://www.youtube.com/watch?v=vXnTMjMe5Eg)
 
 Finally made me *get* TDD. I'm going to try it based on notes for this talk, actually.
 
-* [The Past, Present, and Future of Cross-Site/Cross-Origin Request Forgery - Philippe De Ryck](https://www.youtube.com/watch?v=9ZimlztLa1g)
+## [The Past, Present, and Future of Cross-Site/Cross-Origin Request Forgery - Philippe De Ryck](https://www.youtube.com/watch?v=9ZimlztLa1g)
 
 Finally made me get CORS. More interesting than useful for my work.
