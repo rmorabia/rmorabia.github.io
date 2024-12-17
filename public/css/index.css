@@ -1,20 +1,7 @@
 /* Defaults */
 :root {
-	--font-family: Courier, Consolas,
-		Menlo,
-		Monaco,
-		Andale Mono WT,
-		Andale Mono,
-		Lucida Console,
-		Lucida Sans Typewriter,
-		DejaVu Sans Mono,
-		Bitstream Vera Sans Mono,
-		Liberation Mono,
-		Nimbus Mono L,
-		Courier New,
-		Courier,
-		monospace;
-	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+	--font-family: Inter, Helveltica, Arial;
+	--font-family-monospace: Courier, Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 }
 
 /* Theme colors */
