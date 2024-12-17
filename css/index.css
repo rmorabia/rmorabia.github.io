@@ -74,6 +74,10 @@ p {
 	line-height: 1.5;
 }
 
+ol {
+	padding-left: 0px;
+}
+
 li {
 	line-height: 1.5;
 }
