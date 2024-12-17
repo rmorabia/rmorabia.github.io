@@ -11,7 +11,7 @@ However, my company (particularly my CTO) is fairly bullish on AI so we've had a
 
 I've been using Github Copilot with a standard configuration within VS Code for 4 months now, and this is where I'm at right now with it:
 
-1. Fancy Autocomplete 
+### 1. Fancy Autocomplete 
 
 It outputs something useful for me ...1% of the time? 2% at most.
 
@@ -21,13 +21,13 @@ For example, I have to set up Redux dispatching in the imports (Line 1-10), righ
 
 I will probably accept the inline autocomplete more often that 1-2% of the time just because it'll write a tiny bit of boilerplate for me (eg. setting up a function, but the function is entirely wrong) and then I will slowly use my mouse to rewrite everything in the function. 
 
-2. StackOverflow Replacement
+### 2. StackOverflow Replacement
 
 I haven't found this to be true at all. It hallucinates way too much and doesn't have any sense of *conciseness*. Asking Copilot Chat to tell me how to use a Lodash function makes it write weird slow code in my file instead of just giving me a very quick 2-line example with context, which is again, what I would expect.
 
 This may work better when using ChatGPT (which I do have access to as well), however, the friction for opening up the web app and adding the necessary context takes SO long in a web browser.
 
-3. Tests Writer
+### 3. Tests Writer
 
 This is where it excels, but in a very limited fashion as a front-end engineer. Basically all utility files have it output near perfect tests due to extremely controlled inputs and outputs.
 
@@ -37,7 +37,7 @@ However, tests are still so repetitive to write that I still find it quite helpf
 
 It's kind of surprising I have to manually write the boilerplate, right? It's extremely stuck to very basic testing infrastructures and will create entirely incorrect mocks, etc.. that simply do not run unless I manually put the correct style of tests in the file. 
 
-4. Bug Finder / Rubber Ducker
+### 4. Bug Finder / Rubber Ducker
 
 This probably eludes me the most. It's so off base all of the time. It seems to always recommend writing code that doesn't fit at all with my context. An example of this is I'll have some failing code, and when I suggest it fixes it, it will say, "You are using the wrong library! Use this other library instead! It'll work!" No, it won't, ChatGPT... No, it won't.
 
@@ -49,13 +49,13 @@ I think this is the hardest issue to fix, this would be such an immense improvem
 
 I want to really try to use AI more. I've been reading a lot and I think a lot of my gripes with these 4 areas can be slightly improved. Here's my plan:
 
-1. Switch to Cursor
+### 1. Switch to Cursor
 
 Cursor supports multi-line autocomplete, you can hit tab and it'll take you to the next place in the code it thinks you'd want to add a line to. If I get 1-2% rates of acceptable code, BUT it navigates me to relevant areas, that's just a pure speed of execution improvement.
 
 People also seem to be more impressed with Cursor's autocomplete suggestions (Claude 3.5 Sonnet is supposed to be the first really significant step up since ChatGPT 3), but I'm holding out on skepticism there.
 
-2. Get a ChatGPT API token and use that in another interface
+### 2. Get a ChatGPT API token and use that in another interface
 
 Copilot Chat is atrocious, the context doesn't help at all. What I would like to do is have a very convenient way to ask ChatGPT questions and add just the appropriate context, without having the copy/paste that context in.
 
@@ -63,11 +63,11 @@ I see two options for this: ChatGPT in the terminal, or creating my own little w
 
 Considering I am a front-end developer, it's probably the latter. But yeah, something that doesn't require login, that's just always pinned very easily much like Google is.
 
-3. Continue writing tests
+### 3. Continue writing tests
 
 We'll see if Cursor is any better at this, but I honestly don't mind my flow right now for testing.
 
-4. Rubber Duck with a better model
+### 4. Rubber Duck with a better model
 
 I've been using Copilot Chat and ChatGPT 3.5 to rubber duck. It turns out I have access to ChatGPT 4 and 4o. Combine this with the custom usage in a more dev-friendly interface, and it might actually be mildly pleasant to use. 
 
