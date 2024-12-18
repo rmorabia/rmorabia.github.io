@@ -8,14 +8,14 @@
 :root {
 	--color-gray-20: #e0e0e0;
 	--color-gray-50: #C0C0C0;
-	--color-gray-90: #333;
+	--color-gray-90: #3e372d;
 
 	--background-color: #f6ebdf;
 
 	--text-color: var(--color-gray-90);
-	--text-color-link: #082840;
-	--text-color-link-active: #1cb933;
-	--text-color-link-visited: #17050F;
+	--text-color-link: var(--color-gray-90);
+	--text-color-link-active: #00917b;
+	--text-color-link-visited: var(--color-gray-90);
 
 	--syntax-tab-size: 2;
 }
