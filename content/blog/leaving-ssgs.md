@@ -1,6 +1,6 @@
 ---
 title: "Leaving Static-Site Generators"
-date: "01-07-2025"
+date: "2025-01-07"
 ---
 
 I recently redid rmorabia.com using an static-site generator -- [11ty](https://11ty.dev). For the first time in a decade of blogging using SSGs, I was genuinely exhausted of learning the "hot new thing." I set up my 11ty blog within a day, and find the process of writing and changing things much easier than my old blog using Gatsby (a bloated mess, imo, which I only used because it was JS-native).
