@@ -4,12 +4,32 @@
 	<subtitle>...and the rest is rust and stardust.</subtitle>
 	<link href="https://rmorabia.com/feed.xml" rel="self"/>
 	<link href="https://rmorabia.com/"/>
-	<updated>2025-01-07T00:00:00Z</updated>
+	<updated>2025-01-08T00:00:00Z</updated>
 	<id>https://rmorabia.com/</id>
 	<author>
 		<name>Radhika Morabia</name>
 		<email>hi@rmorabia.com</email>
 	</author>
+	
+	<entry>
+		<title>Open Source Project Idea: Visual Studio Code Extension that renders the DOM output of Jest and React Testing Library</title>
+		<link href="https://rmorabia.com/blog/rtl-output/"/>
+		<updated>2025-01-08T00:00:00Z</updated>
+		<id>https://rmorabia.com/blog/rtl-output/</id>
+		<content type="html">&lt;p&gt;Unfortunately, I got an actually useful open source project idea at work today. Because ideas matter more than execution, I have to write this down publically and think about it.&lt;/p&gt;
+&lt;p&gt;I encountered an issue in the malaise of afternoon with RTL, as I always seem to. This has become a bigger headache ever since I started trying to do all of my tickets using TDD. My &amp;quot;tests&amp;quot; are usually never wrong, it&#39;s always the setup of dependencies and mismatched expectations of what is actually rendering. I &lt;a href=&quot;https://rmorabia.com/blog/integration-testing/&quot;&gt;prefer integration tests&lt;/a&gt;, so I would really like to avoid mocking prematurely.&lt;/p&gt;
+&lt;p&gt;It would be &lt;em&gt;really&lt;/em&gt; useful to see a preview of what the DOM output is. Jest debug is quite helpful, but doesn&#39;t quite fulfill the need.&lt;/p&gt;
+&lt;p&gt;There is a &lt;a href=&quot;https://jest-preview.com&quot;&gt;project that already does this&lt;/a&gt;, but has been abandoned, and doesn&#39;t quite have the feature set I would like, which is namely:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A VS Code extension so there is no need to install an npm package in my corporate project, project agnostic&lt;/li&gt;
+&lt;li&gt;Uses a browser inside the code editor just like the &amp;quot;Live Preview&amp;quot; extension (VS Code supports this with &amp;quot;Simple Browser&amp;quot;)&lt;/li&gt;
+&lt;li&gt;Process the DOM that RTL is seeing and outputting on failure&lt;/li&gt;
+&lt;li&gt;Use some sort of &amp;quot;debug&amp;quot; function to pause and continue at certain points, like how Redux actions work, a &amp;quot;timeline&amp;quot; of sorts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That&#39;s ...about it. The last point is optional, the first 3 would be great.&lt;/p&gt;
+&lt;p&gt;Perhaps I will make this. Perhaps I will not. If I do, I&#39;ll blog about my progress here. I&#39;d love some name ideas, in the meantime.&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Leaving Static-Site Generators</title>
