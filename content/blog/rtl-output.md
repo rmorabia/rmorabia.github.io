@@ -3,7 +3,7 @@ title: "Open Source Project Idea: Visual Studio Code Extension that renders the 
 date: "2025-01-08"
 ---
 
-Unfortunately, I got an actually useful open source project idea at work today. Because ideas matter more than execution, I have to write this down publically and think about it.
+Unfortunately, I got an actually useful open source project idea at work today. Because ideas mean nothing without execution, I have to write this down publically and think about it.
 
 I encountered an issue in the malaise of afternoon with RTL, as I always seem to. This has become a bigger headache ever since I started trying to do all of my tickets using TDD. My "tests" are usually never wrong, it's always the setup of dependencies and mismatched expectations of what is actually rendering. I [prefer integration tests](https://rmorabia.com/blog/integration-testing/), so I would really like to avoid mocking prematurely.
 
