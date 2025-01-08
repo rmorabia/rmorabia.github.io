@@ -16,7 +16,7 @@
 		<link href="https://rmorabia.com/blog/rtl-output/"/>
 		<updated>2025-01-08T00:00:00Z</updated>
 		<id>https://rmorabia.com/blog/rtl-output/</id>
-		<content type="html">&lt;p&gt;Unfortunately, I got an actually useful open source project idea at work today. Because ideas matter more than execution, I have to write this down publically and think about it.&lt;/p&gt;
+		<content type="html">&lt;p&gt;Unfortunately, I got an actually useful open source project idea at work today. Because ideas mean nothing without execution, I have to write this down publically and think about it.&lt;/p&gt;
 &lt;p&gt;I encountered an issue in the malaise of afternoon with RTL, as I always seem to. This has become a bigger headache ever since I started trying to do all of my tickets using TDD. My &amp;quot;tests&amp;quot; are usually never wrong, it&#39;s always the setup of dependencies and mismatched expectations of what is actually rendering. I &lt;a href=&quot;https://rmorabia.com/blog/integration-testing/&quot;&gt;prefer integration tests&lt;/a&gt;, so I would really like to avoid mocking prematurely.&lt;/p&gt;
 &lt;p&gt;It would be &lt;em&gt;really&lt;/em&gt; useful to see a preview of what the DOM output is. Jest debug is quite helpful, but doesn&#39;t quite fulfill the need.&lt;/p&gt;
 &lt;p&gt;There is a &lt;a href=&quot;https://jest-preview.com&quot;&gt;project that already does this&lt;/a&gt;, but has been abandoned, and doesn&#39;t quite have the feature set I would like, which is namely:&lt;/p&gt;
