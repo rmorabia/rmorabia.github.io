@@ -1,6 +1,6 @@
 ---
 title: "Talks I Like"
-date: "2024-12-16"
+date: "2025-01-13"
 ---
 
 I've been keeping a daily practice of watching one talk during work, usually during lunch break, because I believe they are the best way for corporate-focused engineers to learn new things now. Blogs are too cutting edge, and books are too bloated to allow for a variety of inputs. Talks let me learn things in a low stakes way even from disciplines I'm not necessarily a part of.
@@ -20,3 +20,7 @@ Finally made me *get* TDD. I'm going to try it based on notes for this talk, act
 ## [The Past, Present, and Future of Cross-Site/Cross-Origin Request Forgery - Philippe De Ryck](https://www.youtube.com/watch?v=9ZimlztLa1g)
 
 Finally made me get CORS. More interesting than useful for my work.
+
+## [Naming is Hard: Let's Do Better - Kate Gregory - NDC TechTown 2024](https://www.youtube.com/watch?v=aiy5TrU-Hwc)
+
+I thought I was good at naming until I saw this talk. It feels like the kind of thing that would need to be revisited every year to refresh on your new mistakes.
