@@ -32,11 +32,6 @@
 	</url>
 	
 	<url>
-		<loc>https://rmorabia.com/blog/talks/</loc>
-		<lastmod>2024-12-16</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://rmorabia.com/blog/leaving-ssgs/</loc>
 		<lastmod>2025-01-07</lastmod>
 	</url>
@@ -47,32 +42,37 @@
 	</url>
 	
 	<url>
+		<loc>https://rmorabia.com/blog/talks/</loc>
+		<lastmod>2025-01-13</lastmod>
+	</url>
+	
+	<url>
 		<loc>https://rmorabia.com/about/</loc>
-		<lastmod>2025-01-08</lastmod>
+		<lastmod>2025-01-13</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://rmorabia.com/</loc>
-		<lastmod>2025-01-08</lastmod>
+		<lastmod>2025-01-13</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://rmorabia.com/resume/</loc>
-		<lastmod>2025-01-08</lastmod>
+		<lastmod>2025-01-13</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://rmorabia.com/rss/</loc>
-		<lastmod>2025-01-08</lastmod>
+		<lastmod>2025-01-13</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://rmorabia.com/tags/</loc>
-		<lastmod>2025-01-08</lastmod>
+		<lastmod>2025-01-13</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://rmorabia.com/tags/redirects/</loc>
-		<lastmod>2025-01-08</lastmod>
+		<lastmod>2025-01-13</lastmod>
 	</url>
 </urlset>
