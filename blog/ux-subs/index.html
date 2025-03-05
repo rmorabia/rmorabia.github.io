@@ -202,12 +202,11 @@ pre[class*="language-diff-"] {
 @charset "UTF-8";
 
 /* Import ET Book styles
-   adapted from https://github.com/edwardtufte/public/et-bookblob/gh-pages/et-book.css */
+   adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css */
 
 @font-face {
 	font-family: "et-book";
-	src: url("public/public/et-booket-book-roman-line-figures/et-book-roman-line-figures.eot");
-	src: url("public/public/et-booket-book-roman-line-figures/et-book-roman-line-figures.eot?#iefix") format("embedded-opentype"), url("public/et-booket-book-roman-line-figures/et-book-roman-line-figures.woff") format("woff"), url("public/et-booket-book-roman-line-figures/et-book-roman-line-figures.ttf") format("truetype"), url("public/et-booket-book-roman-line-figures/et-book-roman-line-figures.svg#etbookromanosf") format("svg");
+	src: url("et-book/et-book-bold-line-figures.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
@@ -215,8 +214,7 @@ pre[class*="language-diff-"] {
 
 @font-face {
 	font-family: "et-book";
-	src: url("public/et-booket-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot");
-	src: url("public/et-booket-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot?#iefix") format("embedded-opentype"), url("public/et-booket-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff") format("woff"), url("public/et-booket-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.ttf") format("truetype"), url("public/et-booket-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.svg#etbookromanosf") format("svg");
+	src: url("et-book/et-book-display-italic-old-style-figures.woff") format("woff");
 	font-weight: normal;
 	font-style: italic;
 	font-display: swap;
@@ -224,8 +222,7 @@ pre[class*="language-diff-"] {
 
 @font-face {
 	font-family: "et-book";
-	src: url("public/et-booket-book-bold-line-figures/et-book-bold-line-figures.eot");
-	src: url("public/et-booket-book-bold-line-figures/et-book-bold-line-figures.eot?#iefix") format("embedded-opentype"), url("public/et-booket-book-bold-line-figures/et-book-bold-line-figures.woff") format("woff"), url("public/et-booket-book-bold-line-figures/et-book-bold-line-figures.ttf") format("truetype"), url("public/et-booket-book-bold-line-figures/et-book-bold-line-figures.svg#etbookromanosf") format("svg");
+	src: url("et-book/et-book-bold-line-figures.woff") format("woff");
 	font-weight: bold;
 	font-style: normal;
 	font-display: swap;
@@ -233,8 +230,7 @@ pre[class*="language-diff-"] {
 
 @font-face {
 	font-family: "et-book-roman-old-style";
-	src: url("public/et-booket-book-roman-old-style-figures/et-book-roman-old-style-figures.eot");
-	src: url("public/et-booket-book-roman-old-style-figures/et-book-roman-old-style-figures.eot?#iefix") format("embedded-opentype"), url("public/et-booket-book-roman-old-style-figures/et-book-roman-old-style-figures.woff") format("woff"), url("public/et-booket-book-roman-old-style-figures/et-book-roman-old-style-figures.ttf") format("truetype"), url("public/et-booket-book-roman-old-style-figures/et-book-roman-old-style-figures.svg#etbookromanosf") format("svg");
+	src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
@@ -245,13 +241,6 @@ pre[class*="language-diff-"] {
 	--color-gray-20: #e0e0e0;
 	--color-gray-50: #C0C0C0;
 	--color-gray-90: #3e372d;
-
-	--background-color: #f6ebdf;
-
-	--text-color: var(--color-gray-90);
-	--text-color-link: var(--color-gray-90);
-	--text-color-link-active: #00917b;
-	--text-color-link-visited: var(--color-gray-90);
 
 	--syntax-tab-size: 2;
 }
@@ -695,6 +684,8 @@ div.table-wrapper {
 code,
 pre>code {
 	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	font-size: 1.0rem;
+	line-height: 1.42;
 	-webkit-text-size-adjust: 100%;
 	/* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
 }
@@ -787,7 +778,9 @@ table th {
 
 @media (max-width: 760px) {
 	body {
-		width: 90%;
+		width: 84%;
+		padding-left: 8%;
+		padding-right: 8%;
 	}
 
 	hr,
@@ -844,7 +837,6 @@ table th {
 		clear: both;
 		width: 95%;
 		margin: 1rem 2.5%;
-		vertical-align: baseline;
 		position: relative;
 	}
 
@@ -1032,6 +1024,6 @@ THIS WILL TAKE A WHILE<span class="token punctuation">.</span> Once it <span cla
 
 		<footer></footer>
 
-		<!-- This page `/blog/ux-subs/` was built on 2025-03-05T23:14:39.083Z -->
+		<!-- This page `/blog/ux-subs/` was built on 2025-03-05T23:27:07.831Z -->
 	</body>
 </html>
