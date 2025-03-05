@@ -4,8 +4,6 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
-<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
-
 {% set postslist = collections.posts %}
 {% include "postslist.njk" %}
 

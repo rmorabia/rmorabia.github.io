@@ -290,7 +290,7 @@ h1 {
 	font-weight: 400;
 	margin-top: 4rem;
 	margin-bottom: 1.5rem;
-	font-size: 3.2rem;
+	font-size: 2.7rem;
 	line-height: 1.5;
 }
 
@@ -299,14 +299,14 @@ h2 {
 	font-weight: 400;
 	margin-top: 2.1rem;
 	margin-bottom: 1.4rem;
-	font-size: 2.2rem;
+	font-size: 1.9rem;
 	line-height: 1.5;
 }
 
 h3 {
 	font-style: italic;
 	font-weight: 400;
-	font-size: 1.7rem;
+	font-size: 1.6rem;
 	margin-top: 2rem;
 	margin-bottom: 1.4rem;
 	line-height: 1.5;
@@ -864,6 +864,65 @@ table th {
 	img {
 		width: 100%;
 	}
+}
+
+.year-heading {
+	font-style: normal;
+	font-size: 1.75rem;
+	margin-top: 2rem;
+	flex-shrink: 0;
+}
+
+.year-header {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+}
+
+.year-divider {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #928374;
+	margin: 1em 0;
+	padding: 0;
+	width: 100%;
+	margin: 0;
+	flex-grow: 1;
+}
+
+.post-entry {
+	display: flex;
+	margin-bottom: 1.5rem;
+	align-items: baseline;
+}
+
+.post-date {
+	flex: 0 0 100px;
+	text-align: right;
+	padding-right: 1.5rem;
+	line-height: 1.2;
+	font-size: 1.4rem;
+	color: #665c54;
+	white-space: nowrap;
+}
+
+.post-content {
+	flex: 1;
+}
+
+.post-title {
+	font-style: normal;
+	margin: 0 0 0.25rem 0;
+	line-height: 1.2;
+}
+
+.post-title a {
+	text-decoration: none;
+}
+
+.post-title a:hover {
+	text-decoration: underline;
 }</style>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -895,53 +954,53 @@ table th {
 
 <p>All of my friends know I only really did one impressive thing last year: I built an AI subtitle generator that will take any video or audio file (usually a movie), and output a subtitle file you can drop in with the movie. That's existed for years, but the big change here is that a level of progress had been pushed: Subtitles were finally vaguely sorta kinda ...if you squint... usable for movies in other languages.</p>
 <p>It took me 2 or 3 hours, and the entire code can be pasted below:</p>
-<pre class="language-py" tabindex="0"><code class="language-py"><span class="highlight-line"> <span class="token comment"># @title Choose your language and press play to the side</span></span>
-<span class="highlight-line"><span class="token keyword">from</span> google<span class="token punctuation">.</span>colab <span class="token keyword">import</span> drive</span>
-<span class="highlight-line">drive<span class="token punctuation">.</span>mount<span class="token punctuation">(</span><span class="token string">'/content/drive'</span><span class="token punctuation">)</span></span>
-<span class="highlight-line"></span>
-<span class="highlight-line"><span class="token keyword">from</span> google<span class="token punctuation">.</span>colab <span class="token keyword">import</span> files</span>
-<span class="highlight-line">uploaded <span class="token operator">=</span> files<span class="token punctuation">.</span>upload<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
-<span class="highlight-line">filename <span class="token operator">=</span> <span class="token builtin">next</span><span class="token punctuation">(</span><span class="token builtin">iter</span><span class="token punctuation">(</span>uploaded<span class="token punctuation">)</span><span class="token punctuation">)</span></span>
-<span class="highlight-line"></span>
-<span class="highlight-line">!pip install git<span class="token operator">+</span>https<span class="token punctuation">:</span><span class="token operator">//</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>openai<span class="token operator">/</span>whisper<span class="token punctuation">.</span>git</span>
-<span class="highlight-line"></span>
-<span class="highlight-line">!sudo apt update <span class="token operator">&amp;</span><span class="token operator">&amp;</span> sudo apt install ffmpeg</span>
-<span class="highlight-line"></span>
-<span class="highlight-line">language <span class="token operator">=</span> <span class="token string">'Telugu'</span> <span class="token comment"># @param ["Hindi", "Tamil", "Telugu", "Malayalam", "Punjabi", "Kannada", "Gujarati", "Bengali", "French", "Japanese", "Korean", "Cantonese", "Spanish", "Portuguese"]</span></span>
-<span class="highlight-line"></span>
-<span class="highlight-line">!ffmpeg <span class="token operator">-</span>i $filename subs<span class="token punctuation">.</span>mp3</span>
-<span class="highlight-line">!whisper subs<span class="token punctuation">.</span>mp3 <span class="token operator">-</span><span class="token operator">-</span>task translate <span class="token operator">-</span><span class="token operator">-</span>model large <span class="token operator">-</span><span class="token operator">-</span>language $language <span class="token operator">-</span><span class="token operator">-</span>output_dir <span class="token string">"/content/drive/My Drive/Subtitles"</span></span></code></pre>
+<pre class="language-py" tabindex="0"><code class="language-py"> <span class="token comment"># @title Choose your language and press play to the side</span>
+<span class="token keyword">from</span> google<span class="token punctuation">.</span>colab <span class="token keyword">import</span> drive
+drive<span class="token punctuation">.</span>mount<span class="token punctuation">(</span><span class="token string">'/content/drive'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">from</span> google<span class="token punctuation">.</span>colab <span class="token keyword">import</span> files
+uploaded <span class="token operator">=</span> files<span class="token punctuation">.</span>upload<span class="token punctuation">(</span><span class="token punctuation">)</span>
+filename <span class="token operator">=</span> <span class="token builtin">next</span><span class="token punctuation">(</span><span class="token builtin">iter</span><span class="token punctuation">(</span>uploaded<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+!pip install git<span class="token operator">+</span>https<span class="token punctuation">:</span><span class="token operator">//</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>openai<span class="token operator">/</span>whisper<span class="token punctuation">.</span>git
+
+!sudo apt update <span class="token operator">&amp;</span><span class="token operator">&amp;</span> sudo apt install ffmpeg
+
+language <span class="token operator">=</span> <span class="token string">'Telugu'</span> <span class="token comment"># @param ["Hindi", "Tamil", "Telugu", "Malayalam", "Punjabi", "Kannada", "Gujarati", "Bengali", "French", "Japanese", "Korean", "Cantonese", "Spanish", "Portuguese"]</span>
+
+!ffmpeg <span class="token operator">-</span>i $filename subs<span class="token punctuation">.</span>mp3
+!whisper subs<span class="token punctuation">.</span>mp3 <span class="token operator">-</span><span class="token operator">-</span>task translate <span class="token operator">-</span><span class="token operator">-</span>model large <span class="token operator">-</span><span class="token operator">-</span>language $language <span class="token operator">-</span><span class="token operator">-</span>output_dir <span class="token string">"/content/drive/My Drive/Subtitles"</span></code></pre>
 <p>That's right. It's just 15 lines of Python that wraps around OpenAI's Whisper and uses pre-existing tools using Google Colab's Jupyter notebook system.</p>
 <p>To me, it was an architectural wonder that I could clumsily use a fairly accessible system to do huge amounts of computing for personal gain. I thought everyone would be on board with being able to use this magical tool, because all they really needed was a Google account and some patience.</p>
 <p>As always happens in engineers doing UX, I was very, very wrong.</p>
 <p>Let's go back to v1 of this app:</p>
-<pre class="language-py" tabindex="0"><code class="language-py"><span class="highlight-line"><span class="token comment"># Step One: Install Requirements</span></span>
-<span class="highlight-line">!pip install git<span class="token operator">+</span>https<span class="token punctuation">:</span><span class="token operator">//</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>openai<span class="token operator">/</span>whisper<span class="token punctuation">.</span>git</span>
-<span class="highlight-line"></span>
-<span class="highlight-line">!sudo apt update <span class="token operator">&amp;</span><span class="token operator">&amp;</span> sudo apt install ffmpeg</span>
-<span class="highlight-line"></span>
-<span class="highlight-line"><span class="token keyword">from</span> google<span class="token punctuation">.</span>colab <span class="token keyword">import</span> drive</span>
-<span class="highlight-line">drive<span class="token punctuation">.</span>mount<span class="token punctuation">(</span><span class="token string">'/content/drive'</span><span class="token punctuation">)</span></span>
-<span class="highlight-line"></span>
-<span class="highlight-line"><span class="token comment"># Step Two: Upload Audio File</span></span>
-<span class="highlight-line"></span>
-<span class="highlight-line">If you need to get an <span class="token punctuation">.</span>mp3 <span class="token keyword">from</span> a video <span class="token builtin">file</span><span class="token punctuation">,</span> you can use VLC Media Player to do so using this tutorial <span class="token punctuation">[</span>here<span class="token punctuation">]</span><span class="token punctuation">(</span>https<span class="token punctuation">:</span><span class="token operator">//</span>researchguides<span class="token punctuation">.</span><span class="token keyword">case</span><span class="token punctuation">.</span>edu<span class="token operator">/</span>c<span class="token punctuation">.</span>php?g<span class="token operator">=</span><span class="token number">1286426</span><span class="token punctuation">)</span><span class="token punctuation">.</span></span>
-<span class="highlight-line"></span>
-<span class="highlight-line">Once you have your <span class="token builtin">file</span><span class="token punctuation">,</span> <span class="token builtin">open</span> the <span class="token builtin">file</span> folder on the left<span class="token operator">-</span>hand corner of the page<span class="token punctuation">.</span> Drag the <span class="token punctuation">.</span>mp3 you would like to transcribe into the <span class="token string">"Files"</span> section<span class="token punctuation">.</span></span>
-<span class="highlight-line"></span>
-<span class="highlight-line">Give it a minute<span class="token punctuation">,</span> there<span class="token string">'s a blue circle that indicates it'</span>s uploading<span class="token punctuation">.</span> Since it<span class="token string">'s as long as a movie, it'</span>ll probably take a few minutes<span class="token punctuation">.</span> Stay on this page <span class="token keyword">and</span> wait until it's done<span class="token punctuation">.</span></span>
-<span class="highlight-line"></span>
-<span class="highlight-line">This will upload the audio to this page<span class="token punctuation">.</span> Here<span class="token string">'s what it looks like once you'</span>ve uploaded a <span class="token builtin">file</span><span class="token punctuation">:</span></span>
-<span class="highlight-line"></span>
-<span class="highlight-line"><span class="token comment"># Step Three: Translate</span></span>
-<span class="highlight-line"></span>
-<span class="highlight-line">To translate an <span class="token punctuation">.</span>mp3<span class="token punctuation">,</span> simply copy <span class="token keyword">and</span> paste the title of your <span class="token punctuation">.</span>mp3 <span class="token builtin">file</span> into the command line below <span class="token keyword">and</span> run the cell<span class="token punctuation">.</span> Remember to include the <span class="token punctuation">.</span>mp3 at the end<span class="token punctuation">.</span></span>
-<span class="highlight-line"></span>
-<span class="highlight-line">You can change the language <span class="token keyword">as</span> needed <span class="token keyword">in</span> the command line<span class="token punctuation">,</span> <span class="token keyword">and</span> English <span class="token keyword">is</span> the default output<span class="token punctuation">.</span></span>
-<span class="highlight-line"></span>
-<span class="highlight-line">THIS WILL TAKE A WHILE<span class="token punctuation">.</span> Once it <span class="token keyword">is</span> done<span class="token punctuation">,</span> click the Folder icon again<span class="token punctuation">.</span> Wala! There <span class="token keyword">is</span> your SRT<span class="token punctuation">.</span> Enjoy!!!</span>
-<span class="highlight-line"></span>
-<span class="highlight-line">!whisper <span class="token string">"jabardasth.mp3"</span> <span class="token operator">-</span><span class="token operator">-</span>task translate <span class="token operator">-</span><span class="token operator">-</span>model large <span class="token operator">-</span><span class="token operator">-</span>language Telugu <span class="token operator">-</span><span class="token operator">-</span>output_dir <span class="token string">"/content/drive/My Drive/Subtitles"</span></span></code></pre>
+<pre class="language-py" tabindex="0"><code class="language-py"><span class="token comment"># Step One: Install Requirements</span>
+!pip install git<span class="token operator">+</span>https<span class="token punctuation">:</span><span class="token operator">//</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>openai<span class="token operator">/</span>whisper<span class="token punctuation">.</span>git
+
+!sudo apt update <span class="token operator">&amp;</span><span class="token operator">&amp;</span> sudo apt install ffmpeg
+
+<span class="token keyword">from</span> google<span class="token punctuation">.</span>colab <span class="token keyword">import</span> drive
+drive<span class="token punctuation">.</span>mount<span class="token punctuation">(</span><span class="token string">'/content/drive'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Step Two: Upload Audio File</span>
+
+If you need to get an <span class="token punctuation">.</span>mp3 <span class="token keyword">from</span> a video <span class="token builtin">file</span><span class="token punctuation">,</span> you can use VLC Media Player to do so using this tutorial <span class="token punctuation">[</span>here<span class="token punctuation">]</span><span class="token punctuation">(</span>https<span class="token punctuation">:</span><span class="token operator">//</span>researchguides<span class="token punctuation">.</span><span class="token keyword">case</span><span class="token punctuation">.</span>edu<span class="token operator">/</span>c<span class="token punctuation">.</span>php?g<span class="token operator">=</span><span class="token number">1286426</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+
+Once you have your <span class="token builtin">file</span><span class="token punctuation">,</span> <span class="token builtin">open</span> the <span class="token builtin">file</span> folder on the left<span class="token operator">-</span>hand corner of the page<span class="token punctuation">.</span> Drag the <span class="token punctuation">.</span>mp3 you would like to transcribe into the <span class="token string">"Files"</span> section<span class="token punctuation">.</span>
+
+Give it a minute<span class="token punctuation">,</span> there<span class="token string">'s a blue circle that indicates it'</span>s uploading<span class="token punctuation">.</span> Since it<span class="token string">'s as long as a movie, it'</span>ll probably take a few minutes<span class="token punctuation">.</span> Stay on this page <span class="token keyword">and</span> wait until it's done<span class="token punctuation">.</span>
+
+This will upload the audio to this page<span class="token punctuation">.</span> Here<span class="token string">'s what it looks like once you'</span>ve uploaded a <span class="token builtin">file</span><span class="token punctuation">:</span>
+
+<span class="token comment"># Step Three: Translate</span>
+
+To translate an <span class="token punctuation">.</span>mp3<span class="token punctuation">,</span> simply copy <span class="token keyword">and</span> paste the title of your <span class="token punctuation">.</span>mp3 <span class="token builtin">file</span> into the command line below <span class="token keyword">and</span> run the cell<span class="token punctuation">.</span> Remember to include the <span class="token punctuation">.</span>mp3 at the end<span class="token punctuation">.</span>
+
+You can change the language <span class="token keyword">as</span> needed <span class="token keyword">in</span> the command line<span class="token punctuation">,</span> <span class="token keyword">and</span> English <span class="token keyword">is</span> the default output<span class="token punctuation">.</span>
+
+THIS WILL TAKE A WHILE<span class="token punctuation">.</span> Once it <span class="token keyword">is</span> done<span class="token punctuation">,</span> click the Folder icon again<span class="token punctuation">.</span> Wala! There <span class="token keyword">is</span> your SRT<span class="token punctuation">.</span> Enjoy!!!
+
+!whisper <span class="token string">"jabardasth.mp3"</span> <span class="token operator">-</span><span class="token operator">-</span>task translate <span class="token operator">-</span><span class="token operator">-</span>model large <span class="token operator">-</span><span class="token operator">-</span>language Telugu <span class="token operator">-</span><span class="token operator">-</span>output_dir <span class="token string">"/content/drive/My Drive/Subtitles"</span></code></pre>
 <p>As users tried the app, they got stuck at a myriad number of points:</p>
 <ul>
 <li>They wouldn't be clear on how to connect to a GPU using Colab.</li>
@@ -974,6 +1033,6 @@ table th {
 
 		<footer></footer>
 
-		<!-- This page `/blog/ux-subs/` was built on 2025-03-05T20:41:15.680Z -->
+		<!-- This page `/blog/ux-subs/` was built on 2025-03-05T22:05:45.552Z -->
 	</body>
 </html>
