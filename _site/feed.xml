@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="en">
-	<title>radhika&#39;s dev thoughts</title>
+	<title>Radhika Morabia</title>
 	<subtitle>...and the rest is rust and stardust.</subtitle>
 	<link href="https://rmorabia.com/feed.xml" rel="self"/>
 	<link href="https://rmorabia.com/"/>
-	<updated>2024-09-01T00:00:00Z</updated>
+	<updated>2025-01-13T00:00:00Z</updated>
 	<id>https://rmorabia.com/</id>
 	<author>
 		<name>Radhika Morabia</name>
@@ -12,11 +12,171 @@
 	</author>
 	
 	<entry>
-		<title>thoughts on the limits of front-end testing</title>
+		<title>Talks I Like</title>
+		<link href="https://rmorabia.com/blog/talks/"/>
+		<updated>2025-01-13T00:00:00Z</updated>
+		<id>https://rmorabia.com/blog/talks/</id>
+		<content type="html">&lt;p&gt;I&#39;ve been keeping a daily practice of watching one talk during work, usually during lunch break, because I believe they are the best way for corporate-focused engineers to learn new things now. Blogs are too cutting edge, and books are too bloated to allow for a variety of inputs. Talks let me learn things in a low stakes way even from disciplines I&#39;m not necessarily a part of.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://techtalksweekly.substack.com&quot;&gt;Tech Talks Weekly&lt;/a&gt; is how I get all my talks, by the way. Every week, they send a list of basically every talk that went live that week. I add them to my YouTube Watch Later. Then, I shuffle during work and usually watch on a slightly faster speed. If 10ish minutes have passed and there&#39;s no build up to anything seemingly useful or interesting (lots of infotainment out there), I move on.&lt;/p&gt;
+&lt;p&gt;Here are the talks that I&#39;ve found very good and interesting thus far. Keep in mind this is heavily filtered! This will also be updated to whatever date the published date says.&lt;/p&gt;
+&lt;h2 id=&quot;bun-deno-node-js-recreating-a-javascript-runtime-from-scratch-erick-wendel-ndc-oslo-2023&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=uNGDW3snVyA&quot;&gt;Bun, Deno, Node.js? Recreating a JavaScript runtime from Scratch - Erick Wendel - NDC Oslo 2023&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/talks/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Pretty good talk that goes over Node internals. How does it work? What&#39;s it actually doing?&lt;/p&gt;
+&lt;h2 id=&quot;how-to-fall-in-love-with-tdd-gui-ferreira-ndc-oslo-2024&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=vXnTMjMe5Eg&quot;&gt;How to fall in love with TDD - Gui Ferreira - NDC Oslo 2024&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/talks/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Finally made me &lt;em&gt;get&lt;/em&gt; TDD. I&#39;m going to try it based on notes for this talk, actually.&lt;/p&gt;
+&lt;h2 id=&quot;the-past-present-and-future-of-cross-site-cross-origin-request-forgery-philippe-de-ryck&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=9ZimlztLa1g&quot;&gt;The Past, Present, and Future of Cross-Site/Cross-Origin Request Forgery - Philippe De Ryck&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/talks/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Finally made me get CORS. More interesting than useful for my work.&lt;/p&gt;
+&lt;h2 id=&quot;naming-is-hard-let-s-do-better-kate-gregory-ndc-techtown-2024&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=aiy5TrU-Hwc&quot;&gt;Naming is Hard: Let&#39;s Do Better - Kate Gregory - NDC TechTown 2024&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/talks/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I thought I was good at naming until I saw this talk. It feels like the kind of thing that would need to be revisited every year to refresh on your new mistakes.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Open Source Project Idea: Visual Studio Code Extension that renders the DOM output of Jest and React Testing Library</title>
+		<link href="https://rmorabia.com/blog/rtl-output/"/>
+		<updated>2025-01-08T00:00:00Z</updated>
+		<id>https://rmorabia.com/blog/rtl-output/</id>
+		<content type="html">&lt;p&gt;Unfortunately, I got an actually useful open source project idea at work today. Because ideas mean nothing without execution, I have to write this down publically and think about it.&lt;/p&gt;
+&lt;p&gt;I encountered an issue in the malaise of afternoon with RTL, as I always seem to. This has become a bigger headache ever since I started trying to do all of my tickets using TDD. My &amp;quot;tests&amp;quot; are usually never wrong, it&#39;s always the setup of dependencies and mismatched expectations of what is actually rendering. I &lt;a href=&quot;https://rmorabia.com/blog/integration-testing/&quot;&gt;prefer integration tests&lt;/a&gt;, so I would really like to avoid mocking prematurely.&lt;/p&gt;
+&lt;p&gt;It would be &lt;em&gt;really&lt;/em&gt; useful to see a preview of what the DOM output is. Jest debug is quite helpful, but doesn&#39;t quite fulfill the need.&lt;/p&gt;
+&lt;p&gt;There is a &lt;a href=&quot;https://jest-preview.com&quot;&gt;project that already does this&lt;/a&gt;, but has been abandoned, and doesn&#39;t quite have the feature set I would like, which is namely:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A VS Code extension so there is no need to install an npm package in my corporate project, project agnostic&lt;/li&gt;
+&lt;li&gt;Uses a browser inside the code editor just like the &amp;quot;Live Preview&amp;quot; extension (VS Code supports this with &amp;quot;Simple Browser&amp;quot;)&lt;/li&gt;
+&lt;li&gt;Process the DOM that RTL is seeing and outputting on failure&lt;/li&gt;
+&lt;li&gt;Use some sort of &amp;quot;debug&amp;quot; function to pause and continue at certain points, like how Redux actions work, a &amp;quot;timeline&amp;quot; of sorts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That&#39;s ...about it. The last point is optional, the first 3 would be great.&lt;/p&gt;
+&lt;p&gt;Perhaps I will make this. Perhaps I will not. If I do, I&#39;ll blog about my progress here. I&#39;d love some name ideas, in the meantime.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Leaving Static-Site Generators</title>
+		<link href="https://rmorabia.com/blog/leaving-ssgs/"/>
+		<updated>2025-01-07T00:00:00Z</updated>
+		<id>https://rmorabia.com/blog/leaving-ssgs/</id>
+		<content type="html">&lt;p&gt;I recently redid rmorabia.com using an static-site generator -- &lt;a href=&quot;https://11ty.dev&quot;&gt;11ty&lt;/a&gt;. For the first time in a decade of blogging using SSGs, I was genuinely exhausted of learning the &amp;quot;hot new thing.&amp;quot; I set up my 11ty blog within a day, and find the process of writing and changing things much easier than my old blog using Gatsby (a bloated mess, imo, which I only used because it was JS-native).&lt;/p&gt;
+&lt;p&gt;But... then came time to redo my friend Kevin Carson&#39;s website, which I last did with Hugo in 2018. Hugo?! Go?! What was I thinking?&lt;/p&gt;
+&lt;p&gt;I thought about going back to good ol&#39; Jekyll, which probably works the best out of the box of any of these SSGs I&#39;ve ever used. I was browsing themes to build off of in Jekyll, and then within the theme README, I saw something curious I hadn&#39;t before... A copy of the theme using just HTML.&lt;/p&gt;
+&lt;p&gt;I immediately downloaded it and have been working on the site using raw HTML and CSS ever since. There is a single 100-line JavaScript file to scale the website properly when going mobile vs desktop, and some external scripts to FontAwesome and related things, but otherwise: it&#39;s hand-rolled. No AI was involved in this process either, which I find to be a mess to edit even though it technically types things faster than I do.&lt;/p&gt;
+&lt;p&gt;It is actually the easiest time I&#39;ve had building a website in a decade... It may even be easier than Wordpress. I had even forgotten how to &amp;quot;deploy&amp;quot; an HTML website onto a service like Netlify. But, it just worked, just like everything else with HTML.&lt;/p&gt;
+&lt;p&gt;I have no clue how it is from a performance standpoint. I would have to assume my 11ty blog is more compressed, but I think the only big files that wouldn&#39;t load even on the most 2G of connections for this website are the files and icons.&lt;/p&gt;
+&lt;p&gt;I&#39;ve been maintaining this website for 6 years at this point, and I think now that it&#39;s just raw HTML and CSS, I will have a much easier time the next six years maintainign it as Kevin writes more books and needs the details of the content changed.&lt;/p&gt;
+&lt;p&gt;I have no plans to use SSGs for anything but blogs anymore. We keep getting enticed by these fancy tools, but for long-term, decades of maintainability, nothing beats simplicity.&lt;/p&gt;
+&lt;p&gt;You can see the commits that just make sense &lt;a href=&quot;https://github.com/rmorabia/kevinacarson.org/pull/1&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;post-script&quot; tabindex=&quot;-1&quot;&gt;Post-script &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/leaving-ssgs/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Since I refused to use AI for this, I actually became curious about what the result of telling Claude Sonnet 3.5&#39;s Artifact mode to combine the existing content on Kevin&#39;s website would be with the theme that I chose for the 2024 version.&lt;/p&gt;
+&lt;p&gt;First, Claude would not allow me to upload either a GitHub zip or a full page screenshot since the site is over 8000 pixels long. I improvised, and I was expecting to get a sub-par lacking-in-details sort of thing that still matched the design I wanted to a tee.&lt;/p&gt;
+&lt;p&gt;As expected, AI isn&#39;t even good at these kinds of simple websites. I told it to match the design exactly and what I got instead is the most generic 2010 Bootstrap looking site. You can see that Claude Artifact &lt;a href=&quot;https://claude.site/artifacts/5ae82ba8-b9f0-4988-bb2e-8548b13d88a1&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Yeah, I&#39;ll stick to hand-rolling even my personal favors for friends.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Adventures in AI-Assisted Coding Part 2: Re-orienting</title>
+		<link href="https://rmorabia.com/blog/ai-part-two/"/>
+		<updated>2024-12-16T00:00:00Z</updated>
+		<id>https://rmorabia.com/blog/ai-part-two/</id>
+		<content type="html">&lt;p&gt;I have been trying to use AI as an initial entrypoint for everything over the past month or so -- from code generation to debugging to searching.&lt;/p&gt;
+&lt;p&gt;I&#39;ve found it generally disappointing, but I&#39;ve also gotten better at it and have started using it for a few more things.&lt;/p&gt;
+&lt;p&gt;Here&#39;s my update, and maybe my final call on AI for now:&lt;/p&gt;
+&lt;h2 id=&quot;1-fancy-autocomplete-cursor&quot; tabindex=&quot;-1&quot;&gt;1. Fancy Autocomplete / Cursor &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/ai-part-two/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I was not able to get access to Cursor. My company discontinued taking the pilot out company-wide once Copilot integrated Claude 3.5 Sonnet into its chat window.&lt;/p&gt;
+&lt;p&gt;I have to admit, the chat window has gotten marginally better due to do this and some other commands (@workspace seems to work more effectively now). It is now possible to generate something even mildly useful using the chat window and Sonnet. However, it&#39;s still quite slow and gets confused on itself after the initial prompt. It seems best to use this as an initial generator and then edit the code manually from there, although with the type of code I am writing (usually not new flows or endpoints), it&#39;s still faster and more accurate to write it myself.&lt;/p&gt;
+&lt;p&gt;I now like to ask the chat window to refactor my code and then compare and contrast my code to the generated version. It&#39;s quite often true that a mix of both is better. I beleive an overall code review is now integrated within Visual Studio Code, and I am beginning to use it, but thus far, I&#39;ve just been prompting a code block manually within the chat window like, &amp;quot;Rewrite this function to be more concise/readable/performant.&amp;quot; I will likely write an update post on the code review tool and the new debug tool soon, especially once my company gets off the full code review waitlist.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Final Verdict:&lt;/strong&gt; Copilot is still fancy autocomplete, but also a good code reviewer.&lt;/p&gt;
+&lt;h2 id=&quot;2-stackoverflow-replacement&quot; tabindex=&quot;-1&quot;&gt;2. StackOverflow Replacement &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/ai-part-two/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I&#39;ve updated my ChatGPT model to 4 and even o1. It&#39;s mostly useless and needlessly verbose about looking stuff up or asking why X code is behaving in this way. It is sometimes useful if I keep going and going, but by the nature of how it works, it&#39;s always agreeing with me. StackOverflow is still the best source of information, which is a pretty big issue because the site is dying.&lt;/p&gt;
+&lt;p&gt;Honestly, I feel a &lt;strong&gt;big takeaway from LLMs is you need to understand the internals of your language, frameworks, and libraries more than ever before&lt;/strong&gt;. I realize this statement runs quite counter to anything anyone else has been saying about LLMs, but I&#39;ve never doubted StackOverflow the way I&#39;ve doubted ChatGPT. (I know that&#39;s wrong, since StackOverflow is so very often wrong, but there&#39;s something about the multitude of slightly different questions and answers that makes filtering through to some sort of consensus fairly simple compared to the single truth ChatGPT presents itself as. As I said above, I feel that either subsequent prompting is completely useless, or I&#39;m very bad at prompting, so asking for alternate ideas never quite works the same as cross-referencing SO, docs, blog posts, and GitHub Issues.) Without the ability to have multiple sources of truth on the open web anymore, pure reference becomes a much more valuable skill, I think... You should be able to very quickly tell ChatGPT that that fact it just spouted is incorrect and re-prompt them with the ultimate source of truth of &lt;em&gt;your&lt;/em&gt; facts, and then tell them to debug or generate code based on that fact you know.&lt;/p&gt;
+&lt;p&gt;Does that make sense? It&#39;s weird and counterintuitive. We&#39;re at the end of the year for the learning budget, is it time for me to use the remainder on a hardcover copy of ECMAScript 2024.&lt;/p&gt;
+&lt;p&gt;It&#39;s also worth noting that there&#39;s now a Copilot chat that is indexing my organization&#39;s codebases. In theory, I should be able to ask it questions and find out stuff in other codebases. I have not found this useful at all for the back-end C# codebase. I still find highlighting a specific area of the code in VS Code and asking it to explain it to me useful, though. It&#39;s good at language interpretation when you are not worried about accuracy (which is an insane qualifier to make).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Final Verdict:&lt;/strong&gt; Stick to StackOverflow.&lt;/p&gt;
+&lt;h2 id=&quot;3-tests-writer&quot; tabindex=&quot;-1&quot;&gt;3. Tests Writer &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/ai-part-two/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This is basically the same. Write the boilerplate and the first test. It&#39;ll fill in the rest.&lt;/p&gt;
+&lt;p&gt;I&#39;m actually quite interested in TDD these days, which I believe is the next step for how much LLMs have taken over testing for me. They write a lot of tests, it&#39;s up to me to do the brain work to make sure that I am actually writing tests of worth.&lt;/p&gt;
+&lt;p&gt;With our without TDD, the real killer here is just the autocomplete. Tests have so many repetitive statements. Just write one and use the LLM to write the rest quite a bit faster.&lt;/p&gt;
+&lt;p&gt;I also find it generally useful for debugging issues with tests. It&#39;s such a controlled environment that it finally doesn&#39;t seem to get overwhelmed. This has been and continues to be the biggest game-changer here.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Final Verdict:&lt;/strong&gt; It&#39;s actually the reason I am good at writing tests now. This remains huge.&lt;/p&gt;
+&lt;h2 id=&quot;4-rubber-duck-bug-catcher&quot; tabindex=&quot;-1&quot;&gt;4. Rubber Duck / Bug Catcher &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/ai-part-two/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;There&#39;s actually one interesting thing it&#39;s been hit and miss at -- parenthesis bugs. Sometimes, it works beautifully. Sometimes, it doesn&#39;t. Still, these are such a big, frequent pain for me that even the sometimes is useful. The same goes for other typo-induced bugs. I believe this is newly good with Sonnet 3.5 or ChatGPT 4o.&lt;/p&gt;
+&lt;p&gt;Otherwise, for rubber ducking, I&#39;ve gotten more used to it, although I don&#39;t necessarily know if it&#39;s a good thing or a bad thing. It&#39;s just ...there, conveniently, although I don&#39;t know if it&#39;s doing anything. I am not confident either way that it&#39;s saving time or wasting time.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;At this point, I&#39;ve decided to remove the Chat window from my sidebar.&lt;/strong&gt; I still have the Chat prompt when I highlight code and press Cmd + I, but I think there are more productive ways to rubber duck (paper!), and I should go back to using it.&lt;/p&gt;
+&lt;p&gt;There&#39;s only been one instance where that Chat window was particularly helpful for me -- when I needed to generate a Linux command to go through a bunch of JSONs and delete two keys that would have different values each time. I don&#39;t have tasks like these very often, and I believe that the ChatGPT chat interface through a browser could also do this.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Final Verdict:&lt;/strong&gt; Stick to paper.&lt;/p&gt;
+&lt;p&gt;...&lt;/p&gt;
+&lt;p&gt;I&#39;ve now successfully been using these LLM tools for 5 months. There&#39;s been suggestions that 6 months is the necessary training time to get good at these new tools. I think I&#39;m about there. My final conclusions are that it&#39;s a game-changer for tests, interesting for code reviews and little syntax bugs, and near useless for everything else.&lt;/p&gt;
+&lt;p&gt;If anything, the fundamentals are more important now than ever before. Get good at reading code. Get good at reading docs. Get good at writing valuable tests.&lt;/p&gt;
+&lt;p&gt;I will be trying to do that more in 2025, starting with the first half of the year devoted to working via test-driven development.&lt;/p&gt;
+&lt;p&gt;I am actually curious this time if anyone is reading this, please do send me an email and let me know how your usage of LLM tools has been. I feel they&#39;re overhyped even by real surveys (like in the Pragmatic Engineer newsletter).&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Adventures in AI-Assisted Coding Part 1: The Journey So Far</title>
+		<link href="https://rmorabia.com/blog/ai-part-1/"/>
+		<updated>2024-10-29T00:00:00Z</updated>
+		<id>https://rmorabia.com/blog/ai-part-1/</id>
+		<content type="html">&lt;p&gt;I&#39;ve been reading and hearing more and more about AI-Assisted Programming getting to a point where it&#39;s actually making a marginal, but noticable productivity difference.&lt;/p&gt;
+&lt;p&gt;I work for a fairly corporate company with very well-established and decently unique codebase patterns, which has so far seemed at odds with where AI currently excels.&lt;/p&gt;
+&lt;p&gt;However, my company (particularly my CTO) is fairly bullish on AI so we&#39;ve had access to various AI tools for a while now.&lt;/p&gt;
+&lt;p&gt;I&#39;ve been using Github Copilot with a standard configuration within VS Code for 4 months now, and this is where I&#39;m at right now with it:&lt;/p&gt;
+&lt;h3 id=&quot;1-fancy-autocomplete&quot; tabindex=&quot;-1&quot;&gt;1. Fancy Autocomplete &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/ai-part-1/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;It outputs something useful for me ...1% of the time? 2% at most.&lt;/p&gt;
+&lt;p&gt;I&#39;m not a very agile user of IDEs. It&#39;s embarrassing to admit, but I basically use a mouse 90% of the time with my IDE. This makes inline autocomplete of quite limited use for me, since I am not usually writing files linearly from scratch. I spend most of my time modifying existing files.&lt;/p&gt;
+&lt;p&gt;For example, I have to set up Redux dispatching in the imports (Line 1-10), right after the &lt;code&gt;return&lt;/code&gt; (Line 100-110) and actually call the action on a click (Line 200-210). This is fairly rote code that honestly takes me a couple of minutes to write each time I have to do it, so you would think Copilot would be helpful here, but it just isn&#39;t good at adding code in multiple parts of a file. It doesn&#39;t really offer &amp;quot;diffing&amp;quot; or &amp;quot;step logic&amp;quot; in the way I would expect.&lt;/p&gt;
+&lt;p&gt;I will probably accept the inline autocomplete more often that 1-2% of the time just because it&#39;ll write a tiny bit of boilerplate for me (eg. setting up a function, but the function is entirely wrong) and then I will slowly use my mouse to rewrite everything in the function.&lt;/p&gt;
+&lt;h3 id=&quot;2-stackoverflow-replacement&quot; tabindex=&quot;-1&quot;&gt;2. StackOverflow Replacement &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/ai-part-1/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I haven&#39;t found this to be true at all. It hallucinates way too much and doesn&#39;t have any sense of &lt;em&gt;conciseness&lt;/em&gt;. Asking Copilot Chat to tell me how to use a Lodash function makes it write weird slow code in my file instead of just giving me a very quick 2-line example with context, which is again, what I would expect.&lt;/p&gt;
+&lt;p&gt;This may work better when using ChatGPT (which I do have access to as well), however, the friction for opening up the web app and adding the necessary context takes SO long in a web browser.&lt;/p&gt;
+&lt;h3 id=&quot;3-tests-writer&quot; tabindex=&quot;-1&quot;&gt;3. Tests Writer &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/ai-part-1/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This is where it excels, but in a very limited fashion as a front-end engineer. Basically all utility files have it output near perfect tests due to extremely controlled inputs and outputs.&lt;/p&gt;
+&lt;p&gt;But, as a front-end engineer, I am using Jest and React Testing Library, which requires references to text or IDs or other ways to label markup. It seems to hallucinate a LOT with this.&lt;/p&gt;
+&lt;p&gt;However, tests are still so repetitive to write that I still find it quite helpful for doing tests faster. My process so far is to 1) manually write the boilerplate 2) write the first test 3) write the it statement for every following test and tab autocomplete 4) edit the tests to ensure they&#39;re actually correct.&lt;/p&gt;
+&lt;p&gt;It&#39;s kind of surprising I have to manually write the boilerplate, right? It&#39;s extremely stuck to very basic testing infrastructures and will create entirely incorrect mocks, etc.. that simply do not run unless I manually put the correct style of tests in the file.&lt;/p&gt;
+&lt;h3 id=&quot;4-bug-finder-rubber-ducker&quot; tabindex=&quot;-1&quot;&gt;4. Bug Finder / Rubber Ducker &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/ai-part-1/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This probably eludes me the most. It&#39;s so off base all of the time. It seems to always recommend writing code that doesn&#39;t fit at all with my context. An example of this is I&#39;ll have some failing code, and when I suggest it fixes it, it will say, &amp;quot;You are using the wrong library! Use this other library instead! It&#39;ll work!&amp;quot; No, it won&#39;t, ChatGPT... No, it won&#39;t.&lt;/p&gt;
+&lt;p&gt;Worse, Copilot will just fix formatting errors. I really expect Copilot to be able to fix things like the parenthesis and brackets being the wrong number, but it really can&#39;t. This goes back to the LLMs can&#39;t do basic math thing.&lt;/p&gt;
+&lt;p&gt;I think this is the hardest issue to fix, this would be such an immense improvement on AI that I would understand the hype.&lt;/p&gt;
+&lt;h2 id=&quot;what-s-next&quot; tabindex=&quot;-1&quot;&gt;What&#39;s next? &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/ai-part-1/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I want to really try to use AI more. I&#39;ve been reading a lot and I think a lot of my gripes with these 4 areas can be slightly improved. Here&#39;s my plan:&lt;/p&gt;
+&lt;h3 id=&quot;1-switch-to-cursor&quot; tabindex=&quot;-1&quot;&gt;1. Switch to Cursor &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/ai-part-1/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Cursor supports multi-line autocomplete, you can hit tab and it&#39;ll take you to the next place in the code it thinks you&#39;d want to add a line to. If I get 1-2% rates of acceptable code, BUT it navigates me to relevant areas, that&#39;s just a pure speed of execution improvement.&lt;/p&gt;
+&lt;p&gt;People also seem to be more impressed with Cursor&#39;s autocomplete suggestions (Claude 3.5 Sonnet is supposed to be the first really significant step up since ChatGPT 3), but I&#39;m holding out on skepticism there.&lt;/p&gt;
+&lt;h3 id=&quot;2-get-a-chatgpt-api-token-and-use-that-in-another-interface&quot; tabindex=&quot;-1&quot;&gt;2. Get a ChatGPT API token and use that in another interface &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/ai-part-1/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Copilot Chat is atrocious, the context doesn&#39;t help at all. What I would like to do is have a very convenient way to ask ChatGPT questions and add just the appropriate context, without having the copy/paste that context in.&lt;/p&gt;
+&lt;p&gt;I see two options for this: ChatGPT in the terminal, or creating my own little web app to interface with ChatGPT with a file uploader.&lt;/p&gt;
+&lt;p&gt;Considering I am a front-end developer, it&#39;s probably the latter. But yeah, something that doesn&#39;t require login, that&#39;s just always pinned very easily much like Google is.&lt;/p&gt;
+&lt;h3 id=&quot;3-continue-writing-tests&quot; tabindex=&quot;-1&quot;&gt;3. Continue writing tests &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/ai-part-1/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;We&#39;ll see if Cursor is any better at this, but I honestly don&#39;t mind my flow right now for testing.&lt;/p&gt;
+&lt;h3 id=&quot;4-rubber-duck-with-a-better-model&quot; tabindex=&quot;-1&quot;&gt;4. Rubber Duck with a better model &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/ai-part-1/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I&#39;ve been using Copilot Chat and ChatGPT 3.5 to rubber duck. It turns out I have access to ChatGPT 4 and 4o. Combine this with the custom usage in a more dev-friendly interface, and it might actually be mildly pleasant to use.&lt;/p&gt;
+&lt;p&gt;I need to get all of this approved by my company, but after I do this, I do have a grand experiment I want to try: I want to do a significantly large ticket (3 pts) almost entirely through AI and these 4 use cases. I can manually edit code it generates, but I am going to try to tell it to regenerate until it&#39;s right.&lt;/p&gt;
+&lt;p&gt;I think just spending some real significant time investing in the tooling will help both elucidate things and create another marginal productivity bump, even though I highly doubt I will ever want to do another ticket entirely with AI again. My log of that will come in Part 2 of this series.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>The Limits of Front-End Testing</title>
 		<link href="https://rmorabia.com/blog/integration-testing/"/>
 		<updated>2024-09-01T00:00:00Z</updated>
 		<id>https://rmorabia.com/blog/integration-testing/</id>
-		<content type="html"></content>
+		<content type="html">&lt;p&gt;I recently submitted a bugfix in a codebase I haven&#39;t touched in over 6 months. I added unit tests, manually QAed, and ...broke production pretty badly.&lt;/p&gt;
+&lt;p&gt;I spent the next couple of days a bit shaken -- in trying to fix an edge case, I ended up breaking a fundamental flow in the app.&lt;/p&gt;
+&lt;p&gt;How did this happen? We have all sorts of tests: unit tests on most functions and actions (using Jest), component-level tests on this page (using React Testing Library), and end-to-end tests that check if the flow is working (using Cypress). I felt safe in writing code I wasn&#39;t 100% familiar with. I wouldn&#39;t have been surprised if another edge case showed up, but no part of me was expecting to break the entire flow, given this test coverage.&lt;/p&gt;
+&lt;p&gt;What was the leak?&lt;/p&gt;
+&lt;p&gt;First, let me explain the bug, then talk about our tests. I wrote a modification to a function which saves user data to the server, which validates that data and sends it back to us to update the UI with. I made a bad assumption which is that I wanted the data in a specific part to reset to default if the user did a specific action. My code was correct given that assumption, but this would end up locking the user in a loop where it&#39;s impossible to ever actually update that data that I keep resetting to default. I, for some strange reason, thought that it would fail the back-end validation if it wasn&#39;t completely reset. This is not how it ended up working, of course, because the reset data was completely valid to the back-end, and would get saved as the user&#39;s changes every time.&lt;/p&gt;
+&lt;p&gt;The fix to this was to limit the values that are reset to only be the values I actually needed to reset. So, instead of &amp;quot;User did X, data that relies on X will reset to default,&amp;quot; I&#39;m changing it to &amp;quot;User did X, data that relies on X is unchanged, but I&#39;m changing X to Y. They&#39;ll never know.&amp;quot; This is a bit convoluted, but my summary here is: I made a bad assumption about how data would be validated. This ended up resetting the the user&#39;s data every time they tried to save.&lt;/p&gt;
+&lt;p&gt;So, how did this fail the tests, considering how easy this was to replicate in QA, and the app has a log of user actions to check if what the user actually did is what the app ended up understanding?&lt;/p&gt;
+&lt;p&gt;Our component-level tests were testing whether or not the correct components rendered and the UI updated as expected. The UI would update as expected, it was the saving to the server that failed.&lt;/p&gt;
+&lt;p&gt;Okay, then if the saving failed, how did it pass those unit tests? Our unit tests were testing the server call of the specific function I was editing. My work passed all of these tests because the correct server call was being made and I wrote the first assumption of what the request body to that call should be, and of course, my code passed &lt;em&gt;my&lt;/em&gt; tests. It was the UI after that wouldn&#39;t update!&lt;/p&gt;
+&lt;p&gt;Okay, then if the UI didn&#39;t update correctly, how did it pass the end-to-end tests? The end-to-end tests test the entire flow, changing basically every option possible in one large test per flow, which is not how users use the app -- which would be changing one thing and that appropriately showing up in the log.&lt;/p&gt;
+&lt;p&gt;After the incident occurred, I thought: this must be such an easy test to add. How don&#39;t we have tests like that already? Every action the user takes, we have a log of what the user has done. So, it&#39;s a simple test, user does X, does log say that the user did X? Regardless of the request bodies and the state changes, does the app function as expected?&lt;/p&gt;
+&lt;p&gt;It turns out, we never test that kind of interaction in the app. I actually have a few times in another project I did after this bug, but those tests took multiple seconds using RTL when the average time for RTL is a couple of milliseconds. I think it&#39;s against the nature of most apps to do this kind of testing: it would require adding a couple of dozen unit tests at the container level of a sub-application and drilling into sub-components.&lt;/p&gt;
+&lt;p&gt;I&#39;m the only one writing tests this way, which makes me think I&#39;m writing these tests wrong. After this incident, I opened the RTL test for the container component of this page that was failing, expecting to write another one of these drilling tests, only to find all the sub components mocked and the functions tested in isolation. I think that&#39;s the correct way... and it wouldn&#39;t have caught my issue even if I did add that test, since just like the unit tests I wrote, I would&#39;ve updated the request body to reset all my data just like I expected.&lt;/p&gt;
+&lt;p&gt;I think the answer here is pretty simple: there should have already been integration tests. The ideal test for this scenario, and a lot of scenarios in this app that are constantly sending and receiving data to a back-end (more than any other app I&#39;ve ever written) is to have robust integration tests. It would&#39;ve set my alarm signals off if other tests failed, not the new ones I created. How do you do integration tests with React, though, without 30 minute test times in Cypress?&lt;/p&gt;
+&lt;p&gt;The test that would&#39;ve fixed this is in my mind: &amp;quot;When I update Section H and hit Save, the request body is as follows. After a successful response, the user log (which is also gotten from the server) says X occurred as follows, and only X occurred as follows.&amp;quot; The important part here is these would have to be pre-existing tests, dozens of integration tests should have broken when I added my code, sending off alarm signals that this is having unintended consequences.&lt;/p&gt;
+&lt;p&gt;However, the tooling, infrastructure, testing culture, and other overhead to make this happen is over my head. Even if I wanted to take this on as a project on the side now, I&#39;m not even sure how to accomplish that given the render-focused tests that we write with RTL. I&#39;m not the best at testing yet. I have had a copy of TDD by Kent Beck on my desk before this incident, and I will probably take the time to actually crack it open now after this incident.&lt;/p&gt;
+</content>
 	</entry>
 	
 	<entry>
@@ -25,68 +185,120 @@
 		<updated>2024-08-25T00:00:00Z</updated>
 		<id>https://rmorabia.com/blog/dev-blogs/</id>
 		<content type="html">&lt;p&gt;This is a list of the current developer blogs, email newsletters, and YouTube channels I am subscribed to, along with some notes on whether or not they will be useful for you to follow.&lt;/p&gt;
-&lt;h2 id=&quot;1-the-pragmatic-engineer-newsletter&quot; tabindex=&quot;-1&quot;&gt;1. The Pragmatic Engineer (Newsletter) &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/dev-blogs/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Gergely is the best in the biz.&lt;/p&gt;
-&lt;h2 id=&quot;ui-dev&quot; tabindex=&quot;-1&quot;&gt;UI.dev &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/dev-blogs/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&quot;tech-talks-weekly&quot; tabindex=&quot;-1&quot;&gt;Tech Talks Weekly &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/dev-blogs/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&quot;software-clown-by-itamar&quot; tabindex=&quot;-1&quot;&gt;Software Clown by Itamar &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/dev-blogs/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&quot;will-larson&quot; tabindex=&quot;-1&quot;&gt;Will Larson &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/dev-blogs/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;the-pragmatic-engineer&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://www.pragmaticengineer.com/&quot;&gt;The Pragmatic Engineer&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/dev-blogs/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Gergely is the best at telling software engineers everything they need to know about the state of the industry without the hype. I&#39;ve been reading his work since he was just blogging, and have now been reading his newsletter for a couple of years. The emphasis really is on a pragmatic point of view: real, relevant news, analyses, and insider interviews. This is particularly mostly relevant if you work in the &amp;quot;tech&amp;quot; industry, not as an engineer in another industry.&lt;/p&gt;
+&lt;h2 id=&quot;bytes-dev&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://bytes.dev/&quot;&gt;Bytes.dev&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/dev-blogs/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This is JavaScript-specific news that doesn&#39;t make me want to tear my hair out. A lot of the main focus is on trends, which is pretty irrelevant unless you&#39;re working for a startup and are choosing new technologies every day. However, they have a section that&#39;s called &amp;quot;Spot the Bug&amp;quot; which is a good reminder of obscure language rules, and their curation of external blog posts worth reading is a good enough mix of trends and non-trends to justify skimming twice a week.&lt;/p&gt;
+&lt;h2 id=&quot;tech-talks-weekly&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://techtalksweekly.substack.com/&quot;&gt;Tech Talks Weekly&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/dev-blogs/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This is a recent and powerful discovery for me. I fundamentally believe that if you&#39;re hot a hobbyist professional and you want to keep learning, your options start to get slim very fast. You can read a couple of books a year, but I generally focus on more fundamentals and timeless books there. To keep up with a diverse set of ideas and technologies without getting bogged down in blog spam (popularity isn&#39;t a good curation metric!), tech talks are my new go-to. I try and watch anything that sounds interesting to me and shut it off in 10 minutes if it&#39;s not useful. This means, more often than not, watching talks outside of the world of JavaScript and front-end development.&lt;/p&gt;
+&lt;h2 id=&quot;software-clown-by-itamar-turner-trauring&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://codewithoutrules.com/&quot;&gt;Software Clown by Itamar Turner-Trauring&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/dev-blogs/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The shortest, sweetest newsletter I get each week. Software Clown is an extraordinary series even though I&#39;ve never touched Python in my life, and Itamar&#39;s books and blog posts are concise and actionable. I highly recommend this one to basically every professional software engineer. There&#39;s no encouragement to become a hobbyist who&#39;s into trends here.&lt;/p&gt;
+&lt;h2 id=&quot;will-larson&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://lethain.com/&quot;&gt;Will Larson&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/dev-blogs/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Will is mostly a skip for me these days as his focus has shifted almost entirely towards writing for Staff+ Engineers and tech executives. However, I will still read just about anything that isn&#39;t specifically about those topics from him. He has written some of the most all-time engineering career posts ever, so digging through his archives is more recommended than subscribing at this point.&lt;/p&gt;
 </content>
 	</entry>
 	
 	<entry>
-		<title>This is a fifth post (draft)</title>
-		<link href="https://rmorabia.com/blog/fifthpost/"/>
-		<updated>2023-01-23T00:00:00Z</updated>
-		<id>https://rmorabia.com/blog/fifthpost/</id>
-		<content type="html">&lt;p&gt;This is a draft post&lt;/p&gt;
+		<title>UX When Using Dev Tooling for Non-Developers</title>
+		<link href="https://rmorabia.com/blog/ux-subs/"/>
+		<updated>2024-07-22T00:00:00Z</updated>
+		<id>https://rmorabia.com/blog/ux-subs/</id>
+		<content type="html">&lt;p&gt;All of my friends know I only really did one impressive thing last year: I built an AI subtitle generator that will take any video or audio file (usually a movie), and output a subtitle file you can drop in with the movie. That&#39;s existed for years, but the big change here is that a level of progress had been pushed: Subtitles were finally vaguely sorta kinda ...if you squint... usable for movies in other languages.&lt;/p&gt;
+&lt;p&gt;It took me 2 or 3 hours, and the entire code can be pasted below:&lt;/p&gt;
+&lt;pre class=&quot;language-py&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-py&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt; &lt;span class=&quot;token comment&quot;&gt;# @title Choose your language and press play to the side&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; google&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;colab &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; drive&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;drive&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mount&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;/content/drive&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; google&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;colab &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; files&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;uploaded &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; files&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;upload&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;filename &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;iter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;uploaded&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;!pip install git&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;https&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt;github&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;com&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;openai&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;whisper&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;git&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;!sudo apt update &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; sudo apt install ffmpeg&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;language &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;Telugu&#39;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# @param [&quot;Hindi&quot;, &quot;Tamil&quot;, &quot;Telugu&quot;, &quot;Malayalam&quot;, &quot;Punjabi&quot;, &quot;Kannada&quot;, &quot;Gujarati&quot;, &quot;Bengali&quot;, &quot;French&quot;, &quot;Japanese&quot;, &quot;Korean&quot;, &quot;Cantonese&quot;, &quot;Spanish&quot;, &quot;Portuguese&quot;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;!ffmpeg &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;i $filename subs&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mp3&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;!whisper subs&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mp3 &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;task translate &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;model large &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;language $language &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;output_dir &lt;span class=&quot;token string&quot;&gt;&quot;/content/drive/My Drive/Subtitles&quot;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That&#39;s right. It&#39;s just 15 lines of Python that wraps around OpenAI&#39;s Whisper and uses pre-existing tools using Google Colab&#39;s Jupyter notebook system.&lt;/p&gt;
+&lt;p&gt;To me, it was an architectural wonder that I could clumsily use a fairly accessible system to do huge amounts of computing for personal gain. I thought everyone would be on board with being able to use this magical tool, because all they really needed was a Google account and some patience.&lt;/p&gt;
+&lt;p&gt;As always happens in engineers doing UX, I was very, very wrong.&lt;/p&gt;
+&lt;p&gt;Let&#39;s go back to v1 of this app:&lt;/p&gt;
+&lt;pre class=&quot;language-py&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-py&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Step One: Install Requirements&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;!pip install git&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;https&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt;github&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;com&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;openai&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;whisper&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;git&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;!sudo apt update &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; sudo apt install ffmpeg&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; google&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;colab &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; drive&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;drive&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mount&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;/content/drive&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Step Two: Upload Audio File&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;If you need to get an &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mp3 &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; a video &lt;span class=&quot;token builtin&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; you can use VLC Media Player to do so using this tutorial &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;here&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;https&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt;researchguides&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;edu&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;php?g&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1286426&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;Once you have your &lt;span class=&quot;token builtin&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;open&lt;/span&gt; the &lt;span class=&quot;token builtin&quot;&gt;file&lt;/span&gt; folder on the left&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;hand corner of the page&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; Drag the &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mp3 you would like to transcribe into the &lt;span class=&quot;token string&quot;&gt;&quot;Files&quot;&lt;/span&gt; section&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;Give it a minute&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; there&lt;span class=&quot;token string&quot;&gt;&#39;s a blue circle that indicates it&#39;&lt;/span&gt;s uploading&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; Since it&lt;span class=&quot;token string&quot;&gt;&#39;s as long as a movie, it&#39;&lt;/span&gt;ll probably take a few minutes&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; Stay on this page &lt;span class=&quot;token keyword&quot;&gt;and&lt;/span&gt; wait until it&#39;s done&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;This will upload the audio to this page&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; Here&lt;span class=&quot;token string&quot;&gt;&#39;s what it looks like once you&#39;&lt;/span&gt;ve uploaded a &lt;span class=&quot;token builtin&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Step Three: Translate&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;To translate an &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mp3&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; simply copy &lt;span class=&quot;token keyword&quot;&gt;and&lt;/span&gt; paste the title of your &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mp3 &lt;span class=&quot;token builtin&quot;&gt;file&lt;/span&gt; into the command line below &lt;span class=&quot;token keyword&quot;&gt;and&lt;/span&gt; run the cell&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; Remember to include the &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mp3 at the end&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;You can change the language &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; needed &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; the command line&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;and&lt;/span&gt; English &lt;span class=&quot;token keyword&quot;&gt;is&lt;/span&gt; the default output&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;THIS WILL TAKE A WHILE&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; Once it &lt;span class=&quot;token keyword&quot;&gt;is&lt;/span&gt; done&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; click the Folder icon again&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; Wala! There &lt;span class=&quot;token keyword&quot;&gt;is&lt;/span&gt; your SRT&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; Enjoy!!!&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;!whisper &lt;span class=&quot;token string&quot;&gt;&quot;jabardasth.mp3&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;task translate &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;model large &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;language Telugu &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;output_dir &lt;span class=&quot;token string&quot;&gt;&quot;/content/drive/My Drive/Subtitles&quot;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As users tried the app, they got stuck at a myriad number of points:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;They wouldn&#39;t be clear on how to connect to a GPU using Colab.&lt;/li&gt;
+&lt;li&gt;They&#39;d upload files with invalid characters like &lt;code&gt;movie name&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;They were unclear on how to upload files to Google Colab.&lt;/li&gt;
+&lt;li&gt;They expected to be able to walk away after Step 1 or 2, because sometimes their uploads took so long, but actually, they had to stay.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Since this got vaguely popular, I actually got emails asking for help on how to use it, and it was fairly easily for me to diagnose every time. &lt;strong&gt;What was obvious to me was not obvious to the user.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Every time I got an email or message with an issue, I&#39;d update either the documentation or the code to accommodate their lack of understanding, which ended up in the following changes from the original:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Everything is one step now and goes in order of shortest to longest time to interact for the user. So, it begins by validating their Google Drive to save the subtitle file.&lt;/li&gt;
+&lt;li&gt;The user uploads a file using an HTML input they are familiar with from other webpages.&lt;/li&gt;
+&lt;li&gt;The user chooses a language from an HTML dropdown that they are familiar with from other webpages.&lt;/li&gt;
+&lt;li&gt;I change the name of their movie file myself into something that Whisper can handle, and explicitly document the limits of what ffmpeg can handle.&lt;/li&gt;
+&lt;li&gt;The app can work with both video and audio files.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Basically, I gave the user a lot less choice (which I, as an engineer like) and put them on a much more linear path.&lt;/p&gt;
+&lt;p&gt;I eventually was able to get maybe 50% of my expected userbase to deal with the headaches of using a fundamentally technical tool used for college students&#39; coding projects to do our hobbyist movie subtitling. To those 50%, it was magic. To the other 50%, unfortunately Colab still has random failures, the GPUs are often taken, and the subtitling still isn&#39;t that impressive.&lt;/p&gt;
+&lt;p&gt;OpenAI 4o introduced the idea that Indian languages will be 50% faster to translate and have a 20% increase in accuracy. In my limited tests with it, it is a worthwhile enough improvement that I would really like to build v2.0 based on OpenAI 4o&#39;s audio model. I highly doubt that OpenAI will be releasing 4o as an open source project that I can simply plug into Google Colab, though.&lt;/p&gt;
+&lt;p&gt;This means I will likely be building an actual web app for users to use and interface with the API. I&#39;ll have full control over the flow, and I&#39;m really hoping that I can get the 50% user base up to 90% once I can design the app myself.&lt;/p&gt;
+&lt;p&gt;Honestly, the most difficult part for me is to figure out how to get bots to not use the API without my permission, since I&#39;d be paying for OpenAI&#39;s servers out of pocket. I have no idea how to password-protect a site, but I will find out! OpenAI, please, there&#39;s so many movies I need to see.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;By the way, if you want to use the AI subtitler, it is at https://is.gd/translatesubs.&lt;/em&gt;&lt;/p&gt;
 </content>
 	</entry>
 	
 	<entry>
-		<title>This is my fourth post!</title>
-		<link href="https://rmorabia.com/blog/fourthpost/"/>
-		<updated>2018-09-30T00:00:00Z</updated>
-		<id>https://rmorabia.com/blog/fourthpost/</id>
-		<content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
-&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
-&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://rmorabia.com/img/IdthKOzqFA-350.avif 350w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://rmorabia.com/img/IdthKOzqFA-350.webp 350w&quot;&gt;&lt;img alt=&quot;A possum parent and two possum kids hanging from the iconic red balloon&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://rmorabia.com/img/IdthKOzqFA-350.png&quot; width=&quot;350&quot; height=&quot;685&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
-&lt;h2 id=&quot;section-header&quot; tabindex=&quot;-1&quot;&gt;Section Header &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/fourthpost/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
-</content>
-	</entry>
-	
-	<entry>
-		<title>This is my third post.</title>
-		<link href="https://rmorabia.com/blog/thirdpost/"/>
-		<updated>2018-08-24T00:00:00Z</updated>
-		<id>https://rmorabia.com/blog/thirdpost/</id>
-		<content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
-&lt;h2 id=&quot;code&quot; tabindex=&quot;-1&quot;&gt;Code &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/thirdpost/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;styled-with-syntax&quot; tabindex=&quot;-1&quot;&gt;Styled (with Syntax) &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/thirdpost/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
-&lt;pre class=&quot;language-js&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// this is a command&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;myCommand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; counter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-	counter&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;// Test with a line break above this line.&lt;/span&gt;
-console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;Test&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;unstyled&quot; tabindex=&quot;-1&quot;&gt;Unstyled &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/thirdpost/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// this is a command
-function myCommand() {
-	let counter = 0;
-	counter++;
-}
-
-// Test with a line break above this line.
-console.log(&#39;Test&#39;);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&quot;section-header&quot; tabindex=&quot;-1&quot;&gt;Section Header &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/thirdpost/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
+		<title>How to Make Visual Studio Code 150% Faster in Large Projects</title>
+		<link href="https://rmorabia.com/blog/vs/"/>
+		<updated>2020-07-15T00:00:00Z</updated>
+		<id>https://rmorabia.com/blog/vs/</id>
+		<content type="html">&lt;p&gt;I recently switched projects over to our large monorepo (the zip from GitHub is around 150mb, without &lt;code&gt;node_modules&lt;/code&gt;). I found that not only was Webpack causing my fans to run on overdrive, Visual Studio Code would get so laggy that typing caused seconds of latency.&lt;/p&gt;
+&lt;p&gt;I tried switching back to a simpler code editor, but I&#39;m extremely reliant on Code&#39;s built-in search features in such a big project like this.&lt;/p&gt;
+&lt;p&gt;So, I had to take some time to get to the bottom of this.&lt;/p&gt;
+&lt;p&gt;Firstly, I checked Activity Monitor. I saw that something called &lt;code&gt;Code Helper (Renderer)&lt;/code&gt; was taking 150% of my CPU.&lt;/p&gt;
+&lt;p&gt;My initial assumption was to stop using Code&#39;s built-in terminal and switch over to iTerm. That didn&#39;t fix it.&lt;/p&gt;
+&lt;p&gt;I looked at &lt;a href=&quot;https://github.com/microsoft/vscode/issues/87509&quot;&gt;a lot of GitHub Issues about this issue&lt;/a&gt; and saw repeated comments from the Code team that &lt;code&gt;Code Helper (Renderer)&lt;/code&gt; is a process that comes from an extension. Disable all extensions and it will work.&lt;/p&gt;
+&lt;p&gt;So... I did. It did not work. I didn&#39;t even have any themes installed.&lt;/p&gt;
+&lt;p&gt;Finally, I came across &lt;a href=&quot;https://stackoverflow.com/questions/54798028/how-do-i-figure-out-which-extension-or-service-is-making-a-vs-code-helper-proces&quot;&gt;an unanswered StackOverflow question&lt;/a&gt; where the comments answered what I needed.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If you are having performance issues with Visual Studio Code, open &lt;code&gt;Developer: Open Process Explorer&lt;/code&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I saw that something called &lt;code&gt;electron_node tsserver.js&lt;/code&gt; was taking up over 100% of my CPU. What was this? I didn&#39;t use any TypeScript in my project.&lt;/p&gt;
+&lt;p&gt;Further looking around led me to the fact that &lt;strong&gt;Visual Studio Code has extensions built-in that you never installed.&lt;/strong&gt; I did not know this! You can find these by searching &lt;code&gt;@builtin&lt;/code&gt; in your extensions.&lt;/p&gt;
+&lt;p&gt;Specifically, there is an extension called &lt;code&gt;TypeScript and JavaScript Language Features&lt;/code&gt; which includes a lot of functionality like closing tags. However, it automatically runs TypeScript features even if you don&#39;t have a TypeScript project. (This begs the question, why is Visual Studio Code so deeply integrated with TypeScript that it automatically assumes you&#39;re using it? Microsoft is selling us its entire ecosystem.)&lt;/p&gt;
+&lt;p&gt;Once I disabled the &lt;code&gt;TypeScript: Disable Automatic Type Acquisition&lt;/code&gt; feature, Visual Studio Code was instantly faster than I&#39;ve ever seen it before.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TL;DR: To make Visual Studio Code extremely fast if you don&#39;t use TypeScript, add this line to your settings.json file:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;language-json&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token property&quot;&gt;&quot;typescript.disableAutomaticTypeAcquisition&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 </content>
 	</entry>
 </feed>

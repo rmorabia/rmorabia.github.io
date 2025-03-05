@@ -3,87 +3,106 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>thoughts on the limits of front-end testing</title>
+		<title>The Limits of Front-End Testing</title>
 		<meta name="description" content="should we focus more on integration tests for front-end testing?">
-		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="radhika&#39;s dev thoughts">
-		<link rel="alternate" href="/feed/feed.json" type="application/json" title="radhika&#39;s dev thoughts">
-		
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Radhika Morabia">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Radhika Morabia">
 		<style>/**
- * okaidia theme for JavaScript, CSS and HTML
- * Loosely based on Monokai textmate theme by http://www.monokai.nl/
- * @author ocodia
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
  */
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: #f8f8f2;
-	background: none;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 1em;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
+  color: black;
+  background: none;
+  text-shadow: 0 1px white;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1.2rem;
+  text-align: left;
+  white-space: pre-line;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
 
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
 
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+@media print {
+
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
 }
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
-	border-radius: 0.3em;
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
 }
 
-:not(pre) > code[class*="language-"],
+:not(pre)>code[class*="language-"],
 pre[class*="language-"] {
-	background: #272822;
+  background: #f5f2f0;
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
+:not(pre)>code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #8292a2;
+  color: slategray;
 }
 
 .token.punctuation {
-	color: #f8f8f2;
+  color: #999;
 }
 
 .token.namespace {
-	opacity: .7;
+  opacity: .7;
 }
 
 .token.property,
 .token.tag,
+.token.boolean,
+.token.number,
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #f92672;
-}
-
-.token.boolean,
-.token.number {
-	color: #ae81ff;
+  color: #905;
 }
 
 .token.selector,
@@ -92,44 +111,47 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #a6e22e;
+  color: #690;
 }
 
 .token.operator,
 .token.entity,
 .token.url,
 .language-css .token.string,
-.style .token.string,
-.token.variable {
-	color: #f8f8f2;
+.style .token.string {
+  color: #9a6e3a;
+  /* This background color was intended by the author of this theme. */
+  background: hsla(0, 0%, 100%, .5);
 }
 
 .token.atrule,
 .token.attr-value,
-.token.function,
-.token.class-name {
-	color: #e6db74;
+.token.keyword {
+  color: #07a;
 }
 
-.token.keyword {
-	color: #66d9ef;
+.token.function,
+.token.class-name {
+  color: #DD4A68;
 }
 
 .token.regex,
-.token.important {
-	color: #fd971f;
+.token.important,
+.token.variable {
+  color: #e90;
 }
 
 .token.important,
 .token.bold {
-	font-weight: bold;
+  font-weight: bold;
 }
+
 .token.italic {
-	font-style: italic;
+  font-style: italic;
 }
 
 .token.entity {
-	cursor: help;
+  cursor: help;
 }
 /*
  * New diff- syntax
@@ -177,75 +199,176 @@ pre[class*="language-diff-"] {
 	color: inherit; /* override del, ins, mark defaults */
 }
 * { box-sizing: border-box; }
-/* Defaults */
-:root {
-	--font-family: Courier, Consolas,
-		Menlo,
-		Monaco,
-		Andale Mono WT,
-		Andale Mono,
-		Lucida Console,
-		Lucida Sans Typewriter,
-		DejaVu Sans Mono,
-		Bitstream Vera Sans Mono,
-		Liberation Mono,
-		Nimbus Mono L,
-		Courier New,
-		Courier,
-		monospace;
-	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+@charset "UTF-8";
+
+/* Import ET Book styles
+   adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css */
+
+@font-face {
+	font-family: "et-book";
+	src: url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot");
+	src: url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff") format("woff"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.ttf") format("truetype"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.svg#etbookromanosf") format("svg");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
 
-/* Theme colors */
+@font-face {
+	font-family: "et-book";
+	src: url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot");
+	src: url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff") format("woff"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.ttf") format("truetype"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.svg#etbookromanosf") format("svg");
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "et-book";
+	src: url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot");
+	src: url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff") format("woff"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.ttf") format("truetype"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.svg#etbookromanosf") format("svg");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "et-book-roman-old-style";
+	src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot");
+	src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff") format("woff"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.ttf") format("truetype"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.svg#etbookromanosf") format("svg");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Theme colors - needed for variable references */
 :root {
 	--color-gray-20: #e0e0e0;
 	--color-gray-50: #C0C0C0;
-	--color-gray-90: #333;
+	--color-gray-90: #3e372d;
 
-	--background-color: #fff;
+	--background-color: #f6ebdf;
 
 	--text-color: var(--color-gray-90);
-	--text-color-link: #082840;
-	--text-color-link-active: #1cb933;
-	--text-color-link-visited: #17050F;
+	--text-color-link: var(--color-gray-90);
+	--text-color-link-active: #00917b;
+	--text-color-link-visited: var(--color-gray-90);
 
 	--syntax-tab-size: 2;
 }
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--color-gray-20: #e0e0e0;
-		--color-gray-50: #C0C0C0;
-		--color-gray-90: #dad8d8;
-
-		/* --text-color is assigned to --color-gray-_ above */
-		--text-color-link: #1493fb;
-		--text-color-link-active: #6969f7;
-		--text-color-link-visited: #a6a6f8;
-
-		--background-color: #15202b;
-	}
-}
-
 
 /* Global stylesheet */
 * {
 	box-sizing: border-box;
 }
 
-html,
-body {
-	padding: 0;
-	margin: 0 auto;
-	font-family: var(--font-family);
-	color: var(--text-color);
-	background-color: var(--background-color);
-}
+/* Tufte CSS styles */
 html {
+	font-size: 15px;
 	overflow-y: scroll;
 }
+
 body {
-	max-width: 40em;
+	width: 55%;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	background-color: #fffff8;
+	color: #111;
+	max-width: 1400px;
+	counter-reset: sidenote-counter;
+}
+
+/* Adds dark mode */
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #151515;
+		color: #ddd;
+	}
+}
+
+h1 {
+	font-weight: 400;
+	margin-top: 4rem;
+	margin-bottom: 1.5rem;
+	font-size: 3.2rem;
+	line-height: 1.5;
+}
+
+h2 {
+	font-style: italic;
+	font-weight: 400;
+	margin-top: 2.1rem;
+	margin-bottom: 1.4rem;
+	font-size: 2.2rem;
+	line-height: 1.5;
+}
+
+h3 {
+	font-style: italic;
+	font-weight: 400;
+	font-size: 1.7rem;
+	margin-top: 2rem;
+	margin-bottom: 1.4rem;
+	line-height: 1.5;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	width: 55%;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+p.subtitle {
+	font-style: italic;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	font-size: 1.8rem;
+	display: block;
+	line-height: 1.5;
+}
+
+.numeral {
+	font-family: et-book-roman-old-style;
+}
+
+.danger {
+	color: red;
+}
+
+article {
+	padding: 5rem 0rem;
+}
+
+section {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+p,
+dl,
+ol,
+ul {
+	font-size: 1.4rem;
+	line-height: 2rem;
+}
+
+p {
+	margin-top: 1.4rem;
+	margin-bottom: 1.4rem;
+	padding-right: 0;
+	vertical-align: baseline;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+li {
+	line-height: 1.5;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -259,79 +382,97 @@ body {
 	width: 1px;
 }
 
-p:last-child {
-	margin-bottom: 0;
-}
-p {
-	line-height: 1.5;
+.post {
+	margin-bottom: 4px;
 }
 
-li {
-	line-height: 1.5;
+/* Chapter Epigraphs */
+div.epigraph {
+	margin: 5em 0;
 }
 
-a[href] {
-	color: var(--text-color-link);
-}
-a[href]:visited {
-	color: var(--text-color-link-visited);
-}
-a[href]:hover,
-a[href]:active {
-	color: var(--text-color-link-active);
+div.epigraph>blockquote {
+	margin-top: 3em;
+	margin-bottom: 3em;
 }
 
-main {
-	padding: 1rem;
+div.epigraph>blockquote,
+div.epigraph>blockquote>p {
+	font-style: italic;
 }
-main :first-child {
+
+div.epigraph>blockquote>footer {
+	font-style: normal;
+}
+
+div.epigraph>blockquote>footer>cite {
+	font-style: italic;
+}
+
+/* end chapter epigraphs styles */
+
+blockquote {
+	font-size: 1.4rem;
+}
+
+blockquote p {
+	width: 55%;
+	margin-right: 40px;
+}
+
+blockquote footer {
+	width: 55%;
+	font-size: 1.1rem;
+	text-align: right;
+}
+
+section>p,
+section>footer,
+section>table {
+	width: 55%;
+}
+
+/* 50 + 5 == 55, to be the same width as paragraph */
+section>dl,
+section>ol,
+section>ul {
+	width: 50%;
+	-webkit-padding-start: 5%;
+}
+
+figure {
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	max-width: 55%;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	margin: 0 0 3em 0;
+}
+
+figcaption {
+	float: right;
+	clear: right;
 	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 1.1rem;
+	line-height: 1.6;
+	vertical-align: baseline;
+	position: relative;
+	max-width: 40%;
 }
 
-header {
-	border-bottom: 1px dashed var(--color-gray-20);
-}
-header:after {
-	content: "";
-	display: table;
-	clear: both;
+figure.fullwidth figcaption {
+	margin-right: 24%;
 }
 
-.links-nextprev {
-	list-style: none;
-	border-top: 1px dashed var(--color-gray-20);
-	padding: 1em 0;
-}
-
-table {
-	margin: 1em 0;
-}
-table td,
-table th {
-	padding-right: 1em;
-}
-
-pre,
-code {
-	font-family: var(--font-family-monospace);
-}
-pre:not([class*="language-"]) {
-	margin: .5em 0;
-	line-height: 1.375; /* 22px /16 */
-	-moz-tab-size: var(--syntax-tab-size);
-	-o-tab-size: var(--syntax-tab-size);
-	tab-size: var(--syntax-tab-size);
-	-webkit-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-}
-code {
-	word-break: break-all;
+a:link,
+a:visited {
+	color: inherit;
+	text-underline-offset: 0.1em;
+	text-decoration-thickness: 0.05em;
 }
 
 /* Header */
@@ -341,12 +482,22 @@ header {
 	flex-wrap: wrap;
 	align-items: center;
 	padding: 1em;
+	border-bottom: 1px dashed var(--color-gray-20);
 }
+
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 .home-link {
-	font-size: 1em; /* 16px /16 */
+	font-size: 1.4rem;
+	line-height: 2;
 	font-weight: 700;
-	margin-right: 2em;
+	margin-right: 1em;
 }
+
 .home-link:link:not(:hover) {
 	text-decoration: none;
 }
@@ -358,13 +509,16 @@ header {
 	margin: 0;
 	list-style: none;
 }
+
 .nav-item {
 	display: inline-block;
 	margin-right: 1em;
 }
+
 .nav-item a[href]:not(:hover) {
 	text-decoration: none;
 }
+
 .nav a[href][aria-current="page"] {
 	text-decoration: underline;
 }
@@ -374,6 +528,7 @@ header {
 	list-style: none;
 	padding: 0;
 }
+
 .postlist-item {
 	display: flex;
 	flex-wrap: wrap;
@@ -381,6 +536,7 @@ header {
 	counter-increment: start-from -1;
 	margin-bottom: 1em;
 }
+
 .postlist-item:before {
 	display: inline-block;
 	pointer-events: none;
@@ -389,16 +545,21 @@ header {
 	text-align: right;
 	margin-left: -1.5rem;
 }
+
 .postlist-date,
 .postlist-item:before {
-	font-size: 0.8125em; /* 13px /16 */
+	font-size: 0.8125em;
+	/* 13px /16 */
 	color: var(--color-gray-90);
 }
+
 .postlist-date {
 	word-spacing: -0.5px;
 }
+
 .postlist-link {
-	font-size: 1.1875em; /* 19px /16 */
+	font-size: 1.1875em;
+	/* 19px /16 */
 	font-weight: 700;
 	flex-basis: calc(100% - 1.5rem);
 	padding-left: .25em;
@@ -407,6 +568,7 @@ header {
 	text-underline-offset: 0;
 	text-decoration-thickness: 1px;
 }
+
 .postlist-item-active .postlist-link {
 	font-weight: bold;
 }
@@ -419,7 +581,8 @@ header {
 	text-transform: capitalize;
 	font-style: italic;
 }
-.postlist-item > .post-tag {
+
+.postlist-item>.post-tag {
 	align-self: center;
 }
 
@@ -432,6 +595,7 @@ header {
 	padding: 0;
 	margin: 0;
 }
+
 .post-metadata time {
 	margin-right: 1em;
 }
@@ -443,28 +607,273 @@ header {
 	font-size: 1em;
 	margin-left: .1em;
 }
+
 a[href].header-anchor,
 a[href].header-anchor:visited {
 	color: transparent;
 }
+
 a[href].header-anchor:focus,
 a[href].header-anchor:hover {
 	text-decoration: underline;
 }
+
 a[href].header-anchor:focus,
-:hover > a[href].header-anchor {
+:hover>a[href].header-anchor {
 	color: #aaa;
 }
 
-h2 + .header-anchor {
+h2+.header-anchor {
 	font-size: 1.5em;
+}
+
+/* Sidenotes, margin notes, figures, captions */
+img {
+	max-width: 100%;
+}
+
+.sidenote,
+.marginnote {
+	float: right;
+	clear: right;
+	margin-right: -60%;
+	width: 50%;
+	margin-top: 0.3rem;
+	margin-bottom: 0;
+	font-size: 1.1rem;
+	line-height: 1.3;
+	vertical-align: baseline;
+	position: relative;
+}
+
+.sidenote-number {
+	counter-increment: sidenote-counter;
+}
+
+.sidenote-number:after,
+.sidenote:before {
+	font-family: et-book-roman-old-style;
+	position: relative;
+	vertical-align: baseline;
+}
+
+.sidenote-number:after {
+	content: counter(sidenote-counter);
+	font-size: 1rem;
+	top: -0.5rem;
+	left: 0.1rem;
+}
+
+.sidenote:before {
+	content: counter(sidenote-counter) " ";
+	font-size: 1rem;
+	top: -0.5rem;
+}
+
+blockquote .sidenote,
+blockquote .marginnote {
+	margin-right: -82%;
+	min-width: 59%;
+	text-align: left;
+}
+
+div.fullwidth,
+table.fullwidth {
+	width: 100%;
+}
+
+div.table-wrapper {
+	overflow-x: auto;
+	font-family: "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif;
+}
+
+.sans {
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+	letter-spacing: .03em;
+}
+
+code,
+pre>code {
+	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	font-size: 1.0rem;
+	line-height: 1.42;
+	-webkit-text-size-adjust: 100%;
+	/* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
+}
+
+.sans>code {
+	font-size: 1.2rem;
+}
+
+h1>code,
+h2>code,
+h3>code {
+	font-size: 0.80em;
+}
+
+.marginnote>code,
+.sidenote>code {
+	font-size: 1rem;
+}
+
+pre>code {
+	font-size: 0.9rem;
+	width: 90%;
+	margin-left: 2.5%;
+	overflow-x: auto;
+	display: block;
+}
+
+.fullwidth {
+	max-width: 90%;
+	clear: both;
+}
+
+span.newthought {
+	font-variant: small-caps;
+	font-size: 1.2em;
+}
+
+input.margin-toggle {
+	display: none;
+}
+
+label.sidenote-number {
+	display: inline-block;
+	max-height: 2rem;
+	/* should be less than or equal to paragraph line-height */
+}
+
+label.margin-toggle:not(.sidenote-number) {
+	display: none;
+}
+
+.iframe-wrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+	/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.iframe-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+main {
+	padding: 1rem;
+}
+
+main :first-child {
+	margin-top: 0;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+
+table td,
+table th {
+	padding-right: 1em;
+}
+
+@media (max-width: 760px) {
+	body {
+		width: 84%;
+		padding-left: 8%;
+		padding-right: 8%;
+	}
+
+	hr,
+	section>p,
+	section>footer,
+	section>table {
+		width: 100%;
+	}
+
+	pre>code {
+		width: 97%;
+	}
+
+	section>dl,
+	section>ol,
+	section>ul {
+		width: 90%;
+	}
+
+	figure {
+		max-width: 90%;
+	}
+
+	figcaption,
+	figure.fullwidth figcaption {
+		margin-right: 0%;
+		max-width: none;
+	}
+
+	blockquote {
+		margin-left: 1.5em;
+		margin-right: 0em;
+	}
+
+	blockquote p,
+	blockquote footer {
+		width: 100%;
+	}
+
+	label.margin-toggle:not(.sidenote-number) {
+		display: inline;
+	}
+
+	.sidenote,
+	.marginnote {
+		display: none;
+	}
+
+	.margin-toggle:checked+.sidenote,
+	.margin-toggle:checked+.marginnote {
+		display: block;
+		float: left;
+		left: 1rem;
+		clear: both;
+		width: 95%;
+		margin: 1rem 2.5%;
+		vertical-align: baseline;
+		position: relative;
+	}
+
+	label {
+		cursor: pointer;
+	}
+
+	div.table-wrapper,
+	table {
+		width: 85%;
+	}
+
+	img {
+		width: 100%;
+	}
 }</style>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 
 		<header>
-			<a href="/" class="home-link">radhika&#39;s dev thoughts</a>
+			<a href="/" class="home-link">Radhika Morabia</a>
 			<nav>
 				<h2 class="visually-hidden">Top level navigation menu</h2>
 				<ul class="nav">
@@ -478,22 +887,38 @@ h2 + .header-anchor {
 
 		<main id="skip">
 			
-<h1>thoughts on the limits of front-end testing</h1>
+<h1>The Limits of Front-End Testing</h1>
 
 <ul class="post-metadata">
 	<li><time datetime="2024-09-01">September 01, 2024</time></li>
 </ul>
 
+<p>I recently submitted a bugfix in a codebase I haven't touched in over 6 months. I added unit tests, manually QAed, and ...broke production pretty badly.</p>
+<p>I spent the next couple of days a bit shaken -- in trying to fix an edge case, I ended up breaking a fundamental flow in the app.</p>
+<p>How did this happen? We have all sorts of tests: unit tests on most functions and actions (using Jest), component-level tests on this page (using React Testing Library), and end-to-end tests that check if the flow is working (using Cypress). I felt safe in writing code I wasn't 100% familiar with. I wouldn't have been surprised if another edge case showed up, but no part of me was expecting to break the entire flow, given this test coverage.</p>
+<p>What was the leak?</p>
+<p>First, let me explain the bug, then talk about our tests. I wrote a modification to a function which saves user data to the server, which validates that data and sends it back to us to update the UI with. I made a bad assumption which is that I wanted the data in a specific part to reset to default if the user did a specific action. My code was correct given that assumption, but this would end up locking the user in a loop where it's impossible to ever actually update that data that I keep resetting to default. I, for some strange reason, thought that it would fail the back-end validation if it wasn't completely reset. This is not how it ended up working, of course, because the reset data was completely valid to the back-end, and would get saved as the user's changes every time.</p>
+<p>The fix to this was to limit the values that are reset to only be the values I actually needed to reset. So, instead of &quot;User did X, data that relies on X will reset to default,&quot; I'm changing it to &quot;User did X, data that relies on X is unchanged, but I'm changing X to Y. They'll never know.&quot; This is a bit convoluted, but my summary here is: I made a bad assumption about how data would be validated. This ended up resetting the the user's data every time they tried to save.</p>
+<p>So, how did this fail the tests, considering how easy this was to replicate in QA, and the app has a log of user actions to check if what the user actually did is what the app ended up understanding?</p>
+<p>Our component-level tests were testing whether or not the correct components rendered and the UI updated as expected. The UI would update as expected, it was the saving to the server that failed.</p>
+<p>Okay, then if the saving failed, how did it pass those unit tests? Our unit tests were testing the server call of the specific function I was editing. My work passed all of these tests because the correct server call was being made and I wrote the first assumption of what the request body to that call should be, and of course, my code passed <em>my</em> tests. It was the UI after that wouldn't update!</p>
+<p>Okay, then if the UI didn't update correctly, how did it pass the end-to-end tests? The end-to-end tests test the entire flow, changing basically every option possible in one large test per flow, which is not how users use the app -- which would be changing one thing and that appropriately showing up in the log.</p>
+<p>After the incident occurred, I thought: this must be such an easy test to add. How don't we have tests like that already? Every action the user takes, we have a log of what the user has done. So, it's a simple test, user does X, does log say that the user did X? Regardless of the request bodies and the state changes, does the app function as expected?</p>
+<p>It turns out, we never test that kind of interaction in the app. I actually have a few times in another project I did after this bug, but those tests took multiple seconds using RTL when the average time for RTL is a couple of milliseconds. I think it's against the nature of most apps to do this kind of testing: it would require adding a couple of dozen unit tests at the container level of a sub-application and drilling into sub-components.</p>
+<p>I'm the only one writing tests this way, which makes me think I'm writing these tests wrong. After this incident, I opened the RTL test for the container component of this page that was failing, expecting to write another one of these drilling tests, only to find all the sub components mocked and the functions tested in isolation. I think that's the correct way... and it wouldn't have caught my issue even if I did add that test, since just like the unit tests I wrote, I would've updated the request body to reset all my data just like I expected.</p>
+<p>I think the answer here is pretty simple: there should have already been integration tests. The ideal test for this scenario, and a lot of scenarios in this app that are constantly sending and receiving data to a back-end (more than any other app I've ever written) is to have robust integration tests. It would've set my alarm signals off if other tests failed, not the new ones I created. How do you do integration tests with React, though, without 30 minute test times in Cypress?</p>
+<p>The test that would've fixed this is in my mind: &quot;When I update Section H and hit Save, the request body is as follows. After a successful response, the user log (which is also gotten from the server) says X occurred as follows, and only X occurred as follows.&quot; The important part here is these would have to be pre-existing tests, dozens of integration tests should have broken when I added my code, sending off alarm signals that this is having unintended consequences.</p>
+<p>However, the tooling, infrastructure, testing culture, and other overhead to make this happen is over my head. Even if I wanted to take this on as a project on the side now, I'm not even sure how to accomplish that given the render-focused tests that we write with RTL. I'm not the best at testing yet. I have had a copy of TDD by Kent Beck on my desk before this incident, and I will probably take the time to actually crack it open now after this incident.</p>
 
 <ul class="links-nextprev">
 	<i>If you would like to get in touch with me, send me an email at hi@[thisdomain].com.</i>
-	<br><br><li>Previous: <a href="/blog/dev-blogs/">Developer Blogs &amp; Newsletters I Read</a></li>
+	<br><br><li>Previous: <a href="/blog/dev-blogs/">Developer Blogs &amp; Newsletters I Read</a></li><li>Next: <a href="/blog/ai-part-1/">Adventures in AI-Assisted Coding Part 1: The Journey So Far</a></li>
 </ul>
 
 		</main>
 
 		<footer></footer>
 
-		<!-- This page `/blog/integration-testing/` was built on 2024-09-01T23:39:48.735Z -->
+		<!-- This page `/blog/integration-testing/` was built on 2025-03-05T20:41:15.680Z -->
 	</body>
 </html>

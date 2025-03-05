@@ -1,5 +1,5 @@
 module.exports = {
-	title: "radhika's dev thoughts",
+	title: "Radhika Morabia",
 	url: "https://rmorabia.com/",
 	language: "en",
 	description: "...and the rest is rust and stardust.",

@@ -3,11 +3,202 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Radhika Morabia</title>
+		<title>How to Make Visual Studio Code 150% Faster in Large Projects</title>
 		<meta name="description" content="...and the rest is rust and stardust.">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Radhika Morabia">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Radhika Morabia">
-		<style>* { box-sizing: border-box; }
+		<style>/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: black;
+  background: none;
+  text-shadow: 0 1px white;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1.2rem;
+  text-align: left;
+  white-space: pre-line;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+@media print {
+
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+}
+
+:not(pre)>code[class*="language-"],
+pre[class*="language-"] {
+  background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre)>code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: slategray;
+}
+
+.token.punctuation {
+  color: #999;
+}
+
+.token.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #9a6e3a;
+  /* This background color was intended by the author of this theme. */
+  background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #07a;
+}
+
+.token.function,
+.token.class-name {
+  color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #e90;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
 @charset "UTF-8";
 
 /* Import ET Book styles
@@ -673,152 +864,6 @@ table th {
 	img {
 		width: 100%;
 	}
-}
-/**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-  color: black;
-  background: none;
-  text-shadow: 0 1px white;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 1.2rem;
-  text-align: left;
-  white-space: pre-line;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
-
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-}
-
-pre[class*="language-"]::-moz-selection,
-pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection,
-code[class*="language-"] ::-moz-selection {
-  text-shadow: none;
-  background: #b3d4fc;
-}
-
-pre[class*="language-"]::selection,
-pre[class*="language-"] ::selection,
-code[class*="language-"]::selection,
-code[class*="language-"] ::selection {
-  text-shadow: none;
-  background: #b3d4fc;
-}
-
-@media print {
-
-  code[class*="language-"],
-  pre[class*="language-"] {
-    text-shadow: none;
-  }
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-  padding: 1em;
-  margin: .5em 0;
-  overflow: auto;
-}
-
-:not(pre)>code[class*="language-"],
-pre[class*="language-"] {
-  background: #f5f2f0;
-}
-
-/* Inline code */
-:not(pre)>code[class*="language-"] {
-  padding: .1em;
-  border-radius: .3em;
-  white-space: normal;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: slategray;
-}
-
-.token.punctuation {
-  color: #999;
-}
-
-.token.namespace {
-  opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-  color: #905;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-  color: #690;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-  color: #9a6e3a;
-  /* This background color was intended by the author of this theme. */
-  background: hsla(0, 0%, 100%, .5);
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-  color: #07a;
-}
-
-.token.function,
-.token.class-name {
-  color: #DD4A68;
-}
-
-.token.regex,
-.token.important,
-.token.variable {
-  color: #e90;
-}
-
-.token.important,
-.token.bold {
-  font-weight: bold;
-}
-
-.token.italic {
-  font-style: italic;
-}
-
-.token.entity {
-  cursor: help;
 }</style>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -842,17 +887,39 @@ pre[class*="language-"] {
 
 		<main id="skip">
 			
-<h1>Tags</h1>
+<h1>How to Make Visual Studio Code 150% Faster in Large Projects</h1>
 
-<ul>
-
+<ul class="post-metadata">
+	<li><time datetime="2020-07-15">July 15, 2020</time></li>
 </ul>
 
+<p>I recently switched projects over to our large monorepo (the zip from GitHub is around 150mb, without <code>node_modules</code>). I found that not only was Webpack causing my fans to run on overdrive, Visual Studio Code would get so laggy that typing caused seconds of latency.</p>
+<p>I tried switching back to a simpler code editor, but I'm extremely reliant on Code's built-in search features in such a big project like this.</p>
+<p>So, I had to take some time to get to the bottom of this.</p>
+<p>Firstly, I checked Activity Monitor. I saw that something called <code>Code Helper (Renderer)</code> was taking 150% of my CPU.</p>
+<p>My initial assumption was to stop using Code's built-in terminal and switch over to iTerm. That didn't fix it.</p>
+<p>I looked at <a href="https://github.com/microsoft/vscode/issues/87509">a lot of GitHub Issues about this issue</a> and saw repeated comments from the Code team that <code>Code Helper (Renderer)</code> is a process that comes from an extension. Disable all extensions and it will work.</p>
+<p>So... I did. It did not work. I didn't even have any themes installed.</p>
+<p>Finally, I came across <a href="https://stackoverflow.com/questions/54798028/how-do-i-figure-out-which-extension-or-service-is-making-a-vs-code-helper-proces">an unanswered StackOverflow question</a> where the comments answered what I needed.</p>
+<p><strong>If you are having performance issues with Visual Studio Code, open <code>Developer: Open Process Explorer</code>.</strong></p>
+<p>I saw that something called <code>electron_node tsserver.js</code> was taking up over 100% of my CPU. What was this? I didn't use any TypeScript in my project.</p>
+<p>Further looking around led me to the fact that <strong>Visual Studio Code has extensions built-in that you never installed.</strong> I did not know this! You can find these by searching <code>@builtin</code> in your extensions.</p>
+<p>Specifically, there is an extension called <code>TypeScript and JavaScript Language Features</code> which includes a lot of functionality like closing tags. However, it automatically runs TypeScript features even if you don't have a TypeScript project. (This begs the question, why is Visual Studio Code so deeply integrated with TypeScript that it automatically assumes you're using it? Microsoft is selling us its entire ecosystem.)</p>
+<p>Once I disabled the <code>TypeScript: Disable Automatic Type Acquisition</code> feature, Visual Studio Code was instantly faster than I've ever seen it before.</p>
+<p><strong>TL;DR: To make Visual Studio Code extremely fast if you don't use TypeScript, add this line to your settings.json file:</strong></p>
+<pre class="language-json" tabindex="0"><code class="language-json"><span class="highlight-line"><span class="token punctuation">{</span></span>
+<span class="highlight-line">  <span class="token property">"typescript.disableAutomaticTypeAcquisition"</span><span class="token operator">:</span> <span class="token boolean">true</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+
+<ul class="links-nextprev">
+	<i>If you would like to get in touch with me, send me an email at hi@[thisdomain].com.</i>
+	<br><br><li>Next: <a href="/blog/ux-subs/">UX When Using Dev Tooling for Non-Developers</a></li>
+</ul>
 
 		</main>
 
 		<footer></footer>
 
-		<!-- This page `/tags/` was built on 2025-03-05T20:41:15.680Z -->
+		<!-- This page `/blog/vs/` was built on 2025-03-05T20:41:15.680Z -->
 	</body>
 </html>
