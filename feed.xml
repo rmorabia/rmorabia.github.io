@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="en">
-	<title>radhika&#39;s dev thoughts</title>
+	<title>Radhika Morabia</title>
 	<subtitle>...and the rest is rust and stardust.</subtitle>
 	<link href="https://rmorabia.com/feed.xml" rel="self"/>
 	<link href="https://rmorabia.com/"/>

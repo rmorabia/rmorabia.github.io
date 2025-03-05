@@ -5,24 +5,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>The Limits of Front-End Testing</title>
 		<meta name="description" content="should we focus more on integration tests for front-end testing?">
-		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="radhika&#39;s dev thoughts">
-		<link rel="alternate" href="/feed/feed.json" type="application/json" title="radhika&#39;s dev thoughts">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Radhika Morabia">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Radhika Morabia">
 		<style>/**
- * VS theme by Andrew Lock (https://andrewlock.net)
- * Inspired by Visual Studio syntax coloring
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
  */
 
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #393A34;
-  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
-  direction: ltr;
+  color: black;
+  background: none;
+  text-shadow: 0 1px white;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1.2rem;
   text-align: left;
   white-space: pre-line;
   word-spacing: normal;
-  word-break: break-word;
-  font-size: .9em;
-  line-height: 1.2em;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
 
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -34,22 +37,28 @@ pre[class*="language-"] {
   hyphens: none;
 }
 
-pre>code[class*="language-"] {
-  font-size: 1em;
-}
-
 pre[class*="language-"]::-moz-selection,
 pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection,
 code[class*="language-"] ::-moz-selection {
-  background: #C1DEF1;
+  text-shadow: none;
+  background: #b3d4fc;
 }
 
 pre[class*="language-"]::selection,
 pre[class*="language-"] ::selection,
 code[class*="language-"]::selection,
 code[class*="language-"] ::selection {
-  background: #C1DEF1;
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+@media print {
+
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
 }
 
 /* Code blocks */
@@ -57,75 +66,78 @@ pre[class*="language-"] {
   padding: 1em;
   margin: .5em 0;
   overflow: auto;
-  background-color: #f6ebdf;
+}
+
+:not(pre)>code[class*="language-"],
+pre[class*="language-"] {
+  background: #f5f2f0;
 }
 
 /* Inline code */
 :not(pre)>code[class*="language-"] {
-  padding: .2em;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  background: #f8f8f8;
-  border: 1px solid #dddddd;
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #008000;
-  font-style: italic;
+  color: slategray;
+}
+
+.token.punctuation {
+  color: #999;
 }
 
 .token.namespace {
   opacity: .7;
 }
 
-.token.string {
-  color: #A31515;
-}
-
-.token.punctuation,
-.token.operator {
-  color: #393A34;
-  /* no highlight */
-}
-
-.token.url,
-.token.symbol,
-.token.number,
+.token.property,
+.token.tag,
 .token.boolean,
-.token.variable,
+.token.number,
 .token.constant,
-.token.inserted {
-  color: #36acaa;
-}
-
-.token.atrule,
-.token.keyword,
-.token.attr-value,
-.language-autohotkey .token.selector,
-.language-json .token.boolean,
-.language-json .token.number,
-code[class*="language-css"] {
-  color: #0000ff;
-}
-
-.token.function {
-  color: #393A34;
-}
-
-.token.deleted,
-.language-autohotkey .token.tag {
-  color: #9a050f;
+.token.symbol,
+.token.deleted {
+  color: #905;
 }
 
 .token.selector,
-.language-autohotkey .token.keyword {
-  color: #00009f;
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #690;
 }
 
-.token.important {
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #9a6e3a;
+  /* This background color was intended by the author of this theme. */
+  background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #07a;
+}
+
+.token.function,
+.token.class-name {
+  color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
   color: #e90;
 }
 
@@ -138,46 +150,8 @@ code[class*="language-css"] {
   font-style: italic;
 }
 
-.token.class-name,
-.language-json .token.property {
-  color: #2B91AF;
-}
-
-.token.tag,
-.token.selector {
-  color: #800000;
-}
-
-.token.attr-name,
-.token.property,
-.token.regex,
 .token.entity {
-  color: #ff0000;
-}
-
-.token.directive.tag .tag {
-  background: #ffff00;
-  color: #393A34;
-}
-
-/* overrides color-values for the Line Numbers plugin
- * http://prismjs.com/plugins/line-numbers/
- */
-.line-numbers.line-numbers .line-numbers-rows {
-  border-right-color: #a5a5a5;
-}
-
-.line-numbers .line-numbers-rows>span:before {
-  color: #2B91AF;
-}
-
-/* overrides color-values for the Line Highlight plugin
-* http://prismjs.com/plugins/line-highlight/
-*/
-.line-highlight.line-highlight {
-  background: rgba(193, 222, 241, 0.2);
-  background: -webkit-linear-gradient(left, rgba(193, 222, 241, 0.2) 70%, rgba(221, 222, 241, 0));
-  background: linear-gradient(to right, rgba(193, 222, 241, 0.2) 70%, rgba(221, 222, 241, 0));
+  cursor: help;
 }
 /*
  * New diff- syntax
@@ -225,13 +199,48 @@ pre[class*="language-diff-"] {
 	color: inherit; /* override del, ins, mark defaults */
 }
 * { box-sizing: border-box; }
-/* Defaults */
-:root {
-	--font-family: Inter, Helveltica, Arial;
-	--font-family-monospace: Courier, Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+@charset "UTF-8";
+
+/* Import ET Book styles
+   adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css */
+
+@font-face {
+	font-family: "et-book";
+	src: url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot");
+	src: url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff") format("woff"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.ttf") format("truetype"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.svg#etbookromanosf") format("svg");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
 
-/* Theme colors */
+@font-face {
+	font-family: "et-book";
+	src: url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot");
+	src: url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff") format("woff"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.ttf") format("truetype"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.svg#etbookromanosf") format("svg");
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "et-book";
+	src: url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot");
+	src: url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff") format("woff"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.ttf") format("truetype"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.svg#etbookromanosf") format("svg");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "et-book-roman-old-style";
+	src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot");
+	src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff") format("woff"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.ttf") format("truetype"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.svg#etbookromanosf") format("svg");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Theme colors - needed for variable references */
 :root {
 	--color-gray-20: #e0e0e0;
 	--color-gray-50: #C0C0C0;
@@ -247,40 +256,119 @@ pre[class*="language-diff-"] {
 	--syntax-tab-size: 2;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--color-gray-20: #e0e0e0;
-		--color-gray-50: #C0C0C0;
-		--color-gray-90: #dad8d8;
-
-		/* --text-color is assigned to --color-gray-_ above */
-		--text-color-link: #1493fb;
-		--text-color-link-active: #6969f7;
-		--text-color-link-visited: #a6a6f8;
-
-		--background-color: #15202b;
-	}
-}
-
-
 /* Global stylesheet */
 * {
 	box-sizing: border-box;
 }
 
-html,
-body {
-	padding: 0;
-	margin: 0 auto;
-	font-family: var(--font-family);
-	color: var(--text-color);
-	background-color: var(--background-color);
-}
+/* Tufte CSS styles */
 html {
+	font-size: 15px;
 	overflow-y: scroll;
 }
+
 body {
-	max-width: 40em;
+	width: 55%;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	background-color: #fffff8;
+	color: #111;
+	max-width: 1400px;
+	counter-reset: sidenote-counter;
+}
+
+/* Adds dark mode */
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #151515;
+		color: #ddd;
+	}
+}
+
+h1 {
+	font-weight: 400;
+	margin-top: 4rem;
+	margin-bottom: 1.5rem;
+	font-size: 3.2rem;
+	line-height: 1.5;
+}
+
+h2 {
+	font-style: italic;
+	font-weight: 400;
+	margin-top: 2.1rem;
+	margin-bottom: 1.4rem;
+	font-size: 2.2rem;
+	line-height: 1.5;
+}
+
+h3 {
+	font-style: italic;
+	font-weight: 400;
+	font-size: 1.7rem;
+	margin-top: 2rem;
+	margin-bottom: 1.4rem;
+	line-height: 1.5;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	width: 55%;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+p.subtitle {
+	font-style: italic;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	font-size: 1.8rem;
+	display: block;
+	line-height: 1.5;
+}
+
+.numeral {
+	font-family: et-book-roman-old-style;
+}
+
+.danger {
+	color: red;
+}
+
+article {
+	padding: 5rem 0rem;
+}
+
+section {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+p,
+dl,
+ol,
+ul {
+	font-size: 1.4rem;
+	line-height: 2rem;
+}
+
+p {
+	margin-top: 1.4rem;
+	margin-bottom: 1.4rem;
+	padding-right: 0;
+	vertical-align: baseline;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+li {
+	line-height: 1.5;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -294,83 +382,97 @@ body {
 	width: 1px;
 }
 
-p:last-child {
-	margin-bottom: 0;
-}
-p {
-	line-height: 1.5;
-}
-
-li {
-	line-height: 1.5;
-}
-
 .post {
 	margin-bottom: 4px;
 }
 
-a[href] {
-	color: var(--text-color-link);
-}
-a[href]:visited {
-	color: var(--text-color-link-visited);
-}
-a[href]:hover,
-a[href]:active {
-	color: var(--text-color-link-active);
+/* Chapter Epigraphs */
+div.epigraph {
+	margin: 5em 0;
 }
 
-main {
-	padding: 1rem;
+div.epigraph>blockquote {
+	margin-top: 3em;
+	margin-bottom: 3em;
 }
-main :first-child {
+
+div.epigraph>blockquote,
+div.epigraph>blockquote>p {
+	font-style: italic;
+}
+
+div.epigraph>blockquote>footer {
+	font-style: normal;
+}
+
+div.epigraph>blockquote>footer>cite {
+	font-style: italic;
+}
+
+/* end chapter epigraphs styles */
+
+blockquote {
+	font-size: 1.4rem;
+}
+
+blockquote p {
+	width: 55%;
+	margin-right: 40px;
+}
+
+blockquote footer {
+	width: 55%;
+	font-size: 1.1rem;
+	text-align: right;
+}
+
+section>p,
+section>footer,
+section>table {
+	width: 55%;
+}
+
+/* 50 + 5 == 55, to be the same width as paragraph */
+section>dl,
+section>ol,
+section>ul {
+	width: 50%;
+	-webkit-padding-start: 5%;
+}
+
+figure {
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	max-width: 55%;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	margin: 0 0 3em 0;
+}
+
+figcaption {
+	float: right;
+	clear: right;
 	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 1.1rem;
+	line-height: 1.6;
+	vertical-align: baseline;
+	position: relative;
+	max-width: 40%;
 }
 
-header {
-	border-bottom: 1px dashed var(--color-gray-20);
-}
-header:after {
-	content: "";
-	display: table;
-	clear: both;
+figure.fullwidth figcaption {
+	margin-right: 24%;
 }
 
-.links-nextprev {
-	list-style: none;
-	border-top: 1px dashed var(--color-gray-20);
-	padding: 1em 0;
-}
-
-table {
-	margin: 1em 0;
-}
-table td,
-table th {
-	padding-right: 1em;
-}
-
-pre,
-code {
-	font-family: var(--font-family-monospace);
-}
-pre:not([class*="language-"]) {
-	margin: .5em 0;
-	line-height: 1.375; /* 22px /16 */
-	-moz-tab-size: var(--syntax-tab-size);
-	-o-tab-size: var(--syntax-tab-size);
-	tab-size: var(--syntax-tab-size);
-	-webkit-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-}
-code {
-	word-break: break-all;
+a:link,
+a:visited {
+	color: inherit;
+	text-underline-offset: 0.1em;
+	text-decoration-thickness: 0.05em;
 }
 
 /* Header */
@@ -380,12 +482,22 @@ header {
 	flex-wrap: wrap;
 	align-items: center;
 	padding: 1em;
+	border-bottom: 1px dashed var(--color-gray-20);
 }
+
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 .home-link {
-	font-size: 1em; /* 16px /16 */
+	font-size: 1.4rem;
+	line-height: 2;
 	font-weight: 700;
-	margin-right: 2em;
+	margin-right: 1em;
 }
+
 .home-link:link:not(:hover) {
 	text-decoration: none;
 }
@@ -397,13 +509,16 @@ header {
 	margin: 0;
 	list-style: none;
 }
+
 .nav-item {
 	display: inline-block;
 	margin-right: 1em;
 }
+
 .nav-item a[href]:not(:hover) {
 	text-decoration: none;
 }
+
 .nav a[href][aria-current="page"] {
 	text-decoration: underline;
 }
@@ -413,6 +528,7 @@ header {
 	list-style: none;
 	padding: 0;
 }
+
 .postlist-item {
 	display: flex;
 	flex-wrap: wrap;
@@ -420,6 +536,7 @@ header {
 	counter-increment: start-from -1;
 	margin-bottom: 1em;
 }
+
 .postlist-item:before {
 	display: inline-block;
 	pointer-events: none;
@@ -428,16 +545,21 @@ header {
 	text-align: right;
 	margin-left: -1.5rem;
 }
+
 .postlist-date,
 .postlist-item:before {
-	font-size: 0.8125em; /* 13px /16 */
+	font-size: 0.8125em;
+	/* 13px /16 */
 	color: var(--color-gray-90);
 }
+
 .postlist-date {
 	word-spacing: -0.5px;
 }
+
 .postlist-link {
-	font-size: 1.1875em; /* 19px /16 */
+	font-size: 1.1875em;
+	/* 19px /16 */
 	font-weight: 700;
 	flex-basis: calc(100% - 1.5rem);
 	padding-left: .25em;
@@ -446,6 +568,7 @@ header {
 	text-underline-offset: 0;
 	text-decoration-thickness: 1px;
 }
+
 .postlist-item-active .postlist-link {
 	font-weight: bold;
 }
@@ -458,7 +581,8 @@ header {
 	text-transform: capitalize;
 	font-style: italic;
 }
-.postlist-item > .post-tag {
+
+.postlist-item>.post-tag {
 	align-self: center;
 }
 
@@ -471,6 +595,7 @@ header {
 	padding: 0;
 	margin: 0;
 }
+
 .post-metadata time {
 	margin-right: 1em;
 }
@@ -482,21 +607,263 @@ header {
 	font-size: 1em;
 	margin-left: .1em;
 }
+
 a[href].header-anchor,
 a[href].header-anchor:visited {
 	color: transparent;
 }
+
 a[href].header-anchor:focus,
 a[href].header-anchor:hover {
 	text-decoration: underline;
 }
+
 a[href].header-anchor:focus,
-:hover > a[href].header-anchor {
+:hover>a[href].header-anchor {
 	color: #aaa;
 }
 
-h2 + .header-anchor {
+h2+.header-anchor {
 	font-size: 1.5em;
+}
+
+/* Sidenotes, margin notes, figures, captions */
+img {
+	max-width: 100%;
+}
+
+.sidenote,
+.marginnote {
+	float: right;
+	clear: right;
+	margin-right: -60%;
+	width: 50%;
+	margin-top: 0.3rem;
+	margin-bottom: 0;
+	font-size: 1.1rem;
+	line-height: 1.3;
+	vertical-align: baseline;
+	position: relative;
+}
+
+.sidenote-number {
+	counter-increment: sidenote-counter;
+}
+
+.sidenote-number:after,
+.sidenote:before {
+	font-family: et-book-roman-old-style;
+	position: relative;
+	vertical-align: baseline;
+}
+
+.sidenote-number:after {
+	content: counter(sidenote-counter);
+	font-size: 1rem;
+	top: -0.5rem;
+	left: 0.1rem;
+}
+
+.sidenote:before {
+	content: counter(sidenote-counter) " ";
+	font-size: 1rem;
+	top: -0.5rem;
+}
+
+blockquote .sidenote,
+blockquote .marginnote {
+	margin-right: -82%;
+	min-width: 59%;
+	text-align: left;
+}
+
+div.fullwidth,
+table.fullwidth {
+	width: 100%;
+}
+
+div.table-wrapper {
+	overflow-x: auto;
+	font-family: "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif;
+}
+
+.sans {
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+	letter-spacing: .03em;
+}
+
+code,
+pre>code {
+	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	font-size: 1.0rem;
+	line-height: 1.42;
+	-webkit-text-size-adjust: 100%;
+	/* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
+}
+
+.sans>code {
+	font-size: 1.2rem;
+}
+
+h1>code,
+h2>code,
+h3>code {
+	font-size: 0.80em;
+}
+
+.marginnote>code,
+.sidenote>code {
+	font-size: 1rem;
+}
+
+pre>code {
+	font-size: 0.9rem;
+	width: 90%;
+	margin-left: 2.5%;
+	overflow-x: auto;
+	display: block;
+}
+
+.fullwidth {
+	max-width: 90%;
+	clear: both;
+}
+
+span.newthought {
+	font-variant: small-caps;
+	font-size: 1.2em;
+}
+
+input.margin-toggle {
+	display: none;
+}
+
+label.sidenote-number {
+	display: inline-block;
+	max-height: 2rem;
+	/* should be less than or equal to paragraph line-height */
+}
+
+label.margin-toggle:not(.sidenote-number) {
+	display: none;
+}
+
+.iframe-wrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+	/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.iframe-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+main {
+	padding: 1rem;
+}
+
+main :first-child {
+	margin-top: 0;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+
+table td,
+table th {
+	padding-right: 1em;
+}
+
+@media (max-width: 760px) {
+	body {
+		width: 84%;
+		padding-left: 8%;
+		padding-right: 8%;
+	}
+
+	hr,
+	section>p,
+	section>footer,
+	section>table {
+		width: 100%;
+	}
+
+	pre>code {
+		width: 97%;
+	}
+
+	section>dl,
+	section>ol,
+	section>ul {
+		width: 90%;
+	}
+
+	figure {
+		max-width: 90%;
+	}
+
+	figcaption,
+	figure.fullwidth figcaption {
+		margin-right: 0%;
+		max-width: none;
+	}
+
+	blockquote {
+		margin-left: 1.5em;
+		margin-right: 0em;
+	}
+
+	blockquote p,
+	blockquote footer {
+		width: 100%;
+	}
+
+	label.margin-toggle:not(.sidenote-number) {
+		display: inline;
+	}
+
+	.sidenote,
+	.marginnote {
+		display: none;
+	}
+
+	.margin-toggle:checked+.sidenote,
+	.margin-toggle:checked+.marginnote {
+		display: block;
+		float: left;
+		left: 1rem;
+		clear: both;
+		width: 95%;
+		margin: 1rem 2.5%;
+		vertical-align: baseline;
+		position: relative;
+	}
+
+	label {
+		cursor: pointer;
+	}
+
+	div.table-wrapper,
+	table {
+		width: 85%;
+	}
+
+	img {
+		width: 100%;
+	}
 }</style>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -506,7 +873,7 @@ h2 + .header-anchor {
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 
 		<header>
-			<a href="/" class="home-link">radhika&#39;s dev thoughts</a>
+			<a href="/" class="home-link">Radhika Morabia</a>
 			<nav>
 				<h2 class="visually-hidden">Top level navigation menu</h2>
 				<ul class="nav">
@@ -552,6 +919,6 @@ h2 + .header-anchor {
 
 		<footer></footer>
 
-		<!-- This page `/blog/integration-testing/` was built on 2025-02-14T20:28:36.282Z -->
+		<!-- This page `/blog/integration-testing/` was built on 2025-03-05T20:42:26.233Z -->
 	</body>
 </html>
