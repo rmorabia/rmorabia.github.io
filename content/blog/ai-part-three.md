@@ -19,7 +19,7 @@ Honestly, the most killer feature that Cursor has is also the most no-brainer on
 
 It's my daily driver now, and I genuinely don't see myself working in comfortable, familiar codebases without it from now on, because I truly am just a bit faster. But, with so many ...so many caveats.
 
-### It's just a typing speed aid.
+## It's just a typing speed aid.
 
 Note that caveat for familiar, comfortable codebases. I am a firm believer that for anything you can't adequately judge accurately and quickly -- as in for code you are unfamiliar with and big changes, LLMs are years off from being useful. I will re-open VS Code (which I guess I now need to disable Copilot in for it to be useful again) for learning or contributions to codebases that I don't work in every day. It's just too untrustworthy and I find the thinking traps to be very enticing.
 
@@ -29,7 +29,7 @@ It's just a siren's call, if that makes sense. If you're not already 90% confide
 
 Exception: CSS. I can't be bothered to memorize CSS, and I just test it manually after the changes.
 
-### I hate agentic mode.
+## I hate agentic mode.
 
 I got my Cursor license a single day before they made agentic mode the default. I really do not believe that the output from LLMs is anywhere near the point where I would trust AI to work on its own iteratively. I need to guide it at every single little step, and I see that being the path forward for a long, long time.
 
@@ -86,7 +86,7 @@ This is just ridiculous. Changing the file to handle specific test cases because
 
 I like Chat mode. If you are not a programmer, do whatever you want. If you are doing things for real people in real life that will affect real things like taxes(!!!), it's just too dangerous to use Agent mode.
 
-### I use AI-powered dictation to do my prompts for me.
+## I use AI-powered dictation to do my prompts for me.
 
 I've had an issue with prompting for a long time. I suppose at a certain point I should study it, but I don't want to, because it seems like a really transient skill, very reminiscent of specifying on your resume that you are a master of Microsoft Word 2003 instead of Microsoft Word in general. 2007 is coming sooner than you think.
 
@@ -104,7 +104,7 @@ And yes, I do work in an in-person office. It's not as bad as it sounds. I found
 
 Genuinely, I recommend this workflow. Until prompting stops requiring a billion caveats and descriptors, it's just too much to type. I finally can actually study how to prompt better, because I am absolutely willing to speak 3 paragraphs worth of context for the LLM to digest.
 
-### I would still never use it for debugging or any other kind of reference.
+## I would still never use it for debugging or any other kind of reference.
 
 I don't have much to say here. It's the same LLMs as I had in my last blog post. Accuracy matters. Multiple sources of truth are vital to debugging. I don't ask it questions. I don't quite know how to get accurate answers to questions in the near future given how bad Google is now, how bad Bing-based DDG has always been, and my unwillingness to pay for Kagi.
 
