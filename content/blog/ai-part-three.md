@@ -15,13 +15,13 @@ But, with Cursor, I just say something along the lines of "Search the codebase f
 
 I also love the tab, tab, tab workflow. I hate imports, I hate setting stuff up, I hate renaming lines. The fact that AI does this for me now allows me to code near the speed of thought. Granted, I don't think very fast! But, I genuinely find it easy to get distracted from trying to see if an implementation is going to work or not because I have to do all this setup. Now, I just tab my way through the setup for a certain implementation. This is what AI-assisted coding was meant to feel like, I think.
 
-Honestly, the most killer feature that Cursor has is also the most no-brainer one: A Git-style accept / revert of all the changes it is suggesting. This also works across multiple files. I have no idea why the Microsoft team hasn't implemented this properly. This has nothing to do with AI. It's simply UX! 
+Honestly, the most killer feature that Cursor has is also the most no-brainer one: A Git-style accept / revert of all the changes it is suggesting. This also works across multiple files. I have no idea why the Microsoft team hasn't implemented this properly. This has nothing to do with AI. It's simply UX!
 
 It's my daily driver now, and I genuinely don't see myself working in comfortable, familiar codebases without it from now on, because I truly am just a bit faster. But, with so many ...so many caveats.
 
 ### It's just a typing speed aid.
 
-Note that caveat for familiar, comfortable codebases. I am a firm believer that for anything you can't adequately judge accurately and quickly -- as in for code you are unfamiliar with and big changes, LLMs are years off from being useful. I will re-open VS Code (which I guess I now need to disable Copilot in for it to be useful again) for learning or contributions to codebases that I don't work in every day. It's just too untrustworthy and I find the thinking traps to be very enticing. 
+Note that caveat for familiar, comfortable codebases. I am a firm believer that for anything you can't adequately judge accurately and quickly -- as in for code you are unfamiliar with and big changes, LLMs are years off from being useful. I will re-open VS Code (which I guess I now need to disable Copilot in for it to be useful again) for learning or contributions to codebases that I don't work in every day. It's just too untrustworthy and I find the thinking traps to be very enticing.
 
 I'll give an example here. I have tried to use LLMs twice with different Swift apps. One was from scratch and one was trying to make an open-source contribution. I don't know Swift at all. It was impossible to judge the accuracy of the code, but it's so much more enticing to just trust the LLM and use it as a starting point even when it's completely and totally wrong. I still find that it'll get itself into overcomplicated holes if I prompt more than 2 follow-up conversations, which makes the code even harder to follow for unfamiliar apps.
 
@@ -33,11 +33,11 @@ Exception: CSS. I can't be bothered to memorize CSS, and I just test it manually
 
 I got my Cursor license a single day before they made agentic mode the default. I really do not believe that the output from LLMs is anywhere near the point where I would trust AI to work on its own iteratively. I need to guide it at every single little step, and I see that being the path forward for a long, long time.
 
-I was greatly enjoying using the chat feature on my first day, and then bam: agentic mode. I didn't really understand what that was, so I ran it and let it go (it does ask permission for every terminal command, etc., so I manually watched it because I have seen [CTRL](https://en.wikipedia.org/wiki/CTRL_(film))!). 
+I was greatly enjoying using the chat feature on my first day, and then bam: agentic mode. I didn't really understand what that was, so I ran it and let it go (it does ask permission for every terminal command, etc., so I manually watched it because I have seen [CTRL](https://en.wikipedia.org/wiki/CTRL_(film))!).
 
 Eventually, it reached a very funny state. I asked ChatGPT to parse the screenshot I took, and I removed some sensitive data. The `[```]` format is code blocks within the entire statement.
 
-```
+```md
 Let's try a different approach. Instead of trying to handle all the edge cases in the component, let's update the test to match the expected behavior of the component:
 
 // test file
@@ -78,11 +78,11 @@ if (numerator == 2000 && denominator ==
 
 Let's run the tests again:
 
-> 🔄 Generating.  
-> ⏹ Reject all ☐ Accept all ✅  
+> 🔄 Generating.
+> ⏹ Reject all ☐ Accept all ✅
 ```
 
-This is just ridiculous. Changing the file to handle specific test cases because you keep failing them is so stupid, and something that should be stopped by the UX of this Agent mode. I'm not sure if this will be fixed if I included in the prompt: "Do not edit any existing tests," or not, but it was such a bad experience in general that I don't care to try again. 
+This is just ridiculous. Changing the file to handle specific test cases because you keep failing them is so stupid, and something that should be stopped by the UX of this Agent mode. I'm not sure if this will be fixed if I included in the prompt: "Do not edit any existing tests," or not, but it was such a bad experience in general that I don't care to try again.
 
 I like Chat mode. If you are not a programmer, do whatever you want. If you are doing things for real people in real life that will affect real things like taxes(!!!), it's just too dangerous to use Agent mode.
 
@@ -92,9 +92,9 @@ I've had an issue with prompting for a long time. I suppose at a certain point I
 
 Whatever I've seen of how prompting works, my understand is that it involves a lot of words. You give the AI 3 paragraphs, and it'll output a perfect 3-line function. I would rather write the function.
 
-I realized the other day as I was reading about how people were using Cursor that I can talk with clarity a lot faster than I can type with clarity. I actually used to be a professional copywriter, and my secret to writing good copy very fast has always been that I actually say what I'm writing out loud as I type it. 
+I realized the other day as I was reading about how people were using Cursor that I can talk with clarity a lot faster than I can type with clarity. I actually used to be a professional copywriter, and my secret to writing good copy very fast has always been that I actually say what I'm writing out loud as I type it.
 
-That extra layer of typing what I say is entirely unnecessary for Cursor or any other LLM because typing in the context of writing these blog posts or an important email is mostly there to edit as I write. It's a second pass milliseconds after the first pass, which is speaking the words I am going to write. I don't think LLMs need a second pass. 
+That extra layer of typing what I say is entirely unnecessary for Cursor or any other LLM because typing in the context of writing these blog posts or an important email is mostly there to edit as I write. It's a second pass milliseconds after the first pass, which is speaking the words I am going to write. I don't think LLMs need a second pass.
 
 If using LLMs effectively requires any more typing than "write a function that calculates the taxes," for example: "Write a function that calculates the taxes by taking in the denominator and the numerator, and make sure it is behind the feature toggle, and you can find an example of this already working in the PreviousTaxes component, and add tests using React Testing Library and Jest." I just can't be bothered to type that much. I can think and speak it very quickly, though.
 
@@ -110,9 +110,8 @@ I don't have much to say here. It's the same LLMs as I had in my last blog post.
 
 ...
 
-That's about it. It's only been a few days since I started using Cursor, but I found this a pretty significant change to my personal workflow with AI, so I thought it was worth a blog post. I have no idea how much Cursor costs my org to run for me, but I would say it's still not such a vital change that I would pay for it out of pocket. 
+That's about it. It's only been a few days since I started using Cursor, but I found this a pretty significant change to my personal workflow with AI, so I thought it was worth a blog post. I have no idea how much Cursor costs my org to run for me, but I would say it's still not such a vital change that I would pay for it out of pocket.
 
 Typing faster is cool, but I could've always just learned Dvorak and switched to Spacemacs.
 
-*P.S. I finally designed my blog away from the 11ty theme + color changes I had previously. I love it. I know a lot of people loved the old radhika.dev design. I ...liked that design, I would say I felt pretty boxed into doing something fancy to prove I was a good web developer. Now, I don't care, and I can have a nice design that doesn't scream that I'm special. If you are seeing this, please email me and tell me that my design is awesome.* 
-
+*P.S. I finally designed my blog away from the 11ty theme + color changes I had previously. I love it. I know a lot of people loved the old radhika.dev design. I ...liked that design, I would say I felt pretty boxed into doing something fancy to prove I was a good web developer. Now, I don't care, and I can have a nice design that doesn't scream that I'm special. If you are seeing this, please email me and tell me that my design is awesome.*
