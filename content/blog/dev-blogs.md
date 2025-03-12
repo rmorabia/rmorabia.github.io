@@ -16,7 +16,7 @@ This is JavaScript-specific news that doesn't make me want to tear my hair out. 
 
 ## [Tech Talks Weekly](https://techtalksweekly.substack.com/)
 
-This is a recent and powerful discovery for me. I fundamentally believe that if you're hot a hobbyist professional and you want to keep learning, your options start to get slim very fast. You can read a couple of books a year, but I generally focus on more fundamentals and timeless books there. To keep up with a diverse set of ideas and technologies without getting bogged down in blog spam (popularity isn't a good curation metric!), tech talks are my new go-to. I try and watch anything that sounds interesting to me and shut it off in 10 minutes if it's not useful. This means, more often than not, watching talks outside of the world of JavaScript and front-end development.
+This is a recent and powerful discovery for me. I fundamentally believe that if you're not a hobbyist professional and you want to keep learning, your options start to get slim very fast. You can read a couple of books a year, but I generally focus on more fundamentals and timeless books there. To keep up with a diverse set of ideas and technologies without getting bogged down in blog spam (popularity isn't a good curation metric!), tech talks are my new go-to. I try and watch anything that sounds interesting to me and shut it off in 10 minutes if it's not useful. This means, more often than not, watching talks outside of the world of JavaScript and front-end development.
 
 ## [Software Clown by Itamar Turner-Trauring](https://codewithoutrules.com/)
 
