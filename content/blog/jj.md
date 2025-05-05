@@ -19,7 +19,7 @@ Enter [JJ](https://github.com/jj-vcs/jj).
 
 It’s git-compatible, it handles dependencies in a way that “just works,” and suffers absolutely none of the rebasing horrors of git.
 
-I read all I could about it for a while, and it was all making sense. It sounded great, particularly with the Git-compatible extension for VS Code [VisualJJ](https://www.visualjj.com/).
+I read all I could about it for a while, and it was all making sense. It sounded great, particularly with the GitHub-compatible extension for VS Code [VisualJJ](https://www.visualjj.com/).
 
 For a while, it was really working. I was putting up PRs and just working on the next one, and it was already ready to go by the time I got an approval and a merge.
 
