@@ -47,6 +47,7 @@ Fundamentally, what this comes down to is a few core ideas:
 
 - Reading code is one of the most important parts of the job.
 - Does JJ make that easier? No, in fact it makes it a bit harder because I currently use JJ a as a GitHub band-aid.
+- Small PRs (250 lines or less) seem to be an effective max size for people finding a PR easy to read.
 - Everyone really needs to pull their weight on code review quantity, or it will cause leeching and uneven burdens.
 - Stacked diffs do make reading PRs easier, more effective, and faster.
 - Tools can not overcome people problems.
