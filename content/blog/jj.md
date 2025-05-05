@@ -23,7 +23,7 @@ I read all I could about it for a while, and it was all making sense. It sounded
 
 For a while, it was really working. I was putting up PRs and just working on the next one, and it was already ready to go by the time I got an approval and a merge.
 
-Then, after VisualJJ broke for me one weekend, I stopped using it. (In VisualJJ’s defense, which I think is a one man operation by Fedor Sheremetyev, he’s been super responsive and quick with bug reports). I meant to restart, I mean, VisualJJ fixed the bug within 2 days.
+Then, after VisualJJ broke for me late one week, I stopped using it. (In VisualJJ’s defense, which I think is a one man operation by Fedor Sheremetyev, he’s been super responsive and quick with bug reports). I meant to restart the next Monday, I mean, VisualJJ fixed the bug within 2 days.
 
 Why didn’t I? I had a team member join on rotation who just catapulted my personal PR approval rate. It also seemed that my commitment to smaller PRs did seem to be a convincing bribe! I was no longer finishing my follow-up PRs before I got an approval. None of those issues with Git mattered anymore, although I should probably still be putting major Prettier changes into its own PR.
 
