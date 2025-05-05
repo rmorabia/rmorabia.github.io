@@ -35,7 +35,7 @@ I think JJ is a much better technology that makes way more intuitive sense than 
 
 The most interesting question here is: Would I use JJ for a personal project? So, not JJ as a band-aid on top of GitHub’s limitations (because by the way, GitLab supports stacked diffs [natively](https://docs.gitlab.com/user/project/merge_requests/stacked_diffs/)), but as a native source control tool for a side project.
 
-…I don’t think so. All my problems with Git also come from other people. I could work with 1-2 other people using just CLI Git with almost zero wasted time. So again: it all comes down to people.
+…I don’t think so. All my problems with Git also come from other people. I could work with 1-2 other people using just Git CLI with almost zero wasted time. So again: it all comes down to people.
 
 Would I work with stacked diffs in the future, though? Absolutely. I think it just makes sense. This is part of the problem with JJ as a band-aid for Git. It would just combine all my stacked commits (I don’t know if they’re called commits in JJ, but whatever, you get the idea) into one commit when making a new Git PR. I’d make an edit on a comment, and it’d just update the existing commit — no real diff tracking remotely, which I didn’t love.
 
