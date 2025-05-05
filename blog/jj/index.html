@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Talks I Like</title>
+		<title>JJ: Hype not achieved</title>
 		<meta name="description" content="...and the rest is rust and stardust.">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Radhika Morabia">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Radhika Morabia">
@@ -963,33 +963,55 @@ table th {
 
 		<main id="skip">
 			
-<h1>Talks I Like</h1>
+<h1>JJ: Hype not achieved</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2025-01-13">January 13, 2025</time></li>
+	<li><time datetime="2025-05-05">May 05, 2025</time></li>
 </ul>
 
-<p>I've been keeping a daily practice of watching one talk during work, usually during lunch break, because I believe they are the best way for corporate-focused engineers to learn new things now. Blogs are too cutting edge, and books are too bloated to allow for a variety of inputs. Talks let me learn things in a low stakes way even from disciplines I'm not necessarily a part of.</p>
-<p><a href="https://techtalksweekly.substack.com">Tech Talks Weekly</a> is how I get all my talks, by the way. Every week, they send a list of basically every talk that went live that week. I add them to my YouTube Watch Later. Then, I shuffle during work and usually watch on a slightly faster speed. If 10ish minutes have passed and there's no build up to anything seemingly useful or interesting (lots of infotainment out there), I move on.</p>
-<p>Here are the talks that I've found very good and interesting thus far. Keep in mind this is heavily filtered! This will also be updated to whatever date the published date says.</p>
-<h2 id="bun-deno-node-js-recreating-a-javascript-runtime-from-scratch-erick-wendel-ndc-oslo-2023" tabindex="-1"><a href="https://www.youtube.com/watch?v=uNGDW3snVyA">Bun, Deno, Node.js? Recreating a JavaScript runtime from Scratch - Erick Wendel - NDC Oslo 2023</a> <a class="header-anchor" href="#bun-deno-node-js-recreating-a-javascript-runtime-from-scratch-erick-wendel-ndc-oslo-2023">#</a></h2>
-<p>Pretty good talk that goes over Node internals. How does it work? What's it actually doing?</p>
-<h2 id="how-to-fall-in-love-with-tdd-gui-ferreira-ndc-oslo-2024" tabindex="-1"><a href="https://www.youtube.com/watch?v=vXnTMjMe5Eg">How to fall in love with TDD - Gui Ferreira - NDC Oslo 2024</a> <a class="header-anchor" href="#how-to-fall-in-love-with-tdd-gui-ferreira-ndc-oslo-2024">#</a></h2>
-<p>Finally made me <em>get</em> TDD. I'm going to try it based on notes for this talk, actually.</p>
-<h2 id="the-past-present-and-future-of-cross-site-cross-origin-request-forgery-philippe-de-ryck" tabindex="-1"><a href="https://www.youtube.com/watch?v=9ZimlztLa1g">The Past, Present, and Future of Cross-Site/Cross-Origin Request Forgery - Philippe De Ryck</a> <a class="header-anchor" href="#the-past-present-and-future-of-cross-site-cross-origin-request-forgery-philippe-de-ryck">#</a></h2>
-<p>Finally made me get CORS. More interesting than useful for my work.</p>
-<h2 id="naming-is-hard-let-s-do-better-kate-gregory-ndc-techtown-2024" tabindex="-1"><a href="https://www.youtube.com/watch?v=aiy5TrU-Hwc">Naming is Hard: Let's Do Better - Kate Gregory - NDC TechTown 2024</a> <a class="header-anchor" href="#naming-is-hard-let-s-do-better-kate-gregory-ndc-techtown-2024">#</a></h2>
-<p>I thought I was good at naming until I saw this talk. It feels like the kind of thing that would need to be revisited every year to refresh on your new mistakes.</p>
+<p>I have been experimenting with smaller PRs in order to bribe people to review my code faster. My team’s average PR time to first review is 12.1 hours, which is the slowest of all the front-end teams in my organization. Surely, I could fix this by putting up smaller PRs (250 lines or less, on average).</p>
+<p>This is difficult, because there’s no greater headache than a <code>git merge</code> in a PR dependent on another PR you just merged, but then other people merged in between. It feels like a flow that is prone to bugs and a lack of confidence.</p>
+<p>The way I use Git and GitHub as a source repository encourages certain behaviors:</p>
+<ul>
+<li><em>One commit per PR.</em> Sure, there are subsequent commits for comments, but primarily, there’s no point in splitting up the PR into multiple commits naturally as this makes reviewing the diff with master more difficult.</li>
+<li><em>No stacked, dependent PRs.</em> Due to the above rebasing horrors I described.</li>
+<li><em>Formatting, etc.. will never gets its own PR.</em> Despite the fact that this makes PRs factually harder to review, everyone simply has to deal with it.</li>
+</ul>
+<p>Surely, there must be a magical tool to overcome all of these issues and make my PRs so beautiful that people will review them within minutes. Surely… some way to put formatting into its own PRs and then have subsequent PRs follow a single responsibility principle instead of following a single ticket principle!</p>
+<p>Enter <a href="https://github.com/jj-vcs/jj">JJ</a>.</p>
+<p>It’s git-compatible, it handles dependencies in a way that “just works,” and suffers absolutely none of the rebasing horrors of git.</p>
+<p>I read all I could about it for a while, and it was all making sense. It sounded great, particularly with the Git-compatible extension for VS Code <a href="https://www.visualjj.com/">VisualJJ</a>.</p>
+<p>For a while, it was really working. I was putting up PRs and just working on the next one, and it was already ready to go by the time I got an approval and a merge.</p>
+<p>Then, after VisualJJ broke for me one weekend, I stopped using it. (In VisualJJ’s defense, which I think is a one man operation by Fedor Sheremetyev, he’s been super responsive and quick with bug reports). I meant to restart, I mean, VisualJJ fixed the bug within 2 days.</p>
+<p>Why didn’t I? I had a team member join on rotation who just catapulted my personal PR approval rate. It also seemed that my commitment to smaller PRs did seem to be a convincing bribe! I was no longer finishing my follow-up PRs before I got an approval. None of those issues with Git mattered anymore, although I should probably still be putting major Prettier changes into its own PR.</p>
+<p>Which by the way — is possible. I like GUI clients for Git. I use VS Code’s built-in one a lot, but I also keep <a href="https://www.sourcetreeapp.com/">Sourcetree</a> around on the side, primarily because it’s free and I would never pay for a Git client. Perhaps there’s a VS Code extension for this, but Sourcetree has a great feature that lets you commit a chunk rather than files. This <em>should be</em> how Git works. I think technically, it is how Git works, and it’s simply our laziness from the clients of usage (<code>git add --all</code> or really simple GUIs) that limit the functionality.</p>
+<p>I am no longer going to use JJ, personally. The time investment was worth my time, but tools can not overcome people problems. Honestly, some people on my team are review leeches, and I am sure there are stats for this, of a ratio of reviews left : reviews asked for. This needs to be fixed from a management perspective, not a personal tooling perspective.</p>
+<p>I think JJ is a much better technology that makes way more intuitive sense than Git, but I also simply do not care enough about Git to go against the status quo. I think it’s likely a better use of my time to use a great GUI like Sourcetree and maybe to take some time to do a deep dive into Git again, for the first time since I started using it in… god, was it 2013?</p>
+<p>The most interesting question here is: Would I use JJ for a personal project? So, not JJ as a band-aid on top of GitHub’s limitations (because by the way, GitLab supports stacked diffs <a href="https://docs.gitlab.com/user/project/merge_requests/stacked_diffs/">natively</a>), but as a native source control tool for a side project.</p>
+<p>…I don’t think so. All my problems with Git also come from other people. I could work with 1-2 other people using just CLI Git with almost zero wasted time. So again: it all comes down to people.</p>
+<p>Would I work with stacked diffs in the future, though? Absolutely. I think it just makes sense. This is part of the problem with JJ as a band-aid for Git. It would just combine all my stacked commits (I don’t know if they’re called commits in JJ, but whatever, you get the idea) into one commit when making a new Git PR. I’d make an edit on a comment, and it’d just update the existing commit — no real diff tracking remotely, which I didn’t love.</p>
+<p>What I really want is for GitHub to support stacked diffs so I can actually make these JJ-size PRs with a UI that intuitively helps the reviewer understand the progressive changes over time — first just the formatting changes, then the data additions, then the UI changes, then the tests, all as separate units of work.</p>
+<p>I do think that feature alone would convince me to use GitLab if I was working on a professional project from scratch today. For a side project, I would still likely stick to GitHub due to the open source visibility on there.</p>
+<p>Fundamentally, what this comes down to is a few core ideas:</p>
+<ul>
+<li>Reading code is one of the most important parts of the job.</li>
+<li>Does JJ make that easier? No, in fact it makes it a bit harder because I currently use JJ a as a GitHub band-aid.</li>
+<li>Everyone really needs to pull their weight on code review quantity, or it will cause leeching and uneven burdens.</li>
+<li>Stacked diffs do make reading PRs easier, more effective, and faster.</li>
+<li>Tools can not overcome people problems.</li>
+</ul>
+<p>Git works, and it will likely be industry standard for another decade, at least. I know the FAANGs use something different, but I have zero desire to work there, so I will stick to Git and concern myself with other problems.</p>
+<p>My other experiment ongoing right now, by the way, is TDD. I will write a blog post once I get a solid idea about how that has gone, as well.</p>
 
 <ul class="links-nextprev">
 	<i>If you would like to get in touch with me, send me an email at hi@[thisdomain].com.</i>
-	<br><br><li>Previous: <a href="/blog/rtl-output/">Open Source Project Idea: Visual Studio Code Extension that renders the DOM output of Jest and React Testing Library</a></li><li>Next: <a href="/blog/ai-part-three/">Adventures in AI-Assisted Coding Part 3: Cursor Changed the Game</a></li>
+	<br><br><li>Previous: <a href="/blog/ai-part-three/">Adventures in AI-Assisted Coding Part 3: Cursor Changed the Game</a></li>
 </ul>
 
 		</main>
 
 		<footer></footer>
 
-		<!-- This page `/blog/talks/` was built on 2025-05-05T17:56:40.642Z -->
+		<!-- This page `/blog/jj/` was built on 2025-05-05T17:56:40.641Z -->
 	</body>
 </html>
