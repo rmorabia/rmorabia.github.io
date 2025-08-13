@@ -16,7 +16,7 @@
 		<link href="https://rmorabia.com/blog/time-curves/"/>
 		<updated>2025-08-13T00:00:00Z</updated>
 		<id>https://rmorabia.com/blog/time-curves/</id>
-		<content type="html">&lt;p&gt;I am currently working on a decently greenfield project (a rarity in my work), so I am finally able to test the result of telling Cursor to let ‘er rip. Using Clause Sonnet-4 and the Agent mode, I upload a Figma screenshot, describe what needs to be done in vivid detail (using my voice), build off of some rules and memories Cursor picked up, and describe some similar components in the codebase to model off of.&lt;/p&gt;
+		<content type="html">&lt;p&gt;I am currently working on a decently greenfield project (a rarity in my work), so I am finally able to test the result of telling Cursor to let ‘er rip. Using Claude Sonnet-4 and the Agent mode, I upload a Figma screenshot, describe what needs to be done in vivid detail (using my voice), build off of some rules and memories Cursor picked up, and describe some similar components in the codebase to model off of.&lt;/p&gt;
 &lt;p&gt;Within an hour of iterating on the prompts, I get something bare that matches 75% of my end-intended functionality.&lt;/p&gt;
 &lt;p&gt;So, it’s easy to assume — there’s 50% of my work done. I’ve cut the time for something that would’ve taken me 3 days before to 1.5 days, right?&lt;/p&gt;
 &lt;p&gt;In practice, after doing these a few times, I can safely say it’s probably more like 20% of the development time cut off. 3 days takes …2.5 still.&lt;/p&gt;
