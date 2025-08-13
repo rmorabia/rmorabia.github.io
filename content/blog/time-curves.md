@@ -3,7 +3,7 @@ title: "Time Curves in AI-Assisted Development"
 date: "2025-08-13"
 ---
 
-I am currently working on a decently greenfield project (a rarity in my work), so I am finally able to test the result of telling Cursor to let ‘er rip. Using Clause Sonnet-4 and the Agent mode, I upload a Figma screenshot, describe what needs to be done in vivid detail (using my voice), build off of some rules and memories Cursor picked up, and describe some similar components in the codebase to model off of.
+I am currently working on a decently greenfield project (a rarity in my work), so I am finally able to test the result of telling Cursor to let ‘er rip. Using Claude Sonnet-4 and the Agent mode, I upload a Figma screenshot, describe what needs to be done in vivid detail (using my voice), build off of some rules and memories Cursor picked up, and describe some similar components in the codebase to model off of.
 
 Within an hour of iterating on the prompts, I get something bare that matches 75% of my end-intended functionality.
 
