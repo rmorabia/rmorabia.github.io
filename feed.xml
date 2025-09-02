@@ -4,12 +4,64 @@
 	<subtitle>...and the rest is rust and stardust.</subtitle>
 	<link href="https://rmorabia.com/feed.xml" rel="self"/>
 	<link href="https://rmorabia.com/"/>
-	<updated>2025-08-13T00:00:00Z</updated>
+	<updated>2025-09-02T00:00:00Z</updated>
 	<id>https://rmorabia.com/</id>
 	<author>
 		<name>Radhika Morabia</name>
 		<email>hi@rmorabia.com</email>
 	</author>
+	
+	<entry>
+		<title>Bring Back Microprogramming</title>
+		<link href="https://rmorabia.com/blog/microprogramming/"/>
+		<updated>2025-09-02T00:00:00Z</updated>
+		<id>https://rmorabia.com/blog/microprogramming/</id>
+		<content type="html">&lt;p&gt;For the first time since I started blogging about AI here, I feel I&#39;ve gone too far.&lt;/p&gt;
+&lt;p&gt;My current project, as I described in my last post, is very AI-friendly, as it involves a lot of re-implementation of what has been done before. AI speeding up that copy/paste conversion process (in my case, from TypeScript to JavaScript), typing speed, and unit test production has been the only way I could deliver this project on time.&lt;/p&gt;
+&lt;p&gt;However, it&#39;s been a month now, and I feel myself atrophying. I&#39;ve never been very good at syntax or implementation details -- what are the functions of &lt;code&gt;Set()&lt;/code&gt;? What is the performance difference between &lt;code&gt;forEach&lt;/code&gt; and &lt;code&gt;for...of&lt;/code&gt;? I always look that up, it&#39;s the kind of thing I&#39;d never memorize, so you would think the fact that AI makes these kinds of microprogramming decisions for me is great, right? Right?&lt;/p&gt;
+&lt;p&gt;I&#39;m no longer sure of this. Specifically due to the nature of my workflow lately. Let&#39;s take an example of just making a util function, transforming and combining 3 data sources into one useful object for the next page to consume:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Tell Cursor I need a function that takes in X (specificaly paste in an example) and outputs Y.&lt;/li&gt;
+&lt;li&gt;Cursor takes several minutes, sometimes 30 minutes of back and forth, to generate something almost there.&lt;/li&gt;
+&lt;li&gt;I lose focus while I wait for it, and it makes such mistakes that require intervention, that I feel I have to sit and watch it.&lt;/li&gt;
+&lt;li&gt;Eventually, it looks right to me, so I tell it to generate tests. This is another 10 minutes of back and forth.&lt;/li&gt;
+&lt;li&gt;I make some heady edits now when I realize the tests or the function are incorrect, and we go back and forth.&lt;/li&gt;
+&lt;li&gt;During this back and forth, I&#39;m editing line-by-line, and I use the autocomplete tab tab tab workflow. It makes microprogramming decisions that I mostly agree with, and sometimes question.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;All in all, making a data transformation utility function plus tests takes me an hour.&lt;/p&gt;
+&lt;p&gt;That&#39;s interesting... That&#39;s a very interesting length of time. It feels very weird, like I look up from the AI and I feel like I just got started, and it&#39;s been an hour.&lt;/p&gt;
+&lt;p&gt;Now, I know that this isn&#39;t the most efficient way to use the AI. The idea from the AI influencers is you give it an extremely clear spec upfront and then it&#39;ll hammer out all of the microprogramming details. But honestly, if I&#39;m going to do that, I should just program the whole thing myself after a quick initial scaffold of a new file with that broad overview of the requirements.&lt;/p&gt;
+&lt;p&gt;Now look at this workflow:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Tell Cursor I need a function that takes in X (specifically paste in an example) and outputs Y.&lt;/li&gt;
+&lt;li&gt;I limit myself to 3 iterations on this to get something mildly usable.&lt;/li&gt;
+&lt;li&gt;I switch to another editor that does not have AI features inside of it and iterate on it manually -- including making this micro-proramming decisions myself. (Yes, I still use Intellisense!)&lt;/li&gt;
+&lt;li&gt;I write a single (or two) test for this by hand.&lt;/li&gt;
+&lt;li&gt;I switch back to Cursor and use the tab tab tab workflow to generate the rest of my tests and add any mocks to make that initial test pass.&lt;/li&gt;
+&lt;li&gt;I&#39;m iffy on this part, I haven&#39;t decided yet whether it&#39;s more efficient to go through the process of getting the tests back with or without AI, but whatever. I can figure that out eventually.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Is this really going to take longer than an hour for the same thing?&lt;/p&gt;
+&lt;p&gt;There&#39;s other variations of these workflows like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Write a spec and feed that to the AI and have it iterate on both the code and the tests.&lt;/li&gt;
+&lt;li&gt;Write all the tests first by hand (no tab workflow) and have it fill in the code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These are just variations based on comfort, but I truly believe that those will also take about an hour to finish this.&lt;/p&gt;
+&lt;p&gt;Look, I genuinely believe that the AI developments in 2025 make me a 10-20% faster programmer. This is most specifically visible with the elimination of writing boring variations of test mocks, and by taking out those microprogramming decisions.&lt;/p&gt;
+&lt;p&gt;I just don&#39;t think the loss of microprogramming is a worthy sacrifice anymore. Forget the tests, I love that the AI does that for me. But, I think those decisions like using a map or an object, &lt;code&gt;forEach&lt;/code&gt; or &lt;code&gt;reduce&lt;/code&gt;, &lt;code&gt;some&lt;/code&gt; vs &lt;code&gt;find&lt;/code&gt; are actually vital to being a good programmer. And, they really don&#39;t take that long to decide yourself from looking at MDN.&lt;/p&gt;
+&lt;p&gt;So, in practice: What am I changing here? Can&#39;t I do this already? Isn&#39;t this just weakness?&lt;/p&gt;
+&lt;p&gt;I find the temptation from Cursor very seductive. Everything with AI. &amp;quot;Chat with me, ask me questions, just tab your way to completion,&amp;quot; it seems to tell me. It doesn&#39;t even work half the time, but I still do it. This only began once I started using Cursor -- it&#39;s just so AI-first. It&#39;s so silly because it doesn&#39;t make my job any easier. I can&#39;t cite it now, but there was a study on how college students use ChatGPT. They&#39;re not actually usually writing full essays with it, they&#39;re talking to it in the vein that it&#39;s a lower cognitive activity. They don&#39;t actually write the essays any faster, but they feel they&#39;re using less cognitive energy.&lt;/p&gt;
+&lt;p&gt;So, I am keeping three editors installed now:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Cursor, my AI editor of choice&lt;/li&gt;
+&lt;li&gt;VS Code, where I have uninstalled Copilot, but it&#39;s still an IDE&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://coteditor.com/&quot;&gt;CotEditor&lt;/a&gt;, which is a plain text editor that I use for ...text editing reasons. (This is just a random plug for CotEditor. Leave Sublime, embrace Cot if you&#39;re on Mac.)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I need to get out of the AI editor when it is not time to use AI. I might find that it&#39;s almost never time to use the AI once I go back to this.&lt;/p&gt;
+&lt;p&gt;End note #1:  My coworker does a thing where he has AI-free days once a week. I like that, too. I&#39;m not ready to do that because like I said, test writing without AI is now deeply unfun to me, but I am considering it.&lt;/p&gt;
+&lt;p&gt;End note #2: I &lt;em&gt;should&lt;/em&gt; actually calculate the times given similar units of work with or without AI, and the different workflow variations within it, but I&#39;m also not ready to do that just yet. Right now, I still think that the feel of the work is more important than the actual time.&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Time Curves in AI-Assisted Development</title>
