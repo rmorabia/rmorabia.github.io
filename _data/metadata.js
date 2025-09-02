@@ -2,7 +2,7 @@ module.exports = {
 	title: "Radhika Morabia",
 	url: "https://rmorabia.com/",
 	language: "en",
-	description: "...and the rest is rust and stardust.",
+	description: "A Software Engineer's Working Thoughts",
 	author: {
 		name: "Radhika Morabia",
 		email: "hi@rmorabia.com",
