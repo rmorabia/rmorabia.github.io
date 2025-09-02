@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="en">
 	<title>Radhika Morabia</title>
-	<subtitle>...and the rest is rust and stardust.</subtitle>
+	<subtitle>A Software Engineer&#39;s Working Thoughts</subtitle>
 	<link href="https://rmorabia.com/feed.xml" rel="self"/>
 	<link href="https://rmorabia.com/"/>
 	<updated>2025-09-02T00:00:00Z</updated>
