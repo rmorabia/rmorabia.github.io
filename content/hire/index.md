@@ -51,7 +51,7 @@ I have been working in restaurant tech for a long time, but whenever I part ways
 * MongoDB
 * LLM-based development
 
-**Need to be trained, hobbyist level knowledge:**
+**Can't be trusted as the primary engineer, but very open to learn:**
 
 * SQL and Databases
 * AWS / GCP
