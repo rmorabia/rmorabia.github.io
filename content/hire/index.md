@@ -24,7 +24,7 @@ eleventyNavigation:
 
 **Open to remote?:** You can probably find someone who's way more invested in that kind of set-up. Let's be honest, you're only looking at me because I'm based in SF.
 
-**Actively interviewing?** No, I'm only open to the right opportunity.
+**Actively interviewing?:** No, I'm only open to the right opportunity.
 
 **Visa Status:** I'm a U.S. citizen. I don't have security clearance, though.
 
