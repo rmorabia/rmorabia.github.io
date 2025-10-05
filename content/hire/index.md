@@ -12,7 +12,7 @@ eleventyNavigation:
 
 **Industries I am interested in:** MedTech, HealthTech, BioTech, Life Sciences
 
-**Skills:** React, TypeScript, Node.js
+**Skills:** React, TypeScript, Node.js, Python, Java / C#, MongoDB, SQL
 
 **Years of Experience:** 7
 
@@ -47,7 +47,7 @@ I have been working in restaurant tech for a long time, but whenever I part ways
 **Need a week or two to get some momentum again:**
 
 * Any other front-end framework (Next.js, Vue, Svelte)
-* Python / Java / C#(?)
+* Python / Java / C#
 * MongoDB
 * LLM-based development
 
@@ -62,10 +62,10 @@ I have been working in restaurant tech for a long time, but whenever I part ways
 
 * Kubernetes (or really, anything to do with infra management)
 
-### What makes me standout? Why should you want me on your team?
+### What makes me stand out? Why should you want me on your team?
 
 * I routinely become a go-to person for the codebases I join within 6 months.
-* I question decisions a lot at all levels -- from PRDs to tech designs to code reviews.
+* I question decisions at all levels -- from PRDs to tech designs to code reviews.
 * I excel in greenfield projects with small-teams. Build a new flow within a month with 3 total engineers? Consider it done.
 * I can build things end-to-end (but, you probably don't want me handling the infra).
 * I _care_.
@@ -76,22 +76,22 @@ I have been working in restaurant tech for a long time, but whenever I part ways
 * I read the code. I read the docs.
 * I actively spend time trying to learn the fundamentals. The tools themselves are easy to pick up and put down.
 
-## What are my values for a good engineering environment and company?
+### What are my values for a good engineering environment and company?
 
 * Strong opinions, loosely held.
 * Product engineers (full-stack) are the best way to move fast and gain a competitive advantage.
 * Pairing and code reviews are awesome.
 * We're probably not as special as we think we are -- I bias towards the most popular tool.
 
-### Can I see what you've been working on?
+### What have I been working on?
 
-Unfortunately, no, not right now. I am part of a small front-end team building and maintaining the internal admin dashboard for 60k+ restaurants. [Here's a video I found from 8 years ago(!?) before I was on this team showing the product I'm working on.](https://www.youtube.com/watch?v=V4k_f8ZaFgc) A lot has changed since, but you get the idea.
+Unfortunately, I am unable to show you any direct code right now. I am part of a small front-end team building and maintaining the internal admin dashboard for 60k+ restaurants. [Here's a video I found from 8 years ago(!?) before I was on this team showing the product I'm working on.](https://www.youtube.com/watch?v=V4k_f8ZaFgc) A lot has changed since, but you get the idea.
 
-Note that I am also working on learning on the side, so I'll update this if I end up making some nice side projects someday. Right now, I am working through [teaching myself CS](https://teachyourselfcs.com), so most of that isn't super impressive to show off.
+Note that I am also learning on the side, so I'll update this if I end up making some nice side projects someday. Right now, I am working through [teaching myself CS](https://teachyourselfcs.com), so most of that isn't super impressive to show off.
 
 My only advice to you is to read this blog. You can see that I care and I'm working on improving myself as an engineer every day.
 
-## How do I get in touch?
+## How should you get in touch?
 
 If you've actually gotten this far, I am in awe. You're awesome and we should talk. Send an email to [hi@rmorabia.com](mailto:hi@rmorabia.com) and be sure to include **stardust** in the email somewhere so I know you've actually read this.
 
