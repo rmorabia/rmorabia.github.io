@@ -26,6 +26,8 @@ eleventyNavigation:
 
 **Actively interviewing?** No, I'm only open to the right opportunity.
 
+**Visa?** Nope, I'm a U.S. citizen. I don't have security clearance, though.
+
 **RESUME:** [Here's a link.](https://rmorabia.com/resume)
 
 **TO GET A REPLY:** I promise you I will get on a call with you if you include the word stardust somewhere in your email or LinkedIn message. My email is hi@[thisdomain].com.
