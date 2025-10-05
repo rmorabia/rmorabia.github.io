@@ -28,7 +28,7 @@ eleventyNavigation:
 
 **RESUME:** [Here's a link.](https://rmorabia.com/resume)
 
-**TO GET A REPLY:** I promise you I will get on a call with you if you include the word stardust somewhere in your email or LinkedIn message.
+**TO GET A REPLY:** I promise you I will get on a call with you if you include the word stardust somewhere in your email or LinkedIn message. My email is hi@[thisdomain].com.
 
 ## For hiring managers:
 
@@ -93,7 +93,7 @@ My only advice to you is to read this blog. You can see that I care and I'm work
 
 ## How should you get in touch?
 
-If you've actually gotten this far, I am in awe. You're awesome and we should talk. Send an email to [hi@rmorabia.com](mailto:hi@rmorabia.com) and be sure to include **stardust** in the email somewhere so I know you've actually read this.
+If you've actually gotten this far, I am in awe. You're awesome and we should talk. Send an email to hi@[thisdomain].com and be sure to include **stardust** in the email somewhere so I know you've actually read this.
 
 This says more about me than my resume, but if you still need that internally, [here's a link](https://rmorabia.com/resume).
 
