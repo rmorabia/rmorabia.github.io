@@ -30,7 +30,7 @@ eleventyNavigation:
 
 **TO GET A REPLY:** I promise you I will get on a call with you if you include the word stardust somewhere in your email or LinkedIn message.
 
-## For hiring managers
+## For hiring managers:
 
 I genuinely don't know if any hirng managers will ever read this, but if you are, thank you! Here's a more honest assessment of the above:
 
