@@ -26,7 +26,7 @@ eleventyNavigation:
 
 **Actively interviewing?** No, I'm only open to the right opportunity.
 
-**Visa?** Nope, I'm a U.S. citizen. I don't have security clearance, though.
+**Visa Status:** I'm a U.S. citizen. I don't have security clearance, though.
 
 **RESUME:** [Here's a link.](https://rmorabia.com/resume)
 
