@@ -9,15 +9,25 @@ eleventyNavigation:
 ## For recruiters:
 
 **Roles I would match:** Senior Software Engineer, Senior Product Engineer, Senior Full-Stack Engineer, Senior Front-End Engineer
+
 **Industries I am interested in:** MedTech, HealthTech, BioTech, Life Sciences
+
 **Skills:** React, TypeScript, Node.js
+
 **Years of Experience:** 7
+
 **Size of company:** I am open to anything from 3 engineers to 1000+. I am never going to be a matching fit for a pre-seed founding engineer! I am likely the best fit for a Series B or Series C startup.
+
 **Location:** San Francisco Bay Area, open to NYC and LA. Strongly prefer the office to not be in South Bay, but I'll compromise for the right place and a hybrid work environment.
+
 **In-office?:** Yep! My preference is to be in an office 4 days a week, but I am open to 5.
+
 **Open to remote?:** You can probably find someone who's way more invested in that kind of set-up. Let's be honest, you're only looking at me because I'm based in SF.
+
 **Actively interviewing?** No, I'm only open to the right opportunity.
+
 **RESUME:** [Here's a link.](https://rmorabia.com/resume)
+
 **TO GET A REPLY:** I promise you I will get on a call with you if you include the word stardust somewhere in your email or LinkedIn message.
 
 ## For hiring managers
