@@ -67,7 +67,7 @@ I have been working in restaurant tech for a long time, but whenever I part ways
 ### What makes me stand out? Why should you want me on your team?
 
 * I routinely become a go-to person for the codebases I join within 6 months.
-* I question decisions at all levels -- from PRDs to tech designs to code reviews.
+* I make thoughtful decisions at all levels -- from PRDs to tech designs to code reviews.
 * I excel in greenfield projects with small-teams. Build a new flow within a month with 3 total engineers? Consider it done.
 * I can build things end-to-end (but, you probably don't want me handling the infra).
 * I _care_.
