@@ -93,7 +93,7 @@ Note that I am also learning on the side, so I'll update this if I end up making
 
 My only advice to you is to read this blog. You can see that I care and I'm working on improving myself as an engineer every day.
 
-## How should you get in touch?
+### How should you get in touch?
 
 If you've actually gotten this far, I am in awe. You're awesome and we should talk. Send an email to hi@[thisdomain].com and be sure to include **stardust** in the email somewhere so I know you've actually read this.
 
