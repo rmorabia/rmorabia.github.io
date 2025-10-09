@@ -30,7 +30,7 @@ eleventyNavigation:
 
 **RESUME:** [Here's a link.](https://rmorabia.com/resume)
 
-**TO GET A REPLY:** I promise you I will get on a call with you if you include the word stardust somewhere in your email or LinkedIn message. My email is hi@[thisdomain].com.
+**TO GET A REPLY:** I promise you I respond to your email if you include the word stardust somewhere in your email or LinkedIn message. My email is hi@[thisdomain].com.
 
 ## For hiring managers:
 
