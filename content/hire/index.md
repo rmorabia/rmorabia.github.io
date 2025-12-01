@@ -16,7 +16,7 @@ eleventyNavigation:
 
 **Years of Experience:** 7
 
-**Size of company:** I am open to anything from 3 engineers to 1000+. I am never going to be a matching fit for a pre-seed founding engineer! I am likely the best fit for a Series B or Series C startup.
+**Size of company:** I am open to anything from 10 engineers to 1000+. I am never going to be a matching fit for a pre-seed founding engineer! I am likely the best fit for a Series B or Series C startup.
 
 **Location:** San Francisco Bay Area, open to NYC and LA. Strongly prefer the office to not be in South Bay, but I'll compromise for the right place and a hybrid work environment.
 
