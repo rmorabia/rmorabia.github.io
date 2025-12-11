@@ -4,12 +4,59 @@
 	<subtitle>A Software Engineer&#39;s Working Thoughts</subtitle>
 	<link href="https://rmorabia.com/feed.xml" rel="self"/>
 	<link href="https://rmorabia.com/"/>
-	<updated>2025-09-02T00:00:00Z</updated>
+	<updated>2025-12-11T00:00:00Z</updated>
 	<id>https://rmorabia.com/</id>
 	<author>
 		<name>Radhika Morabia</name>
 		<email>hi@rmorabia.com</email>
 	</author>
+	
+	<entry>
+		<title>Becoming Faster Than AI</title>
+		<link href="https://rmorabia.com/blog/fast/"/>
+		<updated>2025-12-11T00:00:00Z</updated>
+		<id>https://rmorabia.com/blog/fast/</id>
+		<content type="html">&lt;p&gt;Ever since I&#39;ve tried to step away from using AI-assisted development as my default mode of operation, I&#39;ve been left with a question -- How do I become a better developer than AI?&lt;/p&gt;
+&lt;p&gt;To clarify: I &lt;em&gt;am&lt;/em&gt; a better developer than AI. So, it&#39;s not so much about my accuracy or my actual ability to write good code. This means the question is: How do I make the &lt;em&gt;feel&lt;/em&gt; of development better than the AI experience?&lt;/p&gt;
+&lt;p&gt;There are several mini-workflows where currently the AI is faster (but less accurate, so ultimately slower, but we&#39;re talking about feeling faster here) than me, namely the following tasks:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Search how this is done in the codebase.&lt;/li&gt;
+&lt;li&gt;Fix this test for me.&lt;/li&gt;
+&lt;li&gt;Multi-file solutions (eg. feature toggle removal across the codebase)&lt;/li&gt;
+&lt;li&gt;General typing and navigating.&lt;/li&gt;
+&lt;li&gt;Terminal operations that require bash scripting, basic Python scripts, or complex changes.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Within this wide range of tasks, only a few really feel like they should be handled by AI: everything related to tests, and the bash scripting. I just don&#39;t care about either of those things right now, so let it do that. (Although, really, the takeaway from this article is that I actually think this is proving what a not-well-rounded developer I am. Someone is scoffing reading this at my lack of ability to throw together a working bash script without AI. And you know what! You&#39;re right! I should be faster than AI at that, because AI is very slow in practice. All I&#39;m saying is let&#39;s leave that for another day, because I have bigger priorities right now due to frequency. Let it be known that AI&#39;s greatest boon to my productivity is in exposing my own flaws.)&lt;/p&gt;
+&lt;p&gt;So, then the primary task becomes: How do I become faster at AI at searching, navigating, and moving across files?&lt;/p&gt;
+&lt;p&gt;There&#39;s a multi-pronged and probably overkill solution for this I&#39;ve been working on for the past few months and will continue to work on into 2026.&lt;/p&gt;
+&lt;h2 id=&quot;step-0-become-very-good-at-typing&quot; tabindex=&quot;-1&quot;&gt;Step 0: Become very good at typing. &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/fast/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I have an inherent advantage here because I type over 100wpm with over a 97% accuracy rate. I use QWERTY and don&#39;t do anything special. Due to this inherently good typing speed, I don&#39;t think the cost of switching layouts is worth it. But, I considered it, so I&#39;m adding it here. If you want to become faster than AI, you should probably type at least 90wpm and consider what it takes to get there.&lt;/p&gt;
+&lt;h2 id=&quot;step-1-stop-using-the-mouse-to-switch-windows&quot; tabindex=&quot;-1&quot;&gt;Step 1: Stop using the mouse to switch windows. &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/fast/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This sounds small, but I think it&#39;s very obvious on Zoom calls when you&#39;re pairing: First, move your hand to the mouse, then move it over to the dock (I use a rollerball because I got some wrist issues during COVID&#39;s trackpad only lifestyle, which is even slower), then open the window, then scroll to the tab you wanted to show, then click. It&#39;s just friction. I don&#39;t need it.&lt;/p&gt;
+&lt;p&gt;I tried to find an i3-like solution on Mac, and I found &lt;a href=&quot;https://github.com/nikitabobko/AeroSpace&quot;&gt;Aerospace&lt;/a&gt;. Some people don&#39;t like it apparently and there&#39;s alternatives, but personally all I&#39;m doing is full or half-screening apps, and switching between them rapidly, and it seems to work for that. There&#39;s absolutely no animation or delay, and you can set it so frequently opened apps always open to the same workspace.&lt;/p&gt;
+&lt;p&gt;So basically, the workflow is like: I&#39;m coding -- Alt + C for Cursor, I need to test, Alt + A for Arc (my browser), I need the terminal, Alt + T for Kitty (my terminal), quick -- what was the issue my coworker said? Alt + S for Slack, etc. It&#39;s super easy to memorize and feels frictionless once you get used to it. I genuinely think it&#39;s a great boon to the flow state.&lt;/p&gt;
+&lt;h2 id=&quot;step-2a-get-more-keyboard-friendly-versions-of-your-basic-apps&quot; tabindex=&quot;-1&quot;&gt;Step 2a: Get more keyboard-friendly versions of your basic apps. &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/fast/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Like I mentioned above, I switched to &lt;a href=&quot;https://sw.kovidgoyal.net/kitty/&quot;&gt;Kitty&lt;/a&gt; for my terminal. You will be surprised to learn that I spent significant time researching this. It needed to be compatible with the workflow I prefer, Aerospace&#39;s notion of windows, and have nice keyboard shortcuts. Kitty finally fit the bill.&lt;/p&gt;
+&lt;p&gt;I also use &lt;a href=&quot;https://arc.net&quot;&gt;Arc&lt;/a&gt; although we will see how long that lasts since it got acquired by Atlassian. I find it slightly more keyboard-friendly than Chrome, but I may switch to Zen (which is based on Firefox) once it gets better on Mac. That sidebar-focused browser with folders and auto-clearing tabs and tab previews and split tabs and all the other features in Arc (that are now in Zen since Zen is basically an open-source Arc copy) are just so much more pleasant.&lt;/p&gt;
+&lt;p&gt;That&#39;s pretty much it here. I also used to use Slack in the browser, but switched to the Slack app to be more Aerospace and keyboard compatible. Everything else is the same.&lt;/p&gt;
+&lt;h2 id=&quot;step-2b-learn-the-keyboard-shortcuts-of-all-your-most-used-apps&quot; tabindex=&quot;-1&quot;&gt;Step 2b: Learn the keyboard shortcuts of all your most used apps. &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/fast/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I printed them out, personally. I have Aerospace, Kitty, Arc (and Chrome, which is what Arc is built on), Chrome DevTools, Slack, and Obsidian. Most everything else can be moused in peace. Maybe Spotify is worth it as well.&lt;/p&gt;
+&lt;p&gt;I just try to spend an hour a day in keyboard-only mode. When I want to do something and I&#39;m itching for the mouse, I check my reference sheet and see if there&#39;s a keyboard way. Eventually, things become more automatic and other things get drilled in during that practice hour.&lt;/p&gt;
+&lt;h2 id=&quot;step-3-switch-to-vim&quot; tabindex=&quot;-1&quot;&gt;Step 3: Switch to Vim. &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/fast/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You knew this was coming, didn&#39;t you? There was no VS Code on the list above, because the VS Code keyboard shortcuts are just godawful. I&#39;ve learned plenty over the years, and I&#39;ve failed at learning others over the years.&lt;/p&gt;
+&lt;p&gt;Look, if you want to navigate really fast, they figured out how to do that 40 years ago. This is a very difficult adjustment for me. Currently, I can navigate within single files and slowly switch files. I haven&#39;t figured out how to search or go to definition or other IDE mouse quality of life things. I&#39;m following this book: &lt;a href=&quot;https://lazyvim-ambitious-devs.phillips.codes/&quot;&gt;LazyVim for Ambitious Developers&lt;/a&gt; because from cursory research, it seems these pre-built Neovim versions are the way to go to get an IDE experience out of the box. LazyVim seems to be the most popular without being too opinionated, but I still already changed some settings.&lt;/p&gt;
+&lt;p&gt;Vim isn&#39;t an easy transition, but I just see the vision where it can feel like Aerospace does -- navigating and searching and navigating my searches within milliseconds so I can remain in the flow and read and write faster than AI. To clarify: I don&#39;t actually care about macros or anything. It&#39;s really about the navigating ability with Vim.&lt;/p&gt;
+&lt;h2 id=&quot;step-4-use-a-crazy-keyboard&quot; tabindex=&quot;-1&quot;&gt;Step 4: Use a crazy keyboard. &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/fast/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I think I kind of went too far with this one. I really think all of the above will make me significantly faster, and make the friction for development lower than AI. Switching keyboards, I&#39;m not so sure about. Regardless, I spent the $350 in the heat of research on a used version of a &lt;a href=&quot;https://www.moergo.com/&quot;&gt;MoErgo Glove80&lt;/a&gt;. The idea is that by keeping the pesky keys that are used for keyboard shortcuts where your thumbs are instead of where they usually are, which is in the painful pinky position, it&#39;ll be much more pleasant and simple. I don&#39;t actually care about the split nature and whatever other features it has. I just wanted that. But, from reading, this is the best one, the most comfortable one, so I decided to get this one.&lt;/p&gt;
+&lt;p&gt;I haven&#39;t actually done anything more than take it out of the box. You have to re-learn to type on these things, which takes time I don&#39;t have. It&#39;s not even like Vim where I can hop in and out of Vim... I really have to commit to learning on the weekends, like an hour on learning to type websites each week until I get back to at least 50wpm. I have no priority on this one. But, like I said, this in general is a long-term commitment, so I&#39;ll do it eventually.&lt;/p&gt;
+&lt;p&gt;...&lt;/p&gt;
+&lt;p&gt;Isn&#39;t this overkill, Radhika?&lt;/p&gt;
+&lt;p&gt;Yes. I said that before.&lt;/p&gt;
+&lt;p&gt;I just couldn&#39;t figure out how else to get better at navigating and moving around things. The biggest boon to my development speed was Cursor tabbing between the top of the file, between files, etc.. I want that experience all the time. It just makes sense to me to apply that to navigating windows, navigating within apps like Chrome (switching tabs with the keyboard), and most of all, navigating within the code editor. Until I can get that Cursor-like experience myself, Cursor will always be a much more appealing starting point. In the end, that friction gap means I&#39;m choosing to work in a more brittle, slow environment just because it feels faster.&lt;/p&gt;
+&lt;p&gt;All this has been available for the decade I&#39;ve been developing -- and honestly, I even used Vim and Emacs before just because I was working with resource-constrained devices, but I genuinely thought it didn&#39;t make a difference for my development speed because the biggest constraint has always been the speed of my thought. I still don&#39;t think it &lt;em&gt;really&lt;/em&gt; does, but feel matters. I think feel does affect quality.&lt;/p&gt;
+&lt;p&gt;I&#39;m investing in myself for the long-term here. I genuinely think this will make more of a difference in the long run of my career than learning Svelte or whatever. I am aware I sound crazy, but feel does matter. I&#39;ll report back if this ends up being a good investment after another year, when I actually have all of these dialed in rather than being in the learning/adjusting phase.&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Bring Back Microprogramming</title>
