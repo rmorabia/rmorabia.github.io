@@ -12,11 +12,6 @@
 	</url>
 	
 	<url>
-		<loc>https://rmorabia.com/blog/dev-blogs/</loc>
-		<lastmod>2024-08-25</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://rmorabia.com/blog/integration-testing/</loc>
 		<lastmod>2024-09-01</lastmod>
 	</url>
@@ -72,37 +67,42 @@
 	</url>
 	
 	<url>
+		<loc>https://rmorabia.com/blog/dev-blogs/</loc>
+		<lastmod>2026-01-06</lastmod>
+	</url>
+	
+	<url>
 		<loc>https://rmorabia.com/about/</loc>
-		<lastmod>2025-12-11</lastmod>
+		<lastmod>2026-01-07</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://rmorabia.com/hire/</loc>
-		<lastmod>2025-12-11</lastmod>
+		<lastmod>2026-01-07</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://rmorabia.com/</loc>
-		<lastmod>2025-12-11</lastmod>
+		<lastmod>2026-01-07</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://rmorabia.com/resume/</loc>
-		<lastmod>2025-12-11</lastmod>
+		<lastmod>2026-01-07</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://rmorabia.com/rss/</loc>
-		<lastmod>2025-12-11</lastmod>
+		<lastmod>2026-01-07</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://rmorabia.com/tags/</loc>
-		<lastmod>2025-12-11</lastmod>
+		<lastmod>2026-01-07</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://rmorabia.com/tags/redirects/</loc>
-		<lastmod>2025-12-11</lastmod>
+		<lastmod>2026-01-07</lastmod>
 	</url>
 </urlset>
