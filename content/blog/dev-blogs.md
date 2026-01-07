@@ -1,7 +1,7 @@
 ---
 title: Developer Blogs & Newsletters I Read
 description: A list of developer content I am currently consuming.
-date: 2024-08-25
+date: 2026-01-06
 ---
 
 This is a list of the current developer blogs, email newsletters, and YouTube channels I am subscribed to, along with some notes on whether or not they will be useful for you to follow.
@@ -9,10 +9,6 @@ This is a list of the current developer blogs, email newsletters, and YouTube ch
 ## [The Pragmatic Engineer](https://www.pragmaticengineer.com/)
 
 Gergely is the best at telling software engineers everything they need to know about the state of the industry without the hype. I've been reading his work since he was just blogging, and have now been reading his newsletter for a couple of years. The emphasis really is on a pragmatic point of view: real, relevant news, analyses, and insider interviews. This is particularly mostly relevant if you work in the "tech" industry, not as an engineer in another industry.
-
-## [Bytes.dev](https://bytes.dev/)
-
-This is JavaScript-specific news that doesn't make me want to tear my hair out. A lot of the main focus is on trends, which is pretty irrelevant unless you're working for a startup and are choosing new technologies every day. However, they have a section that's called "Spot the Bug" which is a good reminder of obscure language rules, and their curation of external blog posts worth reading is a good enough mix of trends and non-trends to justify skimming twice a week.
 
 ## [Tech Talks Weekly](https://techtalksweekly.substack.com/)
 
