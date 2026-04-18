@@ -1,5 +1,8 @@
- 
-# I'm addicted to Cursor. It's unsettling.
+---
+title: "I'm addicted to Cursor. This needs to stop."
+date: "2026-04-17"
+---
+
 
 Cursor 3.0 came out recently. I am not generally online, but I did take a look at the [HackerNews thread](https://news.ycombinator.com/item?id=47618084) for the release because I generally don't know how else to find the pulse on things. I noticed people felt similarly to me -- Cursor, the ultimate tool that was developer-as-driver, was moving more in a Claude Code/Codex direction. 
 
