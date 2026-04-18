@@ -4,7 +4,7 @@
 	<subtitle>A Software Engineer&#39;s Working Thoughts</subtitle>
 	<link href="https://rmorabia.com/feed.xml" rel="self"/>
 	<link href="https://rmorabia.com/"/>
-	<updated>2026-04-18T05:10:45Z</updated>
+	<updated>2026-04-17T00:00:00Z</updated>
 	<id>https://rmorabia.com/</id>
 	<author>
 		<name>Radhika Morabia</name>
@@ -12,12 +12,11 @@
 	</author>
 	
 	<entry>
-		<title></title>
+		<title>I&#39;m addicted to Cursor. This needs to stop.</title>
 		<link href="https://rmorabia.com/blog/addicted/"/>
-		<updated>2026-04-18T05:10:45Z</updated>
+		<updated>2026-04-17T00:00:00Z</updated>
 		<id>https://rmorabia.com/blog/addicted/</id>
-		<content type="html">&lt;h1 id=&quot;i-m-addicted-to-cursor-it-s-unsettling&quot; tabindex=&quot;-1&quot;&gt;I&#39;m addicted to Cursor. It&#39;s unsettling. &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/addicted/&quot;&gt;#&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;Cursor 3.0 came out recently. I am not generally online, but I did take a look at the &lt;a href=&quot;https://news.ycombinator.com/item?id=47618084&quot;&gt;HackerNews thread&lt;/a&gt; for the release because I generally don&#39;t know how else to find the pulse on things. I noticed people felt similarly to me -- Cursor, the ultimate tool that was developer-as-driver, was moving more in a Claude Code/Codex direction.&lt;/p&gt;
+		<content type="html">&lt;p&gt;Cursor 3.0 came out recently. I am not generally online, but I did take a look at the &lt;a href=&quot;https://news.ycombinator.com/item?id=47618084&quot;&gt;HackerNews thread&lt;/a&gt; for the release because I generally don&#39;t know how else to find the pulse on things. I noticed people felt similarly to me -- Cursor, the ultimate tool that was developer-as-driver, was moving more in a Claude Code/Codex direction.&lt;/p&gt;
 &lt;p&gt;The IDE is still there... But, for how long?&lt;/p&gt;
 &lt;h2 id=&quot;on-claude-code&quot; tabindex=&quot;-1&quot;&gt;On Claude Code &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/addicted/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;First, let&#39;s talk about Claude Code, because the inevitable question will come up as to why I don&#39;t use Claude Code, and why I&#39;m so obsessed with developer-as-driver / AI as auto-complete + semantic search + mocks writer.&lt;/p&gt;
