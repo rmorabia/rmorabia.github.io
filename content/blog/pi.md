@@ -3,8 +3,6 @@ title: "Trying AI Agents Again: Pi"
 date: "2026-04-29"
 ---
 
-# Trying AI Agents Again: Pi
-
 I am at the tail end of a project right now. I have one feature ticket left, and three days to do it. Let’s try something new, even though I should be focusing on getting used to Zed / [getting off of my Cursor addiction](https://rmorabia.com/blog/addicted/).
 
 Let’s try an AI agentic workflow again, with deliberation and effort. Claude Code has a weird interface I don’t quite understand, so let’s do it from scratch via [Pi](https://pi.dev). I’ve heard Pi described as the Vim of coding agents, which doesn’t necessarily inspire much confidence in me. But, my idea is to consider the pain points of Agentic coding and use the existing tools and generated tools to see if I can scratch every itch that shows up.
