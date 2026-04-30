@@ -16,8 +16,7 @@
 		<link href="https://rmorabia.com/blog/pi/"/>
 		<updated>2026-04-29T00:00:00Z</updated>
 		<id>https://rmorabia.com/blog/pi/</id>
-		<content type="html">&lt;h1 id=&quot;trying-ai-agents-again-pi&quot; tabindex=&quot;-1&quot;&gt;Trying AI Agents Again: Pi &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/pi/&quot;&gt;#&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;I am at the tail end of a project right now. I have one feature ticket left, and three days to do it. Let’s try something new, even though I should be focusing on getting used to Zed / &lt;a href=&quot;https://rmorabia.com/blog/addicted/&quot;&gt;getting off of my Cursor addiction&lt;/a&gt;.&lt;/p&gt;
+		<content type="html">&lt;p&gt;I am at the tail end of a project right now. I have one feature ticket left, and three days to do it. Let’s try something new, even though I should be focusing on getting used to Zed / &lt;a href=&quot;https://rmorabia.com/blog/addicted/&quot;&gt;getting off of my Cursor addiction&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Let’s try an AI agentic workflow again, with deliberation and effort. Claude Code has a weird interface I don’t quite understand, so let’s do it from scratch via &lt;a href=&quot;https://pi.dev&quot;&gt;Pi&lt;/a&gt;. I’ve heard Pi described as the Vim of coding agents, which doesn’t necessarily inspire much confidence in me. But, my idea is to consider the pain points of Agentic coding and use the existing tools and generated tools to see if I can scratch every itch that shows up.&lt;/p&gt;
 &lt;p&gt;First, off the top of my head, what is the ideal agentic coding flow?&lt;/p&gt;
 &lt;h2 id=&quot;the-ideal-agentic-coding-flow-zero-knowledge-edition&quot; tabindex=&quot;-1&quot;&gt;The Ideal Agentic Coding Flow (Zero-Knowledge Edition) &lt;a class=&quot;header-anchor&quot; href=&quot;https://rmorabia.com/blog/pi/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
