@@ -67,7 +67,8 @@ body {
 	width: 55%;
 	margin-left: auto;
 	margin-right: auto;
-	font-family: 'et-book', Georgia, serif;
+	font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD",
+             "Book Antiqua", "URW Palladio L", Georgia, serif;
 	background-color: #fffff8;
 	color: #111;
 	max-width: 1400px;
