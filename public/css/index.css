@@ -75,7 +75,7 @@ body {
 	width: 55%;
 	margin-left: auto;
 	margin-right: auto;
-	font-family: 'et-book', 'Garamond-Fallback', serif;
+	font-family: 'et-book', 'Garamond-Fallback', Georgia, serif;
 	background-color: #fffff8;
 	color: #111;
 	max-width: 1400px;
