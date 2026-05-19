@@ -12,8 +12,43 @@
 	</url>
 	
 	<url>
+		<loc>https://rmorabia.com/blog/dev-blogs/</loc>
+		<lastmod>2024-08-25</lastmod>
+	</url>
+	
+	<url>
 		<loc>https://rmorabia.com/blog/integration-testing/</loc>
 		<lastmod>2024-09-01</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://rmorabia.com/about/</loc>
+		<lastmod>2024-09-02</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://rmorabia.com/</loc>
+		<lastmod>2024-09-02</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://rmorabia.com/resume/</loc>
+		<lastmod>2024-09-02</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://rmorabia.com/rss/</loc>
+		<lastmod>2024-09-02</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://rmorabia.com/tags/</loc>
+		<lastmod>2024-09-02</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://rmorabia.com/tags/redirects/</loc>
+		<lastmod>2024-09-02</lastmod>
 	</url>
 	
 	<url>
@@ -39,80 +74,5 @@
 	<url>
 		<loc>https://rmorabia.com/blog/talks/</loc>
 		<lastmod>2025-01-13</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://rmorabia.com/blog/ai-part-three/</loc>
-		<lastmod>2025-03-05</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://rmorabia.com/blog/jj/</loc>
-		<lastmod>2025-05-05</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://rmorabia.com/blog/time-curves/</loc>
-		<lastmod>2025-08-13</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://rmorabia.com/blog/microprogramming/</loc>
-		<lastmod>2025-09-02</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://rmorabia.com/blog/fast/</loc>
-		<lastmod>2025-12-11</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://rmorabia.com/blog/dev-blogs/</loc>
-		<lastmod>2026-01-06</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://rmorabia.com/blog/addicted/</loc>
-		<lastmod>2026-04-17</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://rmorabia.com/blog/pi/</loc>
-		<lastmod>2026-04-29</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://rmorabia.com/about/</loc>
-		<lastmod>2026-05-19</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://rmorabia.com/hire/</loc>
-		<lastmod>2026-05-19</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://rmorabia.com/</loc>
-		<lastmod>2026-05-19</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://rmorabia.com/resume/</loc>
-		<lastmod>2026-05-19</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://rmorabia.com/rss/</loc>
-		<lastmod>2026-05-19</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://rmorabia.com/tags/</loc>
-		<lastmod>2026-05-19</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://rmorabia.com/tags/redirects/</loc>
-		<lastmod>2026-05-19</lastmod>
 	</url>
 </urlset>

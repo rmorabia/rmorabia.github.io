@@ -1,28 +1,21 @@
 @charset "UTF-8";
 
 /* Import ET Book styles
-   adapted from https: //github.com/edwardtufte/public/et-bookblob/gh-pages/et-book.css */
+   adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css */
 
 @font-face {
 	font-family: "et-book";
-	src: url("https://rmorabia.com/et-book/et-book-roman-line-figures.woff") format("woff");
+	src: url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot");
+	src: url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff") format("woff"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.ttf") format("truetype"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.svg#etbookromanosf") format("svg");
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
-	font-family: "Georgia-Fallback";
-	src: local('Georgia');
-	size-adjust: 92.82%;
-	ascent-override: 96.53%;
-	descent-override: 33.25%;
-	line-gap-override: 0%;
-}
-
-@font-face {
 	font-family: "et-book";
-	src: url("/et-book/et-book-display-italic-old-style-figures.woff") format("woff");
+	src: url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot");
+	src: url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff") format("woff"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.ttf") format("truetype"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.svg#etbookromanosf") format("svg");
 	font-weight: normal;
 	font-style: italic;
 	font-display: swap;
@@ -30,7 +23,8 @@
 
 @font-face {
 	font-family: "et-book";
-	src: url("/et-book/et-book-bold-line-figures.woff") format("woff");
+	src: url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot");
+	src: url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff") format("woff"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.ttf") format("truetype"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.svg#etbookromanosf") format("svg");
 	font-weight: bold;
 	font-style: normal;
 	font-display: swap;
@@ -38,16 +32,9 @@
 
 @font-face {
 	font-family: "et-book-roman-old-style";
-	src: url("/et-book/et-book-roman-old-style-figures.woff") format("woff");
+	src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot");
+	src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff") format("woff"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.ttf") format("truetype"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.svg#etbookromanosf") format("svg");
 	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "et-book-old-style";
-	src: url("/et-book/et-book-semi-bold-old-style-figures.woff") format("woff");
-	font-weight: bold;
 	font-style: normal;
 	font-display: swap;
 }
@@ -57,6 +44,13 @@
 	--color-gray-20: #e0e0e0;
 	--color-gray-50: #C0C0C0;
 	--color-gray-90: #3e372d;
+
+	--background-color: #f6ebdf;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: var(--color-gray-90);
+	--text-color-link-active: #00917b;
+	--text-color-link-visited: var(--color-gray-90);
 
 	--syntax-tab-size: 2;
 }
@@ -76,7 +70,7 @@ body {
 	width: 55%;
 	margin-left: auto;
 	margin-right: auto;
-	font-family: 'et-book', 'Georgia-Fallback', Georgia, serif;
+	font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 	background-color: #fffff8;
 	color: #111;
 	max-width: 1400px;
@@ -594,27 +588,9 @@ table th {
 
 @media (max-width: 760px) {
 	body {
-		width: 90%;
-	}
-
-	p, dl, ol, ul {
-		font-size: 1.3rem;
-	}
-
-	.home-link {
-		font-size: 1.3rem;
-	}
-
-	h1 {
-		font-size: 2.2rem;
-	}
-
-	h2 {
-		font-size: 1.7rem;
-	}
-
-	h3 {
-		font-size: 1.4rem;
+		width: 84%;
+		padding-left: 8%;
+		padding-right: 8%;
 	}
 
 	hr,
@@ -671,6 +647,7 @@ table th {
 		clear: both;
 		width: 95%;
 		margin: 1rem 2.5%;
+		vertical-align: baseline;
 		position: relative;
 	}
 
@@ -695,7 +672,6 @@ table th {
 	flex-shrink: 0;
 	margin-bottom: 0;
 	line-height: 1;
-	flex-shrink: 0;
 	display: flex;
 	align-items: center;
 }

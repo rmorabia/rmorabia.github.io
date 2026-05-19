@@ -5,7 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Developer Blogs &amp; Newsletters I Read</title>
 		<meta name="description" content="A list of developer content I am currently consuming.">
-		<link rel="preload" href="https://rmorabia.com/et-book/et-book-roman-line-figures.woff" as="font" type="font/woff" crossorigin>
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Radhika Morabia">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Radhika Morabia">
 		<style>/**
@@ -203,28 +202,21 @@ pre[class*="language-diff-"] {
 @charset "UTF-8";
 
 /* Import ET Book styles
-   adapted from https: //github.com/edwardtufte/public/et-bookblob/gh-pages/et-book.css */
+   adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css */
 
 @font-face {
 	font-family: "et-book";
-	src: url("https://rmorabia.com/et-book/et-book-roman-line-figures.woff") format("woff");
+	src: url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot");
+	src: url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff") format("woff"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.ttf") format("truetype"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.svg#etbookromanosf") format("svg");
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
-	font-family: "Georgia-Fallback";
-	src: local('Georgia');
-	size-adjust: 92.82%;
-	ascent-override: 96.53%;
-	descent-override: 33.25%;
-	line-gap-override: 0%;
-}
-
-@font-face {
 	font-family: "et-book";
-	src: url("/et-book/et-book-display-italic-old-style-figures.woff") format("woff");
+	src: url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot");
+	src: url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff") format("woff"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.ttf") format("truetype"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.svg#etbookromanosf") format("svg");
 	font-weight: normal;
 	font-style: italic;
 	font-display: swap;
@@ -232,7 +224,8 @@ pre[class*="language-diff-"] {
 
 @font-face {
 	font-family: "et-book";
-	src: url("/et-book/et-book-bold-line-figures.woff") format("woff");
+	src: url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot");
+	src: url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff") format("woff"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.ttf") format("truetype"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.svg#etbookromanosf") format("svg");
 	font-weight: bold;
 	font-style: normal;
 	font-display: swap;
@@ -240,16 +233,9 @@ pre[class*="language-diff-"] {
 
 @font-face {
 	font-family: "et-book-roman-old-style";
-	src: url("/et-book/et-book-roman-old-style-figures.woff") format("woff");
+	src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot");
+	src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff") format("woff"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.ttf") format("truetype"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.svg#etbookromanosf") format("svg");
 	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "et-book-old-style";
-	src: url("/et-book/et-book-semi-bold-old-style-figures.woff") format("woff");
-	font-weight: bold;
 	font-style: normal;
 	font-display: swap;
 }
@@ -259,6 +245,13 @@ pre[class*="language-diff-"] {
 	--color-gray-20: #e0e0e0;
 	--color-gray-50: #C0C0C0;
 	--color-gray-90: #3e372d;
+
+	--background-color: #f6ebdf;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: var(--color-gray-90);
+	--text-color-link-active: #00917b;
+	--text-color-link-visited: var(--color-gray-90);
 
 	--syntax-tab-size: 2;
 }
@@ -278,7 +271,7 @@ body {
 	width: 55%;
 	margin-left: auto;
 	margin-right: auto;
-	font-family: 'et-book', 'Georgia-Fallback', Georgia, serif;
+	font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 	background-color: #fffff8;
 	color: #111;
 	max-width: 1400px;
@@ -796,27 +789,9 @@ table th {
 
 @media (max-width: 760px) {
 	body {
-		width: 90%;
-	}
-
-	p, dl, ol, ul {
-		font-size: 1.3rem;
-	}
-
-	.home-link {
-		font-size: 1.3rem;
-	}
-
-	h1 {
-		font-size: 2.2rem;
-	}
-
-	h2 {
-		font-size: 1.7rem;
-	}
-
-	h3 {
-		font-size: 1.4rem;
+		width: 84%;
+		padding-left: 8%;
+		padding-right: 8%;
 	}
 
 	hr,
@@ -873,6 +848,7 @@ table th {
 		clear: both;
 		width: 95%;
 		margin: 1rem 2.5%;
+		vertical-align: baseline;
 		position: relative;
 	}
 
@@ -954,6 +930,9 @@ table th {
 .post-title a:hover {
 	text-decoration: underline;
 }</style>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
@@ -965,7 +944,7 @@ table th {
 				<ul class="nav">
 					<li class="nav-item"><a href="/">Home</a></li>
 					<li class="nav-item"><a href="/about/">About Me</a></li>
-					<li class="nav-item"><a href="/hire/">Hire Me</a></li>
+					<li class="nav-item"><a href="/resume/">Resume</a></li>
 					<li class="nav-item"><a href="/rss/">RSS</a></li>
 				</ul>
 			</nav>
@@ -976,14 +955,16 @@ table th {
 <h1>Developer Blogs &amp; Newsletters I Read</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2026-01-06">January 06, 2026</time></li>
+	<li><time datetime="2024-08-25">August 25, 2024</time></li>
 </ul>
 
 <p>This is a list of the current developer blogs, email newsletters, and YouTube channels I am subscribed to, along with some notes on whether or not they will be useful for you to follow.</p>
 <h2 id="the-pragmatic-engineer" tabindex="-1"><a href="https://www.pragmaticengineer.com/">The Pragmatic Engineer</a> <a class="header-anchor" href="#the-pragmatic-engineer">#</a></h2>
 <p>Gergely is the best at telling software engineers everything they need to know about the state of the industry without the hype. I've been reading his work since he was just blogging, and have now been reading his newsletter for a couple of years. The emphasis really is on a pragmatic point of view: real, relevant news, analyses, and insider interviews. This is particularly mostly relevant if you work in the &quot;tech&quot; industry, not as an engineer in another industry.</p>
+<h2 id="bytes-dev" tabindex="-1"><a href="https://bytes.dev/">Bytes.dev</a> <a class="header-anchor" href="#bytes-dev">#</a></h2>
+<p>This is JavaScript-specific news that doesn't make me want to tear my hair out. A lot of the main focus is on trends, which is pretty irrelevant unless you're working for a startup and are choosing new technologies every day. However, they have a section that's called &quot;Spot the Bug&quot; which is a good reminder of obscure language rules, and their curation of external blog posts worth reading is a good enough mix of trends and non-trends to justify skimming twice a week.</p>
 <h2 id="tech-talks-weekly" tabindex="-1"><a href="https://techtalksweekly.substack.com/">Tech Talks Weekly</a> <a class="header-anchor" href="#tech-talks-weekly">#</a></h2>
-<p>This is a recent and powerful discovery for me. I fundamentally believe that if you're not a hobbyist professional and you want to keep learning, your options start to get slim very fast. You can read a couple of books a year, but I generally focus on more fundamentals and timeless books there. To keep up with a diverse set of ideas and technologies without getting bogged down in blog spam (popularity isn't a good curation metric!), tech talks are my new go-to. I try and watch anything that sounds interesting to me and shut it off in 10 minutes if it's not useful. This means, more often than not, watching talks outside of the world of JavaScript and front-end development.</p>
+<p>This is a recent and powerful discovery for me. I fundamentally believe that if you're hot a hobbyist professional and you want to keep learning, your options start to get slim very fast. You can read a couple of books a year, but I generally focus on more fundamentals and timeless books there. To keep up with a diverse set of ideas and technologies without getting bogged down in blog spam (popularity isn't a good curation metric!), tech talks are my new go-to. I try and watch anything that sounds interesting to me and shut it off in 10 minutes if it's not useful. This means, more often than not, watching talks outside of the world of JavaScript and front-end development.</p>
 <h2 id="software-clown-by-itamar-turner-trauring" tabindex="-1"><a href="https://codewithoutrules.com/">Software Clown by Itamar Turner-Trauring</a> <a class="header-anchor" href="#software-clown-by-itamar-turner-trauring">#</a></h2>
 <p>The shortest, sweetest newsletter I get each week. Software Clown is an extraordinary series even though I've never touched Python in my life, and Itamar's books and blog posts are concise and actionable. I highly recommend this one to basically every professional software engineer. There's no encouragement to become a hobbyist who's into trends here.</p>
 <h2 id="will-larson" tabindex="-1"><a href="https://lethain.com/">Will Larson</a> <a class="header-anchor" href="#will-larson">#</a></h2>
@@ -991,13 +972,13 @@ table th {
 
 <ul class="links-nextprev">
 	<i>If you would like to get in touch with me, send me an email at hi@[thisdomain].com.</i>
-	<br><br><li>Previous: <a href="/blog/fast/">Becoming Faster Than AI</a></li><li>Next: <a href="/blog/addicted/">I&#39;m addicted to Cursor. This needs to stop.</a></li>
+	<br><br><li>Previous: <a href="/blog/ux-subs/">UX When Using Dev Tooling for Non-Developers</a></li><li>Next: <a href="/blog/integration-testing/">The Limits of Front-End Testing</a></li>
 </ul>
 
 		</main>
 
 		<footer></footer>
 
-		<!-- This page `/blog/dev-blogs/` was built on 2026-05-19T02:52:11.239Z -->
+		<!-- This page `/blog/dev-blogs/` was built on 2025-03-05T22:21:22.360Z -->
 	</body>
 </html>
