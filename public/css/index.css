@@ -5,7 +5,7 @@
 
 @font-face {
 	font-family: "et-book";
-	src: url("https://rmorabia.com/et-book/et-book-roman-line-figures.woff") format("woff");
+	src: url("https://rmorabia.com/et-book/et-book-roman-line-figures.woff2") format("woff2");
 	font-weight: normal;
 	font-style: normal;
 	font-display: optional;
@@ -13,7 +13,7 @@
 
 @font-face {
 	font-family: "et-book";
-	src: url("/et-book/et-book-display-italic-old-style-figures.woff") format("woff");
+	src: url("/et-book/et-book-display-italic-old-style-figures.woff2") format("woff2");
 	font-weight: normal;
 	font-style: italic;
 	font-display: optional;
@@ -21,7 +21,7 @@
 
 @font-face {
 	font-family: "et-book";
-	src: url("/et-book/et-book-bold-line-figures.woff") format("woff");
+	src: url("/et-book/et-book-bold-line-figures.woff2") format("woff2");
 	font-weight: bold;
 	font-style: normal;
 	font-display: optional;
@@ -29,7 +29,7 @@
 
 @font-face {
 	font-family: "et-book-roman-old-style";
-	src: url("/et-book/et-book-roman-old-style-figures.woff") format("woff");
+	src: url("/et-book/et-book-roman-old-style-figures.woff2") format("woff2");
 	font-weight: normal;
 	font-style: normal;
 	font-display: optional;
@@ -37,7 +37,7 @@
 
 @font-face {
 	font-family: "et-book-old-style";
-	src: url("/et-book/et-book-semi-bold-old-style-figures.woff") format("woff");
+	src: url("/et-book/et-book-semi-bold-old-style-figures.woff2") format("woff2");
 	font-weight: bold;
 	font-style: normal;
 	font-display: optional;
