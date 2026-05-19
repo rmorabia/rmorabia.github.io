@@ -13,10 +13,11 @@
 
 @font-face {
 	font-family: "Garamond-Fallback";
-	src: local("Garamond"), local("Georgia");
-	size-adjust: 103%;
-	ascent-override: 92%;
-	descent-override: 22%;
+	src: local('Garamond');
+	size-adjust: 94%;
+	ascent-override: 88%;
+	descent-override: 18%;
+	letter-spacing: -0.2px;
 }
 
 @font-face {
