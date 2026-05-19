@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Adventures in AI-Assisted Coding Part 1: The Journey So Far</title>
+		<title>I&#39;m addicted to Cursor. This needs to stop.</title>
 		<meta name="description" content="A Software Engineer&#39;s Working Thoughts">
 		<link rel="preload" href="https://rmorabia.com/et-book/et-book-roman-line-figures.woff" as="font" type="font/woff" crossorigin>
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Radhika Morabia">
@@ -964,58 +964,83 @@ table th {
 
 		<main id="skip">
 			
-<h1>Adventures in AI-Assisted Coding Part 1: The Journey So Far</h1>
+<h1>I&#39;m addicted to Cursor. This needs to stop.</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2024-10-29">October 29, 2024</time></li>
+	<li><time datetime="2026-04-17">April 17, 2026</time></li>
 </ul>
 
-<p>I've been reading and hearing more and more about AI-Assisted Programming getting to a point where it's actually making a marginal, but noticable productivity difference.</p>
-<p>I work for a fairly corporate company with very well-established and decently unique codebase patterns, which has so far seemed at odds with where AI currently excels.</p>
-<p>However, my company (particularly my CTO) is fairly bullish on AI so we've had access to various AI tools for a while now.</p>
-<p>I've been using Github Copilot with a standard configuration within VS Code for 4 months now, and this is where I'm at right now with it:</p>
-<h2 id="1-fancy-autocomplete" tabindex="-1">1. Fancy Autocomplete <a class="header-anchor" href="#1-fancy-autocomplete">#</a></h2>
-<p>It outputs something useful for me ...1% of the time? 2% at most.</p>
-<p>I'm not a very agile user of IDEs. It's embarrassing to admit, but I basically use a mouse 90% of the time with my IDE. This makes inline autocomplete of quite limited use for me, since I am not usually writing files linearly from scratch. I spend most of my time modifying existing files.</p>
-<p>For example, I have to set up Redux dispatching in the imports (Line 1-10), right after the <code>return</code> (Line 100-110) and actually call the action on a click (Line 200-210). This is fairly rote code that honestly takes me a couple of minutes to write each time I have to do it, so you would think Copilot would be helpful here, but it just isn't good at adding code in multiple parts of a file. It doesn't really offer &quot;diffing&quot; or &quot;step logic&quot; in the way I would expect.</p>
-<p>I will probably accept the inline autocomplete more often that 1-2% of the time just because it'll write a tiny bit of boilerplate for me (eg. setting up a function, but the function is entirely wrong) and then I will slowly use my mouse to rewrite everything in the function.</p>
-<h2 id="2-stackoverflow-replacement" tabindex="-1">2. StackOverflow Replacement <a class="header-anchor" href="#2-stackoverflow-replacement">#</a></h2>
-<p>I haven't found this to be true at all. It hallucinates way too much and doesn't have any sense of <em>conciseness</em>. Asking Copilot Chat to tell me how to use a Lodash function makes it write weird slow code in my file instead of just giving me a very quick 2-line example with context, which is again, what I would expect.</p>
-<p>This may work better when using ChatGPT (which I do have access to as well), however, the friction for opening up the web app and adding the necessary context takes SO long in a web browser.</p>
-<h2 id="3-tests-writer" tabindex="-1">3. Tests Writer <a class="header-anchor" href="#3-tests-writer">#</a></h2>
-<p>This is where it excels, but in a very limited fashion as a front-end engineer. Basically all utility files have it output near perfect tests due to extremely controlled inputs and outputs.</p>
-<p>But, as a front-end engineer, I am using Jest and React Testing Library, which requires references to text or IDs or other ways to label markup. It seems to hallucinate a LOT with this.</p>
-<p>However, tests are still so repetitive to write that I still find it quite helpful for doing tests faster. My process so far is to 1) manually write the boilerplate 2) write the first test 3) write the it statement for every following test and tab autocomplete 4) edit the tests to ensure they're actually correct.</p>
-<p>It's kind of surprising I have to manually write the boilerplate, right? It's extremely stuck to very basic testing infrastructures and will create entirely incorrect mocks, etc.. that simply do not run unless I manually put the correct style of tests in the file.</p>
-<h2 id="4-bug-finder-rubber-ducker" tabindex="-1">4. Bug Finder / Rubber Ducker <a class="header-anchor" href="#4-bug-finder-rubber-ducker">#</a></h2>
-<p>This probably eludes me the most. It's so off base all of the time. It seems to always recommend writing code that doesn't fit at all with my context. An example of this is I'll have some failing code, and when I suggest it fixes it, it will say, &quot;You are using the wrong library! Use this other library instead! It'll work!&quot; No, it won't, ChatGPT... No, it won't.</p>
-<p>Worse, Copilot will just fix formatting errors. I really expect Copilot to be able to fix things like the parenthesis and brackets being the wrong number, but it really can't. This goes back to the LLMs can't do basic math thing.</p>
-<p>I think this is the hardest issue to fix, this would be such an immense improvement on AI that I would understand the hype.</p>
-<h2 id="what-s-next" tabindex="-1">What's next? <a class="header-anchor" href="#what-s-next">#</a></h2>
-<p>I want to really try to use AI more. I've been reading a lot and I think a lot of my gripes with these 4 areas can be slightly improved. Here's my plan:</p>
-<h2 id="1-switch-to-cursor" tabindex="-1">1. Switch to Cursor <a class="header-anchor" href="#1-switch-to-cursor">#</a></h2>
-<p>Cursor supports multi-line autocomplete, you can hit tab and it'll take you to the next place in the code it thinks you'd want to add a line to. If I get 1-2% rates of acceptable code, BUT it navigates me to relevant areas, that's just a pure speed of execution improvement.</p>
-<p>People also seem to be more impressed with Cursor's autocomplete suggestions (Claude 3.5 Sonnet is supposed to be the first really significant step up since ChatGPT 3), but I'm holding out on skepticism there.</p>
-<h2 id="2-get-a-chatgpt-api-token-and-use-that-in-another-interface" tabindex="-1">2. Get a ChatGPT API token and use that in another interface <a class="header-anchor" href="#2-get-a-chatgpt-api-token-and-use-that-in-another-interface">#</a></h2>
-<p>Copilot Chat is atrocious, the context doesn't help at all. What I would like to do is have a very convenient way to ask ChatGPT questions and add just the appropriate context, without having the copy/paste that context in.</p>
-<p>I see two options for this: ChatGPT in the terminal, or creating my own little web app to interface with ChatGPT with a file uploader.</p>
-<p>Considering I am a front-end developer, it's probably the latter. But yeah, something that doesn't require login, that's just always pinned very easily much like Google is.</p>
-<h2 id="3-continue-writing-tests" tabindex="-1">3. Continue writing tests <a class="header-anchor" href="#3-continue-writing-tests">#</a></h2>
-<p>We'll see if Cursor is any better at this, but I honestly don't mind my flow right now for testing.</p>
-<h2 id="4-rubber-duck-with-a-better-model" tabindex="-1">4. Rubber Duck with a better model <a class="header-anchor" href="#4-rubber-duck-with-a-better-model">#</a></h2>
-<p>I've been using Copilot Chat and ChatGPT 3.5 to rubber duck. It turns out I have access to ChatGPT 4 and 4o. Combine this with the custom usage in a more dev-friendly interface, and it might actually be mildly pleasant to use.</p>
-<p>I need to get all of this approved by my company, but after I do this, I do have a grand experiment I want to try: I want to do a significantly large ticket (3 pts) almost entirely through AI and these 4 use cases. I can manually edit code it generates, but I am going to try to tell it to regenerate until it's right.</p>
-<p>I think just spending some real significant time investing in the tooling will help both elucidate things and create another marginal productivity bump, even though I highly doubt I will ever want to do another ticket entirely with AI again. My log of that will come in Part 2 of this series.</p>
+<p>Cursor 3.0 came out recently. I am not generally online, but I did take a look at the <a href="https://news.ycombinator.com/item?id=47618084">HackerNews thread</a> for the release because I generally don't know how else to find the pulse on things. I noticed people felt similarly to me -- Cursor, the ultimate tool that was developer-as-driver, was moving more in a Claude Code/Codex direction.</p>
+<p>The IDE is still there... But, for how long?</p>
+<h2 id="on-claude-code" tabindex="-1">On Claude Code <a class="header-anchor" href="#on-claude-code">#</a></h2>
+<p>First, let's talk about Claude Code, because the inevitable question will come up as to why I don't use Claude Code, and why I'm so obsessed with developer-as-driver / AI as auto-complete + semantic search + mocks writer.</p>
+<p>I am entirely against Claude Code and Codex. I am open to hearing the ridicule on that, but for the type of coding I do and the way my brain works, it will break prod. You may be saying there are contexts in which it is great, even with my skepticism: namely refactors and migrations. I think that's fair with a very clear test suite to run against, but every migration I've ever been a part of has involved writing <em>better</em> tests in the V2.</p>
+<p>Regardless, I have one anecdote that involves my first time really going ,&quot;I'm sure Claude Code would be great for this!&quot; that was a disaster. I never even told my coworkers how embarrassing this ended up being, but no one reads this blog, so I'm safe.</p>
+<p>This was in my deeply trying AI as the first point of contact on all tickets phase (which I entirely stepped back from as elucidated in later posts). We had to write Cypress tests for a new flow -- new page, really simple flow, but I hate Cypress, so I'm sure Claude Code can handle that.</p>
+<p>I have to literally pull out my Git history to show this clown behavior in its full glory.</p>
+<p><strong>PR #1: chore(project): TICKET-123 Add Cypress tests for project -- November 6th, 2025</strong></p>
+<p>I remember doing this in Claude Code and being fascinated that unlike Cursor, it would just run the Cypress tests until they passed. Looks like I did 6 commits, 3 proper ones. There's a commit here titled &quot;working version before cleanup&quot; which I assume was just straight from Claude, 350 lines of tests. I ran a follow up to tell Claude to reduce the terrible churn in here which looks like a lot of logs and waits, and it got down to adding just 123 lines.</p>
+<p>That's not so bad, right, that's a typical AI flow. Oh boy, keep reading.</p>
+<p><strong>PR #2: chore(cypress): Do not remove project-related X and Y -- November 12th, 2025</strong></p>
+<p>This is 6 days later. I believe I did this with AI as well, but Cursor chat this time, so I was manually reviewing it.</p>
+<p>Fine, Cypress is really annoying. There are side effects from other tests that mess up our tests because we run against a real working container and we don't mock in Cypress. We all hate it for good reason.</p>
+<p><strong>PR #3: chore(cypress): Check for X in Y -- November 12th, 2025</strong></p>
+<p>Okay... Okay... It's starting to get a little silly... But, I'm sure it's fine. We hate Cypress for good reason.</p>
+<p><strong>PR #4: chore(cypress): Add waits to Cypress API calls -- November 19th, 2025</strong></p>
+<p>It's starting to get a little silly... It's starting to get a little strange. It's been 2 weeks since I submitted the first PR. How am I still not getting these tests to pass?</p>
+<p><strong>PR #5: chore(cypress): Try to reset state before doing a hard navigation change -- November 20, 2025</strong></p>
+<p>I remember at this point. I recall just begging the AI to give me any suggestion of what could work. This sounded reasonable.</p>
+<p><strong>PR #6: Revert &quot;chore(cypress): Try to reset state before doing a hard navigation change&quot; -- November 20, 2025</strong></p>
+<p>I have no words at this point.</p>
+<p><strong>PR #7 (CLOSED): fix(project): Reset state when you navigate the page -- December 1st, 2025</strong></p>
+<p>I'M STILL WORKING ON CYPRESS. I AM STILL DOING CYPRESS. IT'S BEEN A MONTH. I AM CHANGING THE CODEBASE FOR A CYPRESS ERROR. PROBABLY BECAUSE THE AI TOLD ME TO. Luckily, everyone rejected my idea.</p>
+<p><strong>PR #8: chore(cypress): Reload when navigating pages -- November 21, 2025</strong></p>
+<p>I don't know why these are out of order. I assume I waited a while to close the previous one. At this point, it's not even funny. It's just sad.</p>
+<p><strong>PR #9: chore(cypress): Remove check on initial load-- December 1st, 2025</strong></p>
+<p>This was actually just because I was breaking Cypress so much I had to add safeguards that if these tests failed, the entire test suite wouldn't collapse.</p>
+<p><strong>PR #10: chore(cypress): Wait for the final put before navigating back to the other page -- December 1st, 2025</strong></p>
+<p>No comments at this point. I'm suffering.</p>
+<p><strong>PR #11: chore(cypress): Try navigating via the UI to emulate user behavior</strong></p>
+<p>This is the last PR. It's very telling. I can share the diff. I'm not 100% sure how to do Git diffs in Markdown, but you'll get the gist.</p>
+<pre class="language-js" tabindex="0"><code class="language-js"><span class="token operator">-</span> cy<span class="token punctuation">.</span><span class="token function">visit</span><span class="token punctuation">(</span><span class="token string">'/myprojectpage'</span><span class="token punctuation">)</span>
+<span class="token operator">+</span> cy<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'PageTitle'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>That did it. That fixed it. Every PR between #4 and #11 were trying to fix the same problem, and you know what finally fixed it? Doing the more human thing.</p>
+<p>I will never forget as I was just combing over this code, I was so desperately trying to find something off -- because I never had an error like this before. And I remember I saw the <code>cy.visit</code> and I thought, well, let me try it, because I'd personally never write <code>cy.visit</code> in a Cypress test except on the top-level (which this was not).</p>
+<p>And that fixed it.</p>
+<p>This was every nightmare about AI that I'd been warned about. Reasonable looking code... I read the code, I reviewed the code, it looked fine, and it ran fine... until it didn't. When it didn't, it took WEEKS of drains on my time to fix. This was way longer than if I had just written it myself the first time.</p>
+<p>Again, you can criticize me that I am simply not a very good agentic engineer. That's fair. I tried it for several months, and it's simply not conducive to how my brain works. If I get replaced by AI-native engineers because their brains are more malleable to reviewing code than I am (although what I'm hearing these days is that the companies behind this are trying to remove the bottleneck of reviewing code, too, which just get a little bit strange to me), I am okay with that. Right now, I have high doubts it'll happen. I think the average engineer is going to fall into the same trap I did.</p>
+<p>Particularly, what's so weirdly intoxicating about it is since you never wrote the code, it never became intuitive to you, so this is the same difficulty as a production bug coming from your fellow engineer. Those get story points for complexity. We use time on my team now, and I generally always put 2 days for any ticket I have no context on. This means any time I use Claude Code, I have to be willing to spend 2 entire days (8-12 engineering hours in the IDE and debugger) fixing it if something goes wrong. I'm not going to do that! So, I ask the AI to fix the AI! IT'S A TRAP.</p>
+<p>I don't think I've written in all-caps on this blog before. I feel very passionate this time. I'm not experimeting, I'm sure. Claude Opus 4.7 isn't any better. Claude Opus 6.3 isn't going to be any better. We need another massive leap like how it was between 0 AI -&gt; Claude 3.5(? 3.0?) in order to fix this problem, and I Won't be using Claude Code for my projects until then, unless it's something extremely well-defined (eg. migrate all my RTL/Jest tests to use userEvent instead of fireEvent or any other API changes within libraries).</p>
+<p>Okay, so that's how I feel about Claude Code and such. I'm not using. I've been mainline on Cursor for over a year and I've stuck with that.</p>
+<h2 id="so-what-s-wrong-with-cursor-3-0" tabindex="-1">So, what's wrong with Cursor 3.0? <a class="header-anchor" href="#so-what-s-wrong-with-cursor-3-0">#</a></h2>
+<p>Nothing, exactly. They introduced a new agents view that makes them a bit more Claude Code-y. All of the AI companies are investing in being locked into their platforms for obvious reasons. The IDE is still there...</p>
+<p>I remember when I first got Cursor. I told my director that for the first time in my life, I can code as fast as I think. Granted, that's not very fast. But, even before AI came into the picture, I was always struggling with syntax (famously couldn't write a for loop straight), so autocomplete++ is my favorite thing in the world. Cursor finally made autocomplete <em>work</em> with a better diffing UX, the navigating within a file, and the codebase indexing. It's great. It genuinely works really well and I abuse my tab key to death.</p>
+<p>I had a decently large step back from AI attempt 5 months ago or so. I found the middle ground that's been working for me and is finally semi-permanent (well... I speak too soon). I do not start with the agent / chat ever anymore. I basically pseudocode and tab fills in the rest. I edit with tab too, I backspace and say <code>r</code> for reduce instead <code>m</code> for map and it figures out the rest. I tab through my tests creation as well so I can stop the AI before it makes stupid &quot;check if null and undefined&quot; tests. I love it, honestly. I feel like <em>I</em> am coding, but all of my friction with coding is gone, both because I never learned how to use my IDE super well to navigate within files easily / &quot;quickly rename all these functions&quot; and because all I have to do is think &quot;okay, I want a map there&quot; and it does it.</p>
+<p>...But, how long will the IDE be there?</p>
+<p>Autocomplete isn't profitable. It's a $10-20 a month offering. I don't think this is heavily subsidized like other AI. I Googled this and I got &quot;AUTOCOMPLETE IS USELESS. USE AGENTIC CODING&quot; blog posts, so I need to ask the AI how much this is subsidized. The AI says it costs $2-3/m for autocomplete, $.50 to index my codebase, and I still have 100-200 chats to frontier models a month (probably along the Ask lines) before they stop making a profit on a $10/m plan.</p>
+<p>Meanwhile, in the other world of agentic coding, my company and many other companies are talking about how to reduce token usage. It just costs too much.</p>
+<p>I gotta be honest. I ignore everything they say. I use Claude 4.6 Opus HIGH THINKING without any reservations whenever I want a slow frontier model without any regards to cost. I check my Cursor dashboard every so often, and I have never topped double-digit costs to my company in a month. Because all I'm doing is asking questions or having it search the codebase or make a bunch of dummy code for me. Using the entire context window once is still a $3 request. If you did that every working day 2x, that would only be $120 a month. My understanding is for people who do agentic coding, they can burn through $120 in a session. They can burn through $120 for a slice of a feature.</p>
+<p>I think there's only one company still offering autocomplete primarily (apart from Github Copilot which is just mediocre all around), which is Supermaven. My future is not a future. <strong>Cursor, the VS Code fork, is going to die eventually.</strong></p>
+<p>It's not happening now. It's not happening next month. I don't know when it's going to happen.</p>
+<h2 id="what-have-i-been-doing-with-this-anxiety" tabindex="-1">What have I been doing with this anxiety? <a class="header-anchor" href="#what-have-i-been-doing-with-this-anxiety">#</a></h2>
+<p>I've been trying other IDEs. It hasn't gone well.</p>
+<p>First, I tried <a href="https://zed.dev">Zed</a>. I am not using their Zeta autocomplete model, so GitHub Copilot as my autocomplete model is not very good.</p>
+<p>Frankly, this is going to sound very weak, but because Copilot is so slow / useless, I am basically just coding entirely myself in there, and I feel exhausted very fast. It's part learning the IDE, part my pseudocode needing to actually be translated into real code -- like speaking a second language, and part just hating the search functionality. It uses buffer-based search like Sublime Text. I am legitimately married to the way VS Code does Search and every time I've tried another code editor, I have suffered without it. Like, even clicking the file with the buffer in Zed is difficult, it doesn't jump to the line. It's really weird and I don't know if it's ever going to get better.</p>
+<p>So... I went back. VS Code + Copilot. Copilot obviously saw so much of its userbase leave for Cursor that it copied its method. It has next edit predictions and codebase indexing now. It's still bad! It's still really awful, and I find myself in the same situation as Zed, just 1/3 less brain fatigue since I have been using VS Code for a decade now and am very comfortable with it.</p>
+<p>I am considering the possibility that Copilot's autocomplete model is just bad. I'm thinking of trying a local autocomplete model -- although it still won't have the file jumping that Cursor offered. (Yes, as I told myself 5 months ago, what you're craving is Vim speed of navigation, Radhika.) I downloaded this one called <a href="https://blog.sweep.dev/posts/oss-next-edit">Sweep AI</a> and need to actually try it, but friction is real. Work needs to get done, and my fastest way to get work done has been through Cursor in over a year.</p>
+<p>I could ask work for a Supermaven subscription, but they're owned by Cursor, too. It sounds like the future if you are going to be an autocomplete person is some sort of local model.</p>
+<p>I'm going to keep experimenting with that. It's just scary that my coding performance is tied to one company right now, a company whose goals are no longer aligned with my success, and every alternative is bad, and I don't feel like I can program anymore without it. No matter the productivity gains, that's a really anxious place to be in. Openness is the only way forward (or just using Copilot again despite being noticeably worse -- then I simply need to be better).</p>
+<p>Regardless of what the exact solution ends up being, the answer is clear: I really have to get off of Cursor. I really need to learn Vim navigation properly!</p>
 
 <ul class="links-nextprev">
 	<i>If you would like to get in touch with me, send me an email at hi@[thisdomain].com.</i>
-	<br><br><li>Previous: <a href="/blog/integration-testing/">The Limits of Front-End Testing</a></li><li>Next: <a href="/blog/ai-part-two/">Adventures in AI-Assisted Coding Part 2: Re-orienting</a></li>
+	<br><br><li>Previous: <a href="/blog/dev-blogs/">Developer Blogs &amp; Newsletters I Read</a></li><li>Next: <a href="/blog/pi/">Trying AI Agents Again: Pi</a></li>
 </ul>
 
 		</main>
 
 		<footer></footer>
 
-		<!-- This page `/blog/ai-part-1/` was built on 2026-05-19T03:02:14.445Z -->
+		<!-- This page `/blog/addicted/` was built on 2026-05-19T03:02:14.444Z -->
 	</body>
 </html>
