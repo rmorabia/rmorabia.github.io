@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Leaving Static-Site Generators</title>
+		<title>Bring Back Microprogramming</title>
 		<meta name="description" content="A Software Engineer&#39;s Working Thoughts">
 		<link rel="preload" href="https://rmorabia.com/et-book/et-book-roman-line-figures.woff" as="font" type="font/woff" crossorigin>
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Radhika Morabia">
@@ -973,36 +973,66 @@ table th {
 
 		<main id="skip">
 			
-<h1>Leaving Static-Site Generators</h1>
+<h1>Bring Back Microprogramming</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2025-01-07">January 07, 2025</time></li>
+	<li><time datetime="2025-09-02">September 02, 2025</time></li>
 </ul>
 
-<p>I recently redid rmorabia.com using an static-site generator -- <a href="https://11ty.dev">11ty</a>. For the first time in a decade of blogging using SSGs, I was genuinely exhausted of learning the &quot;hot new thing.&quot; I set up my 11ty blog within a day, and find the process of writing and changing things much easier than my old blog using Gatsby (a bloated mess, imo, which I only used because it was JS-native).</p>
-<p>But... then came time to redo my friend Kevin Carson's website, which I last did with Hugo in 2018. Hugo?! Go?! What was I thinking?</p>
-<p>I thought about going back to good ol' Jekyll, which probably works the best out of the box of any of these SSGs I've ever used. I was browsing themes to build off of in Jekyll, and then within the theme README, I saw something curious I hadn't before... A copy of the theme using just HTML.</p>
-<p>I immediately downloaded it and have been working on the site using raw HTML and CSS ever since. There is a single 100-line JavaScript file to scale the website properly when going mobile vs desktop, and some external scripts to FontAwesome and related things, but otherwise: it's hand-rolled. No AI was involved in this process either, which I find to be a mess to edit even though it technically types things faster than I do.</p>
-<p>It is actually the easiest time I've had building a website in a decade... It may even be easier than Wordpress. I had even forgotten how to &quot;deploy&quot; an HTML website onto a service like Netlify. But, it just worked, just like everything else with HTML.</p>
-<p>I have no clue how it is from a performance standpoint. I would have to assume my 11ty blog is more compressed, but I think the only big files that wouldn't load even on the most 2G of connections for this website are the files and icons.</p>
-<p>I've been maintaining this website for 6 years at this point, and I think now that it's just raw HTML and CSS, I will have a much easier time the next six years maintainign it as Kevin writes more books and needs the details of the content changed.</p>
-<p>I have no plans to use SSGs for anything but blogs anymore. We keep getting enticed by these fancy tools, but for long-term, decades of maintainability, nothing beats simplicity.</p>
-<p>You can see the commits that just make sense <a href="https://github.com/rmorabia/kevinacarson.org/pull/1">here</a>.</p>
-<h2 id="post-script" tabindex="-1">Post-script <a class="header-anchor" href="#post-script">#</a></h2>
-<p>Since I refused to use AI for this, I actually became curious about what the result of telling Claude Sonnet 3.5's Artifact mode to combine the existing content on Kevin's website would be with the theme that I chose for the 2024 version.</p>
-<p>First, Claude would not allow me to upload either a GitHub zip or a full page screenshot since the site is over 8000 pixels long. I improvised, and I was expecting to get a sub-par lacking-in-details sort of thing that still matched the design I wanted to a tee.</p>
-<p>As expected, AI isn't even good at these kinds of simple websites. I told it to match the design exactly and what I got instead is the most generic 2010 Bootstrap looking site. You can see that Claude Artifact <a href="https://claude.site/artifacts/5ae82ba8-b9f0-4988-bb2e-8548b13d88a1">here</a>.</p>
-<p>Yeah, I'll stick to hand-rolling even my personal favors for friends.</p>
+<p>For the first time since I started blogging about AI here, I feel I've gone too far.</p>
+<p>My current project, as I described in my last post, is very AI-friendly, as it involves a lot of re-implementation of what has been done before. AI speeding up that copy/paste conversion process (in my case, from TypeScript to JavaScript), typing speed, and unit test production has been the only way I could deliver this project on time.</p>
+<p>However, it's been a month now, and I feel myself atrophying. I've never been very good at syntax or implementation details -- what are the functions of <code>Set()</code>? What is the performance difference between <code>forEach</code> and <code>for...of</code>? I always look that up, it's the kind of thing I'd never memorize, so you would think the fact that AI makes these kinds of microprogramming decisions for me is great, right? Right?</p>
+<p>I'm no longer sure of this. Specifically due to the nature of my workflow lately. Let's take an example of just making a util function, transforming and combining 3 data sources into one useful object for the next page to consume:</p>
+<ol>
+<li>Tell Cursor I need a function that takes in X (specificaly paste in an example) and outputs Y.</li>
+<li>Cursor takes several minutes, sometimes 30 minutes of back and forth, to generate something almost there.</li>
+<li>I lose focus while I wait for it, and it makes such mistakes that require intervention, that I feel I have to sit and watch it.</li>
+<li>Eventually, it looks right to me, so I tell it to generate tests. This is another 10 minutes of back and forth.</li>
+<li>I make some heady edits now when I realize the tests or the function are incorrect, and we go back and forth.</li>
+<li>During this back and forth, I'm editing line-by-line, and I use the autocomplete tab tab tab workflow. It makes microprogramming decisions that I mostly agree with, and sometimes question.</li>
+</ol>
+<p>All in all, making a data transformation utility function plus tests takes me an hour.</p>
+<p>That's interesting... That's a very interesting length of time. It feels very weird, like I look up from the AI and I feel like I just got started, and it's been an hour.</p>
+<p>Now, I know that this isn't the most efficient way to use the AI. The idea from the AI influencers is you give it an extremely clear spec upfront and then it'll hammer out all of the microprogramming details. But honestly, if I'm going to do that, I should just program the whole thing myself after a quick initial scaffold of a new file with that broad overview of the requirements.</p>
+<p>Now look at this workflow:</p>
+<ol>
+<li>Tell Cursor I need a function that takes in X (specifically paste in an example) and outputs Y.</li>
+<li>I limit myself to 3 iterations on this to get something mildly usable.</li>
+<li>I switch to another editor that does not have AI features inside of it and iterate on it manually -- including making this micro-proramming decisions myself. (Yes, I still use Intellisense!)</li>
+<li>I write a single (or two) test for this by hand.</li>
+<li>I switch back to Cursor and use the tab tab tab workflow to generate the rest of my tests and add any mocks to make that initial test pass.</li>
+<li>I'm iffy on this part, I haven't decided yet whether it's more efficient to go through the process of getting the tests back with or without AI, but whatever. I can figure that out eventually.</li>
+</ol>
+<p>Is this really going to take longer than an hour for the same thing?</p>
+<p>There's other variations of these workflows like:</p>
+<ul>
+<li>Write a spec and feed that to the AI and have it iterate on both the code and the tests.</li>
+<li>Write all the tests first by hand (no tab workflow) and have it fill in the code.</li>
+</ul>
+<p>These are just variations based on comfort, but I truly believe that those will also take about an hour to finish this.</p>
+<p>Look, I genuinely believe that the AI developments in 2025 make me a 10-20% faster programmer. This is most specifically visible with the elimination of writing boring variations of test mocks, and by taking out those microprogramming decisions.</p>
+<p>I just don't think the loss of microprogramming is a worthy sacrifice anymore. Forget the tests, I love that the AI does that for me. But, I think those decisions like using a map or an object, <code>forEach</code> or <code>reduce</code>, <code>some</code> vs <code>find</code> are actually vital to being a good programmer. And, they really don't take that long to decide yourself from looking at MDN.</p>
+<p>So, in practice: What am I changing here? Can't I do this already? Isn't this just weakness?</p>
+<p>I find the temptation from Cursor very seductive. Everything with AI. &quot;Chat with me, ask me questions, just tab your way to completion,&quot; it seems to tell me. It doesn't even work half the time, but I still do it. This only began once I started using Cursor -- it's just so AI-first. It's so silly because it doesn't make my job any easier. I can't cite it now, but there was a study on how college students use ChatGPT. They're not actually usually writing full essays with it, they're talking to it in the vein that it's a lower cognitive activity. They don't actually write the essays any faster, but they feel they're using less cognitive energy.</p>
+<p>So, I am keeping three editors installed now:</p>
+<ol>
+<li>Cursor, my AI editor of choice</li>
+<li>VS Code, where I have uninstalled Copilot, but it's still an IDE</li>
+<li><a href="https://coteditor.com/">CotEditor</a>, which is a plain text editor that I use for ...text editing reasons. (This is just a random plug for CotEditor. Leave Sublime, embrace Cot if you're on Mac.)</li>
+</ol>
+<p>I need to get out of the AI editor when it is not time to use AI. I might find that it's almost never time to use the AI once I go back to this.</p>
+<p>End note #1:  My coworker does a thing where he has AI-free days once a week. I like that, too. I'm not ready to do that because like I said, test writing without AI is now deeply unfun to me, but I am considering it.</p>
+<p>End note #2: I <em>should</em> actually calculate the times given similar units of work with or without AI, and the different workflow variations within it, but I'm also not ready to do that just yet. Right now, I still think that the feel of the work is more important than the actual time.</p>
 
 <ul class="links-nextprev">
 	<i>If you would like to get in touch with me, send me an email at hi@[thisdomain].com.</i>
-	<br><br><li>Previous: <a href="/blog/ai-part-two/">Adventures in AI-Assisted Coding Part 2: Re-orienting</a></li><li>Next: <a href="/blog/rtl-output/">Open Source Project Idea: Visual Studio Code Extension that renders the DOM output of Jest and React Testing Library</a></li>
+	<br><br><li>Previous: <a href="/blog/time-curves/">Time Curves in AI-Assisted Development</a></li><li>Next: <a href="/blog/fast/">Becoming Faster Than AI</a></li>
 </ul>
 
 		</main>
 
 		<footer></footer>
 
-		<!-- This page `/blog/leaving-ssgs/` was built on 2026-05-19T02:52:11.240Z -->
+		<!-- This page `/blog/microprogramming/` was built on 2026-05-19T02:52:11.240Z -->
 	</body>
 </html>

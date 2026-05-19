@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Leaving Static-Site Generators</title>
+		<title>Becoming Faster Than AI</title>
 		<meta name="description" content="A Software Engineer&#39;s Working Thoughts">
 		<link rel="preload" href="https://rmorabia.com/et-book/et-book-roman-line-figures.woff" as="font" type="font/woff" crossorigin>
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Radhika Morabia">
@@ -973,36 +973,61 @@ table th {
 
 		<main id="skip">
 			
-<h1>Leaving Static-Site Generators</h1>
+<h1>Becoming Faster Than AI</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2025-01-07">January 07, 2025</time></li>
+	<li><time datetime="2025-12-11">December 11, 2025</time></li>
 </ul>
 
-<p>I recently redid rmorabia.com using an static-site generator -- <a href="https://11ty.dev">11ty</a>. For the first time in a decade of blogging using SSGs, I was genuinely exhausted of learning the &quot;hot new thing.&quot; I set up my 11ty blog within a day, and find the process of writing and changing things much easier than my old blog using Gatsby (a bloated mess, imo, which I only used because it was JS-native).</p>
-<p>But... then came time to redo my friend Kevin Carson's website, which I last did with Hugo in 2018. Hugo?! Go?! What was I thinking?</p>
-<p>I thought about going back to good ol' Jekyll, which probably works the best out of the box of any of these SSGs I've ever used. I was browsing themes to build off of in Jekyll, and then within the theme README, I saw something curious I hadn't before... A copy of the theme using just HTML.</p>
-<p>I immediately downloaded it and have been working on the site using raw HTML and CSS ever since. There is a single 100-line JavaScript file to scale the website properly when going mobile vs desktop, and some external scripts to FontAwesome and related things, but otherwise: it's hand-rolled. No AI was involved in this process either, which I find to be a mess to edit even though it technically types things faster than I do.</p>
-<p>It is actually the easiest time I've had building a website in a decade... It may even be easier than Wordpress. I had even forgotten how to &quot;deploy&quot; an HTML website onto a service like Netlify. But, it just worked, just like everything else with HTML.</p>
-<p>I have no clue how it is from a performance standpoint. I would have to assume my 11ty blog is more compressed, but I think the only big files that wouldn't load even on the most 2G of connections for this website are the files and icons.</p>
-<p>I've been maintaining this website for 6 years at this point, and I think now that it's just raw HTML and CSS, I will have a much easier time the next six years maintainign it as Kevin writes more books and needs the details of the content changed.</p>
-<p>I have no plans to use SSGs for anything but blogs anymore. We keep getting enticed by these fancy tools, but for long-term, decades of maintainability, nothing beats simplicity.</p>
-<p>You can see the commits that just make sense <a href="https://github.com/rmorabia/kevinacarson.org/pull/1">here</a>.</p>
-<h2 id="post-script" tabindex="-1">Post-script <a class="header-anchor" href="#post-script">#</a></h2>
-<p>Since I refused to use AI for this, I actually became curious about what the result of telling Claude Sonnet 3.5's Artifact mode to combine the existing content on Kevin's website would be with the theme that I chose for the 2024 version.</p>
-<p>First, Claude would not allow me to upload either a GitHub zip or a full page screenshot since the site is over 8000 pixels long. I improvised, and I was expecting to get a sub-par lacking-in-details sort of thing that still matched the design I wanted to a tee.</p>
-<p>As expected, AI isn't even good at these kinds of simple websites. I told it to match the design exactly and what I got instead is the most generic 2010 Bootstrap looking site. You can see that Claude Artifact <a href="https://claude.site/artifacts/5ae82ba8-b9f0-4988-bb2e-8548b13d88a1">here</a>.</p>
-<p>Yeah, I'll stick to hand-rolling even my personal favors for friends.</p>
+<p>Ever since I've tried to step away from using AI-assisted development as my default mode of operation, I've been left with a question -- How do I become a better developer than AI?</p>
+<p>To clarify: I <em>am</em> a better developer than AI. So, it's not so much about my accuracy or my actual ability to write good code. This means the question is: How do I make the <em>feel</em> of development better than the AI experience?</p>
+<p>There are several mini-workflows where currently the AI is faster (but less accurate, so ultimately slower, but we're talking about feeling faster here) than me, namely the following tasks:</p>
+<ol>
+<li>Search how this is done in the codebase.</li>
+<li>Fix this test for me.</li>
+<li>Multi-file solutions (eg. feature toggle removal across the codebase)</li>
+<li>General typing and navigating.</li>
+<li>Terminal operations that require bash scripting, basic Python scripts, or complex changes.</li>
+</ol>
+<p>Within this wide range of tasks, only a few really feel like they should be handled by AI: everything related to tests, and the bash scripting. I just don't care about either of those things right now, so let it do that. (Although, really, the takeaway from this article is that I actually think this is proving what a not-well-rounded developer I am. Someone is scoffing reading this at my lack of ability to throw together a working bash script without AI. And you know what! You're right! I should be faster than AI at that, because AI is very slow in practice. All I'm saying is let's leave that for another day, because I have bigger priorities right now due to frequency. Let it be known that AI's greatest boon to my productivity is in exposing my own flaws.)</p>
+<p>So, then the primary task becomes: How do I become faster at AI at searching, navigating, and moving across files?</p>
+<p>There's a multi-pronged and probably overkill solution for this I've been working on for the past few months and will continue to work on into 2026.</p>
+<h2 id="step-0-become-very-good-at-typing" tabindex="-1">Step 0: Become very good at typing. <a class="header-anchor" href="#step-0-become-very-good-at-typing">#</a></h2>
+<p>I have an inherent advantage here because I type over 100wpm with over a 97% accuracy rate. I use QWERTY and don't do anything special. Due to this inherently good typing speed, I don't think the cost of switching layouts is worth it. But, I considered it, so I'm adding it here. If you want to become faster than AI, you should probably type at least 90wpm and consider what it takes to get there.</p>
+<h2 id="step-1-stop-using-the-mouse-to-switch-windows" tabindex="-1">Step 1: Stop using the mouse to switch windows. <a class="header-anchor" href="#step-1-stop-using-the-mouse-to-switch-windows">#</a></h2>
+<p>This sounds small, but I think it's very obvious on Zoom calls when you're pairing: First, move your hand to the mouse, then move it over to the dock (I use a rollerball because I got some wrist issues during COVID's trackpad only lifestyle, which is even slower), then open the window, then scroll to the tab you wanted to show, then click. It's just friction. I don't need it.</p>
+<p>I tried to find an i3-like solution on Mac, and I found <a href="https://github.com/nikitabobko/AeroSpace">Aerospace</a>. Some people don't like it apparently and there's alternatives, but personally all I'm doing is full or half-screening apps, and switching between them rapidly, and it seems to work for that. There's absolutely no animation or delay, and you can set it so frequently opened apps always open to the same workspace.</p>
+<p>So basically, the workflow is like: I'm coding -- Alt + C for Cursor, I need to test, Alt + A for Arc (my browser), I need the terminal, Alt + T for Kitty (my terminal), quick -- what was the issue my coworker said? Alt + S for Slack, etc. It's super easy to memorize and feels frictionless once you get used to it. I genuinely think it's a great boon to the flow state.</p>
+<h2 id="step-2a-get-more-keyboard-friendly-versions-of-your-basic-apps" tabindex="-1">Step 2a: Get more keyboard-friendly versions of your basic apps. <a class="header-anchor" href="#step-2a-get-more-keyboard-friendly-versions-of-your-basic-apps">#</a></h2>
+<p>Like I mentioned above, I switched to <a href="https://sw.kovidgoyal.net/kitty/">Kitty</a> for my terminal. You will be surprised to learn that I spent significant time researching this. It needed to be compatible with the workflow I prefer, Aerospace's notion of windows, and have nice keyboard shortcuts. Kitty finally fit the bill.</p>
+<p>I also use <a href="https://arc.net">Arc</a> although we will see how long that lasts since it got acquired by Atlassian. I find it slightly more keyboard-friendly than Chrome, but I may switch to Zen (which is based on Firefox) once it gets better on Mac. That sidebar-focused browser with folders and auto-clearing tabs and tab previews and split tabs and all the other features in Arc (that are now in Zen since Zen is basically an open-source Arc copy) are just so much more pleasant.</p>
+<p>That's pretty much it here. I also used to use Slack in the browser, but switched to the Slack app to be more Aerospace and keyboard compatible. Everything else is the same.</p>
+<h2 id="step-2b-learn-the-keyboard-shortcuts-of-all-your-most-used-apps" tabindex="-1">Step 2b: Learn the keyboard shortcuts of all your most used apps. <a class="header-anchor" href="#step-2b-learn-the-keyboard-shortcuts-of-all-your-most-used-apps">#</a></h2>
+<p>I printed them out, personally. I have Aerospace, Kitty, Arc (and Chrome, which is what Arc is built on), Chrome DevTools, Slack, and Obsidian. Most everything else can be moused in peace. Maybe Spotify is worth it as well.</p>
+<p>I just try to spend an hour a day in keyboard-only mode. When I want to do something and I'm itching for the mouse, I check my reference sheet and see if there's a keyboard way. Eventually, things become more automatic and other things get drilled in during that practice hour.</p>
+<h2 id="step-3-switch-to-vim" tabindex="-1">Step 3: Switch to Vim. <a class="header-anchor" href="#step-3-switch-to-vim">#</a></h2>
+<p>You knew this was coming, didn't you? There was no VS Code on the list above, because the VS Code keyboard shortcuts are just godawful. I've learned plenty over the years, and I've failed at learning others over the years.</p>
+<p>Look, if you want to navigate really fast, they figured out how to do that 40 years ago. This is a very difficult adjustment for me. Currently, I can navigate within single files and slowly switch files. I haven't figured out how to search or go to definition or other IDE mouse quality of life things. I'm following this book: <a href="https://lazyvim-ambitious-devs.phillips.codes/">LazyVim for Ambitious Developers</a> because from cursory research, it seems these pre-built Neovim versions are the way to go to get an IDE experience out of the box. LazyVim seems to be the most popular without being too opinionated, but I still already changed some settings.</p>
+<p>Vim isn't an easy transition, but I just see the vision where it can feel like Aerospace does -- navigating and searching and navigating my searches within milliseconds so I can remain in the flow and read and write faster than AI. To clarify: I don't actually care about macros or anything. It's really about the navigating ability with Vim.</p>
+<h2 id="step-4-use-a-crazy-keyboard" tabindex="-1">Step 4: Use a crazy keyboard. <a class="header-anchor" href="#step-4-use-a-crazy-keyboard">#</a></h2>
+<p>I think I kind of went too far with this one. I really think all of the above will make me significantly faster, and make the friction for development lower than AI. Switching keyboards, I'm not so sure about. Regardless, I spent the $350 in the heat of research on a used version of a <a href="https://www.moergo.com/">MoErgo Glove80</a>. The idea is that by keeping the pesky keys that are used for keyboard shortcuts where your thumbs are instead of where they usually are, which is in the painful pinky position, it'll be much more pleasant and simple. I don't actually care about the split nature and whatever other features it has. I just wanted that. But, from reading, this is the best one, the most comfortable one, so I decided to get this one.</p>
+<p>I haven't actually done anything more than take it out of the box. You have to re-learn to type on these things, which takes time I don't have. It's not even like Vim where I can hop in and out of Vim... I really have to commit to learning on the weekends, like an hour on learning to type websites each week until I get back to at least 50wpm. I have no priority on this one. But, like I said, this in general is a long-term commitment, so I'll do it eventually.</p>
+<p>...</p>
+<p>Isn't this overkill, Radhika?</p>
+<p>Yes. I said that before.</p>
+<p>I just couldn't figure out how else to get better at navigating and moving around things. The biggest boon to my development speed was Cursor tabbing between the top of the file, between files, etc.. I want that experience all the time. It just makes sense to me to apply that to navigating windows, navigating within apps like Chrome (switching tabs with the keyboard), and most of all, navigating within the code editor. Until I can get that Cursor-like experience myself, Cursor will always be a much more appealing starting point. In the end, that friction gap means I'm choosing to work in a more brittle, slow environment just because it feels faster.</p>
+<p>All this has been available for the decade I've been developing -- and honestly, I even used Vim and Emacs before just because I was working with resource-constrained devices, but I genuinely thought it didn't make a difference for my development speed because the biggest constraint has always been the speed of my thought. I still don't think it <em>really</em> does, but feel matters. I think feel does affect quality.</p>
+<p>I'm investing in myself for the long-term here. I genuinely think this will make more of a difference in the long run of my career than learning Svelte or whatever. I am aware I sound crazy, but feel does matter. I'll report back if this ends up being a good investment after another year, when I actually have all of these dialed in rather than being in the learning/adjusting phase.</p>
 
 <ul class="links-nextprev">
 	<i>If you would like to get in touch with me, send me an email at hi@[thisdomain].com.</i>
-	<br><br><li>Previous: <a href="/blog/ai-part-two/">Adventures in AI-Assisted Coding Part 2: Re-orienting</a></li><li>Next: <a href="/blog/rtl-output/">Open Source Project Idea: Visual Studio Code Extension that renders the DOM output of Jest and React Testing Library</a></li>
+	<br><br><li>Previous: <a href="/blog/microprogramming/">Bring Back Microprogramming</a></li><li>Next: <a href="/blog/dev-blogs/">Developer Blogs &amp; Newsletters I Read</a></li>
 </ul>
 
 		</main>
 
 		<footer></footer>
 
-		<!-- This page `/blog/leaving-ssgs/` was built on 2026-05-19T02:52:11.240Z -->
+		<!-- This page `/blog/fast/` was built on 2026-05-19T02:52:11.240Z -->
 	</body>
 </html>

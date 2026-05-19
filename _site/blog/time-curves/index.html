@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Leaving Static-Site Generators</title>
+		<title>Time Curves in AI-Assisted Development</title>
 		<meta name="description" content="A Software Engineer&#39;s Working Thoughts">
 		<link rel="preload" href="https://rmorabia.com/et-book/et-book-roman-line-figures.woff" as="font" type="font/woff" crossorigin>
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Radhika Morabia">
@@ -973,36 +973,30 @@ table th {
 
 		<main id="skip">
 			
-<h1>Leaving Static-Site Generators</h1>
+<h1>Time Curves in AI-Assisted Development</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2025-01-07">January 07, 2025</time></li>
+	<li><time datetime="2025-08-13">August 13, 2025</time></li>
 </ul>
 
-<p>I recently redid rmorabia.com using an static-site generator -- <a href="https://11ty.dev">11ty</a>. For the first time in a decade of blogging using SSGs, I was genuinely exhausted of learning the &quot;hot new thing.&quot; I set up my 11ty blog within a day, and find the process of writing and changing things much easier than my old blog using Gatsby (a bloated mess, imo, which I only used because it was JS-native).</p>
-<p>But... then came time to redo my friend Kevin Carson's website, which I last did with Hugo in 2018. Hugo?! Go?! What was I thinking?</p>
-<p>I thought about going back to good ol' Jekyll, which probably works the best out of the box of any of these SSGs I've ever used. I was browsing themes to build off of in Jekyll, and then within the theme README, I saw something curious I hadn't before... A copy of the theme using just HTML.</p>
-<p>I immediately downloaded it and have been working on the site using raw HTML and CSS ever since. There is a single 100-line JavaScript file to scale the website properly when going mobile vs desktop, and some external scripts to FontAwesome and related things, but otherwise: it's hand-rolled. No AI was involved in this process either, which I find to be a mess to edit even though it technically types things faster than I do.</p>
-<p>It is actually the easiest time I've had building a website in a decade... It may even be easier than Wordpress. I had even forgotten how to &quot;deploy&quot; an HTML website onto a service like Netlify. But, it just worked, just like everything else with HTML.</p>
-<p>I have no clue how it is from a performance standpoint. I would have to assume my 11ty blog is more compressed, but I think the only big files that wouldn't load even on the most 2G of connections for this website are the files and icons.</p>
-<p>I've been maintaining this website for 6 years at this point, and I think now that it's just raw HTML and CSS, I will have a much easier time the next six years maintainign it as Kevin writes more books and needs the details of the content changed.</p>
-<p>I have no plans to use SSGs for anything but blogs anymore. We keep getting enticed by these fancy tools, but for long-term, decades of maintainability, nothing beats simplicity.</p>
-<p>You can see the commits that just make sense <a href="https://github.com/rmorabia/kevinacarson.org/pull/1">here</a>.</p>
-<h2 id="post-script" tabindex="-1">Post-script <a class="header-anchor" href="#post-script">#</a></h2>
-<p>Since I refused to use AI for this, I actually became curious about what the result of telling Claude Sonnet 3.5's Artifact mode to combine the existing content on Kevin's website would be with the theme that I chose for the 2024 version.</p>
-<p>First, Claude would not allow me to upload either a GitHub zip or a full page screenshot since the site is over 8000 pixels long. I improvised, and I was expecting to get a sub-par lacking-in-details sort of thing that still matched the design I wanted to a tee.</p>
-<p>As expected, AI isn't even good at these kinds of simple websites. I told it to match the design exactly and what I got instead is the most generic 2010 Bootstrap looking site. You can see that Claude Artifact <a href="https://claude.site/artifacts/5ae82ba8-b9f0-4988-bb2e-8548b13d88a1">here</a>.</p>
-<p>Yeah, I'll stick to hand-rolling even my personal favors for friends.</p>
+<p>I am currently working on a decently greenfield project (a rarity in my work), so I am finally able to test the result of telling Cursor to let ‘er rip. Using Claude Sonnet-4 and the Agent mode, I upload a Figma screenshot, describe what needs to be done in vivid detail (using my voice), build off of some rules and memories Cursor picked up, and describe some similar components in the codebase to model off of.</p>
+<p>Within an hour of iterating on the prompts, I get something bare that matches 75% of my end-intended functionality.</p>
+<p>So, it’s easy to assume — there’s 50% of my work done. I’ve cut the time for something that would’ve taken me 3 days before to 1.5 days, right?</p>
+<p>In practice, after doing these a few times, I can safely say it’s probably more like 20% of the development time cut off. 3 days takes …2.5 still.</p>
+<p>There’s a weird false confidence from the old way of coding. If I was developing these features by hand, things go very linearly — I build one line of my UI at a time. I add the data, then the header, then the first button, then the second modal, etc.. As a human, I write pretty good code the first time and <strong>edit as I go</strong> so when I am done with the header, chances are it’s pretty similar to how that code is going to look when I submit my PR.</p>
+<p>However, with AI-assisted development, that’s not the case at all. I can get all that functionality, and things look like they work, but as I start reading the code and editing — one thing breaks another and I’m making broad-stroke changes across the codebase. It’s all very 2 steps forward, 1 step back. Instead of the tasks being to build one thing at a time, the tasks take nearly as long with a different linearity: remove the ungodly awful hacky code, tell the AI how to replace it, fix the thing three steps down that broke, yell at the AI to stop adding that awful code, write the fix by hand, and rewrite the code to be more concise and clear and human, and read the next section of code… and do it all over again. It takes time. It's just a different workflow, not necessarily a better or faster one.</p>
+<p>Working with this has solidified for me that AI is really only useful for experienced engineers with taste and judgment and a pre-existing database in their mind of how the solution is likely going to look. It’s way better than it was a year ago, where I am now actually seeing slightly more than typing gains now, but the judgment gap seems insurmountable in the near future. We are responsible for every line of code we check in!</p>
+<p>As always, open and willing to hearing other perspectives and talking about it!</p>
 
 <ul class="links-nextprev">
 	<i>If you would like to get in touch with me, send me an email at hi@[thisdomain].com.</i>
-	<br><br><li>Previous: <a href="/blog/ai-part-two/">Adventures in AI-Assisted Coding Part 2: Re-orienting</a></li><li>Next: <a href="/blog/rtl-output/">Open Source Project Idea: Visual Studio Code Extension that renders the DOM output of Jest and React Testing Library</a></li>
+	<br><br><li>Previous: <a href="/blog/jj/">JJ: Hype not achieved</a></li><li>Next: <a href="/blog/microprogramming/">Bring Back Microprogramming</a></li>
 </ul>
 
 		</main>
 
 		<footer></footer>
 
-		<!-- This page `/blog/leaving-ssgs/` was built on 2026-05-19T02:52:11.240Z -->
+		<!-- This page `/blog/time-curves/` was built on 2026-05-19T02:52:11.240Z -->
 	</body>
 </html>
