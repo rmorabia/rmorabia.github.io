@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>JJ: Hype not achieved</title>
 		<meta name="description" content="A Software Engineer&#39;s Working Thoughts">
+		<link rel="preload" href="https://rmorabia.com/et-book/et-book-roman-line-figures.woff" as="font" type="font/woff" crossorigin>
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Radhika Morabia">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Radhika Morabia">
 		<style>/**
@@ -206,10 +207,18 @@ pre[class*="language-diff-"] {
 
 @font-face {
 	font-family: "et-book";
-	src: url("/et-book/et-book-roman-line-figures.woff") format("woff");
+	src: url("https://rmorabia.com/et-book/et-book-roman-line-figures.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
+}
+
+@font-face {
+	font-family: "Garamond-Fallback";
+	src: local("Garamond"), local("Georgia");
+	size-adjust: 103%;
+	ascent-override: 92%;
+	descent-override: 22%;
 }
 
 @font-face {
@@ -268,7 +277,7 @@ body {
 	width: 55%;
 	margin-left: auto;
 	margin-right: auto;
-	font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	font-family: 'et-book', 'Garamond-Fallback', Georgia, serif;
 	background-color: #fffff8;
 	color: #111;
 	max-width: 1400px;
@@ -1013,6 +1022,6 @@ table th {
 
 		<footer></footer>
 
-		<!-- This page `/blog/jj/` was built on 2026-05-19T02:08:49.000Z -->
+		<!-- This page `/blog/jj/` was built on 2026-05-19T02:17:45.048Z -->
 	</body>
 </html>
