@@ -28,13 +28,17 @@
 	},
 	"homepage": "https://rmorabia.com/",
 	"devDependencies": {
-		"@11ty/eleventy": "^3.1.6",
-		"@11ty/eleventy-img": "^3.1.1",
+		"@11ty/eleventy": "^3.1.8",
+		"@11ty/eleventy-img": "^7.1.1",
 		"@11ty/eleventy-navigation": "^0.3.5",
 		"@11ty/eleventy-plugin-bundle": "^1.0.4",
 		"@11ty/eleventy-plugin-rss": "^1.2.0",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
 		"luxon": "^3.3.0",
 		"markdown-it-anchor": "^8.6.7"
+	},
+	"dependencies": {
+		"@capsizecss/core": "^4.1.3",
+		"@capsizecss/metrics": "^4.0.0"
 	}
 }
